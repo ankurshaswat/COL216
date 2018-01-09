@@ -3,7 +3,7 @@
 
 	mov r9,#100 @ is value of n
 
-	@ldr r3, =AA 
+	@ldr r3, =AA   
 	@mov r7,#57
 	@str r7, [r3]
 	@add r3, r3, #4
@@ -17,7 +17,7 @@
 
 	mov r1, #100
 	mov r2, #400
-	ldr r3, =AA 
+	ldr r3, =AA @.word 4,10,6,5,19,3,67 
 	Lab1:
 	str r2, [r3]
 	add r3, r3, #4
@@ -73,6 +73,7 @@
 	@SWI       [r5,#396]
 	swi SWI_Exit
 	.data
+P: .word 4,10,6,5,19,3,67
 
 AA:	.space 400
 	.end
