@@ -36,14 +36,14 @@
 	L: 
 	
 	add r6,r6,#1
-	add r4,r4,#1
-	cmp r4,#7
+	sub r4,r4,#1
+	cmp r4,#0
 	bne backtrack
 	
 
 	add r8,r8,#1
-	add r0,r0,#1
-	cmp r0,#7
+	sub r0,r0,#1
+	cmp r0,#0
 	bne backtrack2
 
 	@SWI       [r5]
