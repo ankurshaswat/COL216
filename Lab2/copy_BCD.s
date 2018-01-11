@@ -9,4 +9,4 @@ copy_BCD:
 	str r3,[r0,#8]
 	ldr r3,[r1,#12]	@r3 is x3 
 	str r3,[r0,#12]
-ret: mov pc lr
+ret: mov pc,lr
