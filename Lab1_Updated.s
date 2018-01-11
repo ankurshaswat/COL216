@@ -1,32 +1,10 @@
+
 	.equ SWI_Exit, 0x11
 	.text
 
-	mov r9,#100 @ is value of n
+	mov r9,#7 @ is value of n
 
-	@ldr r3, =AA   
-	@mov r7,#57
-	@str r7, [r3]
-	@add r3, r3, #4
-	@mov r7,#54
-	@str r7, [r3]
-	@add r3, r3, #4
-	@mov r7,#26	
-	@str r7, [r3]
-	@add r3, r3, #4
-
-
-	mov r1, #100
-	mov r2, #400
-	ldr r3, =AA @.word 4,10,6,5,19,3,67 
-	Lab1:
-	str r2, [r3]
-	add r3, r3, #4
-	sub r2, r2, #4
-	sub r1, r1, #1
-	cmp r1, #0
-	bne Lab1
-
-	ldr r5, =AA  @currently v[0] is r5
+    ldr r10,= P @=AA  @currently v[0] is r10
 
 	@i is r8
 	mov r7,#4
@@ -35,7 +13,7 @@
 	mov r8,#0
 
 	backtrack2:
-	ldr r5, =AA  @currently v[0] is r5
+	ldr r10, = P  @AA  @currently v[0] is r10
 	@temp is r1
 	@temp2 is r2
 	@temp3 is r3
@@ -47,7 +25,7 @@
 	backtrack: 
 	
 	mul 	r1,r6,r7
-	add 	r5,r1,r5
+	add 	r5,r1,r10
 	ldr 	r2,[r5,#0]
 	ldr 	r3,[r5,#4]
 	cmp 	r2,r3
@@ -77,3 +55,4 @@ P: .word 4,10,6,5,19,3,67
 
 AA:	.space 400
 	.end
+
