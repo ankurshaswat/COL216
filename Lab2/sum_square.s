@@ -4,42 +4,42 @@ sum_square:
 
 	ldr r12,=AA @@ AA is in r12 
 
-	@r1 is *s
-	str r1,[r12,#0] @AA[0] has r1 address
-	@r2 is *x
-	str r2,[r12,#4] @AA[1] has r2 address
+	@r0 is *s
+	str r0,[r12,#0] @AA[0] has r0 address
+	@r1 is *x
+	str r1,[r12,#4] @AA[1] has r1 address
 
-	@ldr r2,[r2,#0] @x[0] is in r2
-
-	@r3 is dd
+	@r2 is dd
 	dd: .word 0,0,0,0
-	ldr r3,=dd
+	ldr r2,=dd
+	str r2,[r12,#8]
 
-	str r3,[r12,#8]
 
-	mov r12,r2   @ x[0] is now in r12
-	ldr r2,=zero @ zero is in r2
+	ldr r0,[r12,#0]
+	ldr r1,=zero
 
-	
-	ldr r1,[r12,#0]
-	ldr r2,[r12,#4]
 	bl copy_BCD
 
+	@ldr r1,[r12,#4]
 
-	ldr r1,[r12,#4]
-
-	mov r0,#0   @ i is r0
+	mov r3,#0   @ i is r3
 
 			loop_start:
 
-			ldr r1,=dd
+			ldr r0,=dd
+			ldr r1,[r12,#4]
+			ldr r1,[r1,r3]
+			blt square_digit
 
+			ldr r0,[r12,#0]
+			mov r1,r0
+			ldr r2,=dd
+			blt add_BCD
 
-
-
-			add r0,r0,#1
-			cmp r0,#4
+			add r3,r3,#4
+			cmp r3,#16
 			blt loop_start
+
 
 
 	ret:

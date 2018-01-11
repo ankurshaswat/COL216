@@ -1,36 +1,51 @@
 add_BCD:
 
-@r11 is also used in this function
 
-	ldr r0,[r0,#0]  @ *x is r0
-	ldr r1,[r1,#0]  @ *y is r1
-	ldr r2,[r2,#0]  @ *z is r2
+	AA:	.space 400
 
-	mov r12,#0   @ c is r12
-	mov r11,#0   @ i is r11
+	ldr r12,=AA @@ AA is in r12 
 
-		loop_start:
+	str r0,[r12,#0] @ *x is stored here
+	str r1,[r12,#4] @ *y is stored here
+	str r2,[r12,#8] @ *z is stored here
 
-		add r3,r2,r12
-		add r0,r3,r1
+	mov r3,#0   @ c is r3
+
+	mov r0,#0  @ i is r0
+
+	loop:	
+
+		ldr r1,=AA
 		mov r12,#0
+		ldr r2,[r1,#8]
+		ldr r2,[r2,r0]
+		add r12,r12,r2
+		ldr r2,[r1,#4]
+		ldr r2,[r2,r0]
 
-		cmp r0,#9
+		add r12,r12,r2
+		add r12,r12,r3
+
+		ldr r1,[r1,#0]
+		str r12,[r1,r0]
+
+		cmp r12,#9
 		ble skip_if
 
-			sub r0,r0,#10
-			mov r12,#1
+			sub r12,r12,#10
+			str r12,[r1,r0]
+			mov r3,#1
 
 		skip_if:
 
 
-		ldr r0,[r0,#4]  @ *x is r0
-		ldr r1,[r1,#4]  @ *y is r1
-		ldr r2,[r2,#4]  @ *z is r2
-
-		add r11,r11,#1
-		cmp r11,#4
-		blt loop_start
+		add r0,r0,#4
+		cmp r0,#16
+		blt loop
 
 	ret:
 	mov pc,lr
+
+
+
+
