@@ -6,8 +6,8 @@ ldr r0,=OutFileName @ set Name for output file
 mov r1,#1 @ mode is output
 swi 0x66 @ open file for output
 @bcs OutFileError @ if error ?
-@ldr r1,=OutFileHandle @ load o2utput file handle
-@str r0,[r1] @ save the file handle
+ldr r1,=OutFileHandle @ load o2utput file handle
+str r0,[r1] @ save the file handle
 
 ldr r0,=x
 ldr r1,=one
@@ -124,14 +124,24 @@ mov r9,#0
         ldr r0,=OutFileHandle
         ldr r0,[r0]
 
-        ldr r1,[r7,#0]
+
+        ldr r1,=MatMsg0
+        swi 0x69
+        mov r1,r9
         swi 0x6b
-        ldr r1,[r7,#4]
+        ldr r1,=MatMsg1
+        swi 0x69
+        ldr r1,[r7,#12]
         swi 0x6b
         ldr r1,[r7,#8]
         swi 0x6b
-        ldr r1,[r7,#12]
+        ldr r1,[r7,#4]
         swi 0x6b
+        ldr r1,[r7,#0]
+        swi 0x6b
+        ldr r1,=MatMsg2
+        swi 0x69
+
 
         @ above this file handling
 		skip_if_main:
@@ -147,9 +157,9 @@ mov r9,#0
 	cmp r10,r5
 	blt for_loop_outer
 
-ldr r0,=OutFileHandle
-ldr r0,[r0]
-swi 0x68
+    ldr r0,=OutFileHandle
+    ldr r0,[r0]
+    swi 0x68
 
     swi SWI_Exit
 
@@ -279,6 +289,9 @@ dd: .word 0,0,0,0
 zero: .word 0,0,0,0
 AA: .space 400
 BB: .space 400
+MatMsg0: .asciz "number["
+MatMsg1: .asciz "] = "
+MatMsg2: .asciz "\n"
 OutFileName: .asciz "Outfile1.txt"
 OutFileError:.asciz "Unable to open output file\n"
 .align
