@@ -2,7 +2,12 @@
 	.text
 
 
-
+ldr r0,=OutFileName @ set Name for output file
+mov r1,#1 @ mode is output
+swi 0x66 @ open file for output
+@bcs OutFileError @ if error ?
+@ldr r1,=OutFileHandle @ load o2utput file handle
+@str r0,[r1] @ save the file handle
 
 ldr r0,=x
 ldr r1,=one
@@ -108,12 +113,27 @@ mov r9,#0
 
 		add r9,r9,#1
 		ldr r7,=x
-		ldr r8,[r7,#0]
-		ldr r8,[r7,#4]
-		ldr r8,[r7,#8]
-		ldr r8,[r7,#12]
+		@ldr r8,[r7,#0]
+		@ldr r8,[r7,#4]
+		@ldr r8,[r7,#8]
+		@ldr r8,[r7,#12]
 		@PRINT
+        @below it file handling
 
+
+        ldr r0,=OutFileHandle
+        ldr r0,[r0]
+
+        ldr r1,[r7,#0]
+        swi 0x6b
+        ldr r1,[r7,#4]
+        swi 0x6b
+        ldr r1,[r7,#8]
+        swi 0x6b
+        ldr r1,[r7,#12]
+        swi 0x6b
+
+        @ above this file handling
 		skip_if_main:
 
 		ldr r0,=x
@@ -127,7 +147,11 @@ mov r9,#0
 	cmp r10,r5
 	blt for_loop_outer
 
-	swi SWI_Exit
+ldr r0,=OutFileHandle
+ldr r0,[r0]
+swi 0x68
+
+    swi SWI_Exit
 
 
 
@@ -255,6 +279,10 @@ dd: .word 0,0,0,0
 zero: .word 0,0,0,0
 AA: .space 400
 BB: .space 400
+OutFileName: .asciz "Outfile1.txt"
+OutFileError:.asciz "Unable to open output file\n"
+.align
+OutFileHandle:.word 0
 	.end
 
 
