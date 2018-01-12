@@ -16,7 +16,11 @@ mov r9,#0
 
 	for_loop_outer:
 
-
+		ldr r0,=x
+		ldr r1,[r0]
+		ldr r2,[r0,#4]
+		ldr r3,[r0,#8]
+		ldr r4,[r0,#12]
 
 		ldr r0,=y
 		ldr r1,=x
@@ -205,6 +209,9 @@ add_BCD:
 
 		ldr r1,[r1,#0]
 		str r12,[r1,r0]
+
+		
+		mov r3,#0
 
 		cmp r12,#9
 		ble skip_if
