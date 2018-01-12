@@ -33,11 +33,57 @@ mov r9,#0
 			cmp r0,#1
 			bne while_end
 
-			ldr r0,=s;
-			ldr r1,=y;
-			b sum_square
+			ldr r0,=s
+			ldr r1,=zero
 
-			return_sum_square:
+			bl copy_BCD
+
+
+			mov r4,#0   @ inner i is r4
+
+			loop_start2:
+
+		
+			ldr r0,=dd
+			ldr r1,=zero
+			bl copy_BCD  @passing r0 and r1 i.e. *dd and *zero
+
+			ldr r5,=dd
+			ldr r6,=y
+			ldr r7,[r6,r4]
+			mul r6,r7,r7
+			str r6,[r5]
+
+			ldr r6,=dd
+			ldr r5,[r6,#0]
+			ldr r7,[r6,#4]
+				loop_start:
+
+
+
+			
+				cmp r5,#9
+				ble ret2
+
+
+				sub r5,r5,#10
+				str r5,[r6]
+				add r7,r7,#1
+				str r7,[r6,#4]
+
+				b loop_start
+
+			ret2:
+			
+			ldr r0,=s
+			ldr r1,=s
+			ldr r2,=dd
+			bl add_BCD
+
+			add r4,r4,#4
+			cmp r4,#16
+			blt loop_start2
+
 
 			ldr r0,=y
 			ldr r1,=s
@@ -182,92 +228,13 @@ add_BCD:
 
 
 
-	sum_square:
-
-
-	ldr r12,=AA @@ AA is in r12 
-
-	@r0 is *s
-	str r0,[r12,#0] @AA[0] has r0 address
-	@r1 is *x
-	str r1,[r12,#4] @AA[1] has r1 address
-
-	@r2 is dd
-
-	ldr r2,=dd
-	str r2,[r12,#8]
-
-
-	ldr r0,[r12,#0]
-	ldr r1,=zero
-
-	bl copy_BCD
-
-	@ldr r1,[r12,#4]
-
-	mov r3,#0   @ i is r3
-
-			loop_start2:
-
-			ldr r0,=dd 
-			ldr r1,[r12,#4]
-			ldr r1,[r1,r3]
-			b square_digit
-
-			return_square_digit:
-			
-			ldr r0,[r12,#0]
-			mov r1,r0
-			ldr r2,=dd
-			bl add_BCD
-
-			add r3,r3,#4
-			cmp r3,#16
-			blt loop_start2
-
-
-
-	b return_sum_square
-	@mov pc,lr
 
 
 
 
 
 
-	square_digit:	
 
-	@r0 is *dd
-	@r1 is d value
-
-	mul r2,r1,r1  @ r2 has d square
-	ldr r1, = zero @loading array zero into r1
-	bl copy_BCD  @passing r0 and r1 i.e. *dd and *zero
-
-	str r2,[r0]
-
-	ldr r2,[r0]
-	ldr r12,[r0,#4]
-	@ r2 has value of dd[0]  and r12 has value of dd[1]
-		loop_start:
-
-
-
-	
-		cmp r2,#9
-		ble ret2
-
-
-		sub r2,r0,#10
-		str r2,[r0]
-		add r12,r12,#1
-		str r12,[r0,#4]
-
-		b loop_start
-
-	ret2:
-	b return_square_digit
-	@mov pc,lr
 
 
 
