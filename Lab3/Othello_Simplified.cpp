@@ -124,11 +124,13 @@ int main(){
                 bool disc_to_find=!active_player;
 
                 if(occupied(player_input_x,player_input_y)) { // new fn1
-                        return false;
+                        // return false;
+                        continue;
                 }
 
                 if(!valid_coordinate(player_input_x,player_input_y)) {
-                        return false;
+                        // return false;
+                        continue;
                 }
 
 
