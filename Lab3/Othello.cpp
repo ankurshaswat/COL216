@@ -14,7 +14,6 @@ void clearScreen()
 //      -2 -> possible_moves
 
 int grid[8][8],
-    player_input,
     active_player,
     score[2];
 
@@ -43,12 +42,12 @@ bool valid_coordinate(int x , int y){
     if(x>7 || x<0) {
         return false;
     }
-    
+
     if(y>7 || y<0) {
         return false;
     }
     return true;
-    
+
     }
 
 bool check_marker(int x,int y,bool active_player){
@@ -64,7 +63,7 @@ bool check_marker(int x,int y,bool active_player){
                 return false;
         }
 
-    
+
 
 
         for(int i=-1; i<2; i++) {
@@ -90,7 +89,7 @@ bool check_marker(int x,int y,bool active_player){
                                         x_copy+=i;
                                         y_copy+=j;
                                         continue;
-                               
+
                                 }
                                 else if(grid[x_copy][y_copy]==(!disc_to_find)) {
                                         if(to_flip!=0) {
