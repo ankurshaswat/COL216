@@ -11,6 +11,7 @@ void clearScreen()
 // grid   -1 -> neutral
 //      0  -> black
 //      1  -> white
+//      -2 -> possible_moves
 
 int grid[8][8],
     player_input,
@@ -35,23 +36,36 @@ void initialize(){
         active_player=0;
 }
 
+bool occupied(int x, int y){
+    return grid[x][y]>-1;
+    }
+bool valid_coordinate(int x , int y){
+    if(x>7 || x<0) {
+        return false;
+    }
+    
+    if(y>7 || y<0) {
+        return false;
+    }
+    return true;
+    
+    }
+
 bool check_marker(int x,int y,bool active_player){
 
         bool valid=false;
         bool disc_to_find=!active_player;
 
-        if(grid[x][y]>-1) {
+        if(occupied(x,y)) {         // new fn1
                 return false;
         }
 
-        if(x>7 || x<0) {
+        if(!valid_coordinate(x,y)) {
                 return false;
         }
 
-        if(y>7 || y<0) {
-                return false;
-        }
-// cout<<"Tag4"<<endl;
+    
+
 
         for(int i=-1; i<2; i++) {
                 for(int j=-1; j<2; j++) {
@@ -61,24 +75,24 @@ bool check_marker(int x,int y,bool active_player){
                         }
                         int x_copy=x,y_copy=y;
                         int to_flip=0;
-// int disc_to_find=!active_player;
+
                         x_copy+=i;
                         y_copy+=j;
-// cout<<"Tag5"<<endl;
 
-                        while (x_copy<8 && y_copy<8 && x_copy>-1 && y_copy>-1) {
+
+                        while (valid_coordinate(x_copy,y_copy)) {
 // cout<<"Tag6"<<endl;
 
                                 if(grid[x_copy][y_copy]==disc_to_find) {
 // cout<<"Tag7"<<endl;
 
                                         to_flip++;
-
-
                                         x_copy+=i;
                                         y_copy+=j;
                                         continue;
-                                }else if(grid[x_copy][y_copy]==(!disc_to_find)) {
+                               
+                                }
+                                else if(grid[x_copy][y_copy]==(!disc_to_find)) {
                                         if(to_flip!=0) {
 // cout<<"Tag8"<<endl;
 
@@ -183,7 +197,7 @@ bool show_available_moves(){
                         bool valid=false;
                         bool disc_to_find=!active_player;
 
-                        if(grid[x][y]>-1) {
+                        if(occupied(x,y)) {
                                 continue;
                         }else{
                                 grid[x][y]=-1;
@@ -199,7 +213,7 @@ bool show_available_moves(){
                                         int to_flip=0;
                                         x_copy+=i;
                                         y_copy+=j;
-                                        while (x_copy<8 && y_copy<8 && x_copy>-1 && y_copy>-1) {
+                                        while (valid_coordinate(x_copy,y_copy)) {
                                                 if(grid[x_copy][y_copy]==disc_to_find) {
                                                         to_flip++;
                                                         x_copy+=i;
