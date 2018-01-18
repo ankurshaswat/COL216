@@ -25,11 +25,11 @@ initialize:
 
 
   add r1,r1,#1
-  cmp r1,#7
+  cmp r1,#8
   bne inner_loop_start
 
   add r0,r0,#1
-  cmp r0,#7
+  cmp r0,#8
   bne outer_loop_start
 
   ret:
