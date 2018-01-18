@@ -49,19 +49,19 @@ bool valid_coordinate(int x, int y){
         return true;
 
 }
-
-bool check_marker(int x,int y,bool active_player){
-
-
-}
-
-
-
-
-void place_marker(int x,int y){
-// cout<<"Tag3"<<endl;
-
-}
+//
+// bool check_marker(int x,int y,bool active_player){
+//
+//
+// }
+//
+//
+//
+//
+// void place_marker(int x,int y){
+// // cout<<"Tag3"<<endl;
+//
+// }
 
 
 void print_grid(){
@@ -111,7 +111,7 @@ int main(){
         print_grid();
 
 
-        while(success==false) {
+        while(1==1) {
 
                 cout<<"Chance of Player "<<active_player<<endl;
                 cout<<"Enter Column then row"<<endl;
