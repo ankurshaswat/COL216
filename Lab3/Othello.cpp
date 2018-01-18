@@ -81,10 +81,8 @@ bool check_marker(int x,int y,bool active_player){
 
 
                         while (valid_coordinate(x_copy,y_copy)) {
-// cout<<"Tag6"<<endl;
 
                                 if(grid[x_copy][y_copy]==disc_to_find) {
-// cout<<"Tag7"<<endl;
 
                                         to_flip++;
                                         x_copy+=i;
@@ -94,7 +92,6 @@ bool check_marker(int x,int y,bool active_player){
                                 }
                                 else if(grid[x_copy][y_copy]==(!disc_to_find)) {
                                         if(to_flip!=0) {
-// cout<<"Tag8"<<endl;
 
                                                 int direction_x=0-i;
                                                 int direction_y=0-j;
@@ -276,9 +273,7 @@ int main(){
                 cout<<"Enter Column then row"<<endl;
                 cin>>player_input_y;
                 cin>>player_input_x;
-// cout<<"Tag1"<<endl;
                 clearScreen();
-// cout<<"Tag2"<<endl;
                 place_marker(player_input_x,player_input_y);
                 success=!show_available_moves();
                 print_grid();
