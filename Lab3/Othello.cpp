@@ -52,8 +52,8 @@ bool valid_coordinate(int x , int y){
 
 bool check_marker(int x,int y,bool active_player){
 
-        bool valid=false;
-        bool disc_to_find=!active_player;
+        bool valid = false;
+        bool disc_to_find = !active_player;
 
         if(occupied(x,y)) {         // new fn1
                 return false;
@@ -90,14 +90,16 @@ bool check_marker(int x,int y,bool active_player){
 
                                 }
                                 else if(grid[x_copy][y_copy]==(!disc_to_find)) {
-                                        if(to_flip!=0) {
+                                        if(to_flip!=0)
+                                        {
 
                                                 int direction_x=0-i;
                                                 int direction_y=0-j;
 
                                                 x_copy+=direction_x;
                                                 y_copy+=direction_y;
-                                                while(x_copy!=x || y_copy!=y) {
+                                                while(x_copy!=x || y_copy!=y)
+                                                {
 
 
                                                         grid[x_copy][y_copy]=active_player;
@@ -112,7 +114,9 @@ bool check_marker(int x,int y,bool active_player){
 
 
                                                 valid=true;
-                                        }else{
+                                        }
+                                        else
+                                        {
                                                 break;
                                         }
                                         break;
