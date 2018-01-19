@@ -232,7 +232,7 @@
 
         right_led:
         mov r0, #0x01
-        swi SWI_SETLED
+        swi 0x201
         mov pc,lr
 
 
@@ -273,13 +273,14 @@
 
                 left_led:
                 mov r0, #0x02
-                swi SWI_SETLED
+                swi  0x201
                 mov pc,lr
 
 
 
+
                 input_from_keyboard:
-                ldr r3, =A
+                @ldr r3, =A
                 L: swi 0x203
                 cmp r0, #0
                 beq L
