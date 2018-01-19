@@ -17,7 +17,11 @@ moveq r0, r0, LSR #2
 tst r0, #1
 addeq r1, r1, #1
 moveq r0, r0, LSR #1
-str r1, [r3]
-add r3, r3, #4
-cmp r1, #15
-bne L
+@str r1, [r3]
+@add r3, r3, #4
+@cmp r1, #15
+@bne L
+
+mov r0,r1
+
+mov pc,lr
