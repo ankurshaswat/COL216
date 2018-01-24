@@ -10,20 +10,33 @@
     @active player is stored in r7
     ldr r7,=active_player
 
+    @change_Added
+    ldr r7 ,[r7]
+    @change_completed // 24.01.18
+
     @disc_to_find is opposite to the active player
     rsb r8,r7,#1  @1-active_player
 
 
     @get input of Column(y placeholder) into r4
     @get input of row(x placeholder) into r5
-    ldr r11,=player_input
-    str r5,[r11]
-    str r4,[r11,#4]
+    @ was on //24.01.18
+                    @ ldr r11,=player_input
+                    @str r5,[r11]
+                    @str r4,[r11,#4]
+    @ added
 
-    ldr r11,=valid
-    @@@@@mov r6,#0  @ r6 is valid is false
-    mov r0,#0
-    str r0,[r11]  @setting valid to be 0 i.e. false
+    bl input_from_keyboard
+    mov r5,r0
+    bl input_from_keyboard
+    mov r4,r0
+
+    @ addition completed
+
+    @ldr r11,=valid
+                                                        @@@@@mov r6,#0  @ r6 is valid is false
+    @mov r0,#0
+    @str r0,[r11]  @setting valid to be 0 i.e. false
 
     mov r0,r5
     mov r1,r4
@@ -33,7 +46,7 @@
     beq infinite_repeat  @continue if returns false
 
     mov r0,r5
-    mov r1,r5
+    mov r1,r4 @ changed was mov r1,r5   // 24.01.18
     bl valid_coordinate   @x and y as parameters to valid_co-valid_coordinate
 
     cmp r0,#0
@@ -55,11 +68,18 @@
     b inner_loop_end1
 
     skip_if:
+@ was on 24.01.18
+    @ldr r11,=player_input
+    @ldr r4,[r11]
+    @ldr r5,[r11,#4]
+@ added on 24.01.18
 
-    ldr r11,=player_input
-    ldr r4,[r11]
-    ldr r5,[r11,#4]
+bl input_from_keyboard
+mov r5,r0
+bl input_from_keyboard
+mov r4,r0
 
+@ done
     mov r6,#0  @ to_flip is r6
 
     add r4,r4,r9
