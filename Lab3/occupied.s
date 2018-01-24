@@ -1,5 +1,5 @@
 occupied : 
-add r1,r2,r1,LSL #3
+add r1,r1,r0,LSL #3
 mov r1 ,r1,LSL #2
 ldr r1,[r0,r1]
 cmp r1, #-1

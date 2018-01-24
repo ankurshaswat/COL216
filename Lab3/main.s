@@ -5,6 +5,8 @@
 
     bl print_void
 
+    bl left_led
+    bl right_led
     infinite_repeat:
 
     @active player is stored in r7
@@ -25,24 +27,26 @@
                     @str r5,[r11]
                     @str r4,[r11,#4]
     @ added
-
+    ldr r11,=player_input
     bl input_from_keyboard
     mov r5,r0
+    str r5,[r11]
     bl input_from_keyboard
     mov r4,r0
-
+    str r4,[r11,#4]
     @ addition completed
 
-    @ldr r11,=valid
+    ldr r11,=valid
                                                         @@@@@mov r6,#0  @ r6 is valid is false
-    @mov r0,#0
-    @str r0,[r11]  @setting valid to be 0 i.e. false
+    mov r0,#0
+    str r0,[r11]  @setting valid to be 0 i.e. false
 
     mov r0,r5
     mov r1,r4
     bl occupied  @ x and y as parameters
 
     cmp r0,#0
+    @@@@@@@@   Display the invalid Message
     beq infinite_repeat  @continue if returns false
 
     mov r0,r5
@@ -69,15 +73,15 @@
 
     skip_if:
 @ was on 24.01.18
-    @ldr r11,=player_input
-    @ldr r4,[r11]
-    @ldr r5,[r11,#4]
+    ldr r11,=player_input
+    ldr r4,[r11]
+    ldr r5,[r11,#4]
 @ added on 24.01.18
 
-bl input_from_keyboard
-mov r5,r0
-bl input_from_keyboard
-mov r4,r0
+@bl input_from_keyboard
+@mov r4,r0
+@bl input_from_keyboard
+@mov r5,r1
 
 @ done
     mov r6,#0  @ to_flip is r6
@@ -232,9 +236,9 @@ mov r4,r0
 
 
 
-    valid_coordinate:
-    cmp r0,#7
-    bgt out
+valid_coordinate:
+    cmp r0,#7    @r0 is x
+    bgt out      @//r1 is y
     cmp r0 , #0
     blt out
     cmp r1,#7
@@ -250,35 +254,81 @@ mov r4,r0
         mov pc,lr
 
 
-        right_led:
+    right_led:
         mov r0, #0x01
         swi 0x201
         mov pc,lr
 
+print_void:
 
 
-        print_void:
-            ldr r3,=grid   @r2 contains the address of the grid = grid
+            ldr r3,=grid
             mov r0,#0   @r0 is x
             mov r1,#0   @r1 is y
         out_loop:
             cmp r0,#8
-            beq ret2
-            in_loop:
-                cmp r1 , #8
-                addeq r0,r0,#1
-                beq out_loop
-                @Display the Integer
-                ldr r2,[r3],#4
-                add r1,r1,#1
-                b in_loop
-        ret2:
+            mov r1,#0
+            beq ret1
+        in_loop:
+            cmp r1 , #8
+            addeq r0,r0,#1
+            beq out_loop
+            @Display the Integer
+            ldr r2,[r3],#4
+            cmp r2,#0
+            beq disp
+            cmp r2,#1
+            beq disp
+            bne disp_point
+            b out5
+        disp_point:
+            mov r0,r0,LSL #2
+            mov r1,r1,LSL #1
+            mov r2,#'.
+            swi 0x207
+            mov r1,r1,LSR #1
+            mov r0,r0,LSR #2
+            b out5
+        disp:
+            mov r0,r0,LSL #2
+            mov r1,r1,LSL #1
+            swi 0x205
+            mov r1,r1,LSR #1
+            mov r0,r0,LSR #2
+        out5:
+
+            add r1,r1,#1
+            b in_loop
+
+        ret1:
+            mov r0,#34
+            mov r1,#1
+            ldr r2,=Message0
+            swi 0x204
+
+            mov r1,#6
+            ldr r2,=Message1
+            swi 0x204
+            mov r0,#36
+            mov r1,# 3
+            ldr r3,=score
+            ldr r2,[r3]
+            swi 0x205
+            mov r1,#8
+            ldr r2,[r3,#4]
+            swi 0x205
+            @swi SWI_Exit
             mov pc,lr
 
 
+
+
+
+
             occupied:
-            add r1,r2,r1,LSL #3
+            add r1,r1,r0,LSL #3
             mov r1 ,r1,LSL #2
+            ldr r0,=grid
             ldr r1,[r0,r1]
             cmp r1, #-1
             bgt out2
@@ -291,7 +341,7 @@ mov r4,r0
                 mov pc,lr
 
 
-                left_led:
+            left_led:
                 mov r0, #0x02
                 swi  0x201
                 mov pc,lr
@@ -327,43 +377,70 @@ mov r4,r0
 
                 mov pc,lr
 
-                initialize:
-                  mov r12,#2
-                  ldr r0,=score
-                  str r12,[r0,#0]
-                  str r12,[r0,#4]
-                  ldr r0,=active_player
-                  mov r0,#0
 
-                  ldr r2,=grid @ r2 is grid throughout now
+initialize:
+                    mov r12,#2
+                    ldr r0,=score
+                    str r12,[r0,#0]
+                    str r12,[r0,#4]
+                    ldr r0,=active_player
+                    mov r0,#0
 
-                  mov r0,#0 @ i=0
+                    ldr r2,=grid @ r2 is grid throughout now
 
-                  @ 8x+y is used to access registers (store array linearly)
+                    mov r0,#0 @ i=0
 
-                  outer_loop_start:
+                    @ 8x+y is used to access registers (store array linearly)
 
-                  mov r1,#0 @ j=0
+                    outer_loop_start:
 
-                  inner_loop_start:
+                    mov r1,#0 @ j=0
 
-                  @@@@@mul r3,r0,#8  @ r3 = 8 * i
-                  add r3,r1,r0,LSL #3  @ r3 = r1 +r3 = 8*i + j
-                  @@@@@mul r3,r3,#4
-                  mov r12,#-1
-                  str r12,[r2,r3,LSL #2]  @storing -1 at all positions
+                    inner_loop_start:
 
-
-                  add r1,r1,#1
-                  cmp r1,#8
-                  bne inner_loop_start
-
-                  add r0,r0,#1
-                  cmp r0,#8
-                  bne outer_loop_start
+                    @@@@@mul r3,r0,#8  @ r3 = 8 * i
+                    add r3,r1,r0,LSL #3  @ r3 = r1 +r3 = 8*i + j
+                    @@@@@mul r3,r3,#4
+                    mov r12,#-1
+                    str r12,[r2,r3,LSL #2]  @storing 3 at all positions
 
 
-                        mov pc,lr
+                    add r1,r1,#1
+                    cmp r1,#8
+                    bne inner_loop_start
+
+                    add r0,r0,#1
+                    cmp r0,#8
+                    bne outer_loop_start
+
+                    ldr r2,=grid
+                    mov r0,#3
+                    mov r1,#3
+                    add r3,r1,r0,LSL #3  @ r3 = r1 +r3 = 8*i + j
+                    mov r12,#1
+                    str r12,[r2,r3,LSL #2]
+
+
+                    mov r0,#4
+                    mov r1,#4
+                    add r3,r1,r0,LSL #3  @ r3 = r1 +r3 = 8*i + j
+                    mov r12,#1
+                    str r12,[r2,r3,LSL #2]
+
+                    mov r0,#3
+                    mov r1,#4
+                    add r3,r1,r0,LSL #3  @ r3 = r1 +r3 = 8*i + j
+                    mov r12,#0
+                    str r12,[r2,r3,LSL #2]
+
+                    mov r0,#4
+                    mov r1,#3
+                    add r3,r1,r0,LSL #3  @ r3 = r1 +r3 = 8*i + j
+                    mov r12,#0
+                    str r12,[r2,r3,LSL #2]
+
+
+                    mov pc,lr
 
 
 
@@ -375,4 +452,6 @@ success: .word 0
 grid: .space 300
 player_input: .word 0,0
 valid: .word 0
+Message0: .asciz "BLACK"
+Message1: .asciz "WHITE"
 	.end
