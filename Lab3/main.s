@@ -3,12 +3,10 @@
 
     bl initialize
 
-    bl print_void
 
-    bl left_led
-    bl right_led
+
     infinite_repeat:
-
+        bl clear_print
     @active player is stored in r7
     ldr r7,=active_player
 
@@ -36,8 +34,8 @@
     str r4,[r11,#4]
     @ addition completed
 
-    ldr r11,=valid
-                                                        @@@@@mov r6,#0  @ r6 is valid is false
+
+    ldr r11,=valid                                                    @@@@@mov r6,#0  @ r6 is valid is false
     mov r0,#0
     str r0,[r11]  @setting valid to be 0 i.e. false
 
@@ -45,17 +43,22 @@
     mov r1,r4
     bl occupied  @ x and y as parameters
 
-    cmp r0,#0
+    cmp r0,#1
     @@@@@@@@   Display the invalid Message
+    bne it_is_not_occupied
+    bl display_invalid_input
     beq infinite_repeat  @continue if returns false
-
+it_is_not_occupied:
     mov r0,r5
     mov r1,r4 @ changed was mov r1,r5   // 24.01.18
     bl valid_coordinate   @x and y as parameters to valid_co-valid_coordinate
 
     cmp r0,#0
+    bne these_are_valid_coordinates
+    bl display_invalid_input
     beq infinite_repeat   @continue if returns false
 
+these_are_valid_coordinates:
 
     mov r9,#-1  @ i for loop
 
@@ -325,7 +328,7 @@ print_void:
 
 
 
-            occupied:
+    occupied:
             add r1,r1,r0,LSL #3
             mov r1 ,r1,LSL #2
             ldr r0,=grid
@@ -333,15 +336,15 @@ print_void:
             cmp r1, #-1
             bgt out2
             mov r0,#0
-
+            b out12
             out2:
                 mov r0,#1
-
+            out12:
 
                 mov pc,lr
 
 
-            left_led:
+    left_led:
                 mov r0, #0x02
                 swi  0x201
                 mov pc,lr
@@ -349,7 +352,7 @@ print_void:
 
 
 
-                input_from_keyboard:
+    input_from_keyboard:
                 @ldr r3, =A
                 L: swi 0x203
                 cmp r0, #0
@@ -375,6 +378,27 @@ print_void:
 
                 mov r0,r1
 
+                mov pc,lr
+
+display_invalid_input:
+                mov r0,#32
+                mov r1,#11
+                ldr r2,=invalid0
+                swi 0x204
+                mov r1,#12
+                ldr r2,=invalid1
+                swi 0x204
+                mov r1,#13
+                ldr r2,=invalid2
+                swi 0x204
+                mov r1,#14
+                ldr r2,=invalid3
+                swi 0x204
+                mov pc,lr
+
+clear_print:
+                swi 0x206
+                b print_void
                 mov pc,lr
 
 
@@ -454,4 +478,8 @@ player_input: .word 0,0
 valid: .word 0
 Message0: .asciz "BLACK"
 Message1: .asciz "WHITE"
+invalid0: .asciz "INVALID"
+invalid1: .asciz "INPUT"
+invalid2: .asciz "ENTER"
+invalid3: .asciz "AGAIN"
 	.end
