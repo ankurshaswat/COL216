@@ -1,12 +1,20 @@
 .equ SWI_Exit, 0x11
+.equ SEG_A,0x80
+.equ SEG_B,0x40
+.equ SEG_C,0x20
+.equ SEG_D,0x08
+.equ SEG_E,0x04
+.equ SEG_F,0x02
+.equ SEG_G,0x01
+.equ SEG_P,0x10
 .text
 
     bl initialize
 
-
-
+    bl clear_print
+    bl left_led
     infinite_repeat:
-        bl clear_print
+    @    bl clear_print
     @active player is stored in r7
     ldr r7,=active_player
 
@@ -27,9 +35,13 @@
     @ added
     ldr r11,=player_input
     bl input_from_keyboard
+    cmp r0,#15
+    beq passer
     mov r5,r0
     str r5,[r11]
     bl input_from_keyboard
+    cmp r0,#15
+    beq passer
     mov r4,r0
     str r4,[r11,#4]
     @ addition completed
@@ -222,7 +234,10 @@ these_are_valid_coordinates:
     @ if start
     ldr r0,[r0]
     cmp r0,#1   @ has valid become true
-    bne skip_if2
+    beq true_part
+    bne false_part
+
+true_part:
 
       ldr r0,=score
 
@@ -233,7 +248,7 @@ these_are_valid_coordinates:
       add r2,r2,#1
       str r2,[r0,r1,LSL #2]   @// Score has been updated
 
-
+passer:
      ldr r2,=score
      ldr r0,[r2]
     cmp r0,#0
@@ -245,17 +260,29 @@ these_are_valid_coordinates:
     cmp r2,#64
     beq game_is_finished    @ //display_the_winner
 
+bl clear_print  @ updated_screen_disp
 
       ldr r1,=active_player
       ldr r0,[r1,#0]
       rsb r0,r0,#1             @// active_player has been updated
       str r0,[r1]
+
+   @ bl clear_print  @ updated_screen_disp
+
+
       cmp r0,#1
       beq glow_right        @ // right_led glows pl_white
       bl left_led   @ // left_led glows pl_black
       b skip_if2
-glow_right:
-    bl right_led
+    glow_right:
+        bl right_led
+
+    b skip_if2
+
+false_part:
+
+    bl display_invalid_input
+
 skip_if2:
 
 
@@ -295,6 +322,9 @@ valid_coordinate:
     right_led:
         mov r0, #0x01
         swi 0x201
+ldr r0,=96
+
+SWI 0X200
         mov pc,lr
 
 print_void:
@@ -382,6 +412,9 @@ print_void:
     left_led:
                 mov r0, #0x02
                 swi  0x201
+                ldr r0,=237
+
+                SWI 0X200
                 mov pc,lr
 
 
@@ -554,5 +587,9 @@ player0:  .asciz "CONGRATULATIONS :- BLACK HAS WON THE GAME"
 player1:  .asciz "CONGRATULATIONS :- WHITE HAS WON THE GAME"
 draw: .asciz "CONGRATULATIONS TO BOTH GAME IS  :- DRAW"
 score_difference: .asciz "SCORE DIFFERENCE"
+zero:
+    .word SEG_A|SEG_B|SEG_C|SEG_D|SEG_E|SEG_G @0
+one:
+    .word SEG_B|SEG_C @1
 
 	.end
