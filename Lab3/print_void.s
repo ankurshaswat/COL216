@@ -2,7 +2,8 @@
 .text
 
 @print_void:
-    bl initialize
+mov lr,pc
+    b initialize
 
 
     ldr r3,=grid
