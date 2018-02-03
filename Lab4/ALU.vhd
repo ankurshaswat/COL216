@@ -1,6 +1,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ALU is
 PORT (
@@ -18,6 +19,7 @@ end ALU;
 architecture struc of ALU is
 
 SIGNAL S : std_logic_vector (31 downto 0) ;
+SIGNAL Carry_out : std_logic;
 SIGNAL C31: std_logic;
 
 BEGIN
@@ -45,7 +47,7 @@ output1 <= S;
 
 C31 <=  Op1(31) XOR Op2(31) XOR S(31);
 
-Carry_out <=  (Op1(31) AND Op2(31)) + (Op1(31) AND C31) + (Op1(31) AND C31);
+Carry_out <=  (Op1(31) AND Op2(31)) XOR (Op1(31) AND C31) XOR (Op1(31) AND C31);
 C <= Carry_out;
 
 N <= S(31);

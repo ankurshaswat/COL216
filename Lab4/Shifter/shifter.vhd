@@ -7,12 +7,12 @@ entity shifter is
     shift_type : in std_logic_vector(1 downto 0);
     shift_amount : in std_logic_vector(4 downto 0);
     carry : in std_logic;
-    out  : out std_logic_vector(31 downto 0));
+    out1  : out std_logic_vector(31 downto 0));
 end entity shifter;
 
 architecture arch of shifter is
 begin 
 
-with 
+--with 
 
 end architecture arch;
