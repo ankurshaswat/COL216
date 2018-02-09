@@ -47,7 +47,7 @@ output1 <= S;
 
 C31 <=  Op1(31) XOR Op2(31) XOR S(31);
 
-Carry_out <=  (Op1(31) AND Op2(31)) XOR (Op1(31) AND C31) XOR (Op1(31) AND C31);
+Carry_out <=  (Op1(31) AND Op2(31)) OR (Op1(31) AND C31) OR (Op1(31) AND C31);
 C <= Carry_out;
 
 N <= S(31);
