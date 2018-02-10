@@ -11,6 +11,9 @@ entity shifter is
 end entity shifter;
 
 architecture arch of shifter is
+
+signal to_reverse: in std_logic;
+signal t_shift: in std_logic;
 begin 
 
 --with 
