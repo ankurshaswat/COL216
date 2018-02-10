@@ -5,7 +5,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity shift_4 is
 port (
 	inp:in std_logic_vector(31 downto 0);
-		t_i: in std_logic;
+		shift_type:in std_logic_vector(1 downto 0);
+
 	c_out : out std_logic;
 	slct:in std_logic;
 	oup: out std_logic_vector(31 downto 0));

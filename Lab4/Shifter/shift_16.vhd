@@ -8,14 +8,14 @@ port (
 	inp:in std_logic_vector(31 downto 0);
 		shift_type:in std_logic_vector(1 downto 0);
 
-	t_i: in std_logic;
+	c_out: out std_logic;
 	slct:in std_logic;
 	oup: out std_logic_vector(31 downto 0));
 end entity shift_16;
 
 architecture arch_1 of shift_16 is
 
-
+signal t_i : std_logic_vector(15 downto 0);
 begin
 
 

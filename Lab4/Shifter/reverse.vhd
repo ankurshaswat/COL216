@@ -52,20 +52,26 @@ signal out_8: std_logic_vector(31 downto 0);
 
 begin
 
-rev_1: portmap(inp<=inp,
+rev_1: reverse_1
+	portmap(inp<=inp,
 	slct<=slct,
 	oup<=out_1);
 
-rev_2: portmap(inp<=out_1,
+rev_2: 
+	reverse_2
+	portmap(inp<=out_1,
 	slct<=slct,
 	oup<=out_2);
-rev_4: portmap(inp<=out_2,
+rev_4:  reverse_4
+portmap(inp<=out_2,
 	slct<=slct,
 	oup<=out_4);
-rev_8: portmap(inp<=out_4,
+rev_8: reverse_8
+portmap(inp<=out_4,
 	slct<=slct,
 	oup<=out_8);
-rev_16: portmap(inp<=out_8,
+rev_16: reverse_16
+portmap(inp<=out_8,
 	slct<=slct,
 	oup<=oup);
 
