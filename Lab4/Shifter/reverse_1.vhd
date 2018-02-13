@@ -18,14 +18,17 @@ signal left_update: std_logic_vector(31  downto 0);
 begin 
 
 left <= "0" & inp(31 downto 1) ; 
-for i in 0 to 31 generate
-  right(i) <= inp(i)&mask(i);
-  left_update <= left(i) & mask(i);
-end generate;
+
+GEN: for i in 0 to 31 generate
+  right(i) <= inp(i) AND mask(i);
+  left_update(i) <= left(i) AND mask(i);
+end generate GEN;
+
 right_update <= right(31 downto 1 )& "0";
-for i in 0 to 31 generate
-   out(i) <= right_update(i)|| left_update(i);
-end generate;
+
+GEN2: for i in 0 to 31 generate
+   oup(i) <= right_update(i) OR left_update(i);
+end generate GEN2;
 
 
 end architecture arch_1;

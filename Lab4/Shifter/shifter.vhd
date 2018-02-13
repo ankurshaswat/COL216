@@ -38,30 +38,30 @@ end component;
 begin 
 
 
-with shift_type select to_reverse
-  '1'  when "00";
+with shift_type select to_reverse <=
+  '1'  when "00",
   '0'  when others;
 
 rev_1: reverse 
 	port map (
-		inp<= inp ,
-		slct<=to_reverse,
-		oup<= rev_out) ;
+		inp=> inp ,
+		slct=>to_reverse,
+		oup=> rev_out) ;
 
 swift: shift
   port map(
-  inp        <= inp,
-  shift_type <= shift_type,
-  shift_amount <=shift_amount,
-  carry       <=carry,
-  out1        <=shift_out); 
+  inp        => inp,
+  shift_type => shift_type,
+  shift_amount =>shift_amount,
+  carry       =>carry,
+  out1        =>shift_out); 
 
 
 rev_2: reverse 
 	port map (
-		inp<= shift_out ,
-		slct<=to_reverse,
-		oup<= out1) ;
+		inp=> shift_out ,
+		slct=>to_reverse,
+		oup=> out1) ;
 
 
 

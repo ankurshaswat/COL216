@@ -14,6 +14,6 @@ architecture arch_1 of reverse_16 is
 begin
 
 with slct select oup <=
-	inp(15 downto 0)&inp(31 downto 16) when '1';
+	inp(15 downto 0) AND inp(31 downto 16) when '1',
 	inp(31 downto 0) when '0';
 end architecture arch_1;

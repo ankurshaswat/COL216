@@ -21,10 +21,10 @@ with slct select oup <=
 	t_i & inp(31 downto 4) when '1',
 	inp(31 downto 0) when '0';
 
-with shift_type select t_i
-	"0000" when "00";
-	"0000" when "01";
-	inp(31)&inp(31)&inp(31)&inp(31) when "10";
+with shift_type select t_i <=
+	"0000" when "00",
+	"0000" when "01",
+	inp(31)&inp(31)&inp(31)&inp(31) when "10",
 	inp (3)&inp(2)&inp (1)&inp(0) when "11";
 
 c_out<=inp(3);
