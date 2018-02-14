@@ -67,49 +67,51 @@ BEGIN
 
 Alu :  ALU 
 PORT (
-	Op1 : ,
-	Op2 : ,
-  opcode : ,
-  carry_in  : ,
-  output1 : ,
-  Z : ,
-  N : ,
-  C : ,
-  V : );
+	Op1 <= ,
+	Op2 <= ,
+  opcode <= ,
+  carry_in  <= ,
+  output1 <= ,
+  Z <= ,
+  N <= ,
+  C <= ,
+  V <= );
 
 
 Mul : Multiplier
 PORT (
-	Op1 : ,
-	Op2 : ,
-	Result : );
+	Op1 <= ,
+	Op2 <= ,
+	Result <= );
 
 
 
 ProcMem :  ProcessorMemoryPath 
 PORT MAP (
-	FromProcessor : ,
-	FromMemory : ,
-	DTType : , 
-	ByteOffset : ,
-	ToProcessor : ,
-	ToMemory : ,
-	WriteEnable : );
+	FromProcessor <= ,
+	FromMemory <= ,
+	DTType <= , 
+	ByteOffset <= ,
+	ToProcessor <= ,
+	ToMemory <= ,
+	WriteEnable <= );
 
 
 
 Reg :  RegFile 
 PORT MAP(
-	ReadAddr1 : ,	
-	ReadAddr2 : ,
-	WriteAddr : ,
-	Data : ,
-  c,lock  : ,
-  reset  : ,
-  WriteEnable  : ,
-	ReadOut1 : ,
-	ReadOut2 : ,
-	PC : );
+	ReadAddr1 <= ,	
+	ReadAddr2 <= ,
+	WriteAddr <= ,
+	Data <= <=
+  c,lock  <= ,
+  reset  <= ,
+  WriteEnable  <= ,
+	ReadOut1 <= ,
+	ReadOut2 <= ,
+	PC <= );
+
+
 
 
 	
