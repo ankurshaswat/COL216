@@ -68,7 +68,7 @@ half_word_zero_extended<="0000000000000000" & selected_half_word;
 byte_zero_extended<=     "000000000000000000000000" & selected_byte;
 
 with selected_half_word(15) select half_word_sign_extended <=
-half_word_zero_extended when '0';
+half_word_zero_extended when '0',
 "1111111111111111" & selected_half_word when '1';
 
 with selected_byte(7) select byte_sign_extended<=
@@ -84,8 +84,8 @@ byte_zero_extended when '0',
 byte_sign_extended when '1';
 
 with DTType(1 downto 0) select ToProcessor<=
-FromMemory when "00";
-half_word_extended when "01";
+FromMemory when "00",
+half_word_extended when "01",
 byte_extended when others;
 
 
