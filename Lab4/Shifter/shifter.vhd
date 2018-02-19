@@ -50,7 +50,7 @@ rev_1: reverse
 
 swift: shift
   port map(
-  inp        => inp,
+  inp        => rev_out,
   shift_type => shift_type,
   shift_amount =>shift_amount,
   carry       =>carry,
