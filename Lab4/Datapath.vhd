@@ -99,8 +99,8 @@ PORT( Address:IN std_logic_vector(31 downto 0);
 --signal control_signal1,control_signal2,control_signal3,control_signal4:std_logic;
 
 signal PC,rd,ins,ad,ALUp,wd,rdp,op1,op2,rd1p,rd1,rd2,PCout,ioffset,boffset,ALUout:std_logic_vector(31 downto 0);
-signal rad2:std_logic_vector(3 downto 0);
-signal carry,flagTempN,flagTempZ,flagTempV,flagTempC,Z,V,N,C,reset:std_logic;
+signal rad2,mul_rd:std_logic_vector(3 downto 0);
+signal carry,flagTempN,flagTempZ,flagTempV,flagTempC,Z,V,N,C,reset,mul_slct:std_logic;
 
 BEGIN
 
@@ -125,6 +125,10 @@ wd when "00",
 "00000000000000000000000000000100" when "01",
 ioffset when "10",
 boffset when "11";
+
+with mul_slct select mul_rd <=
+	ins(19 downto 16) when '0',
+	ins(11 downto 8) when '1';
 
 
 --with control_signal1 select rad2 <=
@@ -183,7 +187,7 @@ flagTempZ when '1';
 
 Reg :  RegFile 
 PORT MAP(
-	ReadAddr1 => ins(19 downto 16),	
+	ReadAddr1 => mul_rd,	
 	ReadAddr2 => rad2,
 	WriteAddr => ins(15 downto 12),
 	Data => wd,

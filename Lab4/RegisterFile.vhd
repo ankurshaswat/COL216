@@ -29,19 +29,21 @@ SIGNAL registerFile : filereg;
 
 BEGIN
 
+-- Concurrent Address assignment;
+
 readAdd1 <= to_integer(unsigned(ReadAddr1));
 readAdd2 <= to_integer(unsigned(ReadAddr2));
 writeAdd <= to_integer(unsigned(WriteAddr));
-PC <= registerFile(15);
+PC <= registerFile(15);     -- Copy of PC
 
-ReadOut1 <= registerFile(readAdd1);
+ReadOut1 <= registerFile(readAdd1);   -- Reading done concurrently
 ReadOut2 <= registerFile(readAdd2);
 
-with reset select registerFile(15) <=
+with reset select registerFile(15) <=  -- Initializing PC with 0 ;
   "00000000000000000000000000000000"             when '1',
     registerFile(15)               when '0';
 
-process(clock)
+process(clock)						--- Sequential Writing
 begin
 	if(rising_edge(clock)) then
 		if(WriteEnable='1') then
