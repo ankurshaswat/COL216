@@ -1,5 +1,8 @@
+
 library IEEE;
-use IEEE.std_logic_1164.all;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE ieee.numeric_std.ALL;
 
 entity Memory is
  
@@ -16,7 +19,7 @@ architecture arch of Memory is
 
 TYPE filereg is array (0 to 1000) of std_logic_vector(31 downto 0);
 SIGNAL registerFile : filereg;
-
+signal outerTemp:std_logic_vector(31 downto 0);
  SIGNAL Address_INFO : integer ;
 
 
@@ -26,10 +29,12 @@ begin
 
 -- Concurrent Address assignment;
 
+outer<= outerTemp;
+
 Address_INFO <= to_integer(unsigned(Address));
-with MR select outer<=
+with MR select outerTemp<=
 	registerFile(Address_INFO) when '1',
-	outer when '0';
+	outerTemp when '0';
 
 
 process(clock)						--- Sequential Writing

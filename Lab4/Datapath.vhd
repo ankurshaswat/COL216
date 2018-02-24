@@ -6,7 +6,6 @@ USE ieee.numeric_std.ALL;
 
 entity Datapath is
 PORT (
-PW: in std_logic;
 IorD: in std_logic;
 MR: in std_logic;
 MW: in std_logic;
@@ -16,18 +15,26 @@ BW: in std_logic;
 DW: in std_logic;
 IW: in std_logic;
 Rsrc: in std_logic;
-PrevW: in std_logic;
+WadSrc: in std_logic_vector(1 downto 0);
+R1src: in std_logic;
+op1sel: in std_logic;
 SType: in std_logic_vector(1 downto 0);
-M2R: in std_logic;
-shift_amount_select: in std_logic;
+M2R: in std_logic_vector(1 downto 0);
+ShiftAmtSel: in std_logic;
 Shift: in std_logic;
-Asrc1: in std_logic;
+Asrc1: in std_logic_vector(1 downto 0);
 Fset: in std_logic;
 ReW: in std_logic;
 clock: in std_logic;
 MulW: in std_logic;
-shiftedForward: in std_logic;
-mul_slct: in std_logic;
+ShiftW: in std_logic;
+op1update: in std_logic;
+carry: in std_logic;
+N: OUT std_logic;
+V: OUT std_logic;
+Z: out std_logic;
+C: out std_logic;
+reset: in std_logic;
 op: in std_logic_vector(3 downto 0);
 Asrc2: in std_logic_vector(1 downto 0));
 end Datapath;
@@ -45,7 +52,7 @@ PORT (
   N : OUT std_logic;
   C : OUT std_logic;
   V : OUT std_logic);
-  
+
 end component;
 
 
@@ -58,7 +65,7 @@ end component;
 
 
 component shifter is
-port ( 
+port (
     inp : in std_logic_vector(31 downto 0);
     shift_type : in std_logic_vector(1 downto 0);
     shift_amount : in std_logic_vector(4 downto 0);
@@ -70,8 +77,8 @@ end component;
 --PORT (
 --	FromProcessor : IN std_logic_vector(31 downto 0);
 --	FromMemory : IN std_logic_vector(31 downto 0);
---	DTType : IN std_logic_vector(2 downto 0); -- last 2 bits tell type of tranfer 00 for word 01 for half 10 for byte 
---	-- bit index 3 tells     0 for zero extension and 1 for sign extension 
+--	DTType : IN std_logic_vector(2 downto 0); -- last 2 bits tell type of tranfer 00 for word 01 for half 10 for byte
+--	-- bit index 3 tells     0 for zero extension and 1 for sign extension
 --	ByteOffset : IN std_logic_vector(1 downto 0);
 --	ToProcessor : OUT std_logic_vector(31 downto 0);
 --	ToMemory : OUT std_logic_vector(31 downto 0);
@@ -96,60 +103,92 @@ end component;
 component Memory is
 PORT( Address:IN std_logic_vector(31 downto 0);
  writeData:IN std_logic_vector(31 downto 0);
-    outer:OUT std_logic_vector(31 downto 0));
+    outer:OUT std_logic_vector(31 downto 0);
+		MR:IN std_logic;
+		MW:IN std_logic);
    end component;
 
-signal shift_amount,op1f,op2f,shifted,shiftedp,op1p,rd1p2,mul_resultp,mul_result,wd_temp,PC,rd,ins,ad,wad,ALUp,wd,rdp,op1,op2,rd1p,rd2p,rd1,rd2,PCout,ioffset,boffset,ALUout:std_logic_vector(31 downto 0);
-signal ins_write_add,rad2,mul_rd:std_logic_vector(3 downto 0);
-signal carry,flagTempN,flagTempZ,flagTempV,flagTempC,Z,V,N,C,reset,zero:std_logic;
+signal mul,
+        Samt,
+        mulp,
+        rad1,
+        op1f,
+        op2f,
+        shifted,
+        shiftedp,
+        op1p,
+        rd1p2,
+        PC,
+        rd,
+        ins,
+        ad,
+        wad,
+        ALUoutp,
+        wd,rdp,op1,op2,rd1p,rd2p,rd1,rd2,ioffset,boffset,ALUout:std_logic_vector(31 downto 0);
+signal rad2:std_logic_vector(3 downto 0);
+signal carry_out,
+        flagTempN,
+        flagTempZ,
+        flagTempV,
+        flagTempC,
+        Ztemp,
+        Vtemp,
+        Ntemp,
+        Ctemp:std_logic;
 
 BEGIN
 
-zero<='0';
+--zero<='0';
 
 with IorD select ad<=
 PC when '0',
-ALUp when '1';
+ALUoutp when '1';
 
 with Rsrc select rad2<=
 ins(3 downto 0) when '0',
 ins(15 downto 12) when '1';
 
-with M2R select wd_temp<=
-rdp when '0',
-ALUp when '1';
+with M2R select wd<=
+rdp when "00",
+ALUoutp when "01",
+ALUout when "10";
 
 with Asrc1 select op1<=
-PC when '0',
-rd1p when '1';
+PC when "00",
+rd1p when "01",
+mulp when "10";
 
 with Asrc2 select op2<=
 rd1p2 when "00",
 "00000000000000000000000000000100" when "01",
 ioffset when "10",
 boffset when "11";
+-- 
+-- with R1src select rad1 <=
+-- 	ins(19 downto 16) when '0',
+-- 	ins(11 downto 8) when '1';
 
-with mul_slct select mul_rd <=
-	ins(19 downto 16) when '0',
-	ins(11 downto 8) when '1';
+-- with PW select wad <=
+-- ins_write_add when '0',
+-- "1111" when '1';
+with R1src select rad1 <=
+ins(19 downto 16) when '0',
+ins(11 downto 8) when '1';
 
-with PW select wad <=
-ins_write_add when '0',
-"1111" when '1';
+with WadSrc select wad<=
+ins(15 downto 12) when "00",
+ins (19 downto 16) when "01",
+"1111" when "10";
 
-with mul_slct select ins_write_add<=
-ins(15 downto 12) when '0',
-ins (19 downto 16) when '1';
+-- with mul_slct select rd1p2<=
+-- rd1p when '0',
+-- mul_resultp when '1';
 
-with mul_slct select rd1p2<=
-rd1p when '0',
-mul_resultp when '1';
+-- with PW select wd<=
+-- wd_temp when '0',
+-- ALUout when '1';
 
-with PW select wd<=
-wd_temp when '0',
-ALUout when '1';
-
-with PrevW select op1f<=
+with op1sel select op1f<=
 op1p when '1',
 op1 when '0';
 
@@ -157,14 +196,14 @@ with shift select op2f<=
 op2 when '0',
 shiftedp when '1';
 
-with shift_amount_select select shift_amount<=
+with ShiftAmtSel select Samt<=
 op1p when '0',
 ins(11 downto 4) when '1';
 
 boffset<= (ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23 downto 0) &"00")+4;
 ioffset<="00000000000000000000"&ins(11 downto 0);
 
-Alu11 :  ALU 
+Alu11 :  ALU
 PORT MAP(
 	Op1 => op1f,
 	Op2 => op2f,
@@ -176,29 +215,44 @@ PORT MAP(
   C => flagTempC,
   V => flagTempV);
 
-with Fset select Z<=
-Z when '0',
+Z<= Ztemp;
+N<= Ntemp;
+V<= Vtemp;
+C<= Ctemp;
+
+
+with Fset select Ztemp<=
+Ztemp when '0',
 flagTempZ when '1';
+with Fset select Ctemp<=
+Ctemp when '0',
+flagTempC when '1';
+with Fset select Ntemp<=
+Ntemp when '0',
+flagTempN when '1';
+with Fset select Vtemp<=
+Vtemp when '0',
+flagTempV when '1';
 
-Mul : Multiplier
+Mult : Multiplier
 PORT MAP(
-	Op1 => rd1p,
-	Op2 => rd2p,
-	Result => mul_result);
+	Op1 => op1,
+	Op2 => op2,
+	Result => mul);
 
---ProcMem :  ProcessorMemoryPath 
+--ProcMem :  ProcessorMemoryPath
 --PORT MAP (
 --	FromProcessor => ,
 --	FromMemory => ,
---	DTType => , 
+--	DTType => ,
 --	ByteOffset => ,
 --	ToProcessor => ,
 --	ToMemory => ,
 --	WriteEnable => );
 
-Reg :  RegFile 
+Reg :  RegFile
 PORT MAP(
-	ReadAddr1 => mul_rd,	
+	ReadAddr1 => rad1,
 	ReadAddr2 => rad2,
 	WriteAddr => wad,
 	Data => wd,
@@ -209,58 +263,58 @@ PORT MAP(
 	ReadOut2 => rd2,
 	PC => PC);
 
-	Mem :Memory Port map(address=>ad,writeData=>rd2p,outer=>rd);
-	
+	Mem :Memory Port map(address=>ad,writeData=>rd2p,outer=>rd,MR=>MR,MW=>MW);
+
 	shif: shifter
-	PORT MAP(inp=>op2,shift_type=>SType,shift_amount=>shift_amount,carry=>zero,out1=>shifted);
-	
+	PORT MAP(inp=>op2,shift_type=>SType,shift_amount=>Samt,carry=>carry_out,out1=>shifted);
+
 process(clock)
 begin
 if(rising_edge(clock)) then
 
-    if(IW='0') then 
+    if(IW='0') then
             ins <= ins;
            else
         ins <= rd;
         end if;
-    
-    if(DW='0') then 
+
+    if(DW='0') then
                 rdp <= rdp;
                else
             rdp <= rd;
             end if;
-    
-    if(AW='0') then 
+
+    if(AW='0') then
                     rd1p <= rd1p;
                    else
                 rd1p <= rd1;
                 end if;
-                
-    if(BW='0') then 
+
+    if(BW='0') then
                         rd2p <= rd2p;
                        else
                     rd2p <= rd2;
                     end if;
-    
-        if(ReW='0') then 
-            ALUp <= ALUp;
+
+        if(ReW='0') then
+            ALUoutp <= ALUoutp;
            else
-        ALUp <= ALUout;
+        ALUoutp <= ALUout;
         end if;
-    
+
         if(MulW='0') then
-                   mul_resultp<=mul_resultp;  
+                   mulp<=mulp;
             else
-       mul_resultp<=mul_result;  
+mulp<=mul;
         end if;
-       
-          if(PrevW='0') then
-                        op1p<=op1p;  
+
+          if(op1update='0') then
+                        op1p<=op1p;
                  else
-            op1p<=op1;  
+            op1p<=op1;
              end if;
-        
-        if (shiftedForward = '0') then 
+
+        if (shiftW = '0') then
             shiftedp<=shiftedp;
             else
                  shiftedp<=shifted;
