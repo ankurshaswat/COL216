@@ -19,7 +19,7 @@ port (
   inp:in std_logic_vector(31 downto 0);
     shift_type:in std_logic_vector(1 downto 0);
 
-  c_out: in std_logic;
+  c_out: out std_logic;
   slct:in std_logic;
   oup: out std_logic_vector(31 downto 0));
 end component;
@@ -29,7 +29,7 @@ port (
   inp:in std_logic_vector(31 downto 0);
     shift_type:in std_logic_vector(1 downto 0);
 
-  c_out: in std_logic;
+  c_out: out std_logic;
   slct:in std_logic;
   oup: out std_logic_vector(31 downto 0));
 end component;
@@ -39,7 +39,7 @@ port (
   inp:in std_logic_vector(31 downto 0);
     shift_type:in std_logic_vector(1 downto 0);
 
-  c_out: in std_logic;
+  c_out: out std_logic;
   slct:in std_logic;
   oup: out std_logic_vector(31 downto 0));
 end component;
@@ -49,7 +49,7 @@ port (
   inp:in std_logic_vector(31 downto 0);
     shift_type:in std_logic_vector(1 downto 0);
 
-  c_out: in std_logic;
+  c_out: out std_logic;
   slct:in std_logic;
   oup: out std_logic_vector(31 downto 0));
 end component;
@@ -59,7 +59,7 @@ port (
   inp:in std_logic_vector(31 downto 0);
     shift_type:in std_logic_vector(1 downto 0);
 
-  c_out: in std_logic;
+  c_out: out std_logic;
   slct:in std_logic;
   oup: out std_logic_vector(31 downto 0));
 end component;
@@ -80,43 +80,43 @@ begin
 
 s_1: shift_1
   port map(
-  inp        <= inp,
-  shift_type <= shift_type,
-  c_out      <=carry_1,
-  slct       <=shift_amount(0),
-  oup        <=out_1); 
+  inp        => inp,
+  shift_type => shift_type,
+  c_out      =>carry_1,
+  slct       =>shift_amount(0),
+  oup        =>out_1); 
 
 s_2: shift_2
   port map(
-  inp        <= out_1,
-  shift_type <= shift_type,
-  c_out      <=carry_2,
-  slct       <=shift_amount(1),
-  oup        <=out_1); 
+  inp        => out_1,
+  shift_type => shift_type,
+  c_out      =>carry_2,
+  slct       =>shift_amount(1),
+  oup        =>out_1); 
 
 s_4: shift_4
   port map(
-  inp        <= out_2,
-  shift_type <= shift_type,
-  c_out      <=carry_4,
-  slct       <=shift_amount(2),
-  oup        <=out_4); 
+  inp        => out_2,
+  shift_type => shift_type,
+  c_out      =>carry_4,
+  slct       =>shift_amount(2),
+  oup        =>out_4); 
 
 s_8: shift_8
   port map(
-  inp        <= out_4,
-  shift_type <= shift_type,
-  c_out      <=carry_8,
-  slct       <=shift_amount(3),
-  oup        <=out_4); 
+  inp        => out_4,
+  shift_type => shift_type,
+  c_out      =>carry_8,
+  slct       =>shift_amount(3),
+  oup        =>out_4); 
 
 s_16: shift_16
   port map(
-  inp        <= out_8,
-  shift_type <= shift_type,
-  c_out      <=carry_16,
-  slct       <=shift_amount(4),
-  oup        <=out1);
+  inp        => out_8,
+  shift_type => shift_type,
+  c_out      =>carry_16,
+  slct       =>shift_amount(4),
+  oup        =>out1);
 
 
 carry <=  carry_16 when shift_amount(4) = '1' else

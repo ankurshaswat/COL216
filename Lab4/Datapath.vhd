@@ -109,9 +109,7 @@ PORT( Address:IN std_logic_vector(31 downto 0);
    end component;
 
 signal mul,
-        Samt,
         mulp,
-        rad1,
         op1f,
         op2f,
         shifted,
@@ -122,10 +120,16 @@ signal mul,
         rd,
         ins,
         ad,
-        wad,
         ALUoutp,
         wd,rdp,op1,op2,rd1p,rd2p,rd1,rd2,ioffset,boffset,ALUout:std_logic_vector(31 downto 0);
-signal rad2:std_logic_vector(3 downto 0);
+signal 
+        rad1,
+        wad,
+        rad2:std_logic_vector(3 downto 0);
+
+signal  Samt:std_logic_vector(4 downto 0);
+
+
 signal carry_out,
         flagTempN,
         flagTempZ,
@@ -155,12 +159,12 @@ ins(15 downto 12) when '1';
 with M2R select wd<=
 rdp when "00",
 ALUoutp when "01",
-ALUout when "10";
+ALUout when others;
 
 with Asrc1 select op1<=
 PC when "00",
 rd1p when "01",
-mulp when "10";
+mulp when others;
 
 with Asrc2 select op2<=
 rd1p2 when "00",
@@ -182,7 +186,7 @@ ins(11 downto 8) when '1';
 with WadSrc select wad<=
 ins(15 downto 12) when "00",
 ins (19 downto 16) when "01",
-"1111" when "10";
+"1111" when others;
 
 -- with mul_slct select rd1p2<=
 -- rd1p when '0',
@@ -201,8 +205,8 @@ op2 when '0',
 shiftedp when '1';
 
 with ShiftAmtSel select Samt<=
-op1p when '0',
-ins(11 downto 4) when '1';
+op1p(4 downto 0) when '0',
+ins(8 downto 4) when '1';
 
 boffset<= (ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23 downto 0) &"00")+4;
 ioffset<="00000000000000000000"&ins(11 downto 0);
