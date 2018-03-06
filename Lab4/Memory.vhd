@@ -17,7 +17,7 @@ end entity Memory;
 
 architecture arch of Memory is
 
-TYPE filereg is array (0 to 1000) of std_logic_vector(31 downto 0);
+TYPE filereg is array (0 to 1000) of std_logic_vector(31 downto 0) ;
 SIGNAL registerFile : filereg;
 signal outerTemp:std_logic_vector(31 downto 0);
  SIGNAL Address_INFO : integer ;

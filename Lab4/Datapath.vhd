@@ -73,17 +73,17 @@ port (
     out1  : out std_logic_vector(31 downto 0));
 end component;
 
---component ProcessorMemoryPath is
---PORT (
---	FromProcessor : IN std_logic_vector(31 downto 0);
---	FromMemory : IN std_logic_vector(31 downto 0);
---	DTType : IN std_logic_vector(2 downto 0); -- last 2 bits tell type of tranfer 00 for word 01 for half 10 for byte
---	-- bit index 3 tells     0 for zero extension and 1 for sign extension
---	ByteOffset : IN std_logic_vector(1 downto 0);
---	ToProcessor : OUT std_logic_vector(31 downto 0);
---	ToMemory : OUT std_logic_vector(31 downto 0);
---	WriteEnable : OUT std_logic_vector(3 downto 0));
---end component;
+component ProcessorMemoryPath is
+PORT (
+	FromProcessor : IN std_logic_vector(31 downto 0);
+	FromMemory : IN std_logic_vector(31 downto 0);
+	DTType : IN std_logic_vector(2 downto 0); -- last 2 bits tell type of tranfer 00 for word 01 for half 10 for byte
+	-- bit index 3 tells     0 for zero extension and 1 for sign extension
+	ByteOffset : IN std_logic_vector(1 downto 0);
+	ToProcessor : OUT std_logic_vector(31 downto 0);
+	ToMemory : OUT std_logic_vector(31 downto 0);
+	WriteEnable : OUT std_logic_vector(3 downto 0));
+end component;
 
 
 component RegFile is
@@ -118,6 +118,10 @@ signal mul,
         rd1p2,
         PC,
         rd,
+        rd_temp,
+        dttyper,
+        ad2,
+        byte_offset,
         ins,
         ad,
         ALUoutp,
@@ -125,6 +129,7 @@ signal mul,
 signal 
         rad1,
         wad,
+        write_enable_modified,
         rad2:std_logic_vector(3 downto 0);
 
 signal  Samt:std_logic_vector(4 downto 0);
@@ -271,7 +276,17 @@ PORT MAP(
 	ReadOut2 => rd2,
 	PC => PC);
 
-	Mem :Memory Port map(address=>ad,writeData=>rd2p,outer=>rd,MR=>MR,MW=>MW);
+	Mem :Memory Port map(address=>ad2,writeData=>rd2p,outer=>rd_temp,MR=>MR,MW=>MW);
+
+PMPath: ProcessorMemoryPath Port map(
+	FromProcessor => ad,
+	FromMemory => rd_temp,
+	DTType => dttyper,--
+	ByteOffset => byte_offset,--
+	ToProcessor => rd,
+	ToMemory => ad2,
+	WriteEnable => write_enable_modified--
+);
 
 	shif: shifter
 	PORT MAP(inp=>op2,shift_type=>SType,shift_amount=>Samt,carry=>carry_out,out1=>shifted);
