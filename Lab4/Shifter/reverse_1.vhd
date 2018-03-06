@@ -27,7 +27,7 @@ end generate GEN;
 right_update <= right(31 downto 1 )& "0";
 
 GEN2: for i in 0 to 31 generate
-   oup(i) <= right_update(i) OR left_update(i);
+   oup(i) <=  left_update(i) OR right_update(i) ;
 end generate GEN2;
 
 

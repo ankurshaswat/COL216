@@ -54,7 +54,7 @@ with ByteOffset select write_offset_byte<=
     
 with ByteOffset(1) select selected_half_word<=
     FromMemory(15 downto 0) when '0',
-    FromMemory(31 downto 15) when others;
+    FromMemory(31 downto 16) when others;
     
     
         
