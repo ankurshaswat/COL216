@@ -103,6 +103,7 @@ end component;
 component Memory is
 PORT( Address:IN std_logic_vector(31 downto 0);
  writeData:IN std_logic_vector(31 downto 0);
+  clock : IN std_logic;
     outer:OUT std_logic_vector(31 downto 0);
 		MR:IN std_logic;
 		MW:IN std_logic);
@@ -119,9 +120,8 @@ signal mul,
         PC,
         rd,
         rd_temp,
-        dttyper,
         ad2,
-        byte_offset,
+        
         ins,
         ad,
         ALUoutp,
@@ -132,6 +132,8 @@ signal
         write_enable_modified,
         rad2:std_logic_vector(3 downto 0);
 
+signal         dttyper:std_logic_vector(2 downto 0);
+signal byte_offset:std_logic_vector(1 downto 0);
 signal  Samt:std_logic_vector(4 downto 0);
 
 
@@ -155,11 +157,11 @@ ins_out<=ins;
 
 with IorD select ad<=
 PC when '0',
-ALUoutp when '1';
+ALUoutp when others;
 
 with Rsrc select rad2<=
 ins(3 downto 0) when '0',
-ins(15 downto 12) when '1';
+ins(15 downto 12) when others;
 
 with M2R select wd<=
 rdp when "00",
@@ -175,7 +177,7 @@ with Asrc2 select op2<=
 rd1p2 when "00",
 "00000000000000000000000000000100" when "01",
 ioffset when "10",
-boffset when "11";
+boffset when others;
 -- 
 -- with R1src select rad1 <=
 -- 	ins(19 downto 16) when '0',
@@ -186,7 +188,7 @@ boffset when "11";
 -- "1111" when '1';
 with R1src select rad1 <=
 ins(19 downto 16) when '0',
-ins(11 downto 8) when '1';
+ins(11 downto 8) when others;
 
 with WadSrc select wad<=
 ins(15 downto 12) when "00",
@@ -203,15 +205,15 @@ ins (19 downto 16) when "01",
 
 with op1sel select op1f<=
 op1p when '1',
-op1 when '0';
+op1 when others;
 
 with shift select op2f<=
 op2 when '0',
-shiftedp when '1';
+shiftedp when others;
 
 with ShiftAmtSel select Samt<=
 op1p(4 downto 0) when '0',
-ins(8 downto 4) when '1';
+ins(8 downto 4) when others;
 
 boffset<= (ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23 downto 0) &"00")+4;
 ioffset<="00000000000000000000"&ins(11 downto 0);
@@ -236,16 +238,16 @@ F<= Z & N & V & C;
 
 with Fset select Z<=
 Z when '0',
-flagTempZ when '1';
+flagTempZ when others;
 with Fset select C<=
 C when '0',
-flagTempC when '1';
+flagTempC when others;
 with Fset select N<=
 N when '0',
-flagTempN when '1';
+flagTempN when others;
 with Fset select V<=
 V when '0',
-flagTempV when '1';
+flagTempV when others;
 
 Mult : Multiplier
 PORT MAP(
@@ -276,7 +278,7 @@ PORT MAP(
 	ReadOut2 => rd2,
 	PC => PC);
 
-	Mem :Memory Port map(address=>ad2,writeData=>rd2p,outer=>rd_temp,MR=>MR,MW=>MW);
+	Mem :Memory Port map(address=>ad2,writeData=>rd2p,outer=>rd_temp,MR=>MR,MW=>MW,clock=>clock);
 
 PMPath: ProcessorMemoryPath Port map(
 	FromProcessor => ad,

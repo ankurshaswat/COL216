@@ -43,24 +43,24 @@ with ByteOffset select selected_byte<=
     FromMemory(7 downto 0) when "00",
     FromMemory(15 downto 8) when "01",
     FromMemory(23 downto 16) when "10",
-    FromMemory(31 downto 24) when "11";
+    FromMemory(31 downto 24) when others;
     
 with ByteOffset select write_offset_byte<=
         "0001" when "00",
         "0010" when "01",
         "0100" when "10",
-        "1000" when "11";
+        "1000" when others;
         
     
 with ByteOffset(1) select selected_half_word<=
     FromMemory(15 downto 0) when '0',
-    FromMemory(31 downto 15) when '1';
+    FromMemory(31 downto 15) when others;
     
     
         
 with ByteOffset(1) select write_offset_half_word<=
     "0011" when '0',
-    "1100" when '1';
+    "1100" when others;
         
 half_word_duplicated<=FromProcessor(15 downto 0) & FromProcessor(15 downto 0);
 byte_quadruplicate<= FromProcessor(7 downto 0) & FromProcessor(7 downto 0) & FromProcessor(7 downto 0) & FromProcessor(7 downto 0);
@@ -69,19 +69,19 @@ byte_zero_extended<=     "000000000000000000000000" & selected_byte;
 
 with selected_half_word(15) select half_word_sign_extended <=
 half_word_zero_extended when '0',
-"1111111111111111" & selected_half_word when '1';
+"1111111111111111" & selected_half_word when others;
 
 with selected_byte(7) select byte_sign_extended<=
 byte_zero_extended when '0',
-"111111111111111111111111"&selected_byte when '1';
+"111111111111111111111111"&selected_byte when others;
 
 with DTType(2) select half_word_extended<=
 half_word_zero_extended when '0',
-half_word_sign_extended when '1';
+half_word_sign_extended when others;
 
 with DTType(2) select byte_extended<=
 byte_zero_extended when '0',
-byte_sign_extended when '1';
+byte_sign_extended when others;
 
 with DTType(1 downto 0) select ToProcessor<=
 FromMemory when "00",

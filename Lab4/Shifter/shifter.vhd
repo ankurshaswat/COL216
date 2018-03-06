@@ -3,11 +3,11 @@ use IEEE.std_logic_1164.all;
 
 entity shifter is
   port ( 
-    inp : in std_logic_vector(31 downto 0);
-    shift_type : in std_logic_vector(1 downto 0);
-    shift_amount : in std_logic_vector(4 downto 0);
-    carry : out std_logic;
-    out1  : out std_logic_vector(31 downto 0));
+    inp : in std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+    shift_type : in std_logic_vector(1 downto 0):="00";
+    shift_amount : in std_logic_vector(4 downto 0):="00000";
+    carry : out std_logic:='0';
+    out1  : out std_logic_vector(31 downto 0):="00000000000000000000000000000000");
 end entity shifter;
 
 architecture arch of shifter is
@@ -42,7 +42,7 @@ with shift_type select to_reverse <=
   '1'  when "00",
   '0'  when others;
 
-rev_1: reverse 
+rev_one: reverse 
 	port map (
 		inp=> inp ,
 		slct=>to_reverse,
@@ -57,7 +57,7 @@ swift: shift
   out1        =>shift_out); 
 
 
-rev_2: reverse 
+rev_two: reverse 
 	port map (
 		inp=> shift_out ,
 		slct=>to_reverse,

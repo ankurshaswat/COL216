@@ -34,7 +34,7 @@ outer<= outerTemp;
 Address_INFO <= to_integer(unsigned(Address));
 with MR select outerTemp<=
 	registerFile(Address_INFO) when '1',
-	outerTemp when '0';
+	outerTemp when others;
 
 
 process(clock)						--- Sequential Writing

@@ -15,10 +15,10 @@ begin
 
 with slct select oup(15 downto 0 ) <=
 	inp(7 downto 0)&inp(15 downto 8)   when '1',
-	inp(15 downto 0) when '0';
+	inp(15 downto 0) when others;
 
 with slct select oup(31 downto 16 ) <=
 	inp(23 downto 16)&inp(31 downto 24)   when '1',
-	inp(31 downto 16) when '0';
+	inp(31 downto 16) when others;
 
 end architecture arch_1;

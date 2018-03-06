@@ -40,7 +40,7 @@ with opcode select S <=
     Op1 OR Op2                when "1100",
     Op2                       when "1101",
     Op1 AND NOT Op2           when "1110",
-    NOT Op2                   when "1111";
+    NOT Op2                   when others;
 
 
 output1 <= S;

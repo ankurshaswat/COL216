@@ -41,7 +41,7 @@ ReadOut2 <= registerFile(readAdd2);
 
 with reset select registerFile(15) <=  -- Initializing PC with 0 ;
   "00000000000000000000000000000000"             when '1',
-    registerFile(15)               when '0';
+    registerFile(15)               when others;
 
 process(clock)						--- Sequential Writing
 begin
