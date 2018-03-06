@@ -24,7 +24,7 @@ GEN: for i in 0 to 31 generate
   left_update(i) <= left(i) AND mask(i);
 end generate GEN;
 
-right_update <= right(31 downto 1 )& "0";
+right_update <= right(30 downto 0 )& "0";
 
 GEN2: for i in 0 to 31 generate
    oup(i) <=  left_update(i) OR right_update(i) ;
