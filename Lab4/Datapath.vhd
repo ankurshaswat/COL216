@@ -6,37 +6,37 @@ USE ieee.numeric_std.ALL;
 
 entity Datapath is
 PORT (
+clock,reset : in std_logic;
+ins_out : out std_logic_vector(31 downto 0);
+F : out std_logic_vector(3 downto 0);
 IorD: in std_logic;
 MR: in std_logic;
 MW: in std_logic;
+IW: in std_logic;
+DW: in std_logic;
+Rsrc: in std_logic;
+M2R: in std_logic_vector(1 downto 0);--
 RW: in std_logic;
 AW: in std_logic;
 BW: in std_logic;
-DW: in std_logic;
-IW: in std_logic;
-Rsrc: in std_logic;
+Asrc1: in std_logic_vector(1 downto 0);--
+Asrc2: in std_logic_vector(1 downto 0);
+Fset: in std_logic;
+op: in std_logic_vector(3 downto 0);
+ReW: in std_logic;
+
 WadSrc: in std_logic_vector(1 downto 0);
 R1src: in std_logic;
 op1sel: in std_logic;
 SType: in std_logic_vector(1 downto 0);
-M2R: in std_logic_vector(1 downto 0);
 ShiftAmtSel: in std_logic;
 Shift: in std_logic;
-Asrc1: in std_logic_vector(1 downto 0);
-Fset: in std_logic;
-ReW: in std_logic;
-clock: in std_logic;
 MulW: in std_logic;
 ShiftW: in std_logic;
-op1update: in std_logic;
-carry: in std_logic;
-N: OUT std_logic;
-V: OUT std_logic;
-Z: out std_logic;
-C: out std_logic;
-reset: in std_logic;
-op: in std_logic_vector(3 downto 0);
-Asrc2: in std_logic_vector(1 downto 0));
+op1update: in std_logic
+--carry: in std_logic
+
+);
 end Datapath;
 
 architecture struc of Datapath is
@@ -131,14 +131,18 @@ signal carry_out,
         flagTempZ,
         flagTempV,
         flagTempC,
-        Ztemp,
-        Vtemp,
-        Ntemp,
-        Ctemp:std_logic;
+        Z,
+        V,
+        N,
+        car_temp,
+        C:std_logic;
 
 BEGIN
 
+car_temp<='0';
 --zero<='0';
+
+ins_out<=ins;
 
 with IorD select ad<=
 PC when '0',
@@ -208,30 +212,30 @@ PORT MAP(
 	Op1 => op1f,
 	Op2 => op2f,
   opcode => op,
-  carry_in  => carry,
+  carry_in  => car_temp,
   output1 => ALUout,
   Z => flagTempZ,
   N => flagTempN,
   C => flagTempC,
   V => flagTempV);
 
-Z<= Ztemp;
-N<= Ntemp;
-V<= Vtemp;
-C<= Ctemp;
+--Z<= Ztemp;
+--N<= Ntemp;
+--V<= Vtemp;
+--C<= Ctemp;
+F<= Z & N & V & C;
 
-
-with Fset select Ztemp<=
-Ztemp when '0',
+with Fset select Z<=
+Z when '0',
 flagTempZ when '1';
-with Fset select Ctemp<=
-Ctemp when '0',
+with Fset select C<=
+C when '0',
 flagTempC when '1';
-with Fset select Ntemp<=
-Ntemp when '0',
+with Fset select N<=
+N when '0',
 flagTempN when '1';
-with Fset select Vtemp<=
-Vtemp when '0',
+with Fset select V<=
+V when '0',
 flagTempV when '1';
 
 Mult : Multiplier
