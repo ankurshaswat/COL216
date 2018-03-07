@@ -8,7 +8,7 @@ USE ieee.std_logic_1164.ALL;
 ENTITY multiplier_tb IS
 END multiplier_tb;
 
-ARCHITECTURE behavior OF lab6_multiplier_tb IS 
+ARCHITECTURE behavior OF multiplier_tb IS 
 
 component Multiplier is
 PORT (
@@ -26,7 +26,7 @@ end component;
    signal mul : std_logic_vector(31 downto 0) ;
 
     constant clk_period : time := 10 ns;
-	signal err_cnt_signal : integer := 1;
+	signal err_cnt_signal : integer := 0;
 
 
 BEGIN 
