@@ -6,13 +6,13 @@ USE ieee.numeric_std.ALL;
 
 entity Memory is
  
-PORT( Address:IN std_logic_vector(31 downto 0);
- writeData:IN std_logic_vector(31 downto 0);
- clock : IN std_logic;
- MR:IN std_logic;
- reset: in std_logic;
- MW:IN std_logic;
- WriteEnable: in std_logic_vector(3 downto 0);
+PORT( Address:IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+ writeData:IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+ clock : IN std_logic:='0';
+ MR:IN std_logic:='0';
+ reset: in std_logic:='0';
+ MW:IN std_logic:='1';
+ WriteEnable: in std_logic_vector(3 downto 0):="0000";
     outer:OUT std_logic_vector(31 downto 0));
 
 end entity Memory;
@@ -25,7 +25,7 @@ component design_1_wrapper is
     BRAM_PORTA_clk : in STD_LOGIC;
     BRAM_PORTA_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTA_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_PORTA_en : in STD_LOGIC;
+--    BRAM_PORTA_en : in STD_LOGIC;
     BRAM_PORTA_rst : in STD_LOGIC;
     BRAM_PORTA_we : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
@@ -38,11 +38,14 @@ end component;
 --signal outerTemp:std_logic_vector(31 downto 0);
 -- SIGNAL Address_INFO : integer ;
 
---signal ones:std_logic_vector(3 downto 0):="1111";
+signal write_enable_final:std_logic_vector(3 downto 0);
 
 
 begin
 
+with MW select write_enable_final<=
+"0000" when '0',
+WriteEnable when others;
 
 
 ram: design_1_wrapper port map(
@@ -50,9 +53,9 @@ ram: design_1_wrapper port map(
     BRAM_PORTA_clk => clock,
     BRAM_PORTA_din =>writeData,
     BRAM_PORTA_dout => outer,
-    BRAM_PORTA_en => MW,
+--    BRAM_PORTA_en => MW,
     BRAM_PORTA_rst => reset,
-    BRAM_PORTA_we => WriteEnable
+    BRAM_PORTA_we => write_enable_final
 );
 
 

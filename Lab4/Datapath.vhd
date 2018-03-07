@@ -124,20 +124,20 @@ signal mul,
         rd,
         rd_temp,
         ad2,
-        
         ins,
-        ad,
         ALUoutp,
         wd,rdp,op1,op2,rd1p,rd2p,rd1,rd2,ioffset,boffset,ALUout:std_logic_vector(31 downto 0);
-signal 
-        rad1,
-        wad,
-        write_enable_modified,
-        rad2:std_logic_vector(3 downto 0);
+        
+        
+signal ad:std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+signal rad1:std_logic_vector(3 downto 0):="0001";
+signal rad2:std_logic_vector(3 downto 0):="0010";
 
-signal         dttyper:std_logic_vector(2 downto 0);
+signal wad,write_enable_modified:std_logic_vector(3 downto 0);
+
+signal dttyper:std_logic_vector(2 downto 0);
 signal byte_offset:std_logic_vector(1 downto 0);
-signal  Samt:std_logic_vector(4 downto 0);
+signal Samt:std_logic_vector(4 downto 0);
 
 
 signal carry_out,

@@ -158,12 +158,17 @@ proc create_root_design { parentCell } {
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.3 blk_mem_gen_0 ]
   set_property -dict [ list \
-CONFIG.use_bram_block {BRAM_Controller} \
- ] $blk_mem_gen_0
-
-  # Need to retain value_src of defaults
-  set_property -dict [ list \
-CONFIG.use_bram_block.VALUE_SRC {DEFAULT} \
+CONFIG.Byte_Size {8} \
+CONFIG.Coe_File {../../../memBlock.coe} \
+CONFIG.Enable_32bit_Address {true} \
+CONFIG.Enable_A {Always_Enabled} \
+CONFIG.Fill_Remaining_Memory_Locations {true} \
+CONFIG.Load_Init_File {true} \
+CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+CONFIG.Remaining_Memory_Locations {FFFFFFFF} \
+CONFIG.Use_Byte_Write_Enable {true} \
+CONFIG.Use_RSTA_Pin {true} \
+CONFIG.use_bram_block {Stand_Alone} \
  ] $blk_mem_gen_0
 
   # Create interface connections

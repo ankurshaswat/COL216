@@ -56,7 +56,6 @@
 module design_1_blk_mem_gen_0_1 (
   clka,
   rsta,
-  ena,
   wea,
   addra,
   dina,
@@ -67,8 +66,6 @@ module design_1_blk_mem_gen_0_1 (
 input wire clka;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA RST" *)
 input wire rsta;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *)
-input wire ena;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA WE" *)
 input wire [3 : 0] wea;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR" *)
@@ -85,7 +82,7 @@ output wire [31 : 0] douta;
     .C_INTERFACE_TYPE(0),
     .C_AXI_TYPE(1),
     .C_AXI_SLAVE_TYPE(0),
-    .C_USE_BRAM_BLOCK(1),
+    .C_USE_BRAM_BLOCK(0),
     .C_ENABLE_32BIT_ADDRESS(1),
     .C_CTRL_ECC_ALGO("NONE"),
     .C_HAS_AXI_ID(0),
@@ -94,24 +91,24 @@ output wire [31 : 0] douta;
     .C_BYTE_SIZE(8),
     .C_ALGORITHM(1),
     .C_PRIM_TYPE(1),
-    .C_LOAD_INIT_FILE(0),
-    .C_INIT_FILE_NAME("no_coe_file_loaded"),
+    .C_LOAD_INIT_FILE(1),
+    .C_INIT_FILE_NAME("design_1_blk_mem_gen_0_1.mif"),
     .C_INIT_FILE("NONE"),
-    .C_USE_DEFAULT_DATA(0),
-    .C_DEFAULT_DATA("0"),
+    .C_USE_DEFAULT_DATA(1),
+    .C_DEFAULT_DATA("FFFFFFFF"),
     .C_HAS_RSTA(1),
     .C_RST_PRIORITY_A("CE"),
     .C_RSTRAM_A(0),
     .C_INITA_VAL("0"),
-    .C_HAS_ENA(1),
+    .C_HAS_ENA(0),
     .C_HAS_REGCEA(0),
     .C_USE_BYTE_WEA(1),
     .C_WEA_WIDTH(4),
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_WIDTH_A(32),
     .C_READ_WIDTH_A(32),
-    .C_WRITE_DEPTH_A(2048),
-    .C_READ_DEPTH_A(2048),
+    .C_WRITE_DEPTH_A(8000),
+    .C_READ_DEPTH_A(8000),
     .C_ADDRA_WIDTH(32),
     .C_HAS_RSTB(0),
     .C_RST_PRIORITY_B("CE"),
@@ -124,10 +121,10 @@ output wire [31 : 0] douta;
     .C_WRITE_MODE_B("WRITE_FIRST"),
     .C_WRITE_WIDTH_B(32),
     .C_READ_WIDTH_B(32),
-    .C_WRITE_DEPTH_B(2048),
-    .C_READ_DEPTH_B(2048),
+    .C_WRITE_DEPTH_B(8000),
+    .C_READ_DEPTH_B(8000),
     .C_ADDRB_WIDTH(32),
-    .C_HAS_MEM_OUTPUT_REGS_A(0),
+    .C_HAS_MEM_OUTPUT_REGS_A(1),
     .C_HAS_MEM_OUTPUT_REGS_B(0),
     .C_HAS_MUX_OUTPUT_REGS_A(0),
     .C_HAS_MUX_OUTPUT_REGS_B(0),
@@ -149,13 +146,13 @@ output wire [31 : 0] douta;
     .C_EN_SHUTDOWN_PIN(0),
     .C_EN_SAFETY_CKT(0),
     .C_DISABLE_WARN_BHV_RANGE(0),
-    .C_COUNT_36K_BRAM("2"),
+    .C_COUNT_36K_BRAM("8"),
     .C_COUNT_18K_BRAM("0"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     5.3746 mW")
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     10.194 mW")
   ) inst (
     .clka(clka),
     .rsta(rsta),
-    .ena(ena),
+    .ena(1'D0),
     .regcea(1'D0),
     .wea(wea),
     .addra(addra),

@@ -5,10 +5,10 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ALU is
 PORT (
-	Op1 : IN std_logic_vector(31 downto 0);
-	Op2 : IN std_logic_vector(31 downto 0);
-  opcode : IN std_logic_vector(3 downto 0);
-  carry_in  : IN std_logic;
+	Op1 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+	Op2 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  opcode : IN std_logic_vector(3 downto 0):="0000";
+  carry_in  : IN std_logic:='0';
   output1 : OUT std_logic_vector(31 downto 0);
   Z : OUT std_logic;
   N : OUT std_logic;

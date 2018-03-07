@@ -6,8 +6,8 @@ USE ieee.numeric_std.ALL;
 
 entity Multiplier is
 PORT (
-	Op1 : IN std_logic_vector(31 downto 0);
-	Op2 : IN std_logic_vector(31 downto 0);
+	Op1 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+	Op2 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
 	Result : OUT std_logic_vector(31 downto 0));
 end Multiplier;
 

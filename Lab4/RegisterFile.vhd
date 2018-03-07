@@ -6,13 +6,13 @@ USE ieee.numeric_std.ALL;
 
 entity RegFile is
 PORT (
-	ReadAddr1 : IN std_logic_vector(3 downto 0);
-	ReadAddr2 : IN std_logic_vector(3 downto 0);
-	WriteAddr : IN std_logic_vector(3 downto 0);
-	Data : IN std_logic_vector(31 downto 0);
-  clock  : IN std_logic;
-  reset  : IN std_logic;
-  WriteEnable  : IN std_logic;
+	ReadAddr1 : IN std_logic_vector(3 downto 0):="0000";
+	ReadAddr2 : IN std_logic_vector(3 downto 0):="0000";
+	WriteAddr : IN std_logic_vector(3 downto 0):="0000";
+	Data : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  clock  : IN std_logic:='0';
+  reset  : IN std_logic:='0';
+  WriteEnable  : IN std_logic:='0';
 	ReadOut1 : OUT std_logic_vector(31 downto 0);
 	ReadOut2 : OUT std_logic_vector(31 downto 0);
 	PC : OUT std_logic_vector(31 downto 0));
@@ -38,7 +38,7 @@ SIGNAL registerFile : filereg:=("00000000000000000000000010000000",
 "00000000000000000000000000000000",
 "00000000000000000000000000000000");
 
- SIGNAL readAdd1,readAdd2,writeAdd : integer ;
+ SIGNAL readAdd1,readAdd2,writeAdd : integer:=0 ;
 -- SIGNAL Carry_out : std_logic;
 -- SIGNAL C31: std_logic;
 
