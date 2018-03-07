@@ -124,7 +124,7 @@ carry <=  carry_16 when shift_amount(4) = '1' else
           carry_4   when shift_amount(2) = '1' else
           carry_2   when shift_amount(1) = '1' else
           carry_1   when shift_amount(0) = '1' else
-          '0' ; 
+          '0'; 
 
 
 end architecture arch;

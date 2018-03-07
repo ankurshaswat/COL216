@@ -28,6 +28,10 @@ with shift_type select t_i <=
 	inp(31)&inp(31)&inp(31)&inp(31)&inp(31)&inp(31)&inp(31)&inp(31) when "10",
 	inp (7)&inp(6)&inp (5)&inp(4)&inp (3)&inp(2)&inp (1)&inp(0) when others;
 
-c_out<=inp(7);
+--c_out<=inp(7);
+with slct select c_out <=
+	inp(7) when '1',
+--	c_in when others;
+	'0' when others;
 
 end architecture arch_1;

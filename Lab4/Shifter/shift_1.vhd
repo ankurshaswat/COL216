@@ -21,8 +21,8 @@ begin
  with shift_type select t_i <=
 	'0' when "00",
 	'0' when "01",
-	inp(0) when "10",
-	inp (31) when others;
+	inp(31) when "10",
+	inp (0) when others;
 
 with slct select oup <=
 	 t_i  & inp(31 downto 1) when '1',
