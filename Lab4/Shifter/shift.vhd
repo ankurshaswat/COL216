@@ -92,7 +92,7 @@ s_2: shift_2
   shift_type => shift_type,
   c_out      =>carry_2,
   slct       =>shift_amount(1),
-  oup        =>out_1); 
+  oup        =>out_2); 
 
 s_4: shift_4
   port map(
@@ -108,7 +108,7 @@ s_8: shift_8
   shift_type => shift_type,
   c_out      =>carry_8,
   slct       =>shift_amount(3),
-  oup        =>out_4); 
+  oup        =>out_8); 
 
 s_16: shift_16
   port map(
@@ -124,4 +124,6 @@ carry <=  carry_16 when shift_amount(4) = '1' else
           carry_4   when shift_amount(2) = '1' else
           carry_2   when shift_amount(1) = '1' else
           carry_1   when shift_amount(0) = '1' ; 
+
+
 end architecture arch;

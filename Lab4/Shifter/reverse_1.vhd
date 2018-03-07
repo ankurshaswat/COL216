@@ -14,6 +14,7 @@ signal right: std_logic_vector(31  downto 0);
 signal left: std_logic_vector(31  downto 0);
 signal right_update: std_logic_vector(31  downto 0);
 signal left_update: std_logic_vector(31  downto 0);
+signal out_temp : std_logic_vector(31 downto 0);
 
 begin 
 
@@ -24,11 +25,15 @@ GEN: for i in 0 to 31 generate
   left_update(i) <= left(i) AND mask(i);
 end generate GEN;
 
+
 right_update <= right(30 downto 0 )& "0";
 
 GEN2: for i in 0 to 31 generate
-   oup(i) <=  left_update(i) OR right_update(i) ;
+   out_temp(i) <=  left_update(i) OR right_update(i) ;
 end generate GEN2;
 
+with slct select oup <=
+	out_temp when '1',
+	inp when others;
 
 end architecture arch_1;
