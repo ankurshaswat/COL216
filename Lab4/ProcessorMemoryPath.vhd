@@ -83,11 +83,12 @@ with DTType(2) select byte_extended<=
 byte_zero_extended when '0',
 byte_sign_extended when others;
 
-with DTType(1 downto 0) select ToProcessor<=
-FromMemory when "00",
-byte_extended when "10",
-half_word_extended when others;
+--with DTType(1 downto 0) select ToProcessor<=
+--FromMemory when "00",
+--byte_extended when "10",
+--half_word_extended when others;
 
+ToProcessor <="";
 
 with DTType(1 downto 0) select ToMemory<=
 FromProcessor when "00",
