@@ -6,8 +6,8 @@ entity shifter is
     inp : in std_logic_vector(31 downto 0):="00000000000000000000000000000000";
     shift_type : in std_logic_vector(1 downto 0):="00";
     shift_amount : in std_logic_vector(4 downto 0):="00000";
-    carry : out std_logic:='0';
-    out1  : out std_logic_vector(31 downto 0):="00000000000000000000000000000000");
+    carry : out std_logic;
+    out1  : out std_logic_vector(31 downto 0));
 end entity shifter;
 
 architecture arch of shifter is

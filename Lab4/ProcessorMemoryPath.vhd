@@ -6,11 +6,11 @@ USE ieee.numeric_std.ALL;
 
 entity ProcessorMemoryPath is
 PORT (
-	FromProcessor : IN std_logic_vector(31 downto 0);
-	FromMemory : IN std_logic_vector(31 downto 0);
-	DTType : IN std_logic_vector(2 downto 0); -- last 2 bits tell type of tranfer 00 for word 01 for half 10 for byte 
+	FromProcessor : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+	FromMemory : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+	DTType : IN std_logic_vector(2 downto 0):="000"; -- last 2 bits tell type of tranfer 00 for word 01 for half 10 for byte 
 	-- bit index 3 tells     0 for zero extension and 1 for sign extension 
-	ByteOffset : IN std_logic_vector(1 downto 0);
+	ByteOffset : IN std_logic_vector(1 downto 0):="00";
 	ToProcessor : OUT std_logic_vector(31 downto 0);
 	ToMemory : OUT std_logic_vector(31 downto 0);
 	WriteEnable : OUT std_logic_vector(3 downto 0));
