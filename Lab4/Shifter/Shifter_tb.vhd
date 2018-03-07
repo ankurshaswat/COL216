@@ -150,8 +150,8 @@ BEGIN
 		-------------------------------------------------------------
 		
 		
-		assert (shifted = "00000000000000000000000000000110") report "Error:  Shift by the shifter03  is wrong";
-		if (shifted /=    "00000000000000000000000000000110") then
+		assert (shifted = "00000000000000000000000000000011") report "Error:  Shift by the shifter03  is wrong";
+		if (shifted /=    "00000000000000000000000000000011") then
 			err_cnt := err_cnt + 1;
 		end if;
 
