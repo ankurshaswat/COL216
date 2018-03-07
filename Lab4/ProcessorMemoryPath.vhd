@@ -85,19 +85,19 @@ byte_sign_extended when others;
 
 with DTType(1 downto 0) select ToProcessor<=
 FromMemory when "00",
-half_word_extended when "01",
-byte_extended when others;
+byte_extended when "10",
+half_word_extended when others;
 
 
 with DTType(1 downto 0) select ToMemory<=
 FromProcessor when "00",
-half_word_duplicated when "01",
-byte_quadruplicate when others;
+byte_quadruplicate when "10",
+half_word_duplicated when others;
 
 with DTType(1 downto 0) select WriteEnable<=
 "1111" when "00",
-write_offset_half_word when "01",
-write_offset_byte when others;
+write_offset_byte when "10",
+write_offset_half_word when others;
 
 
 end struc;

@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
--- Date        : Thu Feb 22 19:25:59 2018
--- Host        : sakshi running 64-bit Ubuntu 14.04.5 LTS
+-- Date        : Wed Mar  7 09:33:18 2018
+-- Host        : ankurshaswat-GL502VT running 64-bit Ubuntu 17.10
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/sakshi/Desktop/COL216/LabAssign4/ip/blk_mem_gen_0/blk_mem_gen_0_stub.vhdl
+--               /home/ankurshaswat/MyFiles/Repos/COL216/Lab4/ip/blk_mem_gen_0/blk_mem_gen_0_stub.vhdl
 -- Design      : blk_mem_gen_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

@@ -106,6 +106,7 @@ PORT( Address:IN std_logic_vector(31 downto 0);
   clock : IN std_logic;
     outer:OUT std_logic_vector(31 downto 0);
 		MR:IN std_logic;
+		reset:in std_logic;
 		MW:IN std_logic);
    end component;
 
@@ -278,7 +279,7 @@ PORT MAP(
 	ReadOut2 => rd2,
 	PC => PC);
 
-	Mem :Memory Port map(address=>ad2,writeData=>rd2p,outer=>rd_temp,MR=>MR,MW=>MW,clock=>clock);
+	Mem :Memory Port map(address=>ad2,writeData=>rd2p,outer=>rd_temp,MR=>MR,MW=>MW,clock=>clock,reset=>reset);
 
 PMPath: ProcessorMemoryPath Port map(
 	FromProcessor => ad,
