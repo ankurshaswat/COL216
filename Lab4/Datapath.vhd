@@ -107,7 +107,8 @@ PORT( Address:IN std_logic_vector(31 downto 0);
     outer:OUT std_logic_vector(31 downto 0);
 		MR:IN std_logic;
 		reset:in std_logic;
-		MW:IN std_logic);
+		MW:IN std_logic;
+		WriteEnable: in std_logic_vector(3 downto 0));
    end component;
 
 signal mul,
@@ -118,6 +119,7 @@ signal mul,
         shiftedp,
         op1p,
         rd1p2,
+        rd2p2,
         PC,
         rd,
         rd_temp,
@@ -279,15 +281,26 @@ PORT MAP(
 	ReadOut2 => rd2,
 	PC => PC);
 
-	Mem :Memory Port map(address=>ad2,writeData=>rd2p,outer=>rd_temp,MR=>MR,MW=>MW,clock=>clock,reset=>reset);
+	Mem :Memory Port map(address=>ad2,writeData=>rd2p2,outer=>rd_temp,MR=>MR,MW=>MW,clock=>clock,reset=>reset,WriteEnable => write_enable_modified);
+
+dttyper <= ins(6) & ins(6 downto 5);
+
+--with ins(6 downto 5) select write_enable_modified <=
+--"1111" when "00",
+--"0101" when "01",
+--"
+
+byte_offset <= ad(1 downto 0);
+ad2 <= ad(31 downto 2) & "00";
+
 
 PMPath: ProcessorMemoryPath Port map(
-	FromProcessor => ad,
+	FromProcessor => rd2p,
 	FromMemory => rd_temp,
 	DTType => dttyper,--
 	ByteOffset => byte_offset,--
 	ToProcessor => rd,
-	ToMemory => ad2,
+	ToMemory => rd2p2,
 	WriteEnable => write_enable_modified--
 );
 

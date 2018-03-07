@@ -12,6 +12,7 @@ PORT( Address:IN std_logic_vector(31 downto 0);
  MR:IN std_logic;
  reset: in std_logic;
  MW:IN std_logic;
+ WriteEnable: in std_logic_vector(3 downto 0);
     outer:OUT std_logic_vector(31 downto 0));
 
 end entity Memory;
@@ -37,7 +38,7 @@ end component;
 --signal outerTemp:std_logic_vector(31 downto 0);
 -- SIGNAL Address_INFO : integer ;
 
-signal ones:std_logic_vector(3 downto 0):="1111";
+--signal ones:std_logic_vector(3 downto 0):="1111";
 
 
 begin
@@ -49,9 +50,9 @@ ram: design_1_wrapper port map(
     BRAM_PORTA_clk => clock,
     BRAM_PORTA_din =>writeData,
     BRAM_PORTA_dout => outer,
-    BRAM_PORTA_en => MR,
+    BRAM_PORTA_en => MW,
     BRAM_PORTA_rst => reset,
-    BRAM_PORTA_we => ones
+    BRAM_PORTA_we => WriteEnable
 );
 
 
