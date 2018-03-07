@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
---Date        : Tue Mar  6 15:44:52 2018
+--Date        : Wed Mar  7 10:17:23 2018
 --Host        : ankurshaswat-GL502VT running 64-bit Ubuntu 17.10
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -21,14 +21,14 @@ entity design_1 is
     BRAM_PORTA_rst : in STD_LOGIC;
     BRAM_PORTA_we : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=1,numReposBlks=1,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
-  attribute core_generation_info : string;
-  attribute core_generation_info of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=1,numReposBlks=1,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
 end design_1;
 
 architecture STRUCTURE of design_1 is
-  component design_1_blk_mem_gen_0_0 is
+  component design_1_blk_mem_gen_0_1 is
   port (
     clka : in STD_LOGIC;
     rsta : in STD_LOGIC;
@@ -38,7 +38,7 @@ architecture STRUCTURE of design_1 is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     douta : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  end component design_1_blk_mem_gen_0_0;
+  end component design_1_blk_mem_gen_0_1;
   signal BRAM_PORTA_1_ADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal BRAM_PORTA_1_CLK : STD_LOGIC;
   signal BRAM_PORTA_1_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -54,7 +54,7 @@ begin
   BRAM_PORTA_1_RST <= BRAM_PORTA_rst;
   BRAM_PORTA_1_WE(3 downto 0) <= BRAM_PORTA_we(3 downto 0);
   BRAM_PORTA_dout(31 downto 0) <= BRAM_PORTA_1_DOUT(31 downto 0);
-blk_mem_gen_0: component design_1_blk_mem_gen_0_0
+blk_mem_gen_0: component design_1_blk_mem_gen_0_1
      port map (
       addra(31 downto 0) => BRAM_PORTA_1_ADDR(31 downto 0),
       clka => BRAM_PORTA_1_CLK,
