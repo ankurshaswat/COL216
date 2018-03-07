@@ -11,7 +11,7 @@ PORT( Address:IN std_logic_vector(31 downto 0):="0000000000000000000000000000000
  clock : IN std_logic:='0';
  MR:IN std_logic:='0';
  reset: in std_logic:='0';
- MW:IN std_logic:='1';
+ MW:IN std_logic:='0';
  WriteEnable: in std_logic_vector(3 downto 0):="0000";
     outer:OUT std_logic_vector(31 downto 0));
 
@@ -19,7 +19,7 @@ end entity Memory;
 
 architecture arch of Memory is
 
-component design_1_wrapper is
+component ram_wrapper is
   port (
     BRAM_PORTA_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTA_clk : in STD_LOGIC;
@@ -48,7 +48,7 @@ with MW select write_enable_final<=
 WriteEnable when others;
 
 
-ram: design_1_wrapper port map(
+ram: ram_wrapper port map(
    BRAM_PORTA_addr =>Address,
     BRAM_PORTA_clk => clock,
     BRAM_PORTA_din =>writeData,

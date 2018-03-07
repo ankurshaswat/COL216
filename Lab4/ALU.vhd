@@ -10,10 +10,10 @@ PORT (
   opcode : IN std_logic_vector(3 downto 0):="0000";
   carry_in  : IN std_logic:='0';
   output1 : OUT std_logic_vector(31 downto 0);
-  Z : OUT std_logic;
-  N : OUT std_logic;
-  C : OUT std_logic;
-  V : OUT std_logic);
+  Z : OUT std_logic:='0';
+  N : OUT std_logic:='0';
+  C : OUT std_logic:='0';
+  V : OUT std_logic:='0');
 end ALU;
 
 architecture struc of ALU is
