@@ -22,8 +22,8 @@ end component;
 
    --Inputs
    signal op2 : std_logic_vector(31 downto 0) := (others => '0');
-   signal S_type : std_logic_vector(31 downto 0) := (others => '0');
-   signal Samt : std_logic_vector(31 downto 0) := (others => '0');
+   signal SType : std_logic_vector(1 downto 0) := (others => '0');
+   signal Samt : std_logic_vector(4 downto 0) := (others => '0');
    signal clk : std_logic := '0';
 
    -- Outputs
@@ -68,12 +68,12 @@ BEGIN
 		-------------------------------------------------------------
 		
 		
-		assert (shifted = "00000000000000000000000000000010") report "Error:  Shift by the shifter  is wrong";
+		assert (shifted = "00000000000000000000000000000010") report "Error:  Shift by the shifter00  is wrong";
 		if (shifted /= "00000000000000000000000000000010") then
 			err_cnt := err_cnt + 1;
 		end if;
 
-		assert (carry_out = '0') report "Error:  Shift by the shifter  is wrong";
+		assert (carry_out = '0') report "Error:  Shift by the shifter0  is wrong";
 		if (carry_out /= '0') then
 			err_cnt := err_cnt + 1;
 		end if;
@@ -95,12 +95,12 @@ BEGIN
 		-------------------------------------------------------------
 		
 		
-		assert (shifted = "00000000000000000000000000000000") report "Error:  Shift by the shifter  is wrong";
+		assert (shifted = "00000000000000000000000000000000") report "Error:  Shift by the shifter 01 is wrong";
 		if (shifted /= "00000000000000000000000000000000") then
 			err_cnt := err_cnt + 1;
 		end if;
 
-		assert (carry_out = '1') report "Error:  Shift by the shifter  is wrong";
+		assert (carry_out = '1') report "Error:  Shift by the shifter1  is wrong";
 		if (carry_out /= '1') then
 			err_cnt := err_cnt + 1;
 		end if;	
@@ -122,12 +122,12 @@ BEGIN
 		-------------------------------------------------------------
 		
 		
-		assert (shifted = "11100000000000000000000000000000") report "Error:  Shift by the shifter  is wrong";
+		assert (shifted = "11100000000000000000000000000000") report "Error:  Shift by the shifter02  is wrong";
 		if (shifted /=    "11100000000000000000000000000000") then
 			err_cnt := err_cnt + 1;
 		end if;
 
-		assert (carry_out = '0') report "Error:  Shift by the shifter  is wrong";
+		assert (carry_out = '0') report "Error:  Shift by the shifter2  is wrong";
 		if (carry_out /= '0') then
 			err_cnt := err_cnt + 1;
 		end if;
@@ -150,12 +150,12 @@ BEGIN
 		-------------------------------------------------------------
 		
 		
-		assert (shifted = "00000000000000000000000000000110") report "Error:  Shift by the shifter  is wrong";
+		assert (shifted = "00000000000000000000000000000110") report "Error:  Shift by the shifter03  is wrong";
 		if (shifted /=    "00000000000000000000000000000110") then
 			err_cnt := err_cnt + 1;
 		end if;
 
-		assert (carry_out = '0') report "Error:  Shift by the shifter  is wrong";
+		assert (carry_out = '0') report "Error:  Shift by the shifter3  is wrong";
 		if (carry_out /= '0') then
 			err_cnt := err_cnt + 1;
 		end if;

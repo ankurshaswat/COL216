@@ -9,7 +9,18 @@ ENTITY ALU_tb IS
 END ALU_tb;
 
 ARCHITECTURE behavior OF ALU_tb IS 
-
+component ALU is
+PORT (
+	Op1 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+	Op2 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  opcode : IN std_logic_vector(3 downto 0):="0000";
+  carry_in  : IN std_logic:='0';
+  output1 : OUT std_logic_vector(31 downto 0);
+  Z : OUT std_logic:='0';
+  N : OUT std_logic:='0';
+  C : OUT std_logic:='0';
+  V : OUT std_logic:='0');
+end component;
 
 
    --Inputs
@@ -63,7 +74,7 @@ PORT MAP(
 		op1f <= "00000000000000000000000000000011";
 		op2f <= "00000000000000000000000000000001";
 		op <= "0000";
-		car_temp <= 0;
+		car_temp <= '0';
 
 
 	
@@ -96,7 +107,7 @@ PORT MAP(
 		op1f <= "10101010101010101010101010101010";
 		op2f <= "00000000000000000000000000000000";
 		op <= "0001";
-		car_temp <= 0;
+		car_temp <= '0';
 
 
 	
@@ -129,7 +140,7 @@ PORT MAP(
 		op1f <= "10101010101010101010101010101010";
 		op2f <= "00000000000000000000000000000000";
 		op <= "0010";
-		car_temp <= 0;
+		car_temp <= '0';
 
 
 	
@@ -161,7 +172,7 @@ PORT MAP(
 		op1f <= "10101010101010101010101010101010";
 		op2f <= "00000000000000000000000000000000";
 		op <= "0101";
-		car_temp <= 1;
+		car_temp <= '1';
 
 
 	
