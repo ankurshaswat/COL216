@@ -143,111 +143,90 @@ DP_inst : Datapath port map(
 
 	wait for clk_period;
 
-	dout_mem <= "00000000000000000000000000001000"; --(IW is high)
+	   	dout_mem <= 
+   '0'	--              op1update => dout_mem(31)
+&'0'--              ShiftW => dout_mem(30),
+&'0'--              MulW => dout_mem(29),
+&'0'--              Shift => dout_mem(28),
+&'0'--              ShiftAmtSel => dout_mem(27),
+&"00"--              SType => dout_mem(26 downto 25),
+&'0'--              op1sel => dout_mem(24),
+&'0'--              R1src => dout_mem(23),
+&"00"--              WadSrc => dout_mem(22 downto 21),
+&'0'--              ReW   => dout_mem(20),
+&"0000"--              op    => dout_mem(19 downto 16),
+&'0'--              Fset  => dout_mem(15),        
+&"00"--              Asrc2 => dout_mem(14 downto 13),
+&"00"--              Asrc1 => dout_mem(12 downto 11),       
+&'0'--              BW    => dout_mem(10),       
+&'0'--              AW    => dout_mem(9),        
+&'0'--              RW    => dout_mem(8),        
+&"00"--              M2R   => dout_mem(7 downto 6),        
+&'0'--              Rsrc  => dout_mem(5),        
+&'0'--              DW    => dout_mem(4),        
+&'1'--              IW    => dout_mem(3),        
+&'0'--              MW    => dout_mem(2),        
+&'0'--              MR    => dout_mem(1),        
+ &'0'  	 --   IorD  => dout_mem(0),        
+          ; 
     	wait for clk_period;
-   dout_mem <= "00010000000000100010000000000000";--(arsc2 = 01 shift=1)
+     	dout_mem <=
+    '0'    --              op1update => dout_mem(31)
+ &'0'--              ShiftW => dout_mem(30),
+ &'0'--              MulW => dout_mem(29),
+ &'0'--              Shift => dout_mem(28),
+ &'0'--              ShiftAmtSel => dout_mem(27),
+ &"00"--              SType => dout_mem(26 downto 25),
+ &'0'--              op1sel => dout_mem(24),
+ &'0'--              R1src => dout_mem(23),
+ &"00"--              WadSrc => dout_mem(22 downto 21),
+ &'1'--              ReW   => dout_mem(20),
+ &"0100"--              op    => dout_mem(19 downto 16),
+ &'0'--              Fset  => dout_mem(15),        
+ &"01"--              Asrc2 => dout_mem(14 downto 13),
+ &"00"--              Asrc1 => dout_mem(12 downto 11),       
+ &'0'--              BW    => dout_mem(10),       
+ &'0'--              AW    => dout_mem(9),        
+ &'0'--              RW    => dout_mem(8),        
+ &"00"--              M2R   => dout_mem(7 downto 6),        
+ &'0'--              Rsrc  => dout_mem(5),        
+ &'0'--              DW    => dout_mem(4),        
+ &'0'--              IW    => dout_mem(3),        
+ &'0'--              MW    => dout_mem(2),        
+ &'0'--              MR    => dout_mem(1),        
+  &'0'       --   IorD  => dout_mem(0),        
+           ; 
 
     	wait for clk_period;
-
-----    assert(data = '1') report "Stop bit error";
---    if(data /= '1') then
---       err_cnt := err_cnt +1;
---       report "Test Case 1: Stop bit error ";
---    end if;
-
---    send <= '0';
---    data_input <= "0000000100000001";
-
---    wait for 4*clk_period;
---    send <= '1';
---    wait for 2*clk_period;
---    send <= '0';
-
---    outData <= (others => '0');
-
-----    assert(led="0000000100000001") report "LED outputs don't match";
---    if(led/="0000000100000001") then
---       err_cnt := err_cnt +1;
---       report "Test Case 1: LED outputs don't match";
---    end if;
-
-
-----    assert(data = '0') report "Start bit error";
---    if(data /= '0') then
---       err_cnt := err_cnt +1;
---       report "Test Case 1: Start bit error before Packet:1";
---    end if;
---    wait for clk_period;
-
---    collector11 : for i in 0 to 7 loop
---      outData <=  (data) & outData(7 downto 1) ;
---      wait for clk_period;
---    end loop;
-
-----    assert(outData="00000001") report "Incorrect output bits";
---    if(outData /= "00000001") then
---       err_cnt := err_cnt +1;
---       report "Test Case 1: Incorrect 8 output bits of Packet:1";
---    end if;
-
-----    assert(data = '1') report "Incorrect stop bit";
---     if(data /= '1') then
---          err_cnt := err_cnt +1;
---          report "Test Case 1: Incorrect stop bit between Packets";
---     end if;
-
---    wait for clk_period;
-
---    outData <= (others => '0');
-
-----    assert(data = '0') report "Start bit error";
---    if(data /= '0') then
---      err_cnt := err_cnt +1;
---      report "Test Case 1: Start bit error Packet:2";
---    end if;
-
---    wait for clk_period;
---    collector12 : for i in 0 to 7 loop
---      outData <=  (data) & outData(7 downto 1) ;
---      wait for clk_period;
---    end loop;
-
-
-----    assert(outData="00000001") report "Incorrect output bits";
---    if(outData /= "00000001") then
---       err_cnt := err_cnt +1;
---       report "Test Case 1: Incorrect 8 output bits of Packet:2";
---    end if;
-
-----    assert(data = '1') report "Incorrect stop bit";
---     if(data /= '1') then
---         err_cnt := err_cnt +1;
---         report "Test Case 1: Incorrect stop bit after both packets";
---        end if;
-
---    wait for 3*clk_period;
-
---    if((data='1')and(err_cnt=0)) then
---        report "Test Case 1 succesfully cleared";
---        success<='1';
---    else
---        err_cnt:=err_cnt +1;
---        report "Test Case 1: Incorrect stop bit sometime after";
---    end if;
-
---    wait for 3*clk_period;
---    success <= '0';
-
-
-
-
-
-
-
-
-
-
-
+    	
+   	dout_mem <=
+   '0'	--              op1update => dout_mem(31)
+&'0'--              ShiftW => dout_mem(30),
+&'0'--              MulW => dout_mem(29),
+&'0'--              Shift => dout_mem(28),
+&'0'--              ShiftAmtSel => dout_mem(27),
+&"00"--              SType => dout_mem(26 downto 25),
+&'0'--              op1sel => dout_mem(24),
+&'0'--              R1src => dout_mem(23),
+&"10"--              WadSrc => dout_mem(22 downto 21),
+&'0'--              ReW   => dout_mem(20),
+&"0000"--              op    => dout_mem(19 downto 16),
+&'0'--              Fset  => dout_mem(15),        
+&"00"--              Asrc2 => dout_mem(14 downto 13),
+&"00"--              Asrc1 => dout_mem(12 downto 11),       
+&'0'--              BW    => dout_mem(10),       
+&'0'--              AW    => dout_mem(9),        
+&'1'--              RW    => dout_mem(8),        
+&"01"--              M2R   => dout_mem(7 downto 6),        
+&'0'--              Rsrc  => dout_mem(5),        
+&'0'--              DW    => dout_mem(4),        
+&'0'--              IW    => dout_mem(3),        
+&'0'--              MW    => dout_mem(2),        
+&'0'--              MR    => dout_mem(1),        
+ &'0'  	 --   IorD  => dout_mem(0),        
+          ;    
+    	
+    	wait for clk_period;
     
 	------------------------------------------------------------
       --------------------- TEST CASES COMPLETED ---------------------------

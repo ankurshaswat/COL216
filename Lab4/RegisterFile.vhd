@@ -54,14 +54,16 @@ PC <= registerFile(15);     -- Copy of PC
 ReadOut1 <= registerFile(readAdd1);   -- Reading done concurrently
 ReadOut2 <= registerFile(readAdd2);
 
-with reset select registerFile(15) <=  -- Initializing PC with 0 ;
-  "00000000000000000000000000000000"             when '1',
-    registerFile(15)               when others;
+--with reset select registerFile(16) <=  -- Initializing PC with 0 ;
+--  "00000000000000000000000000000000"             when '1',
+--    registerFile(15)               when others;
 
 process(clock)						--- Sequential Writing
 begin
 	if(rising_edge(clock)) then
-		if(WriteEnable='1') then
+	   if(reset = '1') then
+	     registerFile(15)<="00000000000000000000000000000000";
+	    elsif(WriteEnable='1') then
 			registerFile(writeAdd)<=Data;
 	end if;
 
