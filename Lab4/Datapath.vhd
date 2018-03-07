@@ -6,34 +6,34 @@ USE ieee.numeric_std.ALL;
 
 entity Datapath is
 PORT (
-clock,reset : in std_logic;
+clock,reset : in std_logic:='0';
 ins_out : out std_logic_vector(31 downto 0);
 F : out std_logic_vector(3 downto 0);
-IorD: in std_logic;
-MR: in std_logic;
-MW: in std_logic;
-IW: in std_logic;
-DW: in std_logic;
-Rsrc: in std_logic;
-M2R: in std_logic_vector(1 downto 0);--
-RW: in std_logic;
-AW: in std_logic;
-BW: in std_logic;
-Asrc1: in std_logic_vector(1 downto 0);--
-Asrc2: in std_logic_vector(1 downto 0);
-Fset: in std_logic;
-op: in std_logic_vector(3 downto 0);
-ReW: in std_logic;
+IorD: in std_logic:='0';
+MR: in std_logic:='0';
+MW: in std_logic:='0';
+IW: in std_logic:='0';
+DW: in std_logic:='0';
+Rsrc: in std_logic:='0';
+M2R: in std_logic_vector(1 downto 0):="00";--
+RW: in std_logic:='0';
+AW: in std_logic:='0';
+BW: in std_logic:='0';
+Asrc1: in std_logic_vector(1 downto 0):="00";--
+Asrc2: in std_logic_vector(1 downto 0):="00";
+Fset: in std_logic:='0';
+op: in std_logic_vector(3 downto 0):="0000";
+ReW: in std_logic:='0';
 
-WadSrc: in std_logic_vector(1 downto 0);
-R1src: in std_logic;
-op1sel: in std_logic;
-SType: in std_logic_vector(1 downto 0);
-ShiftAmtSel: in std_logic;
-Shift: in std_logic;
-MulW: in std_logic;
-ShiftW: in std_logic;
-op1update: in std_logic
+WadSrc: in std_logic_vector(1 downto 0):="00";
+R1src: in std_logic:='0';
+op1sel: in std_logic:='0';
+SType: in std_logic_vector(1 downto 0):="00";
+ShiftAmtSel: in std_logic:='0';
+Shift: in std_logic:='0';
+MulW: in std_logic:='0';
+ShiftW: in std_logic:='0';
+op1update: in std_logic:='0'
 --carry: in std_logic
 
 );
@@ -126,18 +126,18 @@ signal mul,
         ad2,
         ins,
         ALUoutp,
-        wd,rdp,op1,op2,rd1p,rd2p,rd1,rd2,ioffset,boffset,ALUout:std_logic_vector(31 downto 0);
+        wd,rdp,op1,op2,rd1p,rd2p,rd1,rd2,ioffset,boffset,ALUout:std_logic_vector(31 downto 0):="00000000000000000000000000000000";
         
         
 signal ad:std_logic_vector(31 downto 0):="00000000000000000000000000000000";
 signal rad1:std_logic_vector(3 downto 0):="0001";
 signal rad2:std_logic_vector(3 downto 0):="0010";
 
-signal wad,write_enable_modified:std_logic_vector(3 downto 0);
+signal wad,write_enable_modified:std_logic_vector(3 downto 0):="0000";
 
-signal dttyper:std_logic_vector(2 downto 0);
-signal byte_offset:std_logic_vector(1 downto 0);
-signal Samt:std_logic_vector(4 downto 0);
+signal dttyper:std_logic_vector(2 downto 0):="000";
+signal byte_offset:std_logic_vector(1 downto 0):="00";
+signal Samt:std_logic_vector(4 downto 0):="00000";
 
 
 signal carry_out,
@@ -149,7 +149,7 @@ signal carry_out,
         V,
         N,
         car_temp,
-        C:std_logic;
+        C:std_logic:='0';
 
 BEGIN
 
@@ -218,7 +218,7 @@ with ShiftAmtSel select Samt<=
 op1p(4 downto 0) when '0',
 ins(8 downto 4) when others;
 
-boffset<= (ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23 downto 0) &"00")+4;
+boffset<= (ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23)&ins(23 downto 0) &"00") + 4;
 ioffset<="00000000000000000000"&ins(11 downto 0);
 
 Alu11 :  ALU
