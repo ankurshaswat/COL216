@@ -72,3 +72,5 @@ No Unisim elements were transformed.
 open_run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 6284.234 ; gain = 295.418 ; free physical = 7913 ; free virtual = 12887
 CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
 close_design
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 13 11:03:29 2018...

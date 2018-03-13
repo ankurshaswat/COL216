@@ -11,7 +11,7 @@ end entity Main_Controller;
 
 architecture arch of Main_Controller is
 
-  signal Z, N, V, C : in std_logic;
+  signal Z, N, V, C :  std_logic;
 
 begin
 

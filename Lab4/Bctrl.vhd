@@ -11,7 +11,7 @@ end entity Bctrl;
 
 architecture arch of Bctrl is
 
-  signal Z, N, V, C : in std_logic;
+  signal Z, N, V, C :  std_logic;
 
 begin
 
