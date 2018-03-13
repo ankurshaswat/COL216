@@ -1,20 +1,20 @@
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
-USE ieee.numeric_std.ALL;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
+use ieee.numeric_std.all;
 
 entity Multiplier is
-PORT (
-	Op1 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
-	Op2 : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
-	Result : OUT std_logic_vector(31 downto 0));
+  port (
+    Op1    : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+    Op2    : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+    Result : out std_logic_vector(31 downto 0));
 end Multiplier;
 
 architecture struc of Multiplier is
-BEGIN
+begin
 
-Result <= std_logic_vector(to_unsigned(to_integer(signed(Op1)) * to_integer(signed(Op2)),32));
+  Result <= std_logic_vector(to_unsigned(to_integer(signed(Op1)) * to_integer(signed(Op2)), 32));
 -- Result <= Op1 * Op2;
 
 end struc;

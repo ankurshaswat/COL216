@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue Mar 13 09:15:27 2018
+# Process ID: 3701
+# Current directory: /home/ankurshaswat/MyFiles/Repos/COL216/Lab4
+# Command line: vivado
+# Log file: /home/ankurshaswat/MyFiles/Repos/COL216/Lab4/vivado.log
+# Journal file: /home/ankurshaswat/MyFiles/Repos/COL216/Lab4/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/ankurshaswat/Lab4/Lab4.xpr

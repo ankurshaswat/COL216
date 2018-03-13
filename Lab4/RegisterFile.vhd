@@ -1,74 +1,74 @@
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
-USE ieee.numeric_std.ALL;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
+use ieee.numeric_std.all;
 
 entity RegFile is
-PORT (
-	ReadAddr1 : IN std_logic_vector(3 downto 0):="0000";
-	ReadAddr2 : IN std_logic_vector(3 downto 0):="0000";
-	WriteAddr : IN std_logic_vector(3 downto 0):="0000";
-	Data : IN std_logic_vector(31 downto 0):="00000000000000000000000000000000";
-  clock  : IN std_logic:='0';
-  reset  : IN std_logic:='0';
-  WriteEnable  : IN std_logic:='0';
-	ReadOut1 : OUT std_logic_vector(31 downto 0);
-	ReadOut2 : OUT std_logic_vector(31 downto 0);
-	PC : OUT std_logic_vector(31 downto 0));
+  port (
+    ReadAddr1   : in  std_logic_vector(3 downto 0)  := "0000";
+    ReadAddr2   : in  std_logic_vector(3 downto 0)  := "0000";
+    WriteAddr   : in  std_logic_vector(3 downto 0)  := "0000";
+    Data        : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+    clock       : in  std_logic                     := '0';
+    reset       : in  std_logic                     := '0';
+    WriteEnable : in  std_logic                     := '0';
+    ReadOut1    : out std_logic_vector(31 downto 0);
+    ReadOut2    : out std_logic_vector(31 downto 0);
+    PC          : out std_logic_vector(31 downto 0));
 end RegFile;
 
 architecture struc of RegFile is
 
-TYPE filereg is array (0 to 15) of std_logic_vector(31 downto 0);
-SIGNAL registerFile : filereg:=("00000000000000000000000010000000",
-"00000000000000000000000000000001",
-"00000000000000000000000000000010",
-"00000000000000000000000000000011",
-"00000000000000000000000000000100",
-"00000000000000000000000000000101",
-"00000000000000000000000000000110",
-"00000000000000000000000000000111",
-"00000000000000000000000000001000",
-"00000000000000000000000000001001",
-"00000000000000000000000000000000",
-"00000000000000000000000000000000",
-"00000000000000000000000000000000",
-"00000000000000000000000000000000",
-"00000000000000000000000000000000",
-"00000000000000000000000000000000");
+  type filereg is array (0 to 15) of std_logic_vector(31 downto 0);
+  signal registerFile : filereg := ("00000000000000000000000010000000",
+                                    "00000000000000000000000000000001",
+                                    "00000000000000000000000000000010",
+                                    "00000000000000000000000000000011",
+                                    "00000000000000000000000000000100",
+                                    "00000000000000000000000000000101",
+                                    "00000000000000000000000000000110",
+                                    "00000000000000000000000000000111",
+                                    "00000000000000000000000000001000",
+                                    "00000000000000000000000000001001",
+                                    "00000000000000000000000000000000",
+                                    "00000000000000000000000000000000",
+                                    "00000000000000000000000000000000",
+                                    "00000000000000000000000000000000",
+                                    "00000000000000000000000000000000",
+                                    "00000000000000000000000000000000");
 
- SIGNAL readAdd1,readAdd2,writeAdd : integer:=0 ;
+  signal readAdd1, readAdd2, writeAdd : integer := 0;
 -- SIGNAL Carry_out : std_logic;
 -- SIGNAL C31: std_logic;
 
-BEGIN
+begin
 
 -- Concurrent Address assignment;
 
-readAdd1 <= to_integer(unsigned(ReadAddr1));
-readAdd2 <= to_integer(unsigned(ReadAddr2));
-writeAdd <= to_integer(unsigned(WriteAddr));
-PC <= registerFile(15);     -- Copy of PC
+  readAdd1 <= to_integer(unsigned(ReadAddr1));
+  readAdd2 <= to_integer(unsigned(ReadAddr2));
+  writeAdd <= to_integer(unsigned(WriteAddr));
+  PC       <= registerFile(15);         -- Copy of PC
 
-ReadOut1 <= registerFile(readAdd1);   -- Reading done concurrently
-ReadOut2 <= registerFile(readAdd2);
+  ReadOut1 <= registerFile(readAdd1);   -- Reading done concurrently
+  ReadOut2 <= registerFile(readAdd2);
 
 --with reset select registerFile(16) <=  -- Initializing PC with 0 ;
 --  "00000000000000000000000000000000"             when '1',
 --    registerFile(15)               when others;
 
-process(clock)						--- Sequential Writing
-begin
-	if(rising_edge(clock)) then
-	   if(reset = '1') then
-	     registerFile(15)<="00000000000000000000000000000000";
-	    elsif(WriteEnable='1') then
-			registerFile(writeAdd)<=Data;
-	end if;
+  process(clock)                        --- Sequential Writing
+  begin
+    if(rising_edge(clock)) then
+      if(reset = '1') then
+        registerFile(15) <= "00000000000000000000000000000000";
+      elsif(WriteEnable = '1') then
+        registerFile(writeAdd) <= Data;
+      end if;
 
 
-end if;
+    end if;
 
-end process;
+  end process;
 end struc;

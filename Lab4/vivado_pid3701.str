@@ -1,0 +1,1100 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+Process ID: 3701
+
+Current time: 	3/13/18 9:16:07 AM IST
+Time zone: 	India Standard Time (Asia/Kolkata)
+
+OS: DISTRIB_ID=Ubuntu
+Version: 4.13.0-36-generic
+Architecture: amd64
+Available processors (cores): 8
+
+DISPLAY: :1
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/opt/Xilinx/Vivado/2016.4/tps/lnx64/jre
+
+User name: 	ankurshaswat
+User home directory: /home/ankurshaswat
+User working directory: /home/ankurshaswat/MyFiles/Repos/COL216/Lab4
+User country: 	IN
+User language: 	en
+User locale: 	en_IN
+
+RDI base root directory: /opt/Xilinx/Vivado
+RDI data directory: /opt/Xilinx/Vivado/2016.4/data
+RDI bin directory: /opt/Xilinx/Vivado/2016.4/bin
+
+Vivado preferences path: /home/ankurshaswat/.Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: /home/ankurshaswat/.Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 710 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 26 MB (+25266kb) [00:00:10]
+// [Engine Memory]: 710 MB (+592624kb) [00:00:10]
+// HMemoryUtils.trashcanNow. Engine heap size: 720 MB. GUI used memory: 22 MB. Current time: 3/13/18 9:16:09 AM IST
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/ankurshaswat/Lab4/Lab4.xpr", 0); // q:k (JViewport:JComponent, cd:JFrame)
+// bt:g (cd:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/ankurshaswat/Lab4/Lab4.xpr. Version: Vivado v2016.4 
+// [GUI Memory]: 31 MB (+3543kb) [00:00:30]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/ankurshaswat/Lab4/Lab4.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 42 MB (+9892kb) [00:00:35]
+// [Engine Memory]: 796 MB (+53011kb) [00:00:35]
+// [GUI Memory]: 46 MB (+1228kb) [00:00:37]
+// [GUI Memory]: 49 MB (+1455kb) [00:00:38]
+// [GUI Memory]: 56 MB (+4479kb) [00:00:38]
+// [Engine Memory]: 837 MB (+1240kb) [00:00:38]
+// Tcl Message: open_project /home/ankurshaswat/Lab4/Lab4.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// HMemoryUtils.trashcanNow. Engine heap size: 853 MB. GUI used memory: 30 MB. Current time: 3/13/18 9:16:34 AM IST
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 5873.660 ; gain = 113.707 ; free physical = 13099 ; free virtual = 16370 
+// Project name: Lab4; location: /home/ankurshaswat/Lab4; part: xc7a35tcpg236-1
+// Elapsed time: 10 seconds
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 60 MB (+987kb) [00:00:48]
+// PAPropertyPanels.initPanels (Testbench.vhd) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testbench - behavior (Testbench.vhd)]", 4, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testbench - behavior (Testbench.vhd)]", 4, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 218, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 222, 124); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 190, 152); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 190, 152); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 190, 152); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 190, 152); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 190, 152); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 190, 152); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 175, 243); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 175, 243); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 175, 243); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 77, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 128, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 259, 185); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 203, 182); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 173, 172); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 266, 246); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 309, 303); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 178, 297); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 310); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 310, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 144, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 158, 319); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 158, 319, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 179, 316); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 179, 316, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 194, 311); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 144, 369); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 226, 240); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 192, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 206, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 318, 433); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 240, 358); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 324, 381); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 334); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 334, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 202, 364); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 159, 342); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 159, 342, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// [GUI Memory]: 64 MB (+1616kb) [00:02:04]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 2, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 2, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Datapath.vhd", 144, 283); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 144, 283); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 144, 283); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 144, 283); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 144, 283); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 144, 283); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 144, 283); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 114, 181); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 179 seconds
+selectCodeEditor("Datapath.vhd", 331, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 272, 413); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 68 MB (+224kb) [00:05:21]
+// Elapsed time: 10 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 197, 423); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 89, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 89, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 89, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 89, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 89, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 208, 312); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 30 seconds
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 164, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 74 MB (+3099kb) [00:06:17]
+selectCodeEditor("Datapath.vhd", 529, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 227, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+// [Engine Memory]: 879 MB (+250kb) [00:06:43]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 193, 270); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 345); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("Lab4_TB.vhd", 136, 345); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 12 seconds
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 150, 509); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 198, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 198, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 51 seconds
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 893 MB. GUI used memory: 32 MB. Current time: 3/13/18 9:24:10 AM IST
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 217, 427); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 148, 242); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 152, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 2, true); // y:i (D:JPanel, cd:JFrame) - Node
+// [GUI Memory]: 78 MB (+560kb) [00:08:34]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 2, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Datapath.vhd", 327, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 327, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 327, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 327, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 327, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 548); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 548); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 548); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 548); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 548); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 548); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 84 seconds
+selectCodeEditor("Datapath.vhd", 225, 462); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 225, 462); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 225, 462); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 225, 462); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 225, 462); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 225, 462); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 225, 462); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 83 MB (+809kb) [00:10:24]
+// Elapsed time: 87 seconds
+selectCodeEditor("Datapath.vhd", 86, 161); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 25 seconds
+selectCodeEditor("Datapath.vhd", 76, 81); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 76, 81); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 55, 146); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 272, 403); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 272, 403); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 272, 403); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 195, 325); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("Datapath.vhd", 225, 265); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 336, 340); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 233, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 38, 338); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 16 seconds
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 50, 389); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 339, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 339, 385, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 56, 383); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 139, 446); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 139, 446); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 139, 446); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 139, 446); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 139, 446); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 139, 446); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 139, 446); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 30, 305); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 324, 231); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 105, 390); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 21, 449); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 70, 342); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 79, 355); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 56, 370); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 59, 382); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 77, 397); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 86, 415); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 56, 430); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 55, 438); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 42, 452); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 58, 472); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 88 MB (+822kb) [00:14:48]
+selectCodeEditor("Datapath.vhd", 58, 489); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 52, 504); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 40, 521); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 50, 534); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 65, 547); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 393, 547); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 393, 547); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 393, 547); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 393, 547); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 393, 547); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 299, 429); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 357, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 357, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 357, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 357, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 357, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 253, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 253, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 253, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 253, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 253, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 253, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 158, 416); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 259, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 182, 233); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 182, 233); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 182, 233); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 163, 396); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 147, 139); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 201, 265); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 95, 180); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 126, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 126, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 126, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 126, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 126, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 109, 428); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 39, 280); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 228, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 120, 266); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 157, 455); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 97, 286); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 90, 297); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 90, 297); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Datapath.vhd", 102, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 102, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 60, 277); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 42, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 48, 480); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 25, 330); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 112, 377); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 79, 293); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Datapath.vhd", 24, 168); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 35, 256); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 54, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 54, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 54, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 27, 63); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 75, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 343); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 343); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 75, 343); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 37, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 29, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 100, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 167, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 314, 514); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Lab4_TB.vhd", 120, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 260); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 162, 385); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 168, 471); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 57, 189); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 63, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 923 MB (+451kb) [00:23:20]
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 924 MB. GUI used memory: 33 MB. Current time: 3/13/18 9:39:20 AM IST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
