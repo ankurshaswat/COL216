@@ -34,36 +34,53 @@ architecture behavior of Testbench is
 
   component Datapath
     port (
-      clock, reset : in  std_logic;
+      clock, reset : in  std_logic                    := '0';
       ins_out      : out std_logic_vector(31 downto 0);
       F            : out std_logic_vector(3 downto 0);
-      IorD         : in  std_logic;
-      MR           : in  std_logic;
-      MW           : in  std_logic;
-      IW           : in  std_logic;
-      DW           : in  std_logic;
-      Rsrc         : in  std_logic;
-      M2R          : in  std_logic_vector(1 downto 0);  --
-      RW           : in  std_logic;
-      AW           : in  std_logic;
-      BW           : in  std_logic;
-      Asrc1        : in  std_logic_vector(1 downto 0);  --
-      Asrc2        : in  std_logic_vector(1 downto 0);
-      Fset         : in  std_logic;
-      op           : in  std_logic_vector(3 downto 0);
-      ReW          : in  std_logic;
+      IorD         : in  std_logic                    := '0';
+      --MR: in std_logic:='0';
+      MW           : in  std_logic                    := '0';
+      IW           : in  std_logic                    := '0';
+      DW           : in  std_logic                    := '0';
+      Rsrc         : in  std_logic                    := '0';
+      M2R          : in  std_logic_vector(1 downto 0) := "00";  --
+      RW           : in  std_logic                    := '0';
+      AW           : in  std_logic                    := '0';
+      BW           : in  std_logic                    := '0';
+      Asrc1        : in  std_logic_vector(1 downto 0) := "00";  --
+      Asrc2        : in  std_logic_vector(1 downto 0) := "00";
+      Fset         : in  std_logic                    := '0';
+      op           : in  std_logic_vector(3 downto 0) := "0000";
+      ReW          : in  std_logic                    := '0';
 
-      WadSrc      : in std_logic_vector(1 downto 0);
-      R1src       : in std_logic;
-      op1sel      : in std_logic;
-      SType       : in std_logic_vector(1 downto 0);
-      ShiftAmtSel : in std_logic;
-      Shift       : in std_logic;
-      MulW        : in std_logic;
-      ShiftW      : in std_logic;
-      op1update   : in std_logic
---carry: in std_logic
+      WadSrc      : in std_logic_vector(1 downto 0) := "00";
+      R1src       : in std_logic_vector(1 downto 0) := "00";
+      op1sel      : in std_logic                    := '0';
+      SType       : in std_logic_vector(1 downto 0) := "00";
+      ShiftAmtSel : in std_logic                    := '0';
+      Shift       : in std_logic                    := '0';
+      MulW        : in std_logic                    := '0';
+      ShiftW      : in std_logic                    := '0';
+      op1update   : in std_logic                    := '0';
+      --carry: in std_logic
 
+
+
+      ALUout_sig   : out std_logic_vector(31 downto 0);
+      ALUoutp_sig  : out std_logic_vector(31 downto 0);
+      op1f_sig     : out std_logic_vector(31 downto 0);
+      op2f_sig     : out std_logic_vector(31 downto 0);
+      shifted_sig  : out std_logic_vector(31 downto 0);
+      shiftedp_sig : out std_logic_vector(31 downto 0);
+      rd1p_sig     : out std_logic_vector(31 downto 0);
+      rd2p_sig     : out std_logic_vector(31 downto 0);
+      PC_sig       : out std_logic_vector(31 downto 0);
+      rad1_sig     : out std_logic_vector(31 downto 0);
+      rad2_sig     : out std_logic_vector(31 downto 0);
+      wad_sig      : out std_logic_vector(31 downto 0);
+      wd_sig       : out std_logic_vector(31 downto 0);
+      ad2_sig      : out std_logic_vector(31 downto 0);
+      rd2p2_sig    : out std_logic_vector(31 downto 0)
       );
   end component;
 
@@ -75,28 +92,28 @@ begin
   -- Instantiate the Unit Under Test (UUT)
   DP_inst : Datapath port map(
     clock   => CLK,
-    reset   => reset,
+    reset   => BTN(4),
     ins_out => IR,
     F       => Flags_out,
-    --    PW    => dout_mem(0),
+    --      PW    => dout_mem(0),
     IorD    => dout_mem(0),
-    MR      => dout_mem(1),
-    MW      => dout_mem(2),
-    IW      => dout_mem(3),
-    DW      => dout_mem(4),
-    Rsrc    => dout_mem(5),
-    M2R     => dout_mem(7 downto 6),
-    RW      => dout_mem(8),
-    AW      => dout_mem(9),
-    BW      => dout_mem(10),
-    Asrc1   => dout_mem(12 downto 11),
-    Asrc2   => dout_mem(14 downto 13),
-    Fset    => dout_mem(15),
-    op      => dout_mem(19 downto 16),
-    ReW     => dout_mem(20),
+    --      MR    => dout_mem(1),
+    MW      => dout_mem(1),
+    IW      => dout_mem(2),
+    DW      => dout_mem(3),
+    Rsrc    => dout_mem(4),
+    M2R     => dout_mem(6 downto 5),
+    RW      => dout_mem(7),
+    AW      => dout_mem(8),
+    BW      => dout_mem(9),
+    Asrc1   => dout_mem(11 downto 10),
+    Asrc2   => dout_mem(13 downto 12),
+    Fset    => dout_mem(14),
+    op      => dout_mem(18 downto 15),
+    ReW     => dout_mem(19),
 
-    WadSrc      => dout_mem(22 downto 21),
-    R1src       => dout_mem(23),
+    WadSrc      => dout_mem(21 downto 20),
+    R1src       => dout_mem(23 downto 22),
     op1sel      => dout_mem(24),
     SType       => dout_mem(26 downto 25),
     ShiftAmtSel => dout_mem(27),
@@ -155,18 +172,18 @@ begin
       &"00"    --              WadSrc => dout_mem(22 downto 21),
       &'0'                              --              ReW   => dout_mem(20),
       &"0000"  --              op    => dout_mem(19 downto 16),
-      &'0'     --              Fset  => dout_mem(15),
+      &'0'                              --              Fset  => dout_mem(15),
       &"00"    --              Asrc2 => dout_mem(14 downto 13),
       &"00"    --              Asrc1 => dout_mem(12 downto 11),
-      &'0'     --              BW    => dout_mem(10),
-      &'0'     --              AW    => dout_mem(9),
-      &'0'     --              RW    => dout_mem(8),
+      &'0'                              --              BW    => dout_mem(10),
+      &'0'                              --              AW    => dout_mem(9),
+      &'0'                              --              RW    => dout_mem(8),
       &"00"    --              M2R   => dout_mem(7 downto 6),
-      &'0'     --              Rsrc  => dout_mem(5),
-      &'0'     --              DW    => dout_mem(4),
-      &'1'     --              IW    => dout_mem(3),
-      &'0'     --              MW    => dout_mem(2),
-      &'0'     --              MR    => dout_mem(1),
+      &'0'                              --              Rsrc  => dout_mem(5),
+      &'0'                              --              DW    => dout_mem(4),
+      &'1'                              --              IW    => dout_mem(3),
+      &'0'                              --              MW    => dout_mem(2),
+      &'0'                              --              MR    => dout_mem(1),
       &'0'                              --   IorD  => dout_mem(0),
 ;
     wait for clk_period;
@@ -182,18 +199,18 @@ begin
       &"00"    --              WadSrc => dout_mem(22 downto 21),
       &'1'                              --              ReW   => dout_mem(20),
       &"0100"  --              op    => dout_mem(19 downto 16),
-      &'0'     --              Fset  => dout_mem(15),
+      &'0'                              --              Fset  => dout_mem(15),
       &"01"    --              Asrc2 => dout_mem(14 downto 13),
       &"00"    --              Asrc1 => dout_mem(12 downto 11),
-      &'0'     --              BW    => dout_mem(10),
-      &'0'     --              AW    => dout_mem(9),
-      &'0'     --              RW    => dout_mem(8),
+      &'0'                              --              BW    => dout_mem(10),
+      &'0'                              --              AW    => dout_mem(9),
+      &'0'                              --              RW    => dout_mem(8),
       &"00"    --              M2R   => dout_mem(7 downto 6),
-      &'0'     --              Rsrc  => dout_mem(5),
-      &'0'     --              DW    => dout_mem(4),
-      &'0'     --              IW    => dout_mem(3),
-      &'0'     --              MW    => dout_mem(2),
-      &'0'     --              MR    => dout_mem(1),
+      &'0'                              --              Rsrc  => dout_mem(5),
+      &'0'                              --              DW    => dout_mem(4),
+      &'0'                              --              IW    => dout_mem(3),
+      &'0'                              --              MW    => dout_mem(2),
+      &'0'                              --              MR    => dout_mem(1),
       &'0'                              --   IorD  => dout_mem(0),
 ;
 
@@ -211,18 +228,18 @@ begin
       &"10"    --              WadSrc => dout_mem(22 downto 21),
       &'0'                              --              ReW   => dout_mem(20),
       &"0000"  --              op    => dout_mem(19 downto 16),
-      &'0'     --              Fset  => dout_mem(15),
+      &'0'                              --              Fset  => dout_mem(15),
       &"00"    --              Asrc2 => dout_mem(14 downto 13),
       &"00"    --              Asrc1 => dout_mem(12 downto 11),
-      &'0'     --              BW    => dout_mem(10),
-      &'0'     --              AW    => dout_mem(9),
-      &'1'     --              RW    => dout_mem(8),
+      &'0'                              --              BW    => dout_mem(10),
+      &'0'                              --              AW    => dout_mem(9),
+      &'1'                              --              RW    => dout_mem(8),
       &"01"    --              M2R   => dout_mem(7 downto 6),
-      &'0'     --              Rsrc  => dout_mem(5),
-      &'0'     --              DW    => dout_mem(4),
-      &'0'     --              IW    => dout_mem(3),
-      &'0'     --              MW    => dout_mem(2),
-      &'0'     --              MR    => dout_mem(1),
+      &'0'                              --              Rsrc  => dout_mem(5),
+      &'0'                              --              DW    => dout_mem(4),
+      &'0'                              --              IW    => dout_mem(3),
+      &'0'                              --              MW    => dout_mem(2),
+      &'0'                              --              MR    => dout_mem(1),
       &'0'                              --   IorD  => dout_mem(0),
 ;
 

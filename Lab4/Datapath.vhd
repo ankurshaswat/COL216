@@ -47,9 +47,9 @@ entity Datapath is
     rd1p_sig     : out std_logic_vector(31 downto 0);
     rd2p_sig     : out std_logic_vector(31 downto 0);
     PC_sig       : out std_logic_vector(31 downto 0);
-    rad1_sig     : out std_logic_vector(31 downto 0);
-    rad2_sig     : out std_logic_vector(31 downto 0);
-    wad_sig      : out std_logic_vector(31 downto 0);
+    rad1_sig     : out std_logic_vector(3 downto 0);
+    rad2_sig     : out std_logic_vector(3 downto 0);
+    wad_sig      : out std_logic_vector(3 downto 0);
     wd_sig       : out std_logic_vector(31 downto 0);
     ad2_sig      : out std_logic_vector(31 downto 0);
     rd2p2_sig    : out std_logic_vector(31 downto 0)
@@ -166,7 +166,7 @@ architecture struc of Datapath is
     V,
     N,
     car_temp,
-    C :std_logic := '0';
+    C : std_logic := '0';
 
 begin
 

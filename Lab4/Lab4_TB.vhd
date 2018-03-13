@@ -90,9 +90,9 @@ architecture Behavioral of tb is
       rd1p_sig     : out std_logic_vector(31 downto 0);
       rd2p_sig     : out std_logic_vector(31 downto 0);
       PC_sig       : out std_logic_vector(31 downto 0);
-      rad1_sig     : out std_logic_vector(31 downto 0);
-      rad2_sig     : out std_logic_vector(31 downto 0);
-      wad_sig      : out std_logic_vector(31 downto 0);
+      rad1_sig     : out std_logic_vector(3 downto 0);
+      rad2_sig     : out std_logic_vector(3 downto 0);
+      wad_sig      : out std_logic_vector(3 downto 0);
       wd_sig       : out std_logic_vector(31 downto 0);
       ad2_sig      : out std_logic_vector(31 downto 0);
       rd2p2_sig    : out std_logic_vector(31 downto 0)
@@ -101,20 +101,23 @@ architecture Behavioral of tb is
   end component;
 
 
-  signal temp        : std_logic;
-  signal btn_3_d     : std_logic;
-  signal UART_RX_CNT : std_logic_vector(15 downto 0);
-  signal clk_mem     : std_logic;
-  signal ena_mem     : std_logic;
-  signal wea_mem     : std_logic_vector(3 downto 0);
-  signal addr_mem    : std_logic_vector(11 downto 0);
-  signal din_mem     : std_logic_vector(31 downto 0);
-  signal dout_mem    : std_logic_vector(31 downto 0);
-  signal IR          : std_logic_vector(31 downto 0);
-  signal rx_uart     : std_logic_vector(7 downto 0);
-  signal switch_pair : std_logic_vector(1 downto 0);
-  signal reset_mem   : std_logic;
-  signal Flags_out   : std_logic_vector(3 downto 0);
+  signal temp            : std_logic;
+  signal btn_3_d         : std_logic;
+  signal UART_RX_CNT     : std_logic_vector(15 downto 0);
+  signal clk_mem         : std_logic;
+  signal ena_mem         : std_logic;
+  signal wea_mem         : std_logic_vector(3 downto 0);
+  signal addr_mem        : std_logic_vector(11 downto 0);
+  signal din_mem         : std_logic_vector(31 downto 0);
+  signal dout_mem, dshow : std_logic_vector(31 downto 0);
+  signal IR              : std_logic_vector(31 downto 0);
+  signal rx_uart         : std_logic_vector(7 downto 0);
+  signal switch_pair     : std_logic_vector(1 downto 0);
+  signal reset_mem       : std_logic;
+  signal Flags_out       : std_logic_vector(3 downto 0);
+
+  signal ALUout, ALUoutp, op1f, op2f, rd1p, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2 : std_logic_vector(31 downto 0);
+  signal rad1, rad2, wad                                                                : std_logic_vector(3 downto 0);
 begin
 
 
@@ -156,7 +159,25 @@ begin
     Shift       => dout_mem(28),
     MulW        => dout_mem(29),
     ShiftW      => dout_mem(30),
-    op1update   => dout_mem(31)
+    op1update   => dout_mem(31),
+
+
+
+    ALUout_sig   => ALUout,
+    ALUoutp_sig  => ALUoutp,
+    op1f_sig     => op1f,
+    op2f_sig     => op2f,
+    shifted_sig  => shifted,
+    shiftedp_sig => shiftedp,
+    rd1p_sig     => rd1p,
+    rd2p_sig     => rd2p,
+    PC_sig       => PC,
+    rad1_sig     => rad1,
+    rad2_sig     => rad2,
+    wad_sig      => wad,
+    wd_sig       => wd,
+    ad2_sig      => ad2,
+    rd2p2_sig    => rd2p2
 
     );
 
@@ -231,15 +252,33 @@ begin
     DOUT_MEM     => dout_mem
     );
 
+  with SW(15 downto 3) select dshow <=
+    dout_mem                              when "00000000000000",
+    ALUout                                when "00000000000001",
+    ALUoutp                               when "00000000000010",
+    op1f                                  when "00000000000011",
+    op2f                                  when "00000000000100",
+    shifted                               when "00000000000101",
+    shiftedp                              when "00000000000110",
+    rd1p                                  when "00000000000111",
+    rd2p                                  when "00000000001000",
+    PC                                    when "00000000001001",
+    "0000000000000000000000000000" & rad1 when "00000000001010",
+    "0000000000000000000000000000" & rad2 when "00000000001011",
+    "0000000000000000000000000000" & wad  when "00000000001100",
+    wd                                    when "00000000001101",
+    ad2                                   when "00000000001110",
+    rd2p2                                 when others;
+
   switch_pair <= SW(1) & SW(2);
   with switch_pair select
-    LED(7 downto 0) <= dout_mem(7 downto 0) when ("10"),
-    dout_mem(23 downto 16)                  when ("11"),
-    rx_uart                                 when others;
+    LED(7 downto 0) <= dshow(7 downto 0) when ("10"),
+    dshow(23 downto 16)                  when ("11"),
+    rx_uart                              when others;
   with switch_pair select
-    LED(15 downto 8) <= dout_mem(15 downto 8) when ("10"),
-    dout_mem(31 downto 24)                    when ("11"),
-    "00000000"                                when others;
+    LED(15 downto 8) <= dshow(15 downto 8) when ("10"),
+    dshow(31 downto 24)                    when ("11"),
+    "00000000"                             when others;
 
 
 

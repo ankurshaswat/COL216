@@ -42,16 +42,16 @@ Engine allocated memory: 710 MB
 */
 
 // TclEventType: START_GUI
-// Tcl Message: start_gui 
+// Tcl Message: start_gui
 // [GUI Memory]: 26 MB (+25266kb) [00:00:10]
 // [Engine Memory]: 710 MB (+592624kb) [00:00:10]
 // HMemoryUtils.trashcanNow. Engine heap size: 720 MB. GUI used memory: 22 MB. Current time: 3/13/18 9:16:09 AM IST
 selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/ankurshaswat/Lab4/Lab4.xpr", 0); // q:k (JViewport:JComponent, cd:JFrame)
 // bt:g (cd:JFrame):  Open Project : addNotify
-// Opening Vivado Project: /home/ankurshaswat/Lab4/Lab4.xpr. Version: Vivado v2016.4 
+// Opening Vivado Project: /home/ankurshaswat/Lab4/Lab4.xpr. Version: Vivado v2016.4
 // [GUI Memory]: 31 MB (+3543kb) [00:00:30]
 // TclEventType: DEBUG_PROBE_SET_CHANGE
-// Tcl Message: open_project /home/ankurshaswat/Lab4/Lab4.xpr 
+// Tcl Message: open_project /home/ankurshaswat/Lab4/Lab4.xpr
 // TclEventType: MSGMGR_MOVEMSG
 // TclEventType: FILE_SET_NEW
 // TclEventType: RUN_COMPLETED
@@ -65,11 +65,11 @@ selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/ankurshaswa
 // [GUI Memory]: 49 MB (+1455kb) [00:00:38]
 // [GUI Memory]: 56 MB (+4479kb) [00:00:38]
 // [Engine Memory]: 837 MB (+1240kb) [00:00:38]
-// Tcl Message: open_project /home/ankurshaswat/Lab4/Lab4.xpr 
-// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: open_project /home/ankurshaswat/Lab4/Lab4.xpr
+// Tcl Message: Scanning sources... Finished scanning sources
 // HMemoryUtils.trashcanNow. Engine heap size: 853 MB. GUI used memory: 30 MB. Current time: 3/13/18 9:16:34 AM IST
-// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'. 
-// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 5873.660 ; gain = 113.707 ; free physical = 13099 ; free virtual = 16370 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'.
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 5873.660 ; gain = 113.707 ; free physical = 13099 ; free virtual = 16370
 // Project name: Lab4; location: /home/ankurshaswat/Lab4; part: xc7a35tcpg236-1
 // Elapsed time: 10 seconds
 dismissDialog("Open Project"); // bt:g (cd:JFrame)
@@ -1098,3 +1098,1723 @@ selectCodeEditor("Lab4_TB.vhd", 63, 324); // bF:I (JPanel:JComponent, cd:JFrame)
 // TclEventType: DG_UPDATE_GRAPH
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 406 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 274, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 312, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testbench.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 190, 357); // bF:I (JPanel:JComponent, cd:JFrame)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 185, 320); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 174, 439); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 261, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Lab4_TB.vhd", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Datapath.vhd", 3); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 220, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 17, 127); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testbench.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 36, 100); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Testbench.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Testbench.vhd", 272, 528); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Testbench.vhd", 272, 528); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 272, 528); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 22 seconds
+selectCodeEditor("Testbench.vhd", 272, 528); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 272, 528); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 272, 528); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 238, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 138, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 234, 486); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testbench.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 248, 346); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Testbench.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 22, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Testbench.vhd", 111, 237); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 16 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Datapath.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 175, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 207, 230); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 186, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 186, 272, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 25 seconds
+selectCodeEditor("Lab4_TB.vhd", 129, 310); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 48, 304); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 48, 304, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 76, 361); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 106, 406); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 106, 406); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 106, 406); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 106, 406); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 46 seconds
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 125, 496); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 195, 405); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 393, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 346); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 348, 391); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 273, 237); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 244, 262); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 192, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 192, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 192, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 120, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 69, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 69, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 69, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 69, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 69, 425); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 54, 445); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 54, 445); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 54, 445); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 85, 212); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 362); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 354); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 354); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 154, 354); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 286, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 286, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 286, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 110, 399); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 110, 399); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 110, 399); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 110, 399); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 110, 399); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 110, 399); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 354, 443); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 260, 268); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Lab4_TB.vhd", 196, 246); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 262, 210); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 259, 309); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 278, 538); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 293, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 260, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 260, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 260, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 260, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 402); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 276, 375); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 82 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd)]", 2); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, Lab4_TB.vhd]", 2, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, Lab4_TB.vhd]", 2, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 185, 432); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 4, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 4, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 154, 306); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 134, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 169, 401); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Datapath.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Datapath.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 50, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 51 seconds
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 136, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 429, 408); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// x:r (cd:JFrame): Invalid Top Module: addNotify
+// Elapsed time: 20 seconds
+dismissDialog("Invalid Top Module"); // x:r (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// x:r (cd:JFrame): Invalid Top Module: addNotify
+// Elapsed time: 26 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, x:r)
+dismissDialog("Invalid Top Module"); // x:r (cd:JFrame)
+// Elapsed time: 18 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 230, 557); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 39 seconds
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 253, 519); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 267, 503); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 143, 170); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 80, 170); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 44 seconds
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// Find in Files: addNotify
+// Elapsed time: 12 seconds
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_CLOSE, "Close"); // h:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 213 seconds
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 135, 251); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, f:q)
+// y:aO (cd:JFrame): Synthesis is Out-of-date: addNotify
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // y:aO (cd:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1
+// 'cn' command handler elapsed time: 7 seconds
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: RUN_LAUNCH
+// bt:g (cd:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Mar 13 09:56:20 2018] Launched synth_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/synth_1/runme.log [Tue Mar 13 09:56:20 2018] Launched impl_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/impl_1/runme.log
+dismissDialog("Generate Bitstream"); // bt:g (cd:JFrame)
+// TclEventType: RUN_FAILED
+// ah:y (cd:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 18 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:y)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ah:y (cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-690] width mismatch in assignment; target has 32 bits, source has 4 bits [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Datapath.vhd:184]. ]", 2, false); // ah:i (JViewport:JComponent, cd:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Datapath.vhd;-;;-;16;-;line;-;184;-;;-;16;-;"); // ah:i (JViewport:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 152, 453); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 294, 507); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 343, 539); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 343, 539); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 343, 539); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 343, 539); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 343, 539); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 343, 539); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 300, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-690] width mismatch in assignment; target has 32 bits, source has 4 bits [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Datapath.vhd:184]. ]", 2, false); // ah:i (JViewport:JComponent, cd:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Datapath.vhd;-;;-;16;-;line;-;184;-;;-;16;-;"); // ah:i (JViewport:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 205, 324); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 150, 420); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 150, 420); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 119, 457); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Datapath.vhd", 223, 164); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, f:q)
+// y:aO (cd:JFrame): No Implementation Results Available: addNotify
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+dismissDialog("No Implementation Results Available"); // y:aO (cd:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1
+// 'cn' command handler elapsed time: 3 seconds
+// [GUI Memory]: 93 MB (+165kb) [00:41:44]
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+// Tcl Message: [Tue Mar 13 09:57:39 2018] Launched synth_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/synth_1/runme.log [Tue Mar 13 09:57:39 2018] Launched impl_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/impl_1/runme.log
+// TclEventType: RUN_FAILED
+// ah:y (cd:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 17 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:y)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ah:y (cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-549] port width mismatch for port 'rad1_sig': port width = 4, actual width = 32 [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd:93]. ]", 2, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd;-;;-;16;-;line;-;93;-;;-;16;-;"); // ah:i (JViewport:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 302, 156); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, f:q)
+// y:aO (cd:JFrame): No Implementation Results Available: addNotify
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+dismissDialog("No Implementation Results Available"); // y:aO (cd:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1
+// 'cn' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+// Tcl Message: [Tue Mar 13 09:58:15 2018] Launched synth_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/synth_1/runme.log [Tue Mar 13 09:58:15 2018] Launched impl_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/impl_1/runme.log
+// TclEventType: RUN_FAILED
+// ah:y (cd:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 16 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:y)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ah:y (cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-549] port width mismatch for port 'rad1_sig': port width = 4, actual width = 32 [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd:174]. ]", 2, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd;-;;-;16;-;line;-;174;-;;-;16;-;"); // ah:i (JViewport:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 270, 458); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 270, 458); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 270, 458); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 452, 233); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 61, 248); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("Lab4_TB.vhd", 292, 248); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, f:q)
+// y:aO (cd:JFrame): No Implementation Results Available: addNotify
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+dismissDialog("No Implementation Results Available"); // y:aO (cd:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1
+// 'cn' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+// Tcl Message: [Tue Mar 13 09:59:02 2018] Launched synth_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/synth_1/runme.log [Tue Mar 13 09:59:02 2018] Launched impl_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/impl_1/runme.log
+// TclEventType: RUN_FAILED
+// ah:y (cd:JFrame): Synthesis Failed: addNotify
+// Elapsed time: 15 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:y)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ah:y (cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-3936] Found unconnected internal register 'mem_addrb_reg' and it is trimmed from '32' to '14' bits. [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/memory.vhd:220]. ]", 2, false); // ah:i (JViewport:JComponent, cd:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/memory.vhd;-;;-;16;-;line;-;220;-;;-;16;-;"); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-690] width mismatch in assignment; target has 32 bits, source has 4 bits [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd:255]. ]", 3, false); // ah:i (JViewport:JComponent, cd:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd;-;;-;16;-;line;-;255;-;;-;16;-;"); // ah:i (JViewport:JComponent, cd:JFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("Lab4_TB.vhd", 207, 155); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("Lab4_TB.vhd", 34, 326); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 31 seconds
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 140, 321); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 10 seconds
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "Lab4_TB.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f:q (cd:JFrame): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, f:q)
+// y:aO (cd:JFrame): No Implementation Results Available: addNotify
+dismissDialog("Launch Runs"); // f:q (cd:JFrame)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+dismissDialog("No Implementation Results Available"); // y:aO (cd:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1
+// 'cn' command handler elapsed time: 3 seconds
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+// Tcl Message: [Tue Mar 13 10:01:36 2018] Launched synth_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/synth_1/runme.log [Tue Mar 13 10:01:36 2018] Launched impl_1... Run output will be captured here: /home/ankurshaswat/Lab4/Lab4.runs/impl_1/runme.log
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 61 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DP_inst/Mem/ram/ram_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.. ]", 6, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DP_inst/Mem/ram/ram_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.. ]", 6, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DP_inst/Mem/ram/ram_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.. ]", 6, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DP_inst/Mem/ram/ram_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.. ]", 6, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DP_inst/Mem/ram/ram_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.. ]", 6, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DP_inst/Mem/ram/ram_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.. ]", 6, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'mem_if/bram_0' [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/memory.vhd:242]. ]", 5, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectCodeEditor("Lab4_TB.vhd", 566, 412); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: RUN_COMPLETED
+// ah:y (cd:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 68 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:y)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// bt:g (cd:JFrame):  Open Implemented Design : addNotify
+// Tcl Message: open_run impl_1
+// HMemoryUtils.trashcanNow. Engine heap size: 1,008 MB. GUI used memory: 38 MB. Current time: 3/13/18 10:03:55 AM IST
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,088 MB. GUI used memory: 36 MB. Current time: 3/13/18 10:03:56 AM IST
+// [Engine Memory]: 1,090 MB (+126164kb) [00:48:01]
+// TclEventType: DESIGN_NEW
+// Xgd.load filename: /opt/Xilinx/Vivado/2016.4/data/./parts/xilinx/artix7/devint/artix7/xc7a35t/xc7a35t.xgd; ZipEntry: xc7a35t_detail.xgd elapsed time: 0.6s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// [Engine Memory]: 1,212 MB (+70867kb) [00:48:03]
+// Device: addNotify
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 72 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2016.4 INFO: [Device 21-403] Loading part xc7a35tcpg236-1 INFO: [Project 1-570] Preparing netlist for logic optimization
+// Tcl Message: Parsing XDC File [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/.Xil/Vivado-3701-ankurshaswat-GL502VT/dcp/tb.xdc] Finished Parsing XDC File [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/.Xil/Vivado-3701-ankurshaswat-GL502VT/dcp/tb.xdc] Reading XDEF placement. Reading placer database... Reading XDEF routing.
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.19 . Memory (MB): peak = 6142.766 ; gain = 1.000 ; free physical = 7986 ; free virtual = 12962
+// Tcl Message: Restored from archive | CPU: 0.150000 secs | Memory: 2.848511 MB |
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.19 . Memory (MB): peak = 6142.766 ; gain = 1.000 ; free physical = 7986 ; free virtual = 12962
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.
+// TclEventType: DRC_ADDED
+// Tcl Message: open_run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 6284.234 ; gain = 295.418 ; free physical = 7913 ; free virtual = 12887
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// Device view-level: 0.0
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+// 'dH' command handler elapsed time: 11 seconds
+// [GUI Memory]: 97 MB (+33kb) [00:48:07]
+// M:a (cd:JFrame): Critical Messages: addNotify
+// Elapsed time: 11 seconds
+dismissDialog("Open Implemented Design"); // bt:g (cd:JFrame)
+// [Engine Memory]: 1,294 MB (+22679kb) [00:48:10]
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f:a (JPanel:JComponent, M:a)
+dismissDialog("Critical Messages"); // M:a (cd:JFrame)
+// RouteApi::initDelayMediator elapsed time: 9.1s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// [Engine Memory]: 1,550 MB (+200418kb) [00:48:16]
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Design Timing Summary]", 2, false); // a:C (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Design Timing Summary]", 2, false, false, false, false, false, true); // a:C (JViewport:JComponent, cd:JFrame) - Double Click
+selectButton(PAResourceAtoD.DesignTimingSumSectionPanel_WORST_NEGATIVE_SLACK, "-1.256 ns"); // h:k (JPanel:JComponent, cd:JFrame)
+// PAPropertyPanels.initPanels (Path 1) elapsed time: 0.3s
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, sys_clk_pin, Setup -1.256 ns]", 7, false); // a:C (JViewport:JComponent, cd:JFrame)
+// [GUI Memory]: 103 MB (+652kb) [00:48:23]
+// Elapsed time: 68 seconds
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 7 ; -1.0868427 ; 17 ; 33 ; mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK ; DP_inst/Reg/registerFile_reg[7][28]/D ; 10.903008 ; 4.4309998 ; 6.472007 ; 10.0 ; sys_clk_pin ; sys_clk_pin ; ", 6, "mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK", 4); // i:r (JViewport:JComponent, cd:JFrame)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 8 ; -1.0794566 ; 17 ; 33 ; mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK ; DP_inst/Reg/registerFile_reg[5][29]/D ; 10.929622 ; 4.546 ; 6.3836174 ; 10.0 ; sys_clk_pin ; sys_clk_pin ; ", 7, "mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK", 4); // i:r (JViewport:JComponent, cd:JFrame)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 8 ; -1.0794566 ; 17 ; 33 ; mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK ; DP_inst/Reg/registerFile_reg[5][29]/D ; 10.929622 ; 4.546 ; 6.3836174 ; 10.0 ; sys_clk_pin ; sys_clk_pin ; ", 7, "mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK", 4); // i:r (JViewport:JComponent, cd:JFrame)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 8 ; -1.0794566 ; 17 ; 33 ; mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK ; DP_inst/Reg/registerFile_reg[5][29]/D ; 10.929622 ; 4.546 ; 6.3836174 ; 10.0 ; sys_clk_pin ; sys_clk_pin ; ", 7, "mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK", 4); // i:r (JViewport:JComponent, cd:JFrame)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 7 ; -1.0868427 ; 17 ; 33 ; mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK ; DP_inst/Reg/registerFile_reg[7][28]/D ; 10.903008 ; 4.4309998 ; 6.472007 ; 10.0 ; sys_clk_pin ; sys_clk_pin ; ", 6, "mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK", 4); // i:r (JViewport:JComponent, cd:JFrame)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 255087, 314160); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X1Y1'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 680, 364, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+// [GUI Memory]: 109 MB (+826kb) [00:49:33]
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 250772, 306392); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X1Y1'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 675, 355, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 410441, 398742); // J:a (JViewport:JComponent, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,622 MB. GUI used memory: 85 MB. Current time: 3/13/18 10:05:29 AM IST
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 242141, 447937); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X1Y0'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 665, 519, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+// [GUI Memory]: 116 MB (+1661kb) [00:49:36]
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 218838, 303803); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X1Y1'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 638, 352, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 198124, 132914); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X1Y2'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 614, 154, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 48812, 149312); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X0Y2'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 441, 173, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+// [GUI Memory]: 123 MB (+1721kb) [00:49:38]
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 48812, 255471); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X0Y1'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 441, 296, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,623 MB. GUI used memory: 104 MB. Current time: 3/13/18 10:05:33 AM IST
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 99733, 409962); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X0Y0'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 500, 475, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 240415, 477282); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X1Y0'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 663, 553, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 238689, 335737); // J:a (JViewport:JComponent, cd:JFrame)
+// Device select: 'Clock Region - X1Y1'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 661, 389, 1180, 624); // X:I (k:TdiGroup, cd:JFrame)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -17645, 445348); // J:a (JViewport:JComponent, cd:JFrame)
+closeFrame(PAResourceOtoP.PAViews_TIMING, "Timing - Timing Summary - impl_1"); // as:DockableFrame (aA:FrameContainer, cd:JFrame)
+// PAPropertyPanels.initPanels (Result (DSP48E1)) elapsed time: 0.3s
+// HMemoryUtils.trashcanNow. Engine heap size: 1,626 MB. GUI used memory: 114 MB. Current time: 3/13/18 10:05:47 AM IST
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; There is a large setup violation of -1.000 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[9][28]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 10, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #2 ; There is a large setup violation of -1.003 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[3][23]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 11, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #4 ; There is a large setup violation of -1.009 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[11][27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 13, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #6 ; There is a large setup violation of -1.025 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[3][28]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 15, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #7 ; There is a large setup violation of -1.032 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[3][30]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 16, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #8 ; There is a large setup violation of -1.033 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[4][30]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 17, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #10 ; There is a large setup violation of -1.038 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[0][26]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 19, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #12 ; There is a large setup violation of -1.044 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[13][27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 21, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #13 ; There is a large setup violation of -1.048 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[10][30]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 22, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #14 ; There is a large setup violation of -1.054 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[10][28]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 23, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #15 ; There is a large setup violation of -1.054 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[3][22]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 24, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #16 ; There is a large setup violation of -1.055 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[7][27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 25, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #18 ; There is a large setup violation of -1.056 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[3][27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 27, "Warning", 1, false, false, false, true, false, false); // E:ab (JViewport:JComponent, cd:JFrame) - Alt Key
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #18 ; There is a large setup violation of -1.056 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[3][27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 27, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #16 ; There is a large setup violation of -1.055 ns between mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK (clocked by sys_clk_pin) and DP_inst/Reg/registerFile_reg[7][27]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture", 25, "Warning", 1, false); // E:ab (JViewport:JComponent, cd:JFrame)
+// Elapsed time: 21 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k:JideButton (JPanel:JComponent, cd:JFrame)
+closeTask("Implementation", "Implemented Design", "DesignTask.RESULTS_ANALYSIS");
+// y:aO (cd:JFrame): Confirm Close: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, y:aO)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,626 MB. GUI used memory: 65 MB. Current time: 3/13/18 10:06:19 AM IST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 1,626 MB. GUI used memory: 66 MB. Current time: 3/13/18 10:06:19 AM IST
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: close_design
+dismissDialog("Confirm Close"); // y:aO (cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DP_inst/Mem/ram/ram_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.. ]", 6, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-568] A LUT 'mem_if/bram_0_i_1' is driving clock pin of 4 registers. This could lead to large hold time violations. First few involved registers are:. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. ]", 12, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-3848] Net SSEG_CA in module/entity tb does not have driver. [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd:14]. ]", 3, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-3848] Net SSEG_CA in module/entity tb does not have driver. [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd:14]. ]", 3, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-3848] Net SSEG_CA in module/entity tb does not have driver. [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd:14]. ]", 3, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-3848] Net SSEG_CA in module/entity tb does not have driver. [/home/ankurshaswat/MyFiles/Repos/COL216/Lab4/Lab4_TB.vhd:14]. ]", 3, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-3332] Sequential element (V_reg) is unused and will be removed from module Datapath.. ]", 8, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-568] A LUT 'mem_if/bram_0_i_1' is driving clock pin of 4 registers. This could lead to large hold time violations. First few involved registers are:. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. ]", 12, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-568] A LUT 'mem_if/bram_0_i_1' is driving clock pin of 4 registers. This could lead to large hold time violations. First few involved registers are:. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. 	mem_if/bram_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram {RAMB36E1}. ]", 12, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+// Elapsed time: 35 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+// Elapsed time: 15 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.. ]", 15, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [DRC 23-20] Rule violation (CHECK-3) Report rule limit reached - REQP-1839 rule limit reached: 20 violations have been found.. ]", 17, true); // ah:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.. ]", 15, false); // ah:i (JViewport:JComponent, cd:JFrame)
+// Elapsed time: 12 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Route 35-328] Router estimated timing not met.. Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.. ]", 14, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.. ]", 15, false); // ah:i (JViewport:JComponent, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 10); // y:i (D:JPanel, cd:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 10); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 11); // y:i (D:JPanel, cd:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 11); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), mem_if - memory_uart - Behavioral (memory.vhd)]", 3); // y:i (D:JPanel, cd:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), mem_if - memory_uart - Behavioral (memory.vhd)]", 3); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), mem_if - memory_uart - Behavioral (memory.vhd)]", 3); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 2); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tb - Behavioral (Lab4_TB.vhd), DP_inst - Datapath - struc (Datapath.vhd)]", 2, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 306, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("Lab4_TB.vhd", 211, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+                                     // TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 304 seconds
+closeMainWindow("Lab4 - [/home/ankurshaswat/Lab4/Lab4.xpr] - Vivado 2016.4"); // cd:JFrame
+// y:aO (cd:JFrame): Exit Vivado: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, y:aO)
+dismissDialog("Exit Vivado"); // y:aO (cd:JFrame)
+// [Engine Memory]: 1,627 MB (+82kb) [00:57:35]
