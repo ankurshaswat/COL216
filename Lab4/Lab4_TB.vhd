@@ -252,6 +252,35 @@ begin
     DOUT_MEM     => dout_mem
     );
 
+
+--  process(clk)
+--  begin
+--  if(rising_edge(clk)) then
+  
+--    case SW(15 downto 3) is
+--      when "00000000000000" => dshow <= dout_mem;
+--      when "00000000000001" => dshow <= ALUout;
+--      when "00000000000010" =>dshow  <= ALUoutp;
+--      when "00000000000011" => dshow <= op1f;
+--      when "00000000000100" => dshow <= op2f;
+--      when "00000000000101" => dshow <= shifted;
+--      when "00000000000110" => dshow <= shiftedp;
+--      when "00000000000111" => dshow <= rd1p;
+--      when "00000000001000" => dshow <= rd2p;
+--      when "00000000001001" => dshow <= PC;
+--      when "00000000001010" => dshow <= "0000000000000000000000000000" & rad1;
+--      when "00000000001011" => dshow <= "0000000000000000000000000000" & rad2;
+--      when "00000000001100" => dshow <= "0000000000000000000000000000" & wad;
+--      when "00000000001101" => dshow <= wd;
+--      when "00000000001110" => dshow <= ad2;
+--      when others           => dshow <= rd2p2;
+
+--    end case;
+--end if;
+
+
+--  end process;
+
   with SW(15 downto 3) select dshow <=
     dout_mem                              when "00000000000000",
     ALUout                                when "00000000000001",

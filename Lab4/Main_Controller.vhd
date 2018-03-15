@@ -4,6 +4,7 @@ use IEEE.std_logic_1164.all;
 
 entity Main_Controller is
   port (
+    ins_20 : in std_logic;
     ins_31_28 : in std_logic_vector(3 downto 0);
     ins_27_26 : in std_logic_vector(1 downto 0);
     F         : in std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
@@ -77,7 +78,7 @@ begin
           R1src       <= "00";
           op1sel      <= '0';
           SType       <= "00";
-          ShiftAmtSel <= "00000";
+          ShiftAmtSel <= '0';
           Shift       <= '0';
           MulW        <= '0';
           ShiftW      <= '0';
@@ -109,7 +110,7 @@ begin
             R1src       <= "01";
             op1sel      <= '0';
             SType       <= "00";
-            ShiftAmtSel <= "00000";
+            ShiftAmtSel <= '0';
             Shift       <= '0';
             MulW        <= '0';
             ShiftW      <= '0';
@@ -154,10 +155,10 @@ begin
           else state                   <= M2RF;
           end if;
 --------------------------------------------|
-        when => wrMRF
+        when  wrMRF =>
             state <= fetch;
 --------------------------------------------|
-        when => addr_rdB
+        when  addr_rdB =>
             state <= rdM_and_auto_incr_res2RF;
 
 
