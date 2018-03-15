@@ -7,8 +7,11 @@ entity Main_Controller is
     ins_31_28 : in  std_logic_vector(3 downto 0);
     ins_27_26 : in std_logic_vector(1 downto 0) ;
     F         : in  std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
-    p         : in std_logic
-
+    p         : in std_logic;
+    clk 	  : in std_logic;
+--CONTROL SIGNALS
+ --------------
+    
     IorD         : out  std_logic                   ;
 --MR: out std_logic:='0';
     MW           : out  std_logic                   ;
@@ -39,7 +42,7 @@ end entity Main_Controller;
 
 architecture arch of Main_Controller is
 
-TYPE state_type IS (fetch, rdAB, arith,addr,brn,wrRF,wrM,rdM,M2RF,shift,readx,rdM_and_auto_incr_res2RF,wrMRF,addr_rdB); 
+TYPE state_type IS (fetch, rdAB, arith,addr,brn,wrRF,wrM,rdM,M2RF,shift_state,readx,rdM_and_auto_incr_res2RF,wrMRF,addr_rdB); 
 SIGNAL state : state_type;
 
   signal Z, N, V, C :  std_logic;
@@ -60,17 +63,17 @@ BEGIN
 				    Rsrc        <= '0'; 
 				    M2R         <= "00";   --
 				    RW          <= '0';
-				    AW          <= '0';                    ;
+				    AW          <= '0';                    
 				    BW          <= '0';
 				    Asrc1       <= "00";
 				    Asrc2       <= "01";
-				    Fset        <= '0' ;                  ;
+				    Fset        <= '0' ;                  
 				    op          <= add ;
 				    ReW         <= '0' ;
 
 				    WadSrc      <= "000";
 				    R1src       <= "00";
-				    op1sel      <= '0';                   ;
+				    op1sel      <= '0';                   
 				    SType       <= ;
 				    ShiftAmtSel <= "00000";
 				    Shift       <= '0';
@@ -91,17 +94,17 @@ BEGIN
 				    Rsrc        <= '0'; 
 				    M2R         <= "00";   --
 				    RW          <= '0';
-				    AW          <= '1';                    ;
+				    AW          <= '1';                    
 				    BW          <= '1';
 				    Asrc1       <= "00";
 				    Asrc2       <= "01";
-				    Fset        <= '0' ;                  ;
+				    Fset        <= '0' ;                  
 				    op          <= add ;
 				    ReW         <= '0' ;
 
 				    WadSrc      <= "000";
 				    R1src       <= "01";
-				    op1sel      <= '0';                   ;
+				    op1sel      <= '0';                   
 				    SType       <= ;
 				    ShiftAmtSel <= "00000";
 				    Shift       <= '0';
@@ -127,12 +130,12 @@ BEGIN
 				state <= fetch;
 			WHEN M2RF => 
 				state <= fetch;
-			WHEN shift =>
+			WHEN shift_state =>
 				IF (ins_27_26="00") THEN state <=arith ;
 				ELSIF(ins_27_26="01") THEN state <= addr_rdB; 
 				END IF;
 			WHEN readx =>
-				state <= shift;
+				state <= shift_state;
 			WHEN rdM_and_auto_incr_res2RF =>
 				IF (ins_20 = '0') THEN state <= wrMRF;
 				ELSE state <=M2RF;
