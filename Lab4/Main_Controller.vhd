@@ -53,7 +53,9 @@ begin
   begin
     if (rising_edge(clk)) then
       case state is
-        when fetch =>
+
+--------------------------------------------|        
+		when fetch =>
           IorD  <= '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
@@ -68,19 +70,20 @@ begin
           Asrc1 <= "00";
           Asrc2 <= "01";
           Fset  <= '0';
-          op    <= add;
+          op    <= "0100";
           ReW   <= '0';
 
           WadSrc      <= "000";
           R1src       <= "00";
           op1sel      <= '0';
-          SType       <=;
+          SType       <= "00";
           ShiftAmtSel <= "00000";
           Shift       <= '0';
           MulW        <= '0';
           ShiftW      <= '0';
           op1update   <= '0';
           state       <= rdAB;
+--------------------------------------------|
         when rdAB =>
 
           if (ins_27_26 = "00") then
@@ -99,13 +102,13 @@ begin
             Asrc1 <= "00";
             Asrc2 <= "01";
             Fset  <= '0';
-            op    <= add;
+            op    <= "0100";
             ReW   <= '0';
 
             WadSrc      <= "000";
             R1src       <= "01";
             op1sel      <= '0';
-            SType       <=;
+            SType       <= "00";
             ShiftAmtSel <= "00000";
             Shift       <= '0';
             MulW        <= '0';
@@ -114,35 +117,47 @@ begin
           elsif (ins_27_26 = "01") then state <= addr;
           elsif (ins_27_26 = "10") then state <= brn;
           end if;
+--------------------------------------------|
         when arith =>
           state <= wrRF;
+--------------------------------------------|
         when addr =>
           if (ins_20 = '0') then state <= wrM;
           else state                   <= rdM;
           end if;
+--------------------------------------------|
         when wrM =>
           state <= fetch;
+--------------------------------------------|
         when rdM =>
           state <= M2RF;
+--------------------------------------------|
         when brn =>
           state <= fetch;
+--------------------------------------------|
         when wrRF =>
           state <= fetch;
+--------------------------------------------|
         when M2RF =>
           state <= fetch;
+--------------------------------------------|
         when shift_state =>
           if (ins_27_26 = "00") then state   <= arith;
           elsif(ins_27_26 = "01") then state <= addr_rdB;
           end if;
+--------------------------------------------|
         when readx =>
           state <= shift_state;
+--------------------------------------------|
         when rdM_and_auto_incr_res2RF =>
           if (ins_20 = '0') then state <= wrMRF;
           else state                   <= M2RF;
           end if;
-          when => wrMRF
+--------------------------------------------|
+        when => wrMRF
             state <= fetch;
-          when => addr_rdB
+--------------------------------------------|
+        when => addr_rdB
             state <= rdM_and_auto_incr_res2RF;
 
 
