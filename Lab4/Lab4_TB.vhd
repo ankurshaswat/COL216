@@ -297,8 +297,10 @@ begin
     "0000000000000000000000000000" & wad  when "00000000001100",
     wd                                    when "00000000001101",
     ad2                                   when "00000000001110",
+    IR when "00000000001111",
+    dout_mem when "00000000010000",
     rd2p2                                 when others;
-
+    
   switch_pair <= SW(1) & SW(2);
   with switch_pair select
     LED(7 downto 0) <= dshow(7 downto 0) when ("10"),

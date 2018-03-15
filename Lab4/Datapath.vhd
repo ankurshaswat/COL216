@@ -186,7 +186,7 @@ begin
   wad_sig      <= wad;
   wd_sig       <= wd;
   ad2_sig      <= ad2;
-  rd2p2_sig    <= rd2p2;
+  rd2p2_sig    <= rd_temp;
 
   car_temp <= '0';
 

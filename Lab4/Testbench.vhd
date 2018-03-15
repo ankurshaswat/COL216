@@ -207,7 +207,7 @@ begin
       &"00"    --              M2R   => dout_mem(6 downto 5),
       &'0'                              --              Rsrc  => dout_mem(4),
       &'0'                              --              DW    => dout_mem(3),
-      &'1'                              --              IW    => dout_mem(2),
+      &'0'                              --              IW    => dout_mem(2),
       &'0'                              --              MW    => dout_mem(1),
       &'0'                              --   IorD  => dout_mem(0),
 ;
