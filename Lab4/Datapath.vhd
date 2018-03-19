@@ -212,7 +212,8 @@ begin
   with M2R select wd <=
     rdp     when "00",
     ALUoutp when "01",
-    ALUout  when others;
+    ALUout  when "10",
+    rd2p    when others;
 
   with Asrc1 select op1 <=
     PC   when "00",
