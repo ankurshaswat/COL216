@@ -47,9 +47,10 @@ end entity Main_Controller;
 
 architecture arch of Main_Controller is
 
-  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, rd_mul, mul_ck_MLA, add_MLA, wr_mul);
-  signal state : state_type;
+  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, rd_mul, mul_ck_MLA, add_MLA, wr_mul );
 
+  signal state : state_type;
+  --signal op_temp : std_logic := "0100";
   signal Z, N, V, C : std_logic;
 
 begin
@@ -61,6 +62,8 @@ begin
 
 --------------------------------------------|
         when fetch =>
+
+
           IorD  <= '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
@@ -72,7 +75,8 @@ begin
           RW    <= '1';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1 <= '0';
           Asrc2 <= "01";
           Fset  <= '0';
           op    <= "0100";
@@ -104,10 +108,11 @@ begin
             RW    <= '0';
             AW    <= '1';
             BW    <= '1';
-            Asrc1 <= "01";
+            mulSel <= '0';
+            Asrc1 <= '1';
             Asrc2 <= "00";
             Fset  <= '0';
-            op    <= "0100";
+            op    <= decoded_op;
             ReW   <= '0';
 
             WadSrc      <= "00";
@@ -138,10 +143,11 @@ begin
             RW    <= '0';
             AW    <= '1';
             BW    <= '1';
-            Asrc1 <= "01";
+            mulSel <= '0';
+            Asrc1 <= '1';
             Asrc2 <= "00";
             Fset  <= '0';
-            op    <= "0100";
+            op    <= decoded_op;
             ReW   <= '0';
 
             WadSrc      <= "00";
@@ -164,10 +170,12 @@ begin
             RW    <= '0';
             AW    <= '1';
             BW    <= '1';
-            Asrc1 <= "10";
+            --Asrc1 <= "10";
+            mulSel <= '0';
+            Asrc1 <= '1';
             Asrc2 <= "00";
             Fset  <= '0';
-            op    <= "0100";
+            op    <= decoded_op;
             ReW   <= '0';
 
             WadSrc      <= "00";
@@ -180,33 +188,35 @@ begin
             ShiftW      <= '0';
             op1update   <= '1';
           else
-            state <= brn;
-            IorD  <= '0';
-            --MR: out std_logic:='0';
-            --  PW          <= '1';
-            MW    <= '0';
-            IW    <= '0';
-            DW    <= '1';
-            Rsrc  <= '0';
-            M2R   <= "10";              --
-            RW    <= '1';
-            AW    <= '0';
-            BW    <= '0';
-            Asrc1 <= "00";
+          	state <= brn;
+	          IorD  <= '0';
+	          --MR: out std_logic:='0';
+	          --  PW          <= '1';
+	          MW    <= '0';
+	          IW    <= '0';
+	          DW    <= '1';
+	          Rsrc  <= '0';
+	          M2R   <= "10";                --
+	          RW    <= '1';
+	          AW    <= '0';
+	          BW    <= '0';
+	          --Asrc1 <= "00";
+	          mulSel <= '0';
+            Asrc1 <= '0';
             Asrc2 <= "01";
-            Fset  <= '0';               -- p from Bctrl;
-            op    <= "0100";            -- op from the Actrl;
-            ReW   <= '1';
+	          Fset  <= '0';                 -- p from Bctrl;
+	          op    <= decoded_op;              -- op from the Actrl;
+	          ReW   <= '1';
 
-            WadSrc      <= "10";
-            R1src       <= "00";
-            op1sel      <= '0';
-            SType       <= "00";
-            ShiftAmtSel <= '0';
-            Shift       <= '0';
-            MulW        <= '0';
-            ShiftW      <= '0';
-            op1update   <= '0';
+	          WadSrc      <= "10";
+	          R1src       <= "00";
+	          op1sel      <= '0';
+	          SType       <= "00";
+	          ShiftAmtSel <= '0';
+	          Shift       <= '0';
+	          MulW        <= '0';
+	          ShiftW      <= '0';
+	          op1update   <= '0';
           end if;
 
 --------------------------------------------|
@@ -226,10 +236,12 @@ begin
           RW    <= '0';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1 <= '0';
           Asrc2 <= "00";
           Fset  <= '0';                 -- p from Bctrl;
-          op    <= "0100";              -- op from the Actrl;
+          op    <= decoded_op;              -- op from the Actrl;
           ReW   <= '1';
 
           WadSrc      <= "00";
@@ -257,10 +269,12 @@ begin
           RW                           <= '0';
           AW                           <= '0';
           BW                           <= '1';
-          Asrc1                        <= "00";
+          --Asrc1                        <= "00";
+          mulSel <= '0';
+          Asrc1 <= '0';
           Asrc2                        <= "10";
           Fset                         <= '0';     -- p from Bctrl;
-          op                           <= "0100";  -- op from the Actrl;
+          op                           <= "0100";
           ReW                          <= '1';
 
           WadSrc      <= "00";
@@ -288,10 +302,12 @@ begin
           RW    <= '0';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+            Asrc1 <= '0';
           Asrc2 <= "00";
           Fset  <= '0';                 -- p from Bctrl;
-          op    <= "0100";              -- op from the Actrl;
+          op    <= "0100";
           ReW   <= '0';
 
           WadSrc      <= "00";
@@ -317,7 +333,9 @@ begin
           RW    <= '0';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+            Asrc1 <= '0';
           Asrc2 <= "00";
           Fset  <= '0';                 -- p from Bctrl;
           op    <= "0100";              -- op from the Actrl;
@@ -347,7 +365,9 @@ begin
           RW    <= '1';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+            Asrc1 <= '0';
           Asrc2 <= "11";
           Fset  <= '0';                 -- p from Bctrl;
           op    <= "0100";              -- op from the Actrl;
@@ -376,7 +396,9 @@ begin
           RW    <= '1';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1 <= '0';
           Asrc2 <= "00";
           Fset  <= '0';                 -- depends on p from Bctrl
           op    <= "0100";              -- op from Actrl
@@ -406,7 +428,9 @@ begin
           RW    <= '1';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1 <= '0';
           Asrc2 <= "00";
           Fset  <= '0';                 -- p from Bctrl;
           op    <= "0100";              -- op from the Actrl;
@@ -438,10 +462,12 @@ begin
             RW    <= '0';
             AW    <= '1';
             BW    <= '0';
-            Asrc1 <= "01";
+            --Asrc1 <= "01";
+            mulSel <= '0';
+            Asrc1 <= '1';
             Asrc2 <= "00";
             Fset  <= '0';
-            op    <= "0000";
+            op    <= decoded_op;
             ReW   <= '0';
 
             WadSrc      <= "00";
@@ -466,10 +492,12 @@ begin
             RW    <= '0';
             AW    <= '1';
             BW    <= '0';
-            Asrc1 <= "01";
+            --Asrc1 <= "01";
+            mulSel <= '0';
+            Asrc1 <= '1';
             Asrc2 <= "00";
             Fset  <= '0';
-            op    <= "0000";
+            op    <= decoded_op;
             ReW   <= '0';
 
             WadSrc      <= "00";
@@ -505,7 +533,9 @@ begin
           --RW    <= '0';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+            Asrc1 <= '0';
           Asrc2 <= "00";
           Fset  <= '0';                 -- p from Bctrl;
           op    <= "0100";              -- op from the Actrl;
@@ -542,7 +572,9 @@ begin
           --RW    <= '1';
           AW    <= '0';
           BW    <= '0';
-          Asrc1 <= "00";
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1 <= '0';
           Asrc2 <= "00";
           Fset  <= '0';                 -- p from Bctrl;
           op    <= "0100";              -- op from the Actrl;
@@ -574,10 +606,12 @@ begin
           RW         <= '0';
           AW         <= '0';
           BW         <= '1';
-          Asrc1      <= "00";
+          --Asrc1      <= "00";
+          mulSel <= '0';
+          Asrc1 <= '0';
           Asrc2      <= "00";
           Fset       <= '0';            -- p from Bctrl;
-          op         <= "0100";         -- op from the Actrl;
+          op         <= "0100";
           ReW        <= '1';
 
           WadSrc      <= "00";
@@ -620,52 +654,54 @@ begin
 --          ShiftW      <= '0';
 --          op1update   <= '0';
 --------------------------------------------|
-        when mul_ck_MLA =>
-          if (ins_27_20(1) = '0') then
-            state <= wr_mul;
-          else state <= add_MLA;
-          end if;
-          IorD       <= '0';
-          MW         <= '0';
-          IW         <= '0';   --- Instruction won't update due to PC+4
-          DW         <= '0';
-          Rsrc       <= '0';
-          M2R        <= "00";           --
-          RW         <= '0';
-          AW         <= '0';
-          BW         <= '0';
-          Asrc1      <= "10";
-          Asrc2      <= "00";
-          Fset       <= '0';
-          op         <= "0100";
-          ReW        <= '1';
+ 		when mul_ck_MLA =>
+ 			if (ins_27_20(1) = '0') then
+ 				state <= wr_mul;
+ 			else state <= add_MLA;
+ 			end if;
+            IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '1';
+            BW    <= '0';
+            mulSel <= '1';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '0';
 
-          WadSrc      <= "00";
-          R1src       <= "01";
-          op1sel      <= '1';
-          SType       <= "00";
-          ShiftAmtSel <= '0';
-          Shift       <= '0';
-          MulW        <= '0';
-          ShiftW      <= '0';
-          op1update   <= '0';
+            WadSrc      <= "00";
+            R1src       <= "10";
+            op1sel      <= '1';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '0';
 --------------------------------------------|
-        when add_MLA =>
-          state <= wr_mul;
-          IorD  <= '0';
-          MW    <= '0';
-          IW    <= '0';   --- Instruction won't update due to PC+4
-          DW    <= '0';
-          Rsrc  <= '0';
-          M2R   <= "00";                --
-          RW    <= '0';
-          AW    <= '0';
-          BW    <= '1';
-          Asrc1 <= "10";
-          Asrc2 <= "00";
-          Fset  <= '0';
-          op    <= "0100";
-          ReW   <= '1';
+ 		when add_MLA=>
+ 			state <= wr_mul;
+ 			IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '0';
+            BW    <= '0';
+            mulSel <= '1';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '1';
 
           WadSrc      <= "00";
           R1src       <= "01";
@@ -678,22 +714,23 @@ begin
           op1update   <= '0';
 --------------------------------------------|
         when wr_mul =>
-          state <= fetch;
-          state <= wr_mul;
-          IorD  <= '0';
-          MW    <= '0';
-          IW    <= '0';   --- Instruction won't update due to PC+4
-          DW    <= '0';
-          Rsrc  <= '0';
-          M2R   <= "01";                --
-          RW    <= '1';
-          AW    <= '0';
-          BW    <= '1';
-          Asrc1 <= "10";
-          Asrc2 <= "00";
-          Fset  <= '0';
-          op    <= "0100";
-          ReW   <= '0';
+   			state <= fetch;
+   			state <= wr_mul;
+ 			IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "01";              --
+            RW    <= '1';
+            AW    <= '0';
+            BW    <= '1';
+            mulSel <= '1';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '0';
 
           WadSrc      <= "01";
           R1src       <= "01";
