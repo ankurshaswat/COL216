@@ -19,7 +19,7 @@ end entity Memory;
 
 architecture arch of Memory is
 
-  component ram_wrapper is
+  component design_1_wrapper is
     port (
       BRAM_PORTA_addr : in  std_logic_vector (31 downto 0);
       BRAM_PORTA_clk  : in  std_logic;
@@ -48,7 +48,7 @@ begin
     WriteEnable when others;
 
 
-  ram : ram_wrapper port map(
+  ram : design_1_wrapper port map(
     BRAM_PORTA_addr => Address,
     BRAM_PORTA_clk  => clock,
     BRAM_PORTA_din  => writeData,

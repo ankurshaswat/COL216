@@ -43,7 +43,7 @@ architecture arch of instructionDecoder is
 
 begin
 
-  ins_status_temp <= "01" when ((ins(27 downto 26) = "11")
+  ins_status <= "01" when ((ins(27 downto 26) = "11")
                                 or (ins(27 downto 25) = "100")
                                 or (ins(27 downto 25) = "000"
                                     and (ins(11 downto 7)&ins(4) = "111100"
