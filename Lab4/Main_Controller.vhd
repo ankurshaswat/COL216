@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 
 entity Main_Controller is
   port (
-    ins_20 : in std_logic;
+    ins_20    : in std_logic;
     ins_31_28 : in std_logic_vector(3 downto 0);
     ins_27_26 : in std_logic_vector(1 downto 0);
     ins_27_20 : in std_logic_vector(7 downto 0);
@@ -44,7 +44,7 @@ end entity Main_Controller;
 
 architecture arch of Main_Controller is
 
-  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state, rdM_wrRF, wrM_wrRF, addr_rdB,PC_plus4);
+  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4);
   signal state : state_type;
 
   signal Z, N, V, C : std_logic;
@@ -56,8 +56,8 @@ begin
     if (rising_edge(clk)) then
       case state is
 
---------------------------------------------|        
-		when fetch =>
+--------------------------------------------|
+        when fetch =>
           IorD  <= '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
@@ -89,12 +89,12 @@ begin
         when rdAB =>
 
           if (ins_27_26 = "00") then
-            state <= shift_state;--state <= arith; 
+            state <= shift_state;       --state <= arith;
             IorD  <= '0';
             --MR: out std_logic:='0';
             --  PW          <= '0';
             MW    <= '0';
-            IW    <= '0'; --- Instruction won't update due to PC+4
+            IW    <= '0';          --- Instruction won't update due to PC+4
             DW    <= '0';
             Rsrc  <= '0';
             M2R   <= "00";              --
@@ -115,20 +115,20 @@ begin
             Shift       <= '0';
             MulW        <= '0';
             ShiftW      <= '0';
-            op1update   <= '1';  -- Store op1 in op1p;
-          elsif (ins_27_26 = "01") then 
-            
-            if (ins_27_20(5) = '0') then	
-            	state <= shift_state; --state <= addr;
+            op1update   <= '1';         -- Store op1 in op1p;
+          elsif (ins_27_26 = "01") then
+
+            if (ins_27_20(5) = '0') then
+              state <= shift_state;     --state <= addr;
             else
-            	state <= addr;
+              state <= addr;
             end if;
-            
+
             IorD  <= '0';
             --MR: out std_logic:='0';
             --  PW          <= '0';
             MW    <= '0';
-            IW    <= '0'; --- Instruction won't update due to PC+4
+            IW    <= '0';   --- Instruction won't update due to PC+4
             DW    <= '0';
             Rsrc  <= '0';
             M2R   <= "00";              --
@@ -137,7 +137,7 @@ begin
             BW    <= '1';
             Asrc1 <= "01";
             Asrc2 <= "00";
-            Fset  <= '0'; 
+            Fset  <= '0';
             op    <= "0100";
             ReW   <= '0';
 
@@ -169,8 +169,8 @@ begin
           BW    <= '0';
           Asrc1 <= "00";
           Asrc2 <= "00";
-          Fset  <= '0'; -- p from Bctrl;
-          op    <= "0100"; -- op from the Actrl;
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
           ReW   <= '1';
 
           WadSrc      <= "00";
@@ -187,122 +187,122 @@ begin
           if (ins_20 = '0') then state <= wrM;
           else state                   <= rdM;
           end if;
-	          IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '0';
-	          Rsrc  <= '1';
-	          M2R   <= "00";                --
-	          RW    <= '0';
-	          AW    <= '0';
-	          BW    <= '1';
-	          Asrc1 <= "00";
-	          Asrc2 <= "10";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '1';
+          IorD                         <= '0';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW                           <= '0';
+          IW                           <= '0';
+          DW                           <= '0';
+          Rsrc                         <= '1';
+          M2R                          <= "00";    --
+          RW                           <= '0';
+          AW                           <= '0';
+          BW                           <= '1';
+          Asrc1                        <= "00";
+          Asrc2                        <= "10";
+          Fset                         <= '0';     -- p from Bctrl;
+          op                           <= "0100";  -- op from the Actrl;
+          ReW                          <= '1';
 
-	          WadSrc      <= "00";
-	          R1src       <= "00";
-	          op1sel      <= '1';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '0';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
+          WadSrc      <= "00";
+          R1src       <= "00";
+          op1sel      <= '1';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 
-          
+
 --------------------------------------------|
         when wrM =>
           state <= fetch;
-    		  IorD  <= '1';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '1';
-	          IW    <= '0';
-	          DW    <= '0';
-	          Rsrc  <= '0';
-	          M2R   <= "00";                --
-	          RW    <= '0';
-	          AW    <= '0';
-	          BW    <= '0';
-	          Asrc1 <= "00";
-	          Asrc2 <= "00";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '0';
+          IorD  <= '1';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW    <= '1';
+          IW    <= '0';
+          DW    <= '0';
+          Rsrc  <= '0';
+          M2R   <= "00";                --
+          RW    <= '0';
+          AW    <= '0';
+          BW    <= '0';
+          Asrc1 <= "00";
+          Asrc2 <= "00";
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
+          ReW   <= '0';
 
-	          WadSrc      <= "00";
-	          R1src       <= "00";
-	          op1sel      <= '1';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '1';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
+          WadSrc      <= "00";
+          R1src       <= "00";
+          op1sel      <= '1';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '1';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 --------------------------------------------|
         when rdM =>
           state <= wr_from_M2RF;
-              IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '1';
-	          Rsrc  <= '0';
-	          M2R   <= "00";                --
-	          RW    <= '0';
-	          AW    <= '0';
-	          BW    <= '0';
-	          Asrc1 <= "00";
-	          Asrc2 <= "00";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '0';
+          IorD  <= '0';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW    <= '0';
+          IW    <= '0';
+          DW    <= '1';
+          Rsrc  <= '0';
+          M2R   <= "00";                --
+          RW    <= '0';
+          AW    <= '0';
+          BW    <= '0';
+          Asrc1 <= "00";
+          Asrc2 <= "00";
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
+          ReW   <= '0';
 
-	          WadSrc      <= "00";
-	          R1src       <= "00";
-	          op1sel      <= '1';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '1';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
+          WadSrc      <= "00";
+          R1src       <= "00";
+          op1sel      <= '1';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '1';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 --------------------------------------------|
         when brn =>
-        --;;;  -- we have to do PC =PC + 4 + Offset will take two cycles;
+          --;;;  -- we have to do PC =PC + 4 + Offset will take two cycles;
           state <= fetch;
           IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '1';
-	          Rsrc  <= '0';
-	          M2R   <= "10";                --
-	          RW    <= '1';
-	          AW    <= '0';
-	          BW    <= '0';
-	          Asrc1 <= "00";
-	          Asrc2 <= "11";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '1';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW    <= '0';
+          IW    <= '0';
+          DW    <= '1';
+          Rsrc  <= '0';
+          M2R   <= "10";                --
+          RW    <= '1';
+          AW    <= '0';
+          BW    <= '0';
+          Asrc1 <= "00";
+          Asrc2 <= "11";
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
+          ReW   <= '1';
 
-	          WadSrc      <= "10";
-	          R1src       <= "00";
-	          op1sel      <= '0';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '0';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
+          WadSrc      <= "10";
+          R1src       <= "00";
+          op1sel      <= '0';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 --------------------------------------------|
         when wrRF =>
           state <= fetch;
@@ -313,14 +313,14 @@ begin
           IW    <= '0';
           DW    <= '0';
           Rsrc  <= '0';
-          M2R   <= "1";                --
+          M2R   <= "1";                 --
           RW    <= '1';
           AW    <= '0';
           BW    <= '0';
           Asrc1 <= "00";
           Asrc2 <= "00";
-          Fset  <= '0'; -- depends on p from Bctrl
-          op    <= "0100"; -- op from Actrl	
+          Fset  <= '0';                 -- depends on p from Bctrl
+          op    <= "0100";              -- op from Actrl
           ReW   <= '0';
 
           WadSrc      <= "00";
@@ -332,97 +332,97 @@ begin
           MulW        <= '0';
           ShiftW      <= '0';
           op1update   <= '0';
-    
+
 --------------------------------------------|
         when wr_from_wr_from_M2RF =>
           state <= fetch;
-              IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '0';
-	          Rsrc  <= '0';
-	          M2R   <= "00";                --
-	          RW    <= '1';
-	          AW    <= '0';
-	          BW    <= '0';
-	          Asrc1 <= "00";
-	          Asrc2 <= "00";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '0';
+          IorD  <= '0';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW    <= '0';
+          IW    <= '0';
+          DW    <= '0';
+          Rsrc  <= '0';
+          M2R   <= "00";                --
+          RW    <= '1';
+          AW    <= '0';
+          BW    <= '0';
+          Asrc1 <= "00";
+          Asrc2 <= "00";
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
+          ReW   <= '0';
 
-	          WadSrc      <= "00";
-	          R1src       <= "00";
-	          op1sel      <= '1';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '1';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
+          WadSrc      <= "00";
+          R1src       <= "00";
+          op1sel      <= '1';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '1';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 --------------------------------------------|
         when shift_state =>
-          -- read register X = RF[IR[11-8]]; is also done here;	
-          if (ins_27_26 = "00") then 
-          	  state   <= arith;
+          -- read register X = RF[IR[11-8]]; is also done here;
+          if (ins_27_26 = "00") then
+            state <= arith;
 
-	          IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '0';
-	          Rsrc  <= '0';
-	          M2R   <= "00";                --
-	          RW    <= '0';
-	          AW    <= '1';
-	          BW    <= '0';
-	          Asrc1 <= "01";
-	          Asrc2 <= "00";
-	          Fset  <= '0';
-	          op    <= "0000";
-	          ReW   <= '0';
+            IorD  <= '0';
+            --MR: out std_logic:='0';
+            --  PW          <= '1';
+            MW    <= '0';
+            IW    <= '0';
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '1';
+            BW    <= '0';
+            Asrc1 <= "01";
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0000";
+            ReW   <= '0';
 
-	          WadSrc      <= "00";
-	          R1src       <= "01";
-	          op1sel      <= '1';
-	          SType       <= "00"; --- Not sure which bits signal it
-	          ShiftAmtSel <= '0';
-	          Shift       <= '1';
-	          MulW        <= '0';
-	          ShiftW      <= '1';
-	          op1update   <= '0';
-          elsif(ins_27_26 = "01") then 
-	          	  state <= addr_rdB;
-	              IorD  <= '0';
-		          --MR: out std_logic:='0';
-		          --  PW          <= '1';
-		          MW    <= '0';
-		          IW    <= '0';
-		          DW    <= '0';
-		          Rsrc  <= '0';
-		          M2R   <= "00";                --
-		          RW    <= '0';
-		          AW    <= '1';
-		          BW    <= '0';
-		          Asrc1 <= "01";
-		          Asrc2 <= "00";
-		          Fset  <= '0';
-		          op    <= "0000";
-		          ReW   <= '0';
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";        --- Not sure which bits signal it
+            ShiftAmtSel <= '0';
+            Shift       <= '1';
+            MulW        <= '0';
+            ShiftW      <= '1';
+            op1update   <= '0';
+          elsif(ins_27_26 = "01") then
+            state <= addr_rdB;
+            IorD  <= '0';
+            --MR: out std_logic:='0';
+            --  PW          <= '1';
+            MW    <= '0';
+            IW    <= '0';
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '1';
+            BW    <= '0';
+            Asrc1 <= "01";
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0000";
+            ReW   <= '0';
 
-		          WadSrc      <= "00";
-		          R1src       <= "01";
-		          op1sel      <= '1';
-		          SType       <= "00"; --- Not sure which bits signal it
-		          ShiftAmtSel <= '1'; --- ins(11 to 4);
-		          Shift       <= '1';
-		          MulW        <= '0';
-		          ShiftW      <= '1';
-		          op1update   <= '0';
-		      
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";        --- Not sure which bits signal it
+            ShiftAmtSel <= '1';         --- ins(11 to 4);
+            Shift       <= '1';
+            MulW        <= '0';
+            ShiftW      <= '1';
+            op1update   <= '0';
+
 
           end if;
 --------------------------------------------|
@@ -430,136 +430,136 @@ begin
         --  state <= shift_state;
 --------------------------------------------|
         when rdM_wrRF =>
-       		state  <= wr_from_M2RF;
-       		if (ins_27_20(1)='1' ) then RW    <= '1';;
-            else RW    <= '0';;
-            end if;
+          state                           <= wr_from_M2RF;
+          if (ins_27_20(1) = '1') then RW <= '1';;
+          else RW                         <= '0';;
+          end if;
 
-             IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '1';
-	          Rsrc  <= '0';
-	          M2R   <= "01";                --
-	          --RW    <= '0';
-	          AW    <= '0';
-	          BW    <= '0';
-	          Asrc1 <= "00";
-	          Asrc2 <= "00";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '0';
+          IorD  <= '0';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW    <= '0';
+          IW    <= '0';
+          DW    <= '1';
+          Rsrc  <= '0';
+          M2R   <= "01";                --
+          --RW    <= '0';
+          AW    <= '0';
+          BW    <= '0';
+          Asrc1 <= "00";
+          Asrc2 <= "00";
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
+          ReW   <= '0';
 
-	          WadSrc      <= "01";
-	          R1src       <= "00";
-	          op1sel      <= '1';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '0';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
-     
+          WadSrc      <= "01";
+          R1src       <= "00";
+          op1sel      <= '1';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
+
 --------------------------------------------|
-        when  wrM_wrRF =>
-            state <= fetch;
-            
-            
-            -- If W='1' then auto_inc else don't
-            if (ins_27_20(1)='1' ) then RW <= '1';
-            else RW <= '0';
-            end if;
-            
-             IorD  <= '1';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '1';
-	          IW    <= '0';
-	          DW    <= '0';
-	          Rsrc  <= '0';
-	          M2R   <= "11";                --
-	          --RW    <= '1';
-	          AW    <= '0';
-	          BW    <= '0';
-	          Asrc1 <= "00";
-	          Asrc2 <= "00";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '0';
+        when wrM_wrRF =>
+          state <= fetch;
 
-	          WadSrc      <= "01";
-	          R1src       <= "00";
-	          op1sel      <= '1';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '1';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
+
+          -- If W='1' then auto_inc else don't
+          if (ins_27_20(1) = '1') then RW <= '1';
+          else RW                         <= '0';
+          end if;
+
+          IorD  <= '1';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW    <= '1';
+          IW    <= '0';
+          DW    <= '0';
+          Rsrc  <= '0';
+          M2R   <= "11";                --
+          --RW    <= '1';
+          AW    <= '0';
+          BW    <= '0';
+          Asrc1 <= "00";
+          Asrc2 <= "00";
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
+          ReW   <= '0';
+
+          WadSrc      <= "01";
+          R1src       <= "00";
+          op1sel      <= '1';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '1';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 --------------------------------------------|
-        when  addr_rdB =>
-              if (ins_27_20(5)='1') then	
-             		state <= rdM_wrRF;
-              else state <= wrM_wrRF;
-              end if;
-              IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '0';
-	          Rsrc  <= '1';
-	          M2R   <= "00";                --
-	          RW    <= '0';
-	          AW    <= '0';
-	          BW    <= '1';
-	          Asrc1 <= "00";
-	          Asrc2 <= "00";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '1';
+        when addr_rdB =>
+          if (ins_27_20(5) = '1') then
+            state <= rdM_wrRF;
+          else state <= wrM_wrRF;
+          end if;
+          IorD       <= '0';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW         <= '0';
+          IW         <= '0';
+          DW         <= '0';
+          Rsrc       <= '1';
+          M2R        <= "00";           --
+          RW         <= '0';
+          AW         <= '0';
+          BW         <= '1';
+          Asrc1      <= "00";
+          Asrc2      <= "00";
+          Fset       <= '0';            -- p from Bctrl;
+          op         <= "0100";         -- op from the Actrl;
+          ReW        <= '1';
 
-	          WadSrc      <= "00";
-	          R1src       <= "00";
-	          op1sel      <= '1';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '1';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';
+          WadSrc      <= "00";
+          R1src       <= "00";
+          op1sel      <= '1';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '1';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 
- --------------------------------------------|
-        when  PC_plus4 =>
-        	state <= brn; 
-        	IorD  <= '0';
-	          --MR: out std_logic:='0';
-	          --  PW          <= '1';
-	          MW    <= '0';
-	          IW    <= '0';
-	          DW    <= '1';
-	          Rsrc  <= '0';
-	          M2R   <= "10";                --
-	          RW    <= '1';
-	          AW    <= '0';
-	          BW    <= '0';
-	          Asrc1 <= "00";
-	          Asrc2 <= "01";
-	          Fset  <= '0'; -- p from Bctrl;
-	          op    <= "0100"; -- op from the Actrl;
-	          ReW   <= '1';
+        --------------------------------------------|
+        when PC_plus4 =>
+          state <= brn;
+          IorD  <= '0';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW    <= '0';
+          IW    <= '0';
+          DW    <= '1';
+          Rsrc  <= '0';
+          M2R   <= "10";                --
+          RW    <= '1';
+          AW    <= '0';
+          BW    <= '0';
+          Asrc1 <= "00";
+          Asrc2 <= "01";
+          Fset  <= '0';                 -- p from Bctrl;
+          op    <= "0100";              -- op from the Actrl;
+          ReW   <= '1';
 
-	          WadSrc      <= "10";
-	          R1src       <= "00";
-	          op1sel      <= '0';
-	          SType       <= "00";
-	          ShiftAmtSel <= '0';
-	          Shift       <= '0';
-	          MulW        <= '0';
-	          ShiftW      <= '0';
-	          op1update   <= '0';    
+          WadSrc      <= "10";
+          R1src       <= "00";
+          op1sel      <= '0';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
 
       end case;
     end if;
