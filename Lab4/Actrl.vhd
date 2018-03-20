@@ -11,14 +11,12 @@ end entity Actrl;
 architecture arch of Actrl is
 
   component instructionDecoder is
-
     port (
       ins        : in  std_logic_vector(27 downto 0);
       class      : out std_logic_vector(3 downto 0);
       sub_class  : out std_logic_vector(3 downto 0);
       -- variant  : out std_logic_vector(1 downto 0);
       ins_status : out std_logic_vector(3 downto 0));
-
   end component;
 
   signal class : std_logic_vector(1 downto 0);
@@ -40,11 +38,11 @@ architecture arch of Actrl is
 
 begin
 
-  instructionDecoder port map(ins => ins, class => class, sub_class => sub_class, ins_status => ins_status);
+  i1:instructionDecoder port map(ins => ins, class => class, sub_class => sub_class, ins_status => ins_status);
   -- ins <= "0000" & ins_27_0;
 
   op <= "0100" when (class = "01" and ins(23) = '1') or (class = "11") or (class = "10" and sub_class = "001") else
-        "0010" when (clas = "01" and ins(23) = '0') else
+        "0010" when (class = "01" and ins(23) = '0') else
         "1101" when (class = "10" and sub_class = "000") else
         ins(24 downto 21);
 

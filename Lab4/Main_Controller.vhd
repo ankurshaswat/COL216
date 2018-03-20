@@ -4,6 +4,7 @@ use IEEE.std_logic_1164.all;
 
 entity Main_Controller is
   port (
+  decoded_op : in std_logic_vector;
     ins_20    : in std_logic;
     ins_31_28 : in std_logic_vector(3 downto 0);
     ins_27_26 : in std_logic_vector(1 downto 0);
@@ -589,36 +590,36 @@ begin
           op1update   <= '0';
 
 --------------------------------------------|
-        when PC_plus4 =>
-          state <= brn;
-          IorD  <= '0';
-          --MR: out std_logic:='0';
-          --  PW          <= '1';
-          MW    <= '0';
-          IW    <= '0';
-          DW    <= '1';
-          Rsrc  <= '0';
-          M2R   <= "10";                --
-          RW    <= '1';
-          AW    <= '0';
-          BW    <= '0';
-          Asrc1 <= "00";
-          Asrc2 <= "01";
-          Fset  <= '0';                 -- p from Bctrl;
-          op    <= "0100";              -- op from the Actrl;
-          ReW   <= '1';
+--        when PC_plus4 =>
+--          state <= brn;
+--          IorD  <= '0';
+--          --MR: out std_logic:='0';
+--          --  PW          <= '1';
+--          MW    <= '0';
+--          IW    <= '0';
+--          DW    <= '1';
+--          Rsrc  <= '0';
+--          M2R   <= "10";                --
+--          RW    <= '1';
+--          AW    <= '0';
+--          BW    <= '0';
+--          Asrc1 <= "00";
+--          Asrc2 <= "01";
+--          Fset  <= '0';                 -- p from Bctrl;
+--          op    <= "0100";              -- op from the Actrl;
+--          ReW   <= '1';
 
-          WadSrc      <= "10";
-          R1src       <= "00";
-          op1sel      <= '0';
-          SType       <= "00";
-          ShiftAmtSel <= '0';
-          Shift       <= '0';
-          MulW        <= '0';
-          ShiftW      <= '0';
-          op1update   <= '0';
+--          WadSrc      <= "10";
+--          R1src       <= "00";
+--          op1sel      <= '0';
+--          SType       <= "00";
+--          ShiftAmtSel <= '0';
+--          Shift       <= '0';
+--          MulW        <= '0';
+--          ShiftW      <= '0';
+--          op1update   <= '0';
 --------------------------------------------|
- 		when mul_ck_MLA
+ 		when mul_ck_MLA =>
  			if (ins_27_20(1) = '0') then
  				state <= wr_mul;
  			else state <= add_MLA;
@@ -648,7 +649,7 @@ begin
             ShiftW      <= '0';
             op1update   <= '0';
 --------------------------------------------|
- 		when add_MLA
+ 		when add_MLA=>
  			state <= wr_mul;
  			IorD  <= '0';
             MW    <= '0';

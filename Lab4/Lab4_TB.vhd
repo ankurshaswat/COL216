@@ -47,6 +47,14 @@ architecture Behavioral of tb is
       );
   end component;
 
+
+component Single_clock_cycle is
+  port (
+    clock     : in  std_logic;
+    button    : in  std_logic;
+    out_pulse : out std_logic);
+end component;
+
   component Datapath
     port (
       clock, reset : in  std_logic                    := '0';
@@ -109,7 +117,7 @@ architecture Behavioral of tb is
   signal wea_mem         : std_logic_vector(3 downto 0);
   signal addr_mem        : std_logic_vector(11 downto 0);
   signal din_mem         : std_logic_vector(31 downto 0);
-  signal dout_mem, dshow : std_logic_vector(31 downto 0);
+  signal dout_mem,dout_mem_temp, dshow : std_logic_vector(31 downto 0);
   signal IR              : std_logic_vector(31 downto 0);
   signal rx_uart         : std_logic_vector(7 downto 0);
   signal switch_pair     : std_logic_vector(1 downto 0);
@@ -118,6 +126,9 @@ architecture Behavioral of tb is
 
   signal ALUout, ALUoutp, op1f, op2f, rd1p, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2 : std_logic_vector(31 downto 0);
   signal rad1, rad2, wad                                                                : std_logic_vector(3 downto 0);
+  
+  
+  signal out_pulse:std_logic;
 begin
 
 
@@ -129,8 +140,10 @@ begin
 -- Sample connections are shown below
 -- LEDs are currently connected to monitor the file transfer from uart to memory
 
+sp:Single_clock_cycle port map(clock=>CLK,button=>BTN(2),out_pulse=>out_pulse);
+
   DP_inst : Datapath port map(
-    clock   => CLK,
+    clock   => out_pulse,
     reset   => BTN(4),
     ins_out => IR,
     F       => Flags_out,
@@ -249,14 +262,15 @@ begin
     WEA_MEM      => wea_mem,
     ADDR_MEM     => addr_mem,
     DIN_MEM      => din_mem,
-    DOUT_MEM     => dout_mem
+    DOUT_MEM     => dout_mem_temp
     );
+  dout_mem <= dout_mem_temp(7 downto 0) & dout_mem_temp(15 downto 8) & dout_mem_temp(23 downto 16) & dout_mem_temp(31 downto 24);
 
 
 --  process(clk)
 --  begin
 --  if(rising_edge(clk)) then
-  
+
 --    case SW(15 downto 3) is
 --      when "00000000000000" => dshow <= dout_mem;
 --      when "00000000000001" => dshow <= ALUout;
@@ -281,26 +295,26 @@ begin
 
 --  end process;
 
-  with SW(15 downto 3) select dshow <=
-    dout_mem                              when "00000000000000",
-    ALUout                                when "00000000000001",
-    ALUoutp                               when "00000000000010",
-    op1f                                  when "00000000000011",
-    op2f                                  when "00000000000100",
-    shifted                               when "00000000000101",
-    shiftedp                              when "00000000000110",
-    rd1p                                  when "00000000000111",
-    rd2p                                  when "00000000001000",
-    PC                                    when "00000000001001",
-    "0000000000000000000000000000" & rad1 when "00000000001010",
-    "0000000000000000000000000000" & rad2 when "00000000001011",
-    "0000000000000000000000000000" & wad  when "00000000001100",
-    wd                                    when "00000000001101",
-    ad2                                   when "00000000001110",
-    IR when "00000000001111",
-    dout_mem when "00000000010000",
-    rd2p2                                 when others;
-    
+
+with SW(15 downto 3) select dshow <=
+              dout_mem                              when "00000000000000",
+              ALUout                                when "00000000000001",
+              ALUoutp                               when "00000000000010",
+              op1f                                  when "00000000000011",
+              op2f                                  when "00000000000100",
+              shifted                               when "00000000000101",
+              shiftedp                              when "00000000000110",
+              rd1p                                  when "00000000000111",
+              rd2p                                  when "00000000001000",
+              PC                                    when "00000000001001",
+              "0000000000000000000000000000" & rad1 when "00000000001010",
+              "0000000000000000000000000000" & rad2 when "00000000001011",
+              "0000000000000000000000000000" & wad  when "00000000001100",
+              wd                                    when "00000000001101",
+              ad2                                   when "00000000001110",
+              IR                                    when "00000000001111",
+              rd2p2                                 when others;
+
   switch_pair <= SW(1) & SW(2);
   with switch_pair select
     LED(7 downto 0) <= dshow(7 downto 0) when ("10"),
