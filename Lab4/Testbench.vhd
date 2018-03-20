@@ -47,7 +47,8 @@ architecture behavior of Testbench is
       RW           : in  std_logic                    := '0';
       AW           : in  std_logic                    := '0';
       BW           : in  std_logic                    := '0';
-      Asrc1        : in  std_logic_vector(1 downto 0) := "00";  --
+      mulSel       : in  std_logic                    := '0';
+      Asrc1        : in  std_logic                    := '0';   --
       Asrc2        : in  std_logic_vector(1 downto 0) := "00";
       Fset         : in  std_logic                    := '0';
       op           : in  std_logic_vector(3 downto 0) := "0000";
@@ -106,7 +107,8 @@ begin
     RW      => dout_mem(7),
     AW      => dout_mem(8),
     BW      => dout_mem(9),
-    Asrc1   => dout_mem(11 downto 10),
+    mulSel  => dout_mem(10),
+    Asrc1   => dout_mem(11),
     Asrc2   => dout_mem(13 downto 12),
     Fset    => dout_mem(14),
     op      => dout_mem(18 downto 15),

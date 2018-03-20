@@ -19,7 +19,8 @@ entity Datapath is
     RW           : in  std_logic                    := '0';
     AW           : in  std_logic                    := '0';
     BW           : in  std_logic                    := '0';
-    Asrc1        : in  std_logic_vector(1 downto 0) := "00";  --
+    mulSel       : in  std_logic                    := '0';
+    Asrc1        : in  std_logic                    := '0';   --
     Asrc2        : in  std_logic_vector(1 downto 0) := "00";
     Fset         : in  std_logic                    := '0';
     op           : in  std_logic_vector(3 downto 0) := "0000";
@@ -51,6 +52,8 @@ entity Datapath is
     rad2_sig     : out std_logic_vector(3 downto 0);
     wad_sig      : out std_logic_vector(3 downto 0);
     wd_sig       : out std_logic_vector(31 downto 0);
+    rd_sig       : out std_logic_vector(31 downto 0);
+    rd_temp_sig  : out std_logic_vector(31 downto 0);
     ad2_sig      : out std_logic_vector(31 downto 0);
     rd2p2_sig    : out std_logic_vector(31 downto 0)
     );
@@ -132,6 +135,7 @@ architecture struc of Datapath is
     mulp,
     op1f,
     op2f,
+    op2_temp,
     shifted,
     shiftedp,
     op1p,
@@ -187,6 +191,8 @@ begin
   wd_sig       <= wd;
   ad2_sig      <= ad2;
   rd2p2_sig    <= rd2p2;
+  rd_temp_sig  <= rd_temp;
+  rd_sig       <= rd;
 
   car_temp <= '0';
 
@@ -197,7 +203,7 @@ begin
 
   F <= Z & N & V & C;
 
-  dttyper     <= ins(6) & ins(6 downto 5);
+  dttyper     <= ins(6) & ins(6 downto 5) when IW = '0' else "000";
   byte_offset <= ad(1 downto 0);
   ad2         <= ad(31 downto 2) & "00";
 
@@ -216,9 +222,8 @@ begin
     rd2p    when others;
 
   with Asrc1 select op1 <=
-    PC   when "00",
-    rd1p when "01",
-    mulp when others;
+    PC   when '0',
+    rd1p when others;
 
   with Asrc2 select op2 <=
     rd1p2                              when "00",
@@ -240,7 +245,7 @@ begin
     op1p when '1',
     op1  when others;
 
-  with shift select op2f <=
+  with shift select op2_temp <=
     op2      when '0',
     shiftedp when others;
 
@@ -272,6 +277,9 @@ begin
   with Fset select V <=
     V when '0',
     flagTempV when others;
+  with mulSel select op2f <=
+    op2_temp when '0',
+    mulp     when others;
 
   Mult : Multiplier
     port map(
