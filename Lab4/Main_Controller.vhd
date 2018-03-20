@@ -159,7 +159,7 @@ begin
             MulW        <= '0';
             ShiftW      <= '0';
             op1update   <= '1';
-          elsif (ins_27_26 = "10") then 
+          elsif (ins_27_20(5) = '1' and ins_7_4(3 downto 0) ="1001") then 
             state <= mul_ck_MLA;       
             IorD  <= '0';
             MW    <= '0';
@@ -187,7 +187,7 @@ begin
             MulW        <= '1';
             ShiftW      <= '0';
             op1update   <= '1';
-          else 
+          elsif (ins_27_26 = "10") then 
           	state <= brn;
 	          IorD  <= '0';
 	          --MR: out std_logic:='0';
@@ -474,7 +474,11 @@ begin
             R1src       <= "01";
             op1sel      <= '1';
             SType       <= "00";        --- Not sure which bits signal it
-            ShiftAmtSel <= '0';
+            if (ins_27_20(5)='0') then  
+              ShiftAmtSel <= '0';
+            else
+              ShiftAmtSel <= '1';
+            end if;
             Shift       <= '1';
             MulW        <= '0';
             ShiftW      <= '1';
