@@ -8,6 +8,7 @@ entity Main_Controller is
     ins_31_28 : in std_logic_vector(3 downto 0);
     ins_27_26 : in std_logic_vector(1 downto 0);
     ins_27_20 : in std_logic_vector(7 downto 0);
+    ins_7_4   : in std_logic_vector(3 downto 0);
     F         : in std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
     p         : in std_logic;
     clk       : in std_logic;
@@ -44,7 +45,7 @@ end entity Main_Controller;
 
 architecture arch of Main_Controller is
 
-  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4);
+  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, rd_mul, mul_ck_MLA, add_MLA, wr_mul );
   signal state : state_type;
 
   signal Z, N, V, C : std_logic;
@@ -142,7 +143,7 @@ begin
             ReW   <= '0';
 
             WadSrc      <= "00";
-            R1src       <= "10";
+            R1src       <= "00";
             op1sel      <= '1';
             SType       <= "00";
             ShiftAmtSel <= '0';
@@ -150,9 +151,65 @@ begin
             MulW        <= '0';
             ShiftW      <= '0';
             op1update   <= '1';
-          elsif (ins_27_26 = "10") then state <= PC_plus4;
+          elsif (ins_27_26 = "10") then 
+            state <= mul_ck_MLA;       
+            IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '1';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '1';
+            BW    <= '1';
+            Asrc1 <= "10";
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '0';
+
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '1';
+            ShiftW      <= '0';
+            op1update   <= '1';
+          else 
+          	  state <= brn;
+	          IorD  <= '0';
+	          --MR: out std_logic:='0';
+	          --  PW          <= '1';
+	          MW    <= '0';
+	          IW    <= '0';
+	          DW    <= '1';
+	          Rsrc  <= '0';
+	          M2R   <= "10";                --
+	          RW    <= '1';
+	          AW    <= '0';
+	          BW    <= '0';
+	          Asrc1 <= "00";
+	          Asrc2 <= "01";
+	          Fset  <= '0';                 -- p from Bctrl;
+	          op    <= "0100";              -- op from the Actrl;
+	          ReW   <= '1';
+
+	          WadSrc      <= "10";
+	          R1src       <= "00";
+	          op1sel      <= '0';
+	          SType       <= "00";
+	          ShiftAmtSel <= '0';
+	          Shift       <= '0';
+	          MulW        <= '0';
+	          ShiftW      <= '0';
+	          op1update   <= '0';
           end if;
+
 --------------------------------------------|
+
+
         when arith =>
           state <= wrRF;
 
@@ -334,7 +391,7 @@ begin
           op1update   <= '0';
 
 --------------------------------------------|
-        when wr_from_wr_from_M2RF =>
+        when wr_from_M2RF =>
           state <= fetch;
           IorD  <= '0';
           --MR: out std_logic:='0';
@@ -431,8 +488,8 @@ begin
 --------------------------------------------|
         when rdM_wrRF =>
           state                           <= wr_from_M2RF;
-          if (ins_27_20(1) = '1') then RW <= '1';;
-          else RW                         <= '0';;
+          if (ins_27_20(1) = '1') then RW <= '1';
+          else RW                         <= '0';
           end if;
 
           IorD  <= '0';
@@ -531,7 +588,7 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 
-        --------------------------------------------|
+--------------------------------------------|
         when PC_plus4 =>
           state <= brn;
           IorD  <= '0';
@@ -560,6 +617,94 @@ begin
           MulW        <= '0';
           ShiftW      <= '0';
           op1update   <= '0';
+--------------------------------------------|
+ 		when mul_ck_MLA
+ 			if (ins_27_20(1) = '0') then
+ 				state <= wr_mul;
+ 			else state <= add_MLA;
+ 			end if;
+            IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '0';
+            BW    <= '0';
+            Asrc1 <= "10";
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '1';
+
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '0';
+--------------------------------------------|
+ 		when add_MLA
+ 			state <= wr_mul;
+ 			IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '0';
+            BW    <= '1';
+            Asrc1 <= "10";
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '1';
+
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '0';
+--------------------------------------------|
+        when wr_mul =>
+   			state <= fetch;
+   			state <= wr_mul;
+ 			IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "01";              --
+            RW    <= '1';
+            AW    <= '0';
+            BW    <= '1';
+            Asrc1 <= "10";
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '0';
+
+            WadSrc      <= "01";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '0';
+
+--------------------------------------------|
+
 
       end case;
     end if;

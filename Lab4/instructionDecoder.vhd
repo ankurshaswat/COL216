@@ -33,9 +33,13 @@ architecture arch of instructionDecoder is
 
   -- signal variant : std_logic_vector(1 downto 0);
   -- -- 00 = imm, 01 = reg_imm, others = reg_reg
-  --
+
+  
+  --  
   -- signal ins_status : std_logic_vector(1 downto 0);
   -- -- 00=undefined , 01=unimplemented , others = implemented
+
+
 
 begin
 
