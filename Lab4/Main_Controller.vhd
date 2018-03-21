@@ -47,7 +47,7 @@ end entity Main_Controller;
 
 architecture arch of Main_Controller is
 
-  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, rd_mul, mul_ck_MLA, add_MLA, wr_mul );
+  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2 rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, rd_mul, mul_ck_MLA, add_MLA, wr_mul );
 
   signal state : state_type;
   --signal op_temp : std_logic := "0100";
@@ -96,7 +96,7 @@ begin
         when rdAB =>
 
           if (ins_27_26 = "00") then
-            state <= shift_state;       --state <= arith;
+            state <= shift_state1;       --state <= arith;
             IorD  <= '0';
             --MR: out std_logic:='0';
             --  PW          <= '0';
@@ -116,18 +116,18 @@ begin
             ReW   <= '0';
 
             WadSrc      <= "00";
-            R1src       <= "01";
+            R1src       <= "00";
             op1sel      <= '0';
             SType       <= "00";
             ShiftAmtSel <= '0';
             Shift       <= '0';
             MulW        <= '0';
             ShiftW      <= '0';
-            op1update   <= '1';         -- Store op1 in op1p;
+            op1update   <= '0';         -- Store op1 in op1p;
           elsif (ins_27_26 = "01") then
 
             if (ins_27_20(5) = '0') then
-              state <= shift_state;     --state <= addr;
+              state <= shift_state1;     --state <= addr;
             else
               state <= addr;
             end if;
@@ -450,10 +450,10 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when shift_state =>
+        when shift_state1 =>
           -- read register X = RF[IR[11-8]]; is also done here;
           if (ins_27_26 = "00") then
-            state <= arith;
+            state <= shift_state2;
 
             IorD  <= '0';
             --MR: out std_logic:='0';
@@ -479,9 +479,81 @@ begin
             op1sel      <= '1';
             SType       <= "00";        --- Not sure which bits signal it
             if (ins_27_20(5)='0') then  
-              ShiftAmtSel <= '0';
+              ShiftAmtSel <= '0';   -- register specified
             else
-              ShiftAmtSel <= '1';
+              ShiftAmtSel <= '1';   -- immediate
+            end if;
+            Shift       <= '1';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '1';
+          elsif(ins_27_26 = "01") then
+            state <= shift_state2;
+            IorD  <= '0';
+            --MR: out std_logic:='0';
+            --  PW          <= '1';
+            MW    <= '0';
+            IW    <= '0';
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '1';
+            BW    <= '0';
+            --Asrc1 <= "01";
+            mulSel <= '0';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= decoded_op;
+            ReW   <= '0';
+
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";        --- Not sure which bits signal it
+            ShiftAmtSel <= '1';         --- ins(11 to 4);
+            Shift       <= '1';
+            MulW        <= '0';
+            ShiftW      <= '1';
+            op1update   <= '0';
+
+
+          end if;
+
+--------------------------------------------|
+        when shift_state2 =>
+          -- read register X = RF[IR[11-8]]; is also done here;
+          if (ins_27_26 = "00") then
+            state <= arith;
+
+            IorD  <= '0';
+            --MR: out std_logic:='0';
+            --  PW          <= '1';
+            MW    <= '0';
+            IW    <= '0';
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '0';
+            BW    <= '0';
+            --Asrc1 <= "01";
+            mulSel <= '0';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= decoded_op;
+            ReW   <= '0';
+
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '1';
+            SType       <= "00";        --- Not sure which bits signal it
+            if (ins_27_20(5)='0') then  
+              ShiftAmtSel <= '0';   -- register specified
+            else
+              ShiftAmtSel <= '1';   -- immediate
             end if;
             Shift       <= '1';
             MulW        <= '0';
