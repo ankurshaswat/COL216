@@ -102,13 +102,16 @@ begin
     MW      => dout_mem(1),
     IW      => dout_mem(2),
     DW      => dout_mem(3),
+
     Rsrc    => dout_mem(4),
     M2R     => dout_mem(6 downto 5),
     RW      => dout_mem(7),
+
     AW      => dout_mem(8),
     BW      => dout_mem(9),
     mulSel  => dout_mem(10),
     Asrc1   => dout_mem(11),
+
     Asrc2   => dout_mem(13 downto 12),
     Fset    => dout_mem(14),
     op      => dout_mem(18 downto 15),
@@ -116,9 +119,11 @@ begin
 
     WadSrc      => dout_mem(21 downto 20),
     R1src       => dout_mem(23 downto 22),
+    
     op1sel      => dout_mem(24),
     SType       => dout_mem(26 downto 25),
     ShiftAmtSel => dout_mem(27),
+
     Shift       => dout_mem(28),
     MulW        => dout_mem(29),
     ShiftW      => dout_mem(30),
