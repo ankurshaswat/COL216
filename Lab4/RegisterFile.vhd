@@ -60,7 +60,7 @@ begin
 
   process(clock)                        --- Sequential Writing
   begin
-    if(rising_edge(clock)) then
+    if(falling_edge(clock)) then
       if(reset = '1') then
         registerFile(15) <= "00000000000000000000000000000000";
       elsif(WriteEnable = '1') then

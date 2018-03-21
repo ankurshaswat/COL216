@@ -55,6 +55,10 @@ entity Datapath is
     rd_sig       : out std_logic_vector(31 downto 0);
     rd_temp_sig  : out std_logic_vector(31 downto 0);
     ad2_sig      : out std_logic_vector(31 downto 0);
+ op1_sig  : out std_logic_vector(31 downto 0);
+    op2_sig      : out std_logic_vector(31 downto 0);
+ op1p_sig  : out std_logic_vector(31 downto 0);
+
     rd2p2_sig    : out std_logic_vector(31 downto 0)
     );
 end Datapath;
@@ -193,7 +197,9 @@ begin
   rd2p2_sig    <= rd2p2;
   rd_temp_sig  <= rd_temp;
   rd_sig       <= rd;
-
+op1_sig<=op1;
+op2_sig<=op2;
+op1p_sig<=op1p;
   car_temp <= '0';
 
   ins_out <= ins;
@@ -226,7 +232,7 @@ begin
     rd1p when others;
 
   with Asrc2 select op2 <=
-    rd1p2                              when "00",
+    rd2p                              when "00",
     "00000000000000000000000000000100" when "01",
     ioffset                            when "10",
     boffset                            when others;
@@ -317,7 +323,7 @@ begin
 
   process(clock)
   begin
-    if(rising_edge(clock)) then
+    if(falling_edge(clock)) then
 
       if(IW = '0') then
         ins <= ins;
