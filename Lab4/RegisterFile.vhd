@@ -23,7 +23,7 @@ architecture struc of RegFile is
   type filereg is array (0 to 15) of std_logic_vector(31 downto 0);
   signal registerFile : filereg := ("00000000000000000000000000000001",
                                     "00000000000000000000000000000010",
-                                    "00000000000000000000000000000100",
+                                    "00000000000000000000000000000000",
                                     "00000000000000000000000000001000",
                                     "00000000000000000000000000010000",
                                     "00000000000000000000000000100000",
@@ -60,7 +60,7 @@ begin
 
   process(clock)                        --- Sequential Writing
   begin
-    if(falling_edge(clock)) then
+    if(rising_edge(clock)) then
       if(reset = '1') then
         registerFile(15) <= "00000000000000000000000000000000";
       elsif(WriteEnable = '1') then

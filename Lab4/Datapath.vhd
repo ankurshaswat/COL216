@@ -58,7 +58,7 @@ entity Datapath is
  op1_sig  : out std_logic_vector(31 downto 0);
     op2_sig      : out std_logic_vector(31 downto 0);
  op1p_sig  : out std_logic_vector(31 downto 0);
-
+ Samt_sig  : out std_logic_vector(4 downto 0);
     rd2p2_sig    : out std_logic_vector(31 downto 0)
     );
 end Datapath;
@@ -200,6 +200,8 @@ begin
 op1_sig<=op1;
 op2_sig<=op2;
 op1p_sig<=op1p;
+Samt_sig<=Samt;
+
   car_temp <= '0';
 
   ins_out <= ins;
@@ -256,7 +258,7 @@ op1p_sig<=op1p;
     shiftedp when others;
 
   with ShiftAmtSel select Samt <=
-    op1p(4 downto 0) when '0',
+    op1(4 downto 0) when '0',
     ins(8 downto 4)  when others;
 
   Alu11 : ALU
@@ -323,7 +325,7 @@ op1p_sig<=op1p;
 
   process(clock)
   begin
-    if(falling_edge(clock)) then
+    if(rising_edge(clock)) then
 
       if(IW = '0') then
         ins <= ins;

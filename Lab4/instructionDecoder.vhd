@@ -8,7 +8,7 @@ entity instructionDecoder is
     ins        : in  std_logic_vector(27 downto 0);
     class      : out std_logic_vector(3 downto 0);
     sub_class  : out std_logic_vector(3 downto 0);
-    -- variant  : out std_logic_vector(1 downto 0);
+    variant    : out std_logic_vector(1 downto 0);
     ins_status : out std_logic_vector(3 downto 0));
 
 end entity instructionDecoder;
@@ -31,11 +31,12 @@ architecture arch of instructionDecoder is
   signal sub_class_B : std_logic_vector(3 downto 0) := "0000";
   -- 0=b , others= bl
 
-  -- signal variant : std_logic_vector(1 downto 0);
   -- -- 00 = imm, 01 = reg_imm, others = reg_reg
+  signal variant_DP  : std_logic_vector(1 downto 0);
+  signal variant_DT  : std_logic_vector(1 downto 0);
+  signal variant_MUL : std_logic_vector(1 downto 0);
+  signal variant_B   : std_logic_vector(1 downto 0);
 
-  
-  --  
   -- signal ins_status : std_logic_vector(1 downto 0);
   -- -- 00=undefined , 01=unimplemented , others = implemented
 
@@ -44,12 +45,12 @@ architecture arch of instructionDecoder is
 begin
 
   ins_status <= "01" when ((ins(27 downto 26) = "11")
-                                or (ins(27 downto 25) = "100")
-                                or (ins(27 downto 25) = "000"
-                                    and (ins(11 downto 7)&ins(4) = "111100"
-                                         or (ins(7 downto 4) = "1001" and (ins (24) = '1' or ins(24 downto 23) = "01"))))) else
-                     "00" when ins(27 downto 25)&ins(4) = "0111" else
-                     "10";
+                           or (ins(27 downto 25) = "100")
+                           or (ins(27 downto 25) = "000"
+                               and (ins(11 downto 7)&ins(4) = "111100"
+                                    or (ins(7 downto 4) = "1001" and (ins (24) = '1' or ins(24 downto 23) = "01"))))) else
+                "00" when ins(27 downto 25)&ins(4) = "0111" else
+                "10";
 
   class      <= class_temp;
   class_temp <= "11" when (ins(27 downto 25) = "101") else
@@ -71,14 +72,32 @@ begin
   sub_class_B <= "000" when ins(24) = '0' else
                  "001";
 
+  sub_class_DP <= "010" when ins(24 downto 22) = "100" else
+                  "000" when ins(24 downto 22) = "001" or ins(24 downto 23) = "01" else
+                  "001";
+
   with class_temp select sub_class <=
     sub_class_DP  when "00",
     sub_class_DT  when "01",
     sub_class_MUL when "10",
     sub_class_B   when others;
 
-  -- variant <=
+  variant_DP <= "00" when ins(25) = '1' else
+                "01" when ins(4) = '0' else
+                "10";
 
-  -- sub_class_DP <=;
+  variant_B <= "00";                    --default
+
+  variant_MUL <= "00";                  --default
+
+  variant_DT <= "00" when ins(27 downto 25) = "010" or (ins(27 downto 25) = "000" and ins(22) = '1') else
+                "01" when ins(27 downto 25) "011" else
+                "10";
+
+  with class_temp select variant <=
+    variant_DP  when "00",
+    variant_DT  when "01",
+    variant_MUL when "10",
+    variant_B   when others;
 
 end architecture;

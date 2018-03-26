@@ -34,6 +34,18 @@ end entity Controller;
 
 architecture arch of Controller is
 
+  component instructionDecoder is
+
+    port (
+      ins        : in  std_logic_vector(27 downto 0);
+      class      : out std_logic_vector(3 downto 0);
+      sub_class  : out std_logic_vector(3 downto 0);
+      variant    : out std_logic_vector(1 downto 0);
+      ins_status : out std_logic_vector(3 downto 0));
+
+  end component;
+
+
   component Bctrl is
     port (
       ins_31_28 : in  std_logic_vector(3 downto 0);
@@ -89,14 +101,13 @@ architecture arch of Controller is
       );
   end component;
 
-  -- component instructionDecoder is
-  --   port (
-  --     ins        : in  std_logic_vector(27 downto 0);
-  --     class      : out std_logic_vector(3 downto 0);
-  --     sub_class  : out std_logic_vector(3 downto 0);
-  --     -- variant  : out std_logic_vector(1 downto 0);
-  --     ins_status : out std_logic_vector(3 downto 0));
-  -- end component;
+  signal class      : std_logic_vector(1 downto 0);
+  signal sub_class  : std_logic_vector(3 downto 0);
+  signal variant    : std_logic_vector(1 downto 0);
+  signal ins_status : std_logic_vector(1 downto 0);
+
+
+
 --    signal ins:std_logic_vector(31 downto 0);
 --    signal op:std_logic_vector(3 downto 0);
   signal F          : std_logic_vector(3 downto 0);
@@ -105,13 +116,14 @@ architecture arch of Controller is
   signal op_temp    : std_logic_vector(3 downto 0);
 begin
 
--- instructionDecoder port map(ins => ins(27 downto 0), class => class, sub_class => sub_class, ins_status => ins_status);
+  id : instructionDecoder port map(ins => ins(27 downto 0), class => class, sub_class => sub_class, ins_status => ins_status, variant => variant);
 
-  a1 : Actrl port map(ins => ins(27 downto 0), op => op_temp);
+  a1 : Actrl port map(ins => ins(27 downto 0), op => op_temp, class => class, sub_class => sub_class, ins_status => ins_status, variant => variant);
 
   b1 : Bctrl port map(ins_31_28 => ins(31 downto 28), F => F, p => p_received);
 
   mc : Main_Controller port map(
+    class       => class, sub_class => sub_class, ins_status => ins_status, variant => variant,
     decoded_op  => op_temp,
     ins_20      => ins(20),
     ins_31_28   => ins(31 downto 28),
