@@ -176,7 +176,7 @@ begin
 
   cont : Controller port map(
     ins         => IR,
-    clk         => CLK,
+    clk         => out_pulse,
     IorD        => dout_mem(0),
     MW          => dout_mem(1),
     IW          => dout_mem(2),
