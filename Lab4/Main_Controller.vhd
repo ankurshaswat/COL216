@@ -53,7 +53,7 @@ end entity Main_Controller;
 architecture arch of Main_Controller is
 
 
-  type state_type is (wait1,wait2,fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, rd_mul, mul_ck_MLA, only_mul, add_MLA, wr_mul);
+  type state_type is (wait1,wait2,fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4,  mul_ck_MLA, only_mul, add_MLA, wr_mul);
 
 
   signal state      : state_type;
@@ -64,7 +64,7 @@ begin
 
   process (clk)
   begin
-    if (rising_edge(clk)) then
+    if (falling_edge(clk)) then
       case state is
 --------------------------------------------|
         when wait1 =>  --00000000

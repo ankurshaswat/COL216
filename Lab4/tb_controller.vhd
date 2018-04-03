@@ -135,8 +135,13 @@ architecture Behavioral of tb_controller is
       wad_sig      : out std_logic_vector(3 downto 0);
       wd_sig       : out std_logic_vector(31 downto 0);
       ad2_sig      : out std_logic_vector(31 downto 0);
-      rd2p2_sig    : out std_logic_vector(31 downto 0)
-
+      rd2p2_sig    : out std_logic_vector(31 downto 0);
+      rd_temp_sig  : out std_logic_vector(31 downto 0);
+      op1_sig      : out std_logic_vector(31 downto 0);
+      op2_sig      : out std_logic_vector(31 downto 0);
+      op1p_sig     : out std_logic_vector(31 downto 0);
+      rd_sig       : out std_logic_vector(31 downto 0);
+      Samt_sig     : out std_logic_vector(4 downto 0)
       );
   end component;
 
@@ -156,8 +161,9 @@ architecture Behavioral of tb_controller is
   signal reset_mem                      : std_logic;
   signal Flags_out                      : std_logic_vector(3 downto 0);
 
-  signal ALUout, ALUoutp, op1f, op2f, rd1p, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2 : std_logic_vector(31 downto 0);
-  signal rad1, rad2, wad                                                                : std_logic_vector(3 downto 0);
+  signal op1p, op1, op2, ALUout, ALUoutp, op1f, op2f, rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2 : std_logic_vector(31 downto 0);
+  signal rad1, rad2, wad                                                                                             : std_logic_vector(3 downto 0);
+  signal Samt                                                                                                        : std_logic_vector(4 downto 0);
 
 
   signal out_pulse, mulSel : std_logic;
@@ -251,9 +257,13 @@ begin
     wad_sig      => wad,
     wd_sig       => wd,
     ad2_sig      => ad2,
-    rd2p2_sig    => rd2p2
-
-    );
+    rd2p2_sig    => rd2p2,
+    rd_temp_sig  => rd_temp,
+    rd_sig       => rd,
+    op1_sig      => op1,
+    op2_sig      => op2,
+    op1p_sig     => op1p,
+    Samt_sig     => Samt);
 
 
 
@@ -374,6 +384,12 @@ begin
     wd                                    when "00000000001101",
     ad2                                   when "00000000001110",
     IR                                    when "00000000001111",
+    rd_temp                               when "00000000010000",
+    rd                                    when "00000000010001",
+    op1                                   when "00000000010010",
+    op2                                   when "00000000010011",
+    op1p                                  when "00000000010100",
+    "000000000000000000000000000"&Samt    when "00000000010101",
     rd2p2                                 when others;
 
   switch_pair <= SW(1) & SW(2);

@@ -55,10 +55,10 @@ entity Datapath is
     rd_sig       : out std_logic_vector(31 downto 0);
     rd_temp_sig  : out std_logic_vector(31 downto 0);
     ad2_sig      : out std_logic_vector(31 downto 0);
- op1_sig  : out std_logic_vector(31 downto 0);
+    op1_sig      : out std_logic_vector(31 downto 0);
     op2_sig      : out std_logic_vector(31 downto 0);
- op1p_sig  : out std_logic_vector(31 downto 0);
- Samt_sig  : out std_logic_vector(4 downto 0);
+    op1p_sig     : out std_logic_vector(31 downto 0);
+    Samt_sig     : out std_logic_vector(4 downto 0);
     rd2p2_sig    : out std_logic_vector(31 downto 0)
     );
 end Datapath;
@@ -197,10 +197,10 @@ begin
   rd2p2_sig    <= rd2p2;
   rd_temp_sig  <= rd_temp;
   rd_sig       <= rd;
-op1_sig<=op1;
-op2_sig<=op2;
-op1p_sig<=op1p;
-Samt_sig<=Samt;
+  op1_sig      <= op1;
+  op2_sig      <= op2;
+  op1p_sig     <= op1p;
+  Samt_sig     <= Samt;
 
   car_temp <= '0';
 
@@ -234,7 +234,7 @@ Samt_sig<=Samt;
     rd1p when others;
 
   with Asrc2 select op2 <=
-    rd2p                              when "00",
+    rd2p                               when "00",
     "00000000000000000000000000000100" when "01",
     ioffset                            when "10",
     boffset                            when others;
@@ -259,7 +259,7 @@ Samt_sig<=Samt;
 
   with ShiftAmtSel select Samt <=
     op1(4 downto 0) when '0',
-    ins(8 downto 4)  when others;
+    ins(8 downto 4) when others;
 
   Alu11 : ALU
     port map(
