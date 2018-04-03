@@ -66,7 +66,7 @@ begin
       case state is
 
 --------------------------------------------|
-        when fetch =>
+        when fetch => -- 002210C4
 
 
           IorD   <= '0';
@@ -100,9 +100,11 @@ begin
 --------------------------------------------|
         when rdAB =>
 
-          if (ins_27_26 = "00") then
-            state  <= shift_state1;     --state <= arith;
-            IorD   <= '0';
+
+          if (ins_27_26 = "00") then -- 00020B00
+            state <= shift_state1;       --state <= arith;
+            IorD  <= '0';
+
             --MR: out std_logic:='0';
             --  PW          <= '0';
             MW     <= '0';
@@ -130,7 +132,7 @@ begin
             ShiftW      <= '0';
             op1update   <= '0';         -- Store op1 in op1p;
           elsif (ins_27_26 = "01") then
-
+          	-- 00020B00
             if (ins_27_20(5) = '1') then
               state <= shift_state1;    -- Offser is reg spec
             else
@@ -164,18 +166,20 @@ begin
             MulW        <= '0';
             ShiftW      <= '0';
             op1update   <= '0';
-          elsif (ins_27_20(5) = '1' and ins_7_4(3 downto 0) = "1001") then
-            state <= mul_ck_MLA;
 
-            IorD   <= '0';
-            MW     <= '0';
-            IW     <= '0';   --- Instruction won't update due to PC+4
-            DW     <= '0';
-            Rsrc   <= '1';
-            M2R    <= "00";             --
-            RW     <= '0';
-            AW     <= '1';
-            BW     <= '1';
+          elsif (ins_7_4(3 downto 0) ="1001") then
+            state <= mul_ck_MLA;  -- 00420B10
+
+            IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';   --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '1';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '1';
+            BW    <= '1';
+
             --Asrc1 <= "10";
             mulSel <= '0';
             Asrc1  <= '1';
@@ -195,43 +199,44 @@ begin
             op1update   <= '0';
 
           elsif (ins_27_26 = "10") then
+          	--- 002210C0
 
+          	state <= brn;
+	          IorD  <= '0';
+	          --MR: out std_logic:='0';
+	          --  PW          <= '1';
+	          MW    <= '0';
+	          IW    <= '0';
+	          DW    <= '0';
+	          Rsrc  <= '0';
+	          M2R   <= "10";                --
+	          RW    <= '1';
+	          AW    <= '0';
+	          BW    <= '0';
+	          --Asrc1 <= "00";
+	          mulSel <= '0';
+            Asrc1 <= '0';
+            Asrc2 <= "01";
+	          Fset  <= '0';                 -- p from Bctrl;
+	          op    <= 0100;              -- add
+	          ReW   <= '0';
 
-            state  <= brn;
-            IorD   <= '0';
-            --MR: out std_logic:='0';
-            --  PW          <= '1';
-            MW     <= '0';
-            IW     <= '0';
-            DW     <= '0';
-            Rsrc   <= '0';
-            M2R    <= "10";             --
-            RW     <= '1';
-            AW     <= '0';
-            BW     <= '0';
-            --Asrc1 <= "00";
-            mulSel <= '0';
-            Asrc1  <= '0';
-            Asrc2  <= "01";
-            Fset   <= '0';              -- p from Bctrl;
-            op     <= "0100";           -- add
-            ReW    <= '0';
+	          WadSrc      <= "10";
+	          R1src       <= "00";
+	          op1sel      <= '0';
+	          SType       <= "00";
+	          ShiftAmtSel <= '0';
+	          Shift       <= '0';
+	          MulW        <= '0';
+	          ShiftW      <= '0';
+	          op1update   <= '0';
 
-            WadSrc      <= "10";
-            R1src       <= "00";
-            op1sel      <= '0';
-            SType       <= "00";
-            ShiftAmtSel <= '0';
-            Shift       <= '0';
-            MulW        <= '0';
-            ShiftW      <= '0';
-            op1update   <= '0';
           end if;
 
 --------------------------------------------|
 
 
-        when arith =>
+        when arith => -- 110A0040
           state <= wrRF;
 
           IorD   <= '0';
@@ -263,7 +268,7 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when addr =>
+        when addr => --000A2A10
           if (ins_20 = '0') then state <= wrM;
           else state                   <= rdM;
           end if;
@@ -279,8 +284,10 @@ begin
           AW                           <= '0';
           BW                           <= '1';
           --Asrc1                        <= "00";
-          mulSel                       <= '0';
-          Asrc1                        <= '0';
+
+          mulSel <= '0';
+          Asrc1 <= '1';
+
           Asrc2                        <= "10";
           Fset                         <= '0';     -- p from Bctrl;
           op                           <= "0100";  -- Presently only adding the offset
@@ -298,9 +305,10 @@ begin
 
 
 --------------------------------------------|
-        when wrM =>
-          state  <= fetch;
-          IorD   <= '1';
+        when wrM =>  -- 00020003
+          state <= fetch;
+          IorD  <= '1';
+
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW     <= '1';
@@ -329,9 +337,10 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when rdM =>
-          state  <= wr_from_M2RF;
-          IorD   <= '1';
+        when rdM => -- 00020009
+          state <= wr_from_M2RF;
+          IorD  <= '1';
+
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW     <= '0';
@@ -360,7 +369,7 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when brn =>
+        when brn =>  -- 002230C0
           --;;;  -- we have to do PC =PC + 4 + Offset will take two cycles;
           state  <= fetch;
           IorD   <= '0';
@@ -392,9 +401,9 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when wrRF =>
-          state  <= fetch;
-          IorD   <= '0';
+        when wrRF =>    -- 000200A0
+          state <= fetch;
+          IorD  <= '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW     <= '0';
@@ -424,9 +433,10 @@ begin
           op1update   <= '0';
 
 --------------------------------------------|
-        when wr_from_M2RF =>
-          state  <= fetch;
-          IorD   <= '0';
+        when wr_from_M2RF => -- 00020080
+          state <= fetch;
+          IorD  <= '0';
+
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW     <= '0';
@@ -455,7 +465,7 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when shift_state1 =>
+        when shift_state1 => -- 91420900 reg_spec -- 99420900 imm
           -- read register X = RF[IR[11-8]]; is also done here;
           if (ins_27_26 = "00") then
             state <= shift_state2;
@@ -493,7 +503,9 @@ begin
             ShiftW    <= '0';
             op1update <= '1';
           elsif(ins_27_26 = "01") then
-            state  <= shift_state2;
+
+            state <= shift_state2;  -- 99820900
+
             -- state <= addr_rdB;
             IorD   <= '0';
             --MR: out std_logic:='0';
@@ -528,7 +540,7 @@ begin
           end if;
 
 --------------------------------------------|
-        when shift_state2 =>
+        when shift_state2 =>  -- 51420800 reg_spec -- 59420800 imm
           -- read register X = RF[IR[11-8]]; is also done here;
           if (ins_27_26 = "00") then
             state <= arith;
@@ -566,8 +578,9 @@ begin
             ShiftW    <= '1';
             op1update <= '0';
           elsif(ins_27_26 = "01") then
-            state  <= addr_rdB;
-            IorD   <= '0';
+            state <= addr_rdB; --59820800
+            IorD  <= '0';
+
             --MR: out std_logic:='0';
             --  PW          <= '1';
             MW     <= '0';
@@ -602,7 +615,7 @@ begin
         --when readx =>
         --  state <= shift_state;
 --------------------------------------------|
-        when rdM_wrRF =>
+        when rdM_wrRF =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
           state                           <= wr_from_M2RF;
           if (ins_27_20(1) = '1') then RW <= '1';
           else RW                         <= '0';
@@ -638,7 +651,7 @@ begin
           op1update   <= '0';
 
 --------------------------------------------|
-        when wrM_wrRF =>
+        when wrM_wrRF =>  -- 111200A3 -- Auto_inc  XXX 11120023 -- without Auto_inc
           state <= fetch;
 
 
@@ -676,7 +689,7 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when addr_rdB =>
+        when addr_rdB =>  -- 010A0210
           if (ins_27_20(5) = '1') then
             state <= rdM_wrRF;
           else state <= wrM_wrRF;
@@ -711,7 +724,7 @@ begin
           op1update   <= '0';
 
 --------------------------------------------|
-        when PC_plus4 =>
+        when PC_plus4 => --002A10C8
           state <= brn;
           IorD  <= '0';
           --MR: out std_logic:='0';
@@ -740,26 +753,27 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when mul_ck_MLA =>
-          if (ins_27_20(1) = '0') then
-            state <= only_mul;
-          else state <= add_MLA;
-          end if;
-          IorD       <= '0';
-          MW         <= '0';
-          IW         <= '0';   --- Instruction won't update due to PC+4
-          DW         <= '0';
-          Rsrc       <= '0';
-          M2R        <= "00";           --
-          RW         <= '0';
-          AW         <= '1';
-          BW         <= '0';
-          mulSel     <= '1';
-          Asrc1      <= '1';
-          Asrc2      <= "00";
-          Fset       <= '0';
-          op         <= "0100";
-          ReW        <= '0';
+ 		when mul_ck_MLA => -- 20820D00
+ 			if (ins_27_20(1) = '0') then
+ 				state <= only_mul;
+ 			else state <= add_MLA;
+ 			end if;
+            IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '1';
+            BW    <= '0';
+            mulSel <= '1';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '0';
+
 
           WadSrc      <= "00";
           R1src       <= "10";
@@ -771,51 +785,24 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when only_mul =>
+ 		when only_mul => --000E8C00
+ 			state <= wr_mul;
+            IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '0';
+            BW    <= '0';
+            mulSel <= '1';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "1101";
+            ReW   <= '1';
 
-          IorD   <= '0';
-          MW     <= '0';
-          IW     <= '0';   --- Instruction won't update due to PC+4
-          DW     <= '0';
-          Rsrc   <= '0';
-          M2R    <= "00";               --
-          RW     <= '0';
-          AW     <= '0';
-          BW     <= '0';
-          mulSel <= '1';
-          Asrc1  <= '1';
-          Asrc2  <= "00";
-          Fset   <= '0';
-          op     <= "1101";
-          ReW    <= '1';
-
-          WadSrc      <= "00";
-          R1src       <= "00";
-          op1sel      <= '0';
-          SType       <= "00";
-          ShiftAmtSel <= '0';
-          Shift       <= '0';
-          MulW        <= '0';
-          ShiftW      <= '0';
-          op1update   <= '0';
---------------------------------------------|
-        when add_MLA =>
-          state  <= wr_mul;
-          IorD   <= '0';
-          MW     <= '0';
-          IW     <= '0';   --- Instruction won't update due to PC+4
-          DW     <= '0';
-          Rsrc   <= '0';
-          M2R    <= "00";               --
-          RW     <= '0';
-          AW     <= '0';
-          BW     <= '0';
-          mulSel <= '1';
-          Asrc1  <= '1';
-          Asrc2  <= "00";
-          Fset   <= '0';
-          op     <= "0100";
-          ReW    <= '1';
 
           WadSrc      <= "00";
           R1src       <= "00";
@@ -827,24 +814,53 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
 --------------------------------------------|
-        when wr_mul =>
-          state  <= fetch;
-          state  <= wr_mul;
-          IorD   <= '0';
-          MW     <= '0';
-          IW     <= '0';   --- Instruction won't update due to PC+4
-          DW     <= '0';
-          Rsrc   <= '0';
-          M2R    <= "01";               --
-          RW     <= '1';
-          AW     <= '0';
-          BW     <= '0';
-          mulSel <= '1';
-          Asrc1  <= '1';
-          Asrc2  <= "00";
-          Fset   <= '0';
-          op     <= "0100";
-          ReW    <= '0';
+ 		when add_MLA=> -- 000A0C00
+ 			state <= wr_mul;
+ 			IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "00";              --
+            RW    <= '0';
+            AW    <= '0';
+            BW    <= '0';
+            mulSel <= '1';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '1';
+
+
+          WadSrc      <= "00";
+          R1src       <= "00";
+          op1sel      <= '0';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
+--------------------------------------------|
+        when wr_mul =>  -- 00120CA0
+   			state <= fetch;
+   			state <= wr_mul;
+ 			IorD  <= '0';
+            MW    <= '0';
+            IW    <= '0';          --- Instruction won't update due to PC+4
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "01";              --
+            RW    <= '1';
+            AW    <= '0';
+            BW    <= '0';
+            mulSel <= '1';
+            Asrc1 <= '1';
+            Asrc2 <= "00";
+            Fset  <= '0';
+            op    <= "0100";
+            ReW   <= '0';
 
           WadSrc      <= "01";
           R1src       <= "00";
