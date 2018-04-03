@@ -259,10 +259,10 @@ begin
             ShiftW      <= '0';
             op1update   <= '0';
 
-          elsif (ins_27_26 = "10") then
+          elsif (ins_27_26 = "10" & ins_27_20(4)=0) then
           	--- 002210C0
 
-          	state <= brn;
+          	state <= brn;  -- PC Increamented by 4
 	          IorD  <= '0';
 	          --MR: out std_logic:='0';
 	          --  PW          <= '1';
@@ -292,9 +292,44 @@ begin
 	          ShiftW      <= '0';
 	          op1update   <= '0';
 
+        elsif (ins_27_26 = "10" & ins_27_20(4)=1) then
+            --- 002210C0
+
+            state <= PC_plus4;  -- Write in Link Register
+            IorD  <= '0';
+            --MR: out std_logic:='0';
+            --  PW          <= '1';
+            MW    <= '0';
+            IW    <= '0';
+            DW    <= '0';
+            Rsrc  <= '0';
+            M2R   <= "10";                --
+            RW    <= '1';
+            AW    <= '0';
+            BW    <= '0';
+            --Asrc1 <= "00";
+            mulSel <= '0';
+            Asrc1 <= '0';
+            Asrc2 <= "01";
+            Fset  <= '0';                 -- p from Bctrl;
+            op    <= "0100";              -- add
+            ReW   <= '0';
+
+            WadSrc      <= "11";  -- r14
+            R1src       <= "00";
+            op1sel      <= '0';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '0';
+
           end if;
 
 --------------------------------------------|
+       
+
 
 
         when arith => -- 110A0040
@@ -792,7 +827,7 @@ begin
           --  PW          <= '1';
           MW    <= '0';
           IW    <= '0';
-          DW    <= '1';
+          DW    <= '0';
           Rsrc  <= '0';
           M2R   <= "10";                --
           RW    <= '1';
@@ -804,7 +839,7 @@ begin
           op    <= "0100";              -- op from the Actrl;
           ReW   <= '1';
 
-          WadSrc      <= "10";
+          WadSrc      <= "11";
           R1src       <= "00";
           op1sel      <= '0';
           SType       <= "00";

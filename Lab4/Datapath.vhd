@@ -247,7 +247,8 @@ begin
   with WadSrc select wad <=
     ins(15 downto 12)  when "00",
     ins (19 downto 16) when "01",
-    "1111"             when others;
+    "1111"             when "10",
+    "1110"             when others;
 
   with op1sel select op1f <=
     op1p when '1',
