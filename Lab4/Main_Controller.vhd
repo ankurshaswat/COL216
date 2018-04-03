@@ -13,10 +13,10 @@ entity Main_Controller is
     F          : in std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
     p          : in std_logic;
     clk        : in std_logic;
-    class      : in std_logic_vector(3 downto 0);
+    class      : in std_logic_vector(1 downto 0);
     sub_class  : in std_logic_vector(3 downto 0);
     variant    : in std_logic_vector(1 downto 0);
-    ins_status : in std_logic_vector(3 downto 0);
+    ins_status : in std_logic_vector(1 downto 0);
 
 --CONTROL SIGNALS
     --------------
@@ -52,7 +52,7 @@ end entity Main_Controller;
 
 architecture arch of Main_Controller is
 
-  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, rd_mul, mul_ck_MLA, only_mul, add_MLA, wr_mul);
+  type state_type is (fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4,  mul_ck_MLA, only_mul, add_MLA, wr_mul);
 
   signal state      : state_type;
   --signal op_temp : std_logic := "0100";
@@ -401,7 +401,7 @@ begin
           IW     <= '0';
           DW     <= '0';
           Rsrc   <= '0';
-          M2R    <= "1";                --
+          M2R    <= "01";                --
           RW     <= '1';
           AW     <= '0';
           BW     <= '0';

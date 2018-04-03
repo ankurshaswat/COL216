@@ -38,10 +38,10 @@ architecture arch of Controller is
 
     port (
       ins        : in  std_logic_vector(27 downto 0);
-      class      : out std_logic_vector(3 downto 0);
+      class      : out std_logic_vector(1 downto 0);
       sub_class  : out std_logic_vector(3 downto 0);
       variant    : out std_logic_vector(1 downto 0);
-      ins_status : out std_logic_vector(3 downto 0));
+      ins_status : out std_logic_vector(1 downto 0));
 
   end component;
 
@@ -55,20 +55,29 @@ architecture arch of Controller is
 
   component Actrl is
     port (
-      ins : in  std_logic_vector(27 downto 0);
-      op  : out std_logic_vector(3 downto 0));
+       ins        : in  std_logic_vector(27 downto 0);
+      class      : in  std_logic_vector(1 downto 0);
+      sub_class  : in  std_logic_vector(3 downto 0);
+      variant    : in  std_logic_vector(1 downto 0);
+      ins_status : in  std_logic_vector(1 downto 0);
+      op         : out std_logic_vector(3 downto 0));
   end component;
 
   component Main_Controller is
     port (
-      decoded_op : in std_logic_vector(3 downto 0);
-      ins_20     : in std_logic;
-      ins_31_28  : in std_logic_vector(3 downto 0);
-      ins_27_26  : in std_logic_vector(1 downto 0);
-      ins_27_20  : in std_logic_vector(7 downto 0);
-      F          : in std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
-      p          : in std_logic;
-      clk        : in std_logic;
+     decoded_op : in std_logic_vector;
+        ins_20     : in std_logic;
+        ins_31_28  : in std_logic_vector(3 downto 0);
+        ins_27_26  : in std_logic_vector(1 downto 0);
+        ins_27_20  : in std_logic_vector(7 downto 0);
+        ins_7_4    : in std_logic_vector(3 downto 0);
+        F          : in std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
+        p          : in std_logic;
+        clk        : in std_logic;
+        class      : in std_logic_vector(3 downto 0);
+        sub_class  : in std_logic_vector(3 downto 0);
+        variant    : in std_logic_vector(1 downto 0);
+        ins_status : in std_logic_vector(3 downto 0);
       --CONTROL SIGNALS
       --------------
 
@@ -129,6 +138,7 @@ begin
     ins_31_28   => ins(31 downto 28),
     ins_27_26   => ins(27 downto 26),
     ins_27_20   => ins(27 downto 20),
+    ins_7_4 => ins(7 downto 4),
     F           => F,
     p           => p_received,
     clk         => clk,
