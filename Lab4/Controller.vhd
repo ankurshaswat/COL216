@@ -74,10 +74,10 @@ architecture arch of Controller is
         F          : in std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
         p          : in std_logic;
         clk        : in std_logic;
-        class      : in std_logic_vector(3 downto 0);
+        class      : in std_logic_vector(1 downto 0);
         sub_class  : in std_logic_vector(3 downto 0);
         variant    : in std_logic_vector(1 downto 0);
-        ins_status : in std_logic_vector(3 downto 0);
+        ins_status : in std_logic_vector(1 downto 0);
       --CONTROL SIGNALS
       --------------
 
@@ -144,7 +144,7 @@ begin
     clk         => clk,
     IorD        => IorD,
     MW          => MW,
-    IW          => MW,
+    IW          => IW,
     DW          => DW,
     Rsrc        => Rsrc,
     M2R         => M2R,

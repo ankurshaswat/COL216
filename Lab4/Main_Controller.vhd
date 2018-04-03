@@ -218,7 +218,7 @@ begin
             Asrc1 <= '0';
             Asrc2 <= "01";
 	          Fset  <= '0';                 -- p from Bctrl;
-	          op    <= 0100;              -- add
+	          op    <= "0100";              -- add
 	          ReW   <= '0';
 
 	          WadSrc      <= "10";
