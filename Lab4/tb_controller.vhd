@@ -325,7 +325,7 @@ begin
     DIN_MEM      => din_mem,
     DOUT_MEM     => dout_mem_temp
     );
-  dout_mem <= dout_mem_temp(7 downto 0) & dout_mem_temp(15 downto 8) & dout_mem_temp(23 downto 16) & dout_mem_temp(31 downto 24);
+  -- dout_mem <= dout_mem_temp(7 downto 0) & dout_mem_temp(15 downto 8) & dout_mem_temp(23 downto 16) & dout_mem_temp(31 downto 24);
 
 
 --  process(clk)

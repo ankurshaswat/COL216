@@ -6,10 +6,10 @@ entity instructionDecoder is
 
   port (
     ins        : in  std_logic_vector(27 downto 0);
-    class      : out std_logic_vector(3 downto 0);
+    class      : out std_logic_vector(1 downto 0);
     sub_class  : out std_logic_vector(3 downto 0);
     variant    : out std_logic_vector(1 downto 0);
-    ins_status : out std_logic_vector(3 downto 0));
+    ins_status : out std_logic_vector(1 downto 0));
 
 end entity instructionDecoder;
 
@@ -66,15 +66,15 @@ begin
                               "100";  -- "100" when (ins(27 downto 26) = "00" and ins(6) = '1' and ins(5) = '0') else
 
 
-  sub_class_MUL <= "000" when ins(21) = '0' else
-                   "001";
+  sub_class_MUL <= "0000" when ins(21) = '0' else
+                   "0001";
 
-  sub_class_B <= "000" when ins(24) = '0' else
-                 "001";
+  sub_class_B <= "0000" when ins(24) = '0' else
+                 "0001";
 
-  sub_class_DP <= "010" when ins(24 downto 22) = "100" else
-                  "000" when ins(24 downto 22) = "001" or ins(24 downto 23) = "01" else
-                  "001";
+  sub_class_DP <= "0010" when ins(24 downto 22) = "100" else
+                  "0000" when ins(24 downto 22) = "001" or ins(24 downto 23) = "01" else
+                  "0001";
 
   with class_temp select sub_class <=
     sub_class_DP  when "00",
@@ -91,7 +91,7 @@ begin
   variant_MUL <= "00";                  --default
 
   variant_DT <= "00" when ins(27 downto 25) = "010" or (ins(27 downto 25) = "000" and ins(22) = '1') else
-                "01" when ins(27 downto 25) "011" else
+                "01" when ins(27 downto 25) = "011" else
                 "10";
 
   with class_temp select variant <=
