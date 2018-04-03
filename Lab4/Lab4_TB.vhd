@@ -71,7 +71,7 @@ architecture Behavioral of tb is
       AW           : in  std_logic                    := '0';
       BW           : in  std_logic                    := '0';
       mulSel       : in  std_logic                    := '0';
-      Asrc1        : in  std_logic                    := '0';  --
+      Asrc1        : in  std_logic                    := '0';   --
       Asrc2        : in  std_logic_vector(1 downto 0) := "00";
       Fset         : in  std_logic                    := '0';
       op           : in  std_logic_vector(3 downto 0) := "0000";
@@ -105,12 +105,12 @@ architecture Behavioral of tb is
       wd_sig       : out std_logic_vector(31 downto 0);
       ad2_sig      : out std_logic_vector(31 downto 0);
       rd2p2_sig    : out std_logic_vector(31 downto 0);
-      rd_temp_sig    : out std_logic_vector(31 downto 0);
- op1_sig    : out std_logic_vector(31 downto 0);
- op2_sig    : out std_logic_vector(31 downto 0);
- op1p_sig    : out std_logic_vector(31 downto 0);
-      rd_sig    : out std_logic_vector(31 downto 0)
-
+      rd_temp_sig  : out std_logic_vector(31 downto 0);
+      op1_sig      : out std_logic_vector(31 downto 0);
+      op2_sig      : out std_logic_vector(31 downto 0);
+      op1p_sig     : out std_logic_vector(31 downto 0);
+      rd_sig       : out std_logic_vector(31 downto 0);
+        Samt_sig :out std_logic_vector(4 downto 0)
       );
   end component;
 
@@ -130,11 +130,11 @@ architecture Behavioral of tb is
   signal reset_mem                      : std_logic;
   signal Flags_out                      : std_logic_vector(3 downto 0);
 
-  signal op1p,op1,op2,ALUout, ALUoutp, op1f, op2f, rd1p,rd_temp,rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2 : std_logic_vector(31 downto 0);
-  signal rad1, rad2, wad                                                                : std_logic_vector(3 downto 0);
+  signal op1p, op1, op2, ALUout, ALUoutp, op1f, op2f, rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2 : std_logic_vector(31 downto 0);
+  signal rad1, rad2, wad                                                                                             : std_logic_vector(3 downto 0);
+    signal Samt:std_logic_vector(4 downto 0);
 
-
-  signal out_pulse,mulSel : std_logic;
+  signal out_pulse, mulSel : std_logic;
 begin
 
 
@@ -164,7 +164,7 @@ begin
     RW      => dout_mem(7),
     AW      => dout_mem(8),
     BW      => dout_mem(9),
-    mulSel => dout_mem(10),
+    mulSel  => dout_mem(10),
     Asrc1   => dout_mem(11),
     Asrc2   => dout_mem(13 downto 12),
     Fset    => dout_mem(14),
@@ -198,11 +198,12 @@ begin
     wd_sig       => wd,
     ad2_sig      => ad2,
     rd2p2_sig    => rd2p2,
-    rd_temp_sig => rd_temp,
-    rd_sig => rd,
-op1_sig=>op1,
-op2_sig=>op2,
-op1p_sig=>op1p);
+    rd_temp_sig  => rd_temp,
+    rd_sig       => rd,
+    op1_sig      => op1,
+    op2_sig      => op2,
+    op1p_sig     => op1p,
+    Samt_sig=> Samt);
 
 
 
@@ -323,13 +324,13 @@ op1p_sig=>op1p);
     wd                                    when "00000000001101",
     ad2                                   when "00000000001110",
     IR                                    when "00000000001111",
-    rd_temp when "00000000010000",
-    rd when "00000000010001",
-op1 when "00000000010010",
-op2 when "00000000010011",
-op1p when "00000000010100",
-
-    rd2p2                                 when others;
+    rd_temp                               when "00000000010000",
+    rd                                    when "00000000010001",
+    op1                                   when "00000000010010",
+    op2                                   when "00000000010011",
+    op1p                                  when "00000000010100",
+    "000000000000000000000000000"&Samt when "00000000010101",
+    rd2p2 when others;
 
   switch_pair <= SW(1) & SW(2);
   with switch_pair select
