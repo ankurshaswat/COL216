@@ -56,7 +56,8 @@ architecture arch of Main_Controller is
   type state_type is (wait1,wait2,fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4,  mul_ck_MLA, only_mul, add_MLA, wr_mul);
 
 
-  signal state      : state_type;
+  signal state      : state_typ
+  e;
   --signal op_temp : std_logic := "0100";
   signal Z, N, V, C : std_logic;
 
@@ -589,11 +590,11 @@ begin
             WadSrc <= "00";
             R1src  <= "01";
             op1sel <= '1';
-            SType  <= "00";             --- Not sure which bits signal it
-            if (ins_27_20(5) = '0') then
-              ShiftAmtSel <= '0';       -- register specified
+            SType  <= ins_7_4(2 downto 1);             --- Not sure which bits signal it
+            if (ins_7_4(0) = '0') then
+              ShiftAmtSel <= '1';       -- register specified
             else
-              ShiftAmtSel <= '1';       -- immediate
+              ShiftAmtSel <= '0';       -- immediate
             end if;
             Shift     <= '1';
             MulW      <= '0';
@@ -626,7 +627,7 @@ begin
             WadSrc      <= "00";
             R1src       <= "01";
             op1sel      <= '1';
-            SType       <= "00";        --- Not sure which bits signal it
+            SType       <= ins_7_4(2 downto 1);        --- Not sure which bits signal it
             ShiftAmtSel <= '1';         --- ins(11 to 4);
             Shift       <= '1';
             MulW        <= '0';
