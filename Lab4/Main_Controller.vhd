@@ -161,8 +161,37 @@ begin
 --------------------------------------------|
         when rdAB =>
 
+          if (ins_27_20(7 downto 5) = "000" and ins_7_4(3 downto 0) = "1001") then
+            state <= mul_ck_MLA;        -- 00420B10
 
-          if (ins_27_26 = "00") then    -- 00020B00
+            IorD <= '0';
+            MW   <= '0';
+            IW   <= '0';   --- Instruction won't update due to PC+4
+            DW   <= '0';
+            Rsrc <= '1';
+            M2R  <= "00";               --
+            RW   <= '0';
+            AW   <= '1';
+            BW   <= '1';
+
+            --Asrc1 <= "10";
+            mulSel <= '0';
+            Asrc1  <= '1';
+            Asrc2  <= "00";
+            Fset   <= '0';
+            op     <= decoded_op;
+            ReW    <= '0';
+
+            WadSrc      <= "00";
+            R1src       <= "01";
+            op1sel      <= '0';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '0';
+          elsif (ins_27_26 = "00") then    -- 00020B00
             state <= shift_state1;      --state <= arith;
             IorD  <= '0';
 
@@ -232,36 +261,7 @@ begin
             ShiftW      <= '0';
             op1update   <= '0';
 
-          elsif (ins_7_4(3 downto 0) = "1001") then
-            state <= mul_ck_MLA;        -- 00420B10
-
-            IorD <= '0';
-            MW   <= '0';
-            IW   <= '0';   --- Instruction won't update due to PC+4
-            DW   <= '0';
-            Rsrc <= '1';
-            M2R  <= "00";               --
-            RW   <= '0';
-            AW   <= '1';
-            BW   <= '1';
-
-            --Asrc1 <= "10";
-            mulSel <= '0';
-            Asrc1  <= '1';
-            Asrc2  <= "00";
-            Fset   <= '0';
-            op     <= decoded_op;
-            ReW    <= '0';
-
-            WadSrc      <= "00";
-            R1src       <= "01";
-            op1sel      <= '0';
-            SType       <= "00";
-            ShiftAmtSel <= '0';
-            Shift       <= '0';
-            MulW        <= '0';
-            ShiftW      <= '0';
-            op1update   <= '0';
+          
 
           elsif (ins_27_26 = "10" and ins_27_20(4) = '0') then
             --- 002210C0
