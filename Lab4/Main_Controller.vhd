@@ -178,7 +178,11 @@ begin
             BW     <= '1';
             mulSel <= '0';
             Asrc1  <= '1';
-            Asrc2  <= "00";
+            if (ins_27_20(5)='0') then  
+              Asrc2  <= "00";
+            else
+              Asrc2 <= "10";
+            end if;
             Fset   <= '0';
             op     <= decoded_op;
             ReW    <= '0';
@@ -565,7 +569,7 @@ begin
         when shift_state1 =>            -- 91420900 reg_spec -- 99420900 imm
           -- read register X = RF[IR[11-8]]; is also done here;
           if (ins_27_26 = "00") then
-            if (ins_27_20(5) = '1') then
+            if (ins_27_20(5) = '0') then
               if (ins_7_4(0) = '0') then
                 state <= shift_state2;
 
@@ -593,7 +597,7 @@ begin
                 op1sel <= '1';
                 SType  <= ins_7_4(2 downto 1);  --- Not sure which bits signal it
 
-                ShiftAmtSel <= '1';     -- register specified
+                ShiftAmtSel <= '1';     -- not register specified
 
                 -- end if;
                 Shift     <= '1';
@@ -627,7 +631,7 @@ begin
                 op1sel <= '1';
                 SType  <= "11";         --rotate
 
-                ShiftAmtSel <= '0';     -- immediate
+                ShiftAmtSel <= '0';     -- not immediate
                 -- end if;
                 Shift       <= '1';
                 MulW        <= '0';
@@ -660,11 +664,12 @@ begin
               R1src  <= "01";
               op1sel <= '1';
               SType  <= ins_7_4(2 downto 1);  --- Not sure which bits signal it
-              if (ins_7_4(0) = '0') then
-                ShiftAmtSel <= '1';           -- register specified
-              else
-                ShiftAmtSel <= '0';           -- immediate
-              end if;
+              --if (ins_7_4(0) = '0') then
+              --  ShiftAmtSel <= '1';           -- register specified
+              --else
+              --  ShiftAmtSel <= '0';           -- immediate
+              --end if;
+              ShiftAmtSel = '0';
               Shift     <= '1';
               MulW      <= '0';
               ShiftW    <= '0';
