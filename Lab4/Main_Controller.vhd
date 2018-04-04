@@ -503,7 +503,7 @@ begin
 --------------------------------------------|
         when wrRF =>                    -- 000200A0
           state <= fetch;
-          if (not (ins_27_20(4) = '1' and(ins_27_20(3) = '0'))) then
+          -- if (not (ins_27_20(4) = '1' and(ins_27_20(3) = '0'))) then
             IorD   <= '0';
             --MR: out std_logic:='0';
             --  PW          <= '1';
@@ -532,7 +532,7 @@ begin
             MulW        <= '0';
             ShiftW      <= '0';
             op1update   <= '0';
-          end if;
+          -- end if;
 --------------------------------------------|
         when wr_from_M2RF =>            -- 00020080
           state <= fetch;
@@ -663,7 +663,7 @@ begin
               WadSrc <= "00";
               R1src  <= "01";
               op1sel <= '1';
-              SType  <= ins_7_4(2 downto 1);  --- Not sure which bits signal it
+              SType  <= "11";  --- Not sure which bits signal it
               --if (ins_7_4(0) = '0') then
               --  ShiftAmtSel <= '1';           -- register specified
               --else
@@ -694,7 +694,11 @@ begin
             --Asrc1 <= "01";
             mulSel <= '0';
             Asrc1  <= '1';
-            Asrc2  <= "00";
+            if (ins_27_20(5)='1') then
+              Asrc2  <= "00";
+            else
+              Asrc2 <= "10";
+            end if;
             Fset   <= '0';
             op     <= decoded_op;
             ReW    <= '0';
@@ -732,7 +736,11 @@ begin
             --Asrc1 <= "01";
             mulSel <= '0';
             Asrc1  <= '1';
-            Asrc2  <= "00";
+            if (ins_27_20(5)='0') then
+              Asrc2  <= "00";
+            else
+              Asrc2 <= "10";
+            end if;
             Fset   <= '0';
             op     <= decoded_op;
             ReW    <= '0';
@@ -767,7 +775,11 @@ begin
             --Asrc1 <= "01";
             mulSel <= '0';
             Asrc1  <= '1';
-            Asrc2  <= "00";
+            if(ins_27_20(5)='1') then
+              Asrc2  <= "00";
+            else
+              Asrc2 <= "10";
+          end if;
             Fset   <= '0';
             op     <= decoded_op;
             ReW    <= '0';
