@@ -467,7 +467,7 @@ begin
 --------------------------------------------|
         when brn =>  -- 002230C0
           --;;;  -- we have to do PC =PC + 4 + Offset will take two cycles;
-          state  <= fetch;
+          state  <= wait1;
           IorD   <= '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
