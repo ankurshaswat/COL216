@@ -15,10 +15,10 @@ architecture arch of Bctrl is
 
 begin
 
-  Z <= ins_31_28(3);
-  N <= ins_31_28(2);
-  V <= ins_31_28(1);
-  C <= ins_31_28(0);
+  Z <= F(3);
+  N <= F(2);
+  V <= F(1);
+  C <= F(0);
 
   with ins_31_28 select p <=
     Z when "0000",
