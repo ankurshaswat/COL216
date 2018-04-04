@@ -53,7 +53,7 @@ end entity Main_Controller;
 architecture arch of Main_Controller is
 
 
-  type state_type is (wait1, wait2, wait3, wait4, fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, mul_ck_MLA, only_mul, add_MLA, wr_mul);
+  type state_type is (wait1, wait2, wait3, wait4,wait5,wait6, fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, mul_ck_MLA, only_mul, add_MLA, wr_mul);
 
 
   signal state      : state_type;
@@ -471,7 +471,7 @@ begin
 
 --------------------------------------------|
         when wrM =>                     -- 00020003
-          state <= fetch;
+          state <= wait1;
           IorD  <= '1';
 
           --MR: out std_logic:='0';
@@ -567,7 +567,7 @@ begin
           op1update   <= '0';
 --------------------------------------------|
         when wrRF =>                    -- 000200A0
-          state <= fetch;
+          state <= wait1;
           -- if (not (ins_27_20(4) = '1' and(ins_27_20(3) = '0'))) then
             IorD   <= '0';
             --MR: out std_logic:='0';
@@ -600,7 +600,7 @@ begin
           -- end if;
 --------------------------------------------|
         when wr_from_M2RF =>            -- 00020080
-          state <= fetch;
+          state <= wait1;
           IorD  <= '0';
 
           --MR: out std_logic:='0';
@@ -974,7 +974,7 @@ begin
 
 --------------------------------------------|
         when wrM_wrRF =>  -- 111200A3 -- Auto_inc  XXX 11120023 -- without Auto_inc
-          state <= fetch;
+          state <= wait1;
 
 
           -- If W='1' then auto_inc else don't
