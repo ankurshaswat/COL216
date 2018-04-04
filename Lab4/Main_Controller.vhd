@@ -408,7 +408,7 @@ begin
 
           --MR: out std_logic:='0';
           --  PW          <= '1';
-          MW     <= '1';
+          MW     <= p;--'1';
           IW     <= '0';
           DW     <= '0';
           Rsrc   <= '0';
@@ -477,7 +477,7 @@ begin
           DW     <= '0';
           Rsrc   <= '0';
           M2R    <= "10";               --
-          RW     <= '1';
+          RW     <=  p;     --'1';
           AW     <= '0';
           BW     <= '0';
           --Asrc1 <= "00";
@@ -509,7 +509,7 @@ begin
             DW     <= '0';
             Rsrc   <= '0';
             M2R    <= "01";                --
-            RW     <= '1';
+            RW     <=  p;   --'1';
             AW     <= '0';
             BW     <= '0';
             --Asrc1 <= "00";
@@ -542,7 +542,7 @@ begin
           DW     <= '0';
           Rsrc   <= '0';
           M2R    <= "00";               --
-          RW     <= '1';
+          RW     <=  p;   --'1';
           AW     <= '0';
           BW     <= '0';
           --Asrc1 <= "00";
@@ -715,7 +715,7 @@ begin
 --------------------------------------------|
         when rdM_wrRF =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
           state                           <= wr_from_M2RF;
-          if (ins_27_20(1) = '1') then RW <= '1';
+          if (ins_27_20(1) = '1') then RW <=  p;--'1';
           else RW                         <= '0';
           end if;
 
@@ -754,7 +754,7 @@ begin
 
 
           -- If W='1' then auto_inc else don't
-          if (ins_27_20(1) = '1') then RW <= '1';
+          if (ins_27_20(1) = '1') then RW <= p;--'1';
           else RW                         <= '0';
           end if;
 
@@ -950,7 +950,7 @@ begin
             DW    <= '0';
             Rsrc  <= '0';
             M2R   <= "01";              --
-            RW    <= '1';
+            RW    <= p;           --'1';
             AW    <= '0';
             BW    <= '0';
             mulSel <= '1';
