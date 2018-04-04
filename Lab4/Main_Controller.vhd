@@ -227,7 +227,7 @@ begin
             op1update   <= '0';         -- Store op1 in op1p;
           elsif (ins_27_26 = "01") then
             -- 00020B00
-            if (ins_27_20(0) = '1') then
+            if (ins_27_20(5) = '1') then
               state <= shift_state1;    -- Offser is reg spec
             else
               state <= addr;            -- Offset is immediate
