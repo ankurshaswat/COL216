@@ -562,44 +562,115 @@ begin
           MulW        <= '0';
           ShiftW      <= '0';
           op1update   <= '0';
---------------------------------------------|
+--------------------------------------------|    
         when shift_state1 => -- 91420900 reg_spec -- 99420900 imm
           -- read register X = RF[IR[11-8]]; is also done here;
           if (ins_27_26 = "00") then
-            state <= shift_state2;
+            if (ins_27_20(5)=1) then
+              if (ins_7_4(0)='0') then
+                state <= shift_state2;
 
-            IorD   <= '0';
-            --MR: out std_logic:='0';
-            --  PW          <= '1';
-            MW     <= '0';
-            IW     <= '0';
-            DW     <= '0';
-            Rsrc   <= '0';
-            M2R    <= "00";             --
-            RW     <= '0';
-            AW     <= '1';
-            BW     <= '0';
-            --Asrc1 <= "01";
-            mulSel <= '0';
-            Asrc1  <= '1';
-            Asrc2  <= "00";
-            Fset   <= '0';
-            op     <= decoded_op;
-            ReW    <= '0';
+                IorD   <= '0';
+                --MR: out std_logic:='0';
+                --  PW          <= '1';
+                MW     <= '0';
+                IW     <= '0';
+                DW     <= '0';
+                Rsrc   <= '0';
+                M2R    <= "00";             --
+                RW     <= '0';
+                AW     <= '1';
+                BW     <= '0';
+                --Asrc1 <= "01";
+                mulSel <= '0';
+                Asrc1  <= '1';
+                Asrc2  <= "00";
+                Fset   <= '0';
+                op     <= decoded_op;
+                ReW    <= '0';
 
-            WadSrc <= "00";
-            R1src  <= "01";
-            op1sel <= '1';
-            SType  <= ins_7_4(2 downto 1);             --- Not sure which bits signal it
-            if (ins_7_4(0) = '0') then
-              ShiftAmtSel <= '1';       -- register specified
+                WadSrc <= "00";
+                R1src  <= "01";
+                op1sel <= '1';
+                SType  <= ins_7_4(2 downto 1);             --- Not sure which bits signal it
+              
+                  ShiftAmtSel <= '1';       -- register specified
+             
+                end if;
+                Shift     <= '1';
+                MulW      <= '0';
+                ShiftW    <= '0';
+                op1update <= '1';
+              else
+                state <= shift_state2;
+
+                IorD   <= '0';
+                --MR: out std_logic:='0';
+                --  PW          <= '1';
+                MW     <= '0';
+                IW     <= '0';
+                DW     <= '0';
+                Rsrc   <= '0';
+                M2R    <= "00";             --
+                RW     <= '0';
+                AW     <= '1';
+                BW     <= '0';
+                --Asrc1 <= "01";
+                mulSel <= '0';
+                Asrc1  <= '1';
+                Asrc2  <= "00";
+                Fset   <= '0';
+                op     <= decoded_op;
+                ReW    <= '0';
+
+                WadSrc <= "00";
+                R1src  <= "01";
+                op1sel <= '1';
+                SType  <= "11";             --rotate
+                
+                ShiftAmtSel <= '0';       -- immediate
+                end if;
+                Shift     <= '1';
+                MulW      <= '0';
+                ShiftW    <= '0';
+                op1update <= '1';
+              end if;
             else
-              ShiftAmtSel <= '0';       -- immediate
+              state <= shift_state2;
+
+              IorD   <= '0';
+              --MR: out std_logic:='0';
+              --  PW          <= '1';
+              MW     <= '0';
+              IW     <= '0';
+              DW     <= '0';
+              Rsrc   <= '0';
+              M2R    <= "00";             --
+              RW     <= '0';
+              AW     <= '1';
+              BW     <= '0';
+              --Asrc1 <= "01";
+              mulSel <= '0';
+              Asrc1  <= '1';
+              Asrc2  <= "00";
+              Fset   <= '0';
+              op     <= decoded_op;
+              ReW    <= '0';
+
+              WadSrc <= "00";
+              R1src  <= "01";
+              op1sel <= '1';
+              SType  <= ins_7_4(2 downto 1);             --- Not sure which bits signal it
+              if (ins_7_4(0) = '0') then
+                ShiftAmtSel <= '1';       -- register specified
+              else
+                ShiftAmtSel <= '0';       -- immediate
+              end if;
+              Shift     <= '1';
+              MulW      <= '0';
+              ShiftW    <= '0';
+              op1update <= '1';
             end if;
-            Shift     <= '1';
-            MulW      <= '0';
-            ShiftW    <= '0';
-            op1update <= '1';
           elsif(ins_27_26 = "01") then
 
             state <= shift_state2;  -- 99820900
