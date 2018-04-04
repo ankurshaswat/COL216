@@ -53,7 +53,7 @@ end entity Main_Controller;
 architecture arch of Main_Controller is
 
 
-  type state_type is (wait1, wait2, wait3, wait4,wait5,wait6, fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, mul_ck_MLA, only_mul, add_MLA, wr_mul);
+  type state_type is (wait1, wait2, wait3, wait4,wait5,wait6, wait7, wait8, fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, mul_ck_MLA, only_mul, add_MLA, wr_mul);
 
 
   signal state      : state_type;
@@ -161,6 +161,38 @@ begin
           state       <= wait4;
 --------------------------------------------|
         when wait4 =>                   --00000000
+           IorD  <= '1';
+
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW     <= '0';
+          IW     <= '0';
+          DW     <= '1';
+          Rsrc   <= '0';
+          M2R    <= "00";               --
+          RW     <= '0';
+          AW     <= '0';
+          BW     <= '0';
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1  <= '0';
+          Asrc2  <= "00";
+          Fset   <= '0';                -- p from Bctrl;
+          op     <= "0100";             -- op from the Actrl;
+          ReW    <= '0';
+
+          WadSrc      <= "00";
+          R1src       <= "00";
+          op1sel      <= '0';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
+          state       <= wait8;
+--------------------------------------------|
+        when wait8 =>                   --00000000
            IorD  <= '1';
 
           --MR: out std_logic:='0';
@@ -938,6 +970,42 @@ begin
 
 --------------------------------------------|
         when wait6 =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
+          state                           <=wait7;
+          if (ins_27_20(1) = '1') then RW <= p;  --'1';
+          else RW                         <= '0';
+          end if;
+
+          IorD   <= '1';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW     <= '0';
+          IW     <= '0';
+          DW     <= '1';
+          Rsrc   <= '0';
+          M2R    <= "01";               --
+          --RW    <= '0';
+          AW     <= '0';
+          BW     <= '0';
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1  <= '0';
+          Asrc2  <= "00";
+          Fset   <= '0';                -- p from Bctrl;
+          op     <= "0100";             -- op from the Actrl;
+          ReW    <= '0';
+
+          WadSrc      <= "01";
+          R1src       <= "00";
+          op1sel      <= '0';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
+
+--------------------------------------------|
+        when wait7 =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
           state                           <= wr_from_M2RF;
           if (ins_27_20(1) = '1') then RW <= p;  --'1';
           else RW                         <= '0';
