@@ -126,84 +126,27 @@ begin
           ShiftW      <= '0';
           op1update   <= '0';
           state       <= fetch;
---------------------------------------------|
-        when wait1 =>                   --00000000
-          IorD   <= '0';
-          --MR: out std_logic:='0';
-          --  PW          <= '1';
-          MW     <= '0';
-          IW     <= '0';
-          DW     <= '0';
-          Rsrc   <= '0';
-          M2R    <= "00";               --
-          RW     <= '0';
-          AW     <= '0';
-          BW     <= '0';
-          mulSel <= '0';
-          Asrc1  <= '0';
-          Asrc2  <= "00";
-          Fset   <= '0';
-          op     <= "0000";
-          ReW    <= '0';
 
-          WadSrc      <= "00";
-          R1src       <= "00";
-          op1sel      <= '0';
-          SType       <= "00";
-          ShiftAmtSel <= '0';
-          Shift       <= '0';
-          MulW        <= '0';
-          ShiftW      <= '0';
-          op1update   <= '0';
-          state       <= wait2;
---------------------------------------------|
-        when wait2 =>                   --00000000
-          IorD   <= '0';
-          --MR: out std_logic:='0';
-          --  PW          <= '1';
-          MW     <= '0';
-          IW     <= '0';
-          DW     <= '0';
-          Rsrc   <= '0';
-          M2R    <= "00";               --
-          RW     <= '0';
-          AW     <= '0';
-          BW     <= '0';
-          mulSel <= '0';
-          Asrc1  <= '0';
-          Asrc2  <= "00";
-          Fset   <= '0';
-          op     <= "0000";
-          ReW    <= '0';
-
-          WadSrc      <= "00";
-          R1src       <= "00";
-          op1sel      <= '0';
-          SType       <= "00";
-          ShiftAmtSel <= '0';
-          Shift       <= '0';
-          MulW        <= '0';
-          ShiftW      <= '0';
-          op1update   <= '0';
-          state       <= fetch;
 --------------------------------------------|
         when wait3 =>                   --00000000
-          IorD   <= '0';
+           IorD  <= '1';
+
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW     <= '0';
           IW     <= '0';
-          DW     <= '0';
+          DW     <= '1';
           Rsrc   <= '0';
           M2R    <= "00";               --
           RW     <= '0';
           AW     <= '0';
           BW     <= '0';
+          --Asrc1 <= "00";
           mulSel <= '0';
           Asrc1  <= '0';
           Asrc2  <= "00";
-          Fset   <= '0';
-          op     <= "0000";
+          Fset   <= '0';                -- p from Bctrl;
+          op     <= "0100";             -- op from the Actrl;
           ReW    <= '0';
 
           WadSrc      <= "00";
@@ -218,22 +161,24 @@ begin
           state       <= wait4;
 --------------------------------------------|
         when wait4 =>                   --00000000
-          IorD   <= '0';
+           IorD  <= '1';
+
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW     <= '0';
           IW     <= '0';
-          DW     <= '0';
+          DW     <= '1';
           Rsrc   <= '0';
           M2R    <= "00";               --
           RW     <= '0';
           AW     <= '0';
           BW     <= '0';
+          --Asrc1 <= "00";
           mulSel <= '0';
           Asrc1  <= '0';
           Asrc2  <= "00";
-          Fset   <= '0';
-          op     <= "0000";
+          Fset   <= '0';                -- p from Bctrl;
+          op     <= "0100";             -- op from the Actrl;
           ReW    <= '0';
 
           WadSrc      <= "00";
@@ -245,7 +190,7 @@ begin
           MulW        <= '0';
           ShiftW      <= '0';
           op1update   <= '0';
-          state       <= fetch;
+          state       <= wr_from_M2RF;
 --------------------------------------------|
         when fetch =>                   -- 002210C4
 
@@ -347,7 +292,7 @@ begin
             op1update   <= '0';         -- Store op1 in op1p;
           elsif (ins_27_26 = "01") then
             -- 00020B00
-            if (ins_27_20(0) = '1') then
+            if (ins_27_20(5) = '1') then
               state <= shift_state1;    -- Offser is reg spec
             else
               state <= addr;            -- Offset is immediate
@@ -558,7 +503,7 @@ begin
           op1update   <= '0';
 --------------------------------------------|
         when rdM =>                     -- 00020009
-          state <= wr_from_M2RF;
+          state <= wait3;
           IorD  <= '1';
 
           --MR: out std_logic:='0';
@@ -921,6 +866,78 @@ begin
         --  state <= shift_state;
 --------------------------------------------|
         when rdM_wrRF =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
+          state                           <= wait5;
+          if (ins_27_20(1) = '1') then RW <= p;  --'1';
+          else RW                         <= '0';
+          end if;
+
+          IorD   <= '1';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW     <= '0';
+          IW     <= '0';
+          DW     <= '1';
+          Rsrc   <= '0';
+          M2R    <= "01";               --
+          --RW    <= '0';
+          AW     <= '0';
+          BW     <= '0';
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1  <= '0';
+          Asrc2  <= "00";
+          Fset   <= '0';                -- p from Bctrl;
+          op     <= "0100";             -- op from the Actrl;
+          ReW    <= '0';
+
+          WadSrc      <= "01";
+          R1src       <= "00";
+          op1sel      <= '0';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
+
+--------------------------------------------|
+        when wait5 =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
+          state                           <= wait6;
+          if (ins_27_20(1) = '1') then RW <= p;  --'1';
+          else RW                         <= '0';
+          end if;
+
+          IorD   <= '1';
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW     <= '0';
+          IW     <= '0';
+          DW     <= '1';
+          Rsrc   <= '0';
+          M2R    <= "01";               --
+          --RW    <= '0';
+          AW     <= '0';
+          BW     <= '0';
+          --Asrc1 <= "00";
+          mulSel <= '0';
+          Asrc1  <= '0';
+          Asrc2  <= "00";
+          Fset   <= '0';                -- p from Bctrl;
+          op     <= "0100";             -- op from the Actrl;
+          ReW    <= '0';
+
+          WadSrc      <= "01";
+          R1src       <= "00";
+          op1sel      <= '0';
+          SType       <= "00";
+          ShiftAmtSel <= '0';
+          Shift       <= '0';
+          MulW        <= '0';
+          ShiftW      <= '0';
+          op1update   <= '0';
+
+--------------------------------------------|
+        when wait6 =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
           state                           <= wr_from_M2RF;
           if (ins_27_20(1) = '1') then RW <= p;  --'1';
           else RW                         <= '0';
