@@ -875,7 +875,7 @@ begin
           op1update   <= '0';
 --------------------------------------------|
         when addr_rdB =>                -- 010A0210
-          if (ins_27_20(5) = '1') then
+          if (ins_27_20(0) = '1') then
             state <= rdM_wrRF;
           else state <= wrM_wrRF;
           end if;
@@ -903,7 +903,7 @@ begin
           op1sel      <= '1';
           SType       <= "00";
           ShiftAmtSel <= '0';
-          Shift       <= '0';
+          Shift       <= '1';
           MulW        <= '0';
           ShiftW      <= '0';
           op1update   <= '0';
