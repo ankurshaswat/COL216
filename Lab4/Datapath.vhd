@@ -59,7 +59,10 @@ entity Datapath is
     op2_sig      : out std_logic_vector(31 downto 0);
     op1p_sig     : out std_logic_vector(31 downto 0);
     Samt_sig     : out std_logic_vector(4 downto 0);
-    rd2p2_sig    : out std_logic_vector(31 downto 0)
+    rd2p2_sig    : out std_logic_vector(31 downto 0);
+    mul_sig : out std_logic_vector(31 downto 0);
+    mulp_sig : out std_logic_vector(31 downto 0)
+    
     );
 end Datapath;
 
@@ -201,6 +204,8 @@ begin
   op2_sig      <= op2;
   op1p_sig     <= op1p;
   Samt_sig     <= Samt;
+    mulp_sig<=mulp;
+    mul_sig<=mul;
 
   car_temp <= '0';
 
@@ -242,7 +247,7 @@ begin
   with R1src select rad1 <=
     ins(19 downto 16) when "00",
     ins(11 downto 8)  when "01",
-    ins(15 downto 12) when others;
+    ins(3 downto 0) when others;
 
   with WadSrc select wad <=
     ins(15 downto 12)  when "00",

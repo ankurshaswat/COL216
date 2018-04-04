@@ -227,7 +227,7 @@ begin
             op1update   <= '0';         -- Store op1 in op1p;
           elsif (ins_27_26 = "01") then
             -- 00020B00
-            if (ins_27_20(5) = '1') then
+            if (ins_27_20(0) = '1') then
               state <= shift_state1;    -- Offser is reg spec
             else
               state <= addr;            -- Offset is immediate
@@ -261,7 +261,7 @@ begin
             ShiftW      <= '0';
             op1update   <= '0';
 
-          
+
 
           elsif (ins_27_26 = "10" and ins_27_20(4) = '0') then
             --- 002210C0
@@ -1030,7 +1030,6 @@ begin
 --------------------------------------------|
         when wr_mul =>                  -- 00120CA0
           state  <= fetch;
-          state  <= wr_mul;
           IorD   <= '0';
           MW     <= '0';
           IW     <= '0';   --- Instruction won't update due to PC+4

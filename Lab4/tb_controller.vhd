@@ -141,7 +141,9 @@ architecture Behavioral of tb_controller is
       op2_sig      : out std_logic_vector(31 downto 0);
       op1p_sig     : out std_logic_vector(31 downto 0);
       rd_sig       : out std_logic_vector(31 downto 0);
-      Samt_sig     : out std_logic_vector(4 downto 0)
+      Samt_sig     : out std_logic_vector(4 downto 0);
+      mulp_sig     : out std_logic_vector(31 downto 0);
+      mul_sig      : out std_logic_vector(31 downto 0)
       );
   end component;
 
@@ -161,9 +163,9 @@ architecture Behavioral of tb_controller is
   signal reset_mem                      : std_logic;
   signal Flags_out                      : std_logic_vector(3 downto 0);
 
-  signal op1p, op1, op2, ALUout, ALUoutp, op1f, op2f, rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2 : std_logic_vector(31 downto 0);
-  signal rad1, rad2, wad                                                                                             : std_logic_vector(3 downto 0);
-  signal Samt                                                                                                        : std_logic_vector(4 downto 0);
+  signal op1p, op1, op2, ALUout, ALUoutp, op1f, op2f, rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2, mulp, mul : std_logic_vector(31 downto 0);
+  signal rad1, rad2, wad                                                                                                        : std_logic_vector(3 downto 0);
+  signal Samt                                                                                                                   : std_logic_vector(4 downto 0);
 
 
   signal out_pulse, mulSel : std_logic;
@@ -263,7 +265,9 @@ begin
     op1_sig      => op1,
     op2_sig      => op2,
     op1p_sig     => op1p,
-    Samt_sig     => Samt);
+    Samt_sig     => Samt,
+    mulp_sig     => mulp,
+    mul_sig      => mul);
 
 
 
@@ -390,6 +394,8 @@ begin
     op2                                   when "00000000010011",
     op1p                                  when "00000000010100",
     "000000000000000000000000000"&Samt    when "00000000010101",
+    mulp                                  when "00000000010110",
+    mul                                   when "00000000010111",
     rd2p2                                 when others;
 
   switch_pair <= SW(1) & SW(2);
