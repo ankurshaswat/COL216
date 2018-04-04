@@ -178,7 +178,7 @@ begin
             BW     <= '1';
             mulSel <= '0';
             Asrc1  <= '1';
-            if (ins_27_20(5)='0') then  
+            if (ins_27_20(5)='0') then
               Asrc2  <= "00";
             else
               Asrc2 <= "10";
@@ -655,7 +655,7 @@ begin
               --Asrc1 <= "01";
               mulSel <= '0';
               Asrc1  <= '1';
-              Asrc2  <= "00";
+              Asrc2  <= "10";
               Fset   <= '0';
               op     <= decoded_op;
               ReW    <= '0';
@@ -669,7 +669,7 @@ begin
               --else
               --  ShiftAmtSel <= '0';           -- immediate
               --end if;
-              ShiftAmtSel = '0';
+              ShiftAmtSel <= '0';
               Shift     <= '1';
               MulW      <= '0';
               ShiftW    <= '0';

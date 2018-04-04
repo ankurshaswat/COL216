@@ -260,7 +260,7 @@ begin
 
   with ShiftAmtSel select Samt <=
     op1(4 downto 0) when '0',
-    ins(8 downto 4) when others;
+    ins(11 downto 7) when others;
 
   Alu11 : ALU
     port map(
