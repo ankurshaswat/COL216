@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 
 entity Main_Controller is
   port (
-    decoded_op : in std_logic_vector;
+    decoded_op : in std_logic_vector;  -- whats this
     ins_20     : in std_logic;
     ins_31_28  : in std_logic_vector(3 downto 0);
     ins_27_26  : in std_logic_vector(1 downto 0);
@@ -499,35 +499,36 @@ begin
 --------------------------------------------|
         when wrRF =>    -- 000200A0
           state <= fetch;
-          IorD  <= '0';
-          --MR: out std_logic:='0';
-          --  PW          <= '1';
-          MW     <= '0';
-          IW     <= '0';
-          DW     <= '0';
-          Rsrc   <= '0';
-          M2R    <= "01";                --
-          RW     <= '1';
-          AW     <= '0';
-          BW     <= '0';
-          --Asrc1 <= "00";
-          mulSel <= '0';
-          Asrc1  <= '0';
-          Asrc2  <= "00";
-          Fset   <= '0';                -- depends on p from Bctrl
-          op     <= "0100";             -- op from Actrl
-          ReW    <= '0';
+          if (not (ins_27_20(4)&(not ins_27_20(3)) ) then  
+            IorD  <= '0';
+            --MR: out std_logic:='0';
+            --  PW          <= '1';
+            MW     <= '0';
+            IW     <= '0';
+            DW     <= '0';
+            Rsrc   <= '0';
+            M2R    <= "01";                --
+            RW     <= '1';
+            AW     <= '0';
+            BW     <= '0';
+            --Asrc1 <= "00";
+            mulSel <= '0';
+            Asrc1  <= '0';
+            Asrc2  <= "00";
+            Fset   <= ins_27_20(0);                -- depends on p from Bctrl
+            op     <= "0100";             -- op from Actrl
+            ReW    <= '0';
 
-          WadSrc      <= "00";
-          R1src       <= "00";
-          op1sel      <= '0';
-          SType       <= "00";
-          ShiftAmtSel <= '0';
-          Shift       <= '0';
-          MulW        <= '0';
-          ShiftW      <= '0';
-          op1update   <= '0';
-
+            WadSrc      <= "00";
+            R1src       <= "00";
+            op1sel      <= '0';
+            SType       <= "00";
+            ShiftAmtSel <= '0';
+            Shift       <= '0';
+            MulW        <= '0';
+            ShiftW      <= '0';
+            op1update   <= '0';
+          end if;
 --------------------------------------------|
         when wr_from_M2RF => -- 00020080
           state <= fetch;
