@@ -2,21 +2,21 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 
-entity Anode_interface is
+entity Switches_interface is
   port (
         HTRANS : in std_logic_vector(1 downto 0);
         PortSelect : in std_logic_vector(3 downto 0);
         HWRITE : in std_logic;
-        Switches : in std_logic_vector(15 downto 0);
-        HRDATA : out std_logic_vector(31 downto 0)
+        HRDATA : out std_logic_vector(31 downto 0);
+        Switches : in std_logic_vector(15 downto 0)
 
    );
-end entity Anode_interface;
+end entity Switches_interface;
 
-architecture arch of Anode_interface is
+architecture arch of Switches_interface is
 
 
-  type state_type is (Initial,TransferCheck,PortCheck,WriteCheck,ReadData);
+type state_type is (Initial,ReadData);
 
 
  
@@ -27,31 +27,20 @@ process (clk)
       case state is
       ------------------------------
         when Initial => 
-          state <= TransferCheck;
-      ------------------------------
-        when TransferCheck => 
-          if (HTRANS = "00") then 
-            state <= Initial;
-          elsif (HTRANS = "10") then 
-            state <= PortCheck;
-          end if;
-      ------------------------------
-        when PortCheck => 
-          if (PortSelect = '1') then  
-            state <= WriteCheck;
-          else
-              state <= Initial;
-          end if;
-      ------------------------------
-        when WriteCheck => 
-          if (HWRITE = '0') then  
-            state <= ReadData;
-          else
-              state <= Initial;
-          end if;
 
+          if (HTRANS = "00") then  -- IDLE
+            state <= Initial;
+          elsif (HTRANS = "10") then -- NONSEQ
+            --state <= PortCheck;
+              if (PortSelect = '1') then  
+          if (HWRITE = '1') then  
+                state <= ReadData;
+              end if;
+            end if;
+          end if;
       ------------------------------
-        when ReadData => 
+
+        when WriteData => 
           HRDATA <= Switches;
           state <= Initial;
          
