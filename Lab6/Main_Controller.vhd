@@ -64,7 +64,7 @@ begin
 
   process (clk)
   begin
-    if (falling_edge(clk)) then
+    if (falling_edge(clk) ) then
       case state is
 --------------------------------------------|
         when wait1 =>                   --00000000
@@ -466,10 +466,21 @@ begin
           op1update   <= '0';
 --------------------------------------------|
         when addr =>                             --000A2A10
-          if (ins_20 = '0') then state <= wrM;
-          else state                   <= rdM;
+          if (ins_20 = '0') then --state <= wrM;
+            state <= wait_state1;
+            HTRANS <= '1';
+            HWRITE <= '1';
+          else 
+            state                   <=   wait_state1; --rdM;
+            HTRANS <= '1';
+            HWRITE <= '0';
+
           end if;
-          IorD                         <= '0';
+          
+          
+
+          IorD                         <= '1';  -- give the address for reading  or writing   --- '0';
+
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW                           <= '0';
@@ -502,8 +513,58 @@ begin
 
 
 --------------------------------------------|
+        when wait_state1 => 
+          
+          HTRANS <= '0';
+          if(HREADY = '1') then 
+              if (ins_20 = '0') then 
+                state <= wrM;
+              else 
+                state <= rdM;
+              end if;
+          else state <=wait_state1;
+          end if;
+          IorD                         <= IorD ;      -- give the address for reading  or writing   --- '0';
+
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW                           <= MW;
+          IW                           <= IW;
+          DW                           <= DW;
+          Rsrc                         <= Rsrc;
+          M2R                          <= M2R;  --
+          RW                           <= RW;
+          AW                           <= AW;
+          BW                           <= BW;
+          --Asrc1                        <= "00";
+
+          mulSel <= mulSel;
+          Asrc1  <= Asrc1;
+
+          Asrc2 <= Asrc2;
+          Fset  <= Fset;                 -- p from Bctrl;
+          op    <= op;              -- Presently only adding the offset
+          ReW   <= ReW;
+
+          WadSrc      <= WadSrc;
+          R1src       <= R1src;
+          op1sel      <= op1sel;
+          SType       <= SType;
+          ShiftAmtSel <= ShiftAmtSel;
+          Shift       <= Shift;
+          MulW        <= MulW;
+          ShiftW      <= ShiftW;
+          op1update   <= op1update;
+
+
+
+
+--------------------------------------------|
+
         when wrM =>                     -- 00020003
-          state <= wait1;
+          state <= fetch ; --wait1;
+          --HTRANS <= "1";  -- NONSEQ;
+
           IorD  <= '1';
 
           --MR: out std_logic:='0';
@@ -535,8 +596,10 @@ begin
           op1update   <= '0';
 --------------------------------------------|
         when rdM =>                     -- 00020009
-          state <= wait3;
-          IorD  <= '1';
+          state <= wr_from_M2RF;  --wait3;
+          --HTRANS <= "10";
+
+          IorD  <= '0';  -- made 1 in addr --'1';
 
           --MR: out std_logic:='0';
           --  PW          <= '1';
@@ -568,7 +631,9 @@ begin
 --------------------------------------------|
         when brn =>                     -- 002230C0
           --;;;  -- we have to do PC =PC + 4 + Offset will take two cycles;
-          state  <= wait1;
+          state  <=   fetch; --wait1;
+          HTRANS <= '1';
+
           IorD   <= '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
@@ -599,7 +664,7 @@ begin
           op1update   <= '0';
 --------------------------------------------|
         when wrRF =>                    -- 000200A0
-          state <= wait1;
+          state <=   fetch;  --wait1;
           -- if (not (ins_27_20(4) = '1' and(ins_27_20(3) = '0'))) then
             IorD   <= '0';
             --MR: out std_logic:='0';
@@ -632,7 +697,7 @@ begin
           -- end if;
 --------------------------------------------|
         when wr_from_M2RF =>            -- 00020080
-          state <= wait1;
+          state <=    fetch  ;  ---wait1;
           IorD  <= '0';
 
           --MR: out std_logic:='0';
@@ -898,7 +963,7 @@ begin
         --  state <= shift_state;
 --------------------------------------------|
         when rdM_wrRF =>  -- 001200A9 -- Auto_inc  XXX 00120029 -- without Auto_inc
-          state                           <= wait5;
+          state                           <= wr_from_M2RF; --wait5;
           if (ins_27_20(1) = '1') then RW <= p;  --'1';
           else RW                         <= '0';
           end if;
@@ -1042,7 +1107,7 @@ begin
 
 --------------------------------------------|
         when wrM_wrRF =>  -- 111200A3 -- Auto_inc  XXX 11120023 -- without Auto_inc
-          state <= wait1;
+          state <= fetch ; --wait1;
 
 
           -- If W='1' then auto_inc else don't
@@ -1084,8 +1149,14 @@ begin
           --  state <= rdM_wrRF;
           --else state <= wrM_wrRF;
           --end if;
-          state <= wait3;
-          IorD       <= '0';
+          state <= wait_state2;
+          HTRANS <= '1';
+          if (ins_20(0) = '0') then 
+            HWRITE <= '1';
+          else
+            HWRITE <= '0';
+          end if;  
+          IorD       <= '1';  -- Send the address to the memory- '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW         <= '0';
@@ -1116,6 +1187,52 @@ begin
 
 
 --------------------------------------------|
+
+ when wait_state2 => 
+          
+          HTRANS <= '0';  -- IDLE 
+          if(HREADY = '1') then      
+              if (ins_20 = '0') then 
+                state <= wrM_wrRF;
+              else 
+                state <= rdM_wrRF;
+              end if;
+          else state <=wait_state2;
+          end if;
+          IorD                         <= IorD ;      -- give the address for reading  or writing   --- '0';
+
+          --MR: out std_logic:='0';
+          --  PW          <= '1';
+          MW                           <= MW;
+          IW                           <= IW;
+          DW                           <= DW;
+          Rsrc                         <= Rsrc;
+          M2R                          <= M2R;  --
+          RW                           <= RW;
+          AW                           <= AW;
+          BW                           <= BW;
+          --Asrc1                        <= "00";
+
+          mulSel <= mulSel;
+          Asrc1  <= Asrc1;
+
+          Asrc2 <= Asrc2;
+          Fset  <= Fset;                 -- p from Bctrl;
+          op    <= op;              -- Presently only adding the offset
+          ReW   <= ReW;
+
+          WadSrc      <= WadSrc;
+          R1src       <= R1src;
+          op1sel      <= op1sel;
+          SType       <= SType;
+          ShiftAmtSel <= ShiftAmtSel;
+          Shift       <= Shift;
+          MulW        <= MulW;
+          ShiftW      <= ShiftW;
+          op1update   <= op1update;
+
+--------------------------------------------|
+
         when PC_plus4 =>                --002A10C8
           state <= brn;
           IorD  <= '0';
