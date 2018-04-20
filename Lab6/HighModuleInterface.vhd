@@ -1,10 +1,10 @@
-entity High_Module is
+entity HighModuleInterface is
 port(
 
 );
 
 
-architecture arch  of High_Module is
+architecture arch  of HighModuleInterface is
 
 
 component Anode_interface 
