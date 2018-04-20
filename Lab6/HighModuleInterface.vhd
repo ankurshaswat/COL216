@@ -112,7 +112,7 @@ architecture arch of HighModuleInterface is
   end component;
 
     signal ReadyLED,HREADY,HTRANS,HWRITE,LEDSelect_temp,ReadyAnode,ReadySwitch,ReadyMemory,ReadyCathode,HREADY_temp,MemSelect_temp,AnodeSelect_temp,SwitchSelect_temp,CathodeSelect_temp:std_logic;
-    signal HRDATA,HWDATA,MemoryData:std_logic_vector(31 downto 0);
+    signal Cathodes,HRDATA,HWDATA,MemoryData:std_logic_vector(31 downto 0);
     signal SwitchData,HADDR:std_logic_vector(15 downto 0);
     signal Anodes:std_logic_vector(1 downto 0);
 
