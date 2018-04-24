@@ -23,6 +23,7 @@ architecture arch of Cathode_interface is
   type state_type is (Initial,WriteData);
 signal state:state_type;
 
+
  
 begin
 process (clk)
@@ -46,13 +47,13 @@ process (clk)
 
         when WriteData => 
         if(Position ="00") then
-          Cathodes (7 downto 0) <= HWDATA;
+          Cathodes (7 downto 0) <= HWDATA(7 downto 0);
           elsif (Position = "01") then
-          Cathodes (15 downto 8) <= HWDATA;
+          Cathodes (15 downto 8) <= HWDATA(7 downto 0);
            elsif (Position = "01") then
-           Cathodes (23 downto 16) <= HWDATA;
+           Cathodes (23 downto 16) <= HWDATA(7 downto 0);
           else
-          Cathodes (31 downto 24) <= HWDATA;
+          Cathodes (31 downto 24) <= HWDATA(7 downto 0);
           end if;
           state <= Initial;
          

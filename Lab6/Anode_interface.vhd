@@ -44,7 +44,7 @@ process (clk)
       ------------------------------
 
         when WriteData => 
-          Anodes <= HWDATA;
+          Anodes <= HWDATA(1 downto 0);
           state <= Initial;
          
       end case;

@@ -97,13 +97,15 @@ architecture arch of HighModuleInterface is
     port (
       HTRANS    : in  std_logic;
       MemSelect : in  std_logic;
-      HADDR     : in  std_logic_vector (11 downto 0);
+      HADDR     : in  std_logic_vector (31 downto 0);
       HWRITE    : in  std_logic;
       HWDATA    : in  std_logic_vector (31 downto 0);
       clk       : in  std_logic;
       HREADYIN    : in std_logic;
       HREADYOUT    : out std_logic;
-      HRDATA    : out std_logic_vector(31 downto 0)
+      HRDATA    : out std_logic_vector(31 downto 0);
+        HSIZE: in std_logic_vector(1 downto 0);
+      reset:in std_logic
       );
   end component;
 
@@ -135,7 +137,10 @@ architecture arch of HighModuleInterface is
       Shift       : out std_logic;
       MulW        : out std_logic;
       ShiftW      : out std_logic;
-      op1update   : out std_logic);
+      op1update   : out std_logic;
+          HTRANS : out std_logic;
+      HWRITE : out std_logic;
+      HREADY:in std_logic);
   end component;
 
   component Datapath
@@ -199,10 +204,12 @@ architecture arch of HighModuleInterface is
       );
   end component;
 
-
-    signal ReadyLED,HREADY,HTRANS,HWRITE,LEDSelect_temp,ReadyAnode,ReadySwitch,ReadyMemory,ReadyCathode,HREADY_temp,MemSelect_temp,AnodeSelect_temp,SwitchSelect_temp,CathodeSelect_temp:std_logic;
+    signal HSIZE :std_logic_vector(1 downto 0);
+    signal reset:std_logic;
+    signal ReadyLED,HTRANS,HWRITE,LEDSelect_temp,ReadyAnode,ReadySwitch,ReadyMemory,ReadyCathode,HREADY_temp,MemSelect_temp,AnodeSelect_temp,SwitchSelect_temp,CathodeSelect_temp:std_logic;
     signal Cathodes,HRDATA,HWDATA,MemoryData:std_logic_vector(31 downto 0);
-    signal SwitchData,HADDR:std_logic_vector(15 downto 0);
+    signal SwitchData:std_logic_vector(31 downto 0);
+    signal HADDR:std_logic_vector(31 downto 0);
     signal Anodes:std_logic_vector(1 downto 0);
   signal temp                           : std_logic;
     signal btn_3_d                        : std_logic;
@@ -256,7 +263,10 @@ begin
     Shift       => dout_mem(28),
     MulW        => dout_mem(29),
     ShiftW      => dout_mem(30),
-    op1update   => dout_mem(31));
+    op1update   => dout_mem(31),
+        HTRANS => HTRANS,
+    HWRITE =>HWRITE,
+    HREADY=>HREADY_temp);
 
   DP_inst : Datapath port map(
     clock   => out_pulse,
@@ -325,10 +335,12 @@ begin
     HADDR     => HADDR,
     HWRITE    => HWRITE,
     HWDATA    => HWDATA,
-    clk       => clk,
+    clk       => out_pulse,
     HREADYIN  => HREADY_temp,
     HREADYOUT => ReadyMemory,
-    HRDATA    => MemoryData
+    HRDATA    => MemoryData,
+    HSIZE => HSIZE,
+    reset => reset
     );
 
   Pattern: Cathode_interface port map(
@@ -336,7 +348,7 @@ begin
     HTRANS     => HTRANS,
     PortSelect => CathodeSelect_temp,
     HWRITE     => HWRITE,
-    clk        => clk,
+    clk        => out_pulse,
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadyCathode,
     HWDATA     => HWDATA,
@@ -346,7 +358,7 @@ begin
   si : Switches_interface port map(
     HTRANS     => HTRANS,
     PortSelect => SwitchSelect_temp,
-    clk        => clk,
+    clk        => out_pulse,
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadySwitch,
     HRDATA     => SwitchData,
@@ -358,7 +370,7 @@ begin
     HTRANS     => HTRANS,
     PortSelect => AnodeSelect_temp,
     HWRITE     => HWRITE,
-    clk        => clk,
+    clk        => out_pulse,
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadyAnode,
     HWDATA     => HWDATA,
@@ -369,7 +381,7 @@ begin
     HTRANS     => HTRANS,
     PortSelect => LEDSelect_temp,
     HWRITE     => HWRITE,
-    clk        => clk,
+    clk        => out_pulse,
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadyCathode,
     HWDATA     => HWDATA,
@@ -378,23 +390,23 @@ begin
 
 
   with HADDR select HRDATA <=
-    SwitchData                         when "1111111111111100" ,
-    "00000000000000000000000000000000" when "1111111111111101" ,
-    "00000000000000000000000000000000" when "1111111111111110" ,
-    "00000000000000000000000000000000" when "1111111111111111" ,
+    SwitchData                         when "11111111111111111111111111111100" ,
+    "00000000000000000000000000000000" when "11111111111111111111111111111101" ,
+    "00000000000000000000000000000000" when "11111111111111111111111111111110" ,
+    "00000000000000000000000000000000" when "11111111111111111111111111111111" ,
     MemoryData when others;
 
   with HADDR select HREADY_temp <=
-    ReadySwitch  when "1111111111111100" ,
-    ReadyLED     when "1111111111111101" ,
-    ReadyAnode   when "1111111111111110" ,
-    ReadyCathode when "1111111111111111" ,
+    ReadySwitch  when "11111111111111111111111111111100" ,
+    ReadyLED     when "11111111111111111111111111111101" ,
+    ReadyAnode   when "11111111111111111111111111111110" ,
+    ReadyCathode when "11111111111111111111111111111111" ,
     ReadyMemory when others;
 
-  MemSelect_temp     <= '0' when HADDR(15 downto 2) = "11111111111111" else '1';
-  SwitchSelect_temp  <= '1' when HADDR = "1111111111111100"            else '0';
-  AnodeSelect_temp   <= '1' when HADDR = "1111111111111110"            else '0';
-  CathodeSelect_temp <= '1' when HADDR = "1111111111111111"            else '0';
-  LEDSelect_temp     <= '1' when HADDR = "1111111111111101"            else '0';
+  MemSelect_temp     <= '0' when HADDR(31 downto 2) = "111111111111111111111111111111" else '1';
+  SwitchSelect_temp  <= '1' when HADDR = "11111111111111111111111111111100"            else '0';
+  AnodeSelect_temp   <= '1' when HADDR = "11111111111111111111111111111110"            else '0';
+  CathodeSelect_temp <= '1' when HADDR = "11111111111111111111111111111111"            else '0';
+  LEDSelect_temp     <= '1' when HADDR = "11111111111111111111111111111101"            else '0';
 
 end architecture;

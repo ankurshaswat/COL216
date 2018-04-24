@@ -3,21 +3,24 @@ use IEEE.std_logic_1164.all;
 
 
 entity Switches_interface is
-  port (
-        HTRANS : in std_logic_vector(1 downto 0);
-        PortSelect : in std_logic_vector(3 downto 0);
-        HWRITE : in std_logic;
-        HRDATA : out std_logic_vector(31 downto 0);
-        Switches : in std_logic_vector(15 downto 0)
+   port (
+     HTRANS     : in  std_logic;
+     PortSelect : in  std_logic;
+      HREADYIN    : in std_logic;
+                HREADYOUT    : out std_logic;
+     HWRITE     : in  std_logic;
+      clk       : in  std_logic;
+     HRDATA     : out std_logic_vector(31 downto 0);
+     Switches   : in  std_logic_vector(15 downto 0)
 
-   );
+     );
 end entity Switches_interface;
 
 architecture arch of Switches_interface is
 
 
-type state_type is (Initial,ReadData);
-
+type state_type is (Initial,WriteData);
+signal state:state_type;
 
  
 begin
@@ -28,20 +31,20 @@ process (clk)
       ------------------------------
         when Initial => 
 
-          if (HTRANS = "00") then  -- IDLE
+          if (HTRANS = '0') then  -- IDLE
             state <= Initial;
-          elsif (HTRANS = "10") then -- NONSEQ
+          elsif (HTRANS = '1') then -- NONSEQ
             --state <= PortCheck;
               if (PortSelect = '1') then  
           if (HWRITE = '1') then  
-                state <= ReadData;
+                state <= WriteData;
               end if;
             end if;
           end if;
       ------------------------------
 
         when WriteData => 
-          HRDATA <= Switches;
+          HRDATA <= "0000000000000000" & Switches;
           state <= Initial;
          
       end case;

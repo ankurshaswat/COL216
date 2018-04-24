@@ -44,7 +44,7 @@ process (clk)
       ------------------------------
 
         when WriteData => 
-          LEDs <= HWDATA;
+          LEDs <= HWDATA(15 downto 0);
           state <= Initial;
          
       end case;

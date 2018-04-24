@@ -29,7 +29,10 @@ entity Controller is
     Shift       : out std_logic;
     MulW        : out std_logic;
     ShiftW      : out std_logic;
-    op1update   : out std_logic);
+    op1update   : out std_logic;
+        HTRANS : out std_logic;
+    HWRITE : out std_logic;
+    HREADY:in std_logic);
 end entity Controller;
 
 architecture arch of Controller is
@@ -106,7 +109,10 @@ architecture arch of Controller is
       Shift       : out std_logic;
       MulW        : out std_logic;
       ShiftW      : out std_logic;
-      op1update   : out std_logic
+      op1update   : out std_logic;
+          HTRANS : out std_logic;
+      HWRITE : out std_logic;
+      HREADY:in std_logic
       );
   end component;
 
@@ -165,7 +171,10 @@ begin
     Shift       => Shift,
     MulW        => MulW,
     ShiftW      => ShiftW,
-    op1update   => op1update
+    op1update   => op1update,
+        HTRANS => HTRANS,
+    HWRITE =>HWRITE,
+    HREADY => HREADY
     );
 
 end architecture;

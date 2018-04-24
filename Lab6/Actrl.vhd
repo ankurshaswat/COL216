@@ -19,9 +19,9 @@ begin
   -- i1 : instructionDecoder port map(ins => ins, class => class, sub_class => sub_class, ins_status => ins_status);
   -- ins <= "0000" & ins_27_0;
 
-  op <= "0100" when (class = "01" and ins(23) = '1') or (class = "11") or (class = "10" and sub_class = "001") else
+  op <= "0100" when (class = "01" and ins(23) = '1') or (class = "11") or (class = "10" and sub_class = "0001") else
         "0010" when (class = "01" and ins(23) = '0') else
-        "1101" when (class = "10" and sub_class = "000") else
+        "1101" when (class = "10" and sub_class = "0000") else
         ins(24 downto 21);
 
 end architecture;
