@@ -15,11 +15,27 @@ entity Memory_Interface is
     );
 end entity Memory_Interface;
 
+
+
 architecture arch of Memory_Interface is
 
+  component Memory is
+    port(Address     : in  std_logic_vector(31 downto 0);
+         writeData   : in  std_logic_vector(31 downto 0);
+         clock       : in  std_logic;
+         outer       : out std_logic_vector(31 downto 0);
+         MR          : in  std_logic;
+         reset       : in  std_logic;
+         MW          : in  std_logic;
+         WriteEnable : in  std_logic_vector(3 downto 0));
+  end component;
 
   type state_type is (init, assertAddress, wait1, wait2, wait3, ReadData, WriteData);
   signal state : state_type;
+  signal W:std_logic;
+  signal addr:std_logic_vector(31 downto 0);
+  signal mem_out:std_logic_vector(31 downto 0);
+  signal MW:std_logic;
 begin
 
   process (clk)
@@ -61,7 +77,7 @@ begin
           end if;
 
         when WriteData =>
-          WriteEnable <= '1';
+          MW <= '1';
           state       <= init;
 
         when ReadData =>
@@ -70,5 +86,10 @@ begin
       end case;
     end if;
   end process;
+
+
+  Mem : Memory port map(address => addr, writeData => HWDATA, outer => mem_out,
+   MR => '1', MW => MW, clock => clock, reset => reset, WriteEnable => write_enable_modified);
+
 
 end architecture;
