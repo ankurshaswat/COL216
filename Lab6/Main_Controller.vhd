@@ -160,7 +160,7 @@ IorD <= IorD_temp;
           MulW_temp        <= '0';
           ShiftW_temp      <= '0';
           op1update_temp   <= '0';
-          state       <= fetch;
+          state       <= prefetch;
 
 --------------------------------------------|
         when wait3 =>                   --00000000
@@ -272,11 +272,11 @@ IorD <= IorD_temp;
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW_temp     <= '0';
-          IW_temp     <= '1';
+          IW_temp     <= '0';
           DW_temp     <= '0';
           Rsrc_temp   <= '0';
-          M2R_temp    <= "10";               --
-          RW_temp     <= '1';
+          M2R_temp    <= "00";               --
+          RW_temp     <= '0';
           AW_temp     <= '0';
           BW_temp     <= '0';
           mulSel_temp <= '0';
@@ -286,7 +286,7 @@ IorD <= IorD_temp;
           op_temp     <= "0100";
           ReW_temp    <= '0';
 
-          WadSrc_temp      <= "10";
+          WadSrc_temp      <= "00";
           R1src_temp       <= "00";
           op1sel_temp      <= '0';
           SType_temp       <= "00";
@@ -635,7 +635,7 @@ IorD <= IorD_temp;
 --------------------------------------------|
 
         when wrM =>                     -- 00020003
-          state <= fetch ; --wait1;
+          state <= prefetch ; --wait1;
           --HTRANS <= "1";  -- NONSEQ;
 
           IorD_temp  <= '1';
@@ -704,7 +704,7 @@ IorD <= IorD_temp;
 --------------------------------------------|
         when brn =>                     -- 002230C0
           --;;;  -- we have to do PC =PC + 4 + Offset will take two cycles;
-          state  <=   fetch; --wait1;
+          state  <=   prefetch; --wait1;
           HTRANS <= '1';
 
           IorD_temp   <= '0';
@@ -737,7 +737,7 @@ IorD <= IorD_temp;
           op1update_temp   <= '0';
 --------------------------------------------|
         when wrRF =>                    -- 000200A0
-          state <=   fetch;  --wait1;
+          state <=   prefetch;  --wait1;
           -- if (not (ins_27_20(4) = '1' and(ins_27_20(3) = '0'))) then
             IorD_temp   <= '0';
             --MR: out std_logic:='0';
@@ -770,7 +770,7 @@ IorD <= IorD_temp;
           -- end if;
 --------------------------------------------|
         when wr_from_M2RF =>            -- 00020080
-          state <=    fetch  ;  ---wait1;
+          state <=    prefetch  ;  ---wait1;
           IorD_temp  <= '0';
 
           --MR: out std_logic:='0';
@@ -1180,7 +1180,7 @@ IorD <= IorD_temp;
 
 --------------------------------------------|
         when wrM_wrRF =>  -- 111200A3 -- Auto_inc  XXX 11120023 -- without Auto_inc
-          state <= fetch ; --wait1;
+          state <= prefetch ; --wait1;
 
 
           -- If W='1' then auto_inc else don't
@@ -1426,7 +1426,7 @@ IorD <= IorD_temp;
           op1update_temp   <= '0';
 --------------------------------------------|
         when wr_mul =>                  -- 00120CA0
-          state  <= fetch;
+          state  <= prefetch;
           IorD_temp   <= '0';
           MW_temp     <= '0';
           IW_temp     <= '0';   --- Instruction won't update due to PC+4
