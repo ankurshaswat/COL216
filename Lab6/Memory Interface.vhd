@@ -4,18 +4,18 @@ use IEEE.std_logic_1164.all;
 
 entity Memory_Interface is
       port (
-  HTRANS    : in  std_logic;
-  MemSelect : in  std_logic;
-  HADDR     : in  std_logic_vector (31 downto 0);
-  HWRITE    : in  std_logic;
-  HWDATA    : in  std_logic_vector (31 downto 0);
-  clk       : in  std_logic;
-  HREADYIN    : in std_logic;
-  HREADYOUT    : out std_logic;
-  HRDATA    : out std_logic_vector(31 downto 0);
-  HSIZE: in std_logic_vector(1 downto 0);
-  reset:in std_logic;
-  dttyper : in std_logic_vector(2 downto 0)
+  HTRANS    : in  std_logic := '0';
+  MemSelect : in  std_logic := '0';
+  HADDR     : in  std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+  HWRITE    : in  std_logic := '0';
+  HWDATA    : in  std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+  clk       : in  std_logic := '0';
+  HREADYIN    : in std_logic := '0';
+  HREADYOUT    : out std_logic := '0';
+  HRDATA    : out std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+  HSIZE: in std_logic_vector(1 downto 0) "00";
+  reset:in std_logic := '0';
+  dttyper : in std_logic_vector(2 downto 0) := "000"
   );
 end entity Memory_Interface;
 
