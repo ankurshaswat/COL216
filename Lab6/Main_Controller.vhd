@@ -643,7 +643,7 @@ IorD <= IorD_temp;
           state <= prefetch ; --wait1;
           --HTRANS <= "1";  -- NONSEQ;
 
-          IorD_temp  <= '1';
+          IorD_temp  <= '0';
 
           --MR: out std_logic:='0';
           --  PW          <= '1';
@@ -1193,7 +1193,7 @@ IorD <= IorD_temp;
           else RW_temp                         <= '0';
           end if;
 
-          IorD_temp   <= '1';
+          IorD_temp   <= '0';
           --MR: out std_logic:='0';
           --  PW          <= '1';
           MW_temp     <= '1';
