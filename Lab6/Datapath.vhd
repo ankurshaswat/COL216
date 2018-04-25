@@ -62,7 +62,7 @@ entity Datapath is
     rd2p2_sig    : out std_logic_vector(31 downto 0);
     mul_sig : out std_logic_vector(31 downto 0);
     mulp_sig : out std_logic_vector(31 downto 0)
-    
+
     );
 end Datapath;
 
@@ -216,9 +216,6 @@ begin
 
   F <= Z & N & V & C;
 
-  dttyper     <= ins(6) & ins(6 downto 5) when IW = '0' else "000";
-  byte_offset <= ad(1 downto 0);
-  ad2         <= ad(31 downto 2) & "00";
 
   with IorD select ad <=
     PC      when '0',
@@ -314,17 +311,27 @@ begin
       ReadOut2    => rd2,
       PC          => PC);
 
-  Mem : Memory port map(address => ad2, writeData => rd2p2, outer => rd_temp, MR => '1', MW => MW, clock => clock, reset => reset, WriteEnable => write_enable_modified);
 
-  PMPath : ProcessorMemoryPath port map(
-    FromProcessor => rd2p,
-    FromMemory    => rd_temp,
-    DTType        => dttyper,               --
-    ByteOffset    => byte_offset,           --
-    ToProcessor   => rd,
-    ToMemory      => rd2p2,
-    WriteEnable   => write_enable_modified  --
-    );
+      HRDATA in
+      HWDATA out
+      HADDR out
+
+      rd <= HRDATA;
+      HAADR <= ad;
+      HWDATA <= rd2p;
+
+
+  -- Mem : Memory port map(address => ad2, writeData => rd2p2, outer => rd_temp, MR => '1', MW => MW, clock => clock, reset => reset, WriteEnable => write_enable_modified);
+  --
+  -- PMPath : ProcessorMemoryPath port map(
+  --   FromProcessor => rd2p,
+  --   FromMemory    => rd_temp,
+  --   DTType        => dttyper,               --
+  --   ByteOffset    => byte_offset,           --
+  --   ToProcessor   => rd,
+  --   ToMemory      => rd2p2,
+  --   WriteEnable   => write_enable_modified  --
+  --   );
 
   shif : shifter
     port map(inp => op2, shift_type => SType, shift_amount => Samt, carry => carry_out, out1 => shifted);

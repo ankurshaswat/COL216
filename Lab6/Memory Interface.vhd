@@ -14,7 +14,8 @@ entity Memory_Interface is
   HREADYOUT    : out std_logic;
   HRDATA    : out std_logic_vector(31 downto 0);
   HSIZE: in std_logic_vector(1 downto 0);
-  reset:in std_logic
+  reset:in std_logic;
+  dttyper : in std_logic_vector(2 downto 0)
   );
 end entity Memory_Interface;
 
@@ -52,7 +53,7 @@ architecture arch of Memory_Interface is
   signal mem_out,mem_out_temp,HWDATA_modified:std_logic_vector(31 downto 0);
   signal MW:std_logic;
   signal write_enable_modified:std_logic_vector(3 downto 0);
-  signal dttyper:std_logic_vector(2 downto 0);
+  -- signal dttyper:std_logic_vector(2 downto 0);
 begin
 
   process (clk)
@@ -106,18 +107,23 @@ begin
 
 dttyper <= '1' & HSIZE;
 
+byte_offset <= HAADR(1 downto 0);
+ad         <= HADDR(31 downto 2) & "00";
+
+-- dttyper     <= ins(6) & ins(6 downto 5) when IW = '0' else "000";
+
     PMPath : ProcessorMemoryPath port map(
       FromProcessor => HWDATA,
       FromMemory    => mem_out_temp,
       DTType        => dttyper,               --
-      ByteOffset    => "00",           --
+      ByteOffset    => byte_offset,           --
       ToProcessor   => mem_out,
       ToMemory      => HWDATA_modified,
       WriteEnable   => write_enable_modified  --
       );
 
 
-  Mem : Memory port map(address => HADDR, writeData => HWDATA_modified, outer => mem_out_temp,
+  Mem : Memory port map(address => ad, writeData => HWDATA_modified, outer => mem_out_temp,
    MR => '1', MW => MW, clock => clk, reset => reset, WriteEnable => write_enable_modified);
 
 

@@ -4,21 +4,21 @@ use IEEE.std_logic_1164.all;
 
 entity HighModuleInterface is
   port(
-            SW        : in    std_logic_vector (15 downto 0);
-            BTN       : in    std_logic_vector (4 downto 0);
-            CLK       : in    std_logic;
-            LED       : out   std_logic_vector (15 downto 0);
-            SSEG_CA   : out   std_logic_vector (7 downto 0);
-            SSEG_AN   : out   std_logic_vector (3 downto 0);
-            UART_TXD  : out   std_logic;
-            UART_RXD  : in    std_logic;
-            VGA_RED   : out   std_logic_vector (3 downto 0);
-            VGA_BLUE  : out   std_logic_vector (3 downto 0);
-            VGA_GREEN : out   std_logic_vector (3 downto 0);
-            VGA_VS    : out   std_logic;
-            VGA_HS    : out   std_logic;
-            PS2_CLK   : inout std_logic;
-            PS2_DATA  : inout std_logic
+    SW        : in    std_logic_vector (15 downto 0);
+    BTN       : in    std_logic_vector (4 downto 0);
+    CLK       : in    std_logic;
+    LED       : out   std_logic_vector (15 downto 0);
+    SSEG_CA   : out   std_logic_vector (7 downto 0);
+    SSEG_AN   : out   std_logic_vector (3 downto 0);
+    UART_TXD  : out   std_logic;
+    UART_RXD  : in    std_logic;
+    VGA_RED   : out   std_logic_vector (3 downto 0);
+    VGA_BLUE  : out   std_logic_vector (3 downto 0);
+    VGA_GREEN : out   std_logic_vector (3 downto 0);
+    VGA_VS    : out   std_logic;
+    VGA_HS    : out   std_logic;
+    PS2_CLK   : inout std_logic;
+    PS2_DATA  : inout std_logic
     );
 end entity HighModuleInterface;
 
@@ -30,9 +30,9 @@ architecture arch of HighModuleInterface is
       HTRANS     : in  std_logic;
       PortSelect : in  std_logic;
       HWRITE     : in  std_logic;
-       clk       : in  std_logic;
-        HREADYIN    : in std_logic;
-                  HREADYOUT    : out std_logic;
+      clk        : in  std_logic;
+      HREADYIN   : in  std_logic;
+      HREADYOUT  : out std_logic;
       HWDATA     : in  std_logic_vector(31 downto 0);
       LEDs       : out std_logic_vector(15 downto 0)
 
@@ -50,9 +50,9 @@ architecture arch of HighModuleInterface is
       HTRANS     : in  std_logic;
       PortSelect : in  std_logic;
       HWRITE     : in  std_logic;
-       HREADYIN    : in std_logic;
-                 HREADYOUT    : out std_logic;
-       clk       : in  std_logic;
+      HREADYIN   : in  std_logic;
+      HREADYOUT  : out std_logic;
+      clk        : in  std_logic;
       HWDATA     : in  std_logic_vector(31 downto 0);
       Anodes     : out std_logic_vector(1 downto 0)
 
@@ -64,10 +64,10 @@ architecture arch of HighModuleInterface is
     port (
       HTRANS     : in  std_logic;
       PortSelect : in  std_logic;
-       HREADYIN    : in std_logic;
-                 HREADYOUT    : out std_logic;
+      HREADYIN   : in  std_logic;
+      HREADYOUT  : out std_logic;
       HWRITE     : in  std_logic;
-       clk       : in  std_logic;
+      clk        : in  std_logic;
       HRDATA     : out std_logic_vector(31 downto 0);
       Switches   : in  std_logic_vector(15 downto 0)
 
@@ -78,13 +78,13 @@ architecture arch of HighModuleInterface is
 
   component Cathode_interface is
     port (
-    Position : in std_logic_vector(1 downto 0);
+      Position   : in  std_logic_vector(1 downto 0);
       HTRANS     : in  std_logic;
       PortSelect : in  std_logic;
       HWRITE     : in  std_logic;
-        clk       : in  std_logic;
-          HREADYIN    : in std_logic;
-            HREADYOUT    : out std_logic;
+      clk        : in  std_logic;
+      HREADYIN   : in  std_logic;
+      HREADYOUT  : out std_logic;
       HWDATA     : in  std_logic_vector(31 downto 0);
       Cathodes   : out std_logic_vector(31 downto 0)
 
@@ -101,11 +101,12 @@ architecture arch of HighModuleInterface is
       HWRITE    : in  std_logic;
       HWDATA    : in  std_logic_vector (31 downto 0);
       clk       : in  std_logic;
-      HREADYIN    : in std_logic;
-      HREADYOUT    : out std_logic;
+      HREADYIN  : in  std_logic;
+      HREADYOUT : out std_logic;
       HRDATA    : out std_logic_vector(31 downto 0);
-        HSIZE: in std_logic_vector(1 downto 0);
-      reset:in std_logic
+      HSIZE     : in  std_logic_vector(1 downto 0);
+      reset     : in  std_logic;
+      dttyper   : in  std_logic_vector(2 downto 0)
       );
   end component;
 
@@ -138,9 +139,9 @@ architecture arch of HighModuleInterface is
       MulW        : out std_logic;
       ShiftW      : out std_logic;
       op1update   : out std_logic;
-          HTRANS : out std_logic;
-      HWRITE : out std_logic;
-      HREADY:in std_logic);
+      HTRANS      : out std_logic;
+      HWRITE      : out std_logic;
+      HREADY      : in  std_logic);
   end component;
 
   component Datapath
@@ -204,34 +205,36 @@ architecture arch of HighModuleInterface is
       );
   end component;
 
-    signal HSIZE :std_logic_vector(1 downto 0);
-    signal reset:std_logic;
-    signal ReadyLED,HTRANS,HWRITE,LEDSelect_temp,ReadyAnode,ReadySwitch,ReadyMemory,ReadyCathode,HREADY_temp,MemSelect_temp,AnodeSelect_temp,SwitchSelect_temp,CathodeSelect_temp:std_logic;
-    signal Cathodes,HRDATA,HWDATA,MemoryData:std_logic_vector(31 downto 0);
-    signal SwitchData:std_logic_vector(31 downto 0);
-    signal HADDR:std_logic_vector(31 downto 0);
-    signal Anodes:std_logic_vector(1 downto 0);
-  signal temp                           : std_logic;
-    signal btn_3_d                        : std_logic;
-    signal UART_RX_CNT                    : std_logic_vector(15 downto 0);
-    signal clk_mem                        : std_logic;
-    signal ena_mem                        : std_logic;
-    signal wea_mem                        : std_logic_vector(3 downto 0);
-    signal addr_mem                       : std_logic_vector(11 downto 0);
-    signal din_mem                        : std_logic_vector(31 downto 0);
-    signal dout_mem, dout_mem_temp, dshow : std_logic_vector(31 downto 0);
-    signal IR                             : std_logic_vector(31 downto 0);
-    signal rx_uart                        : std_logic_vector(7 downto 0);
-    signal switch_pair                    : std_logic_vector(1 downto 0);
-    signal reset_mem                      : std_logic;
-    signal Flags_out                      : std_logic_vector(3 downto 0);
-  
-    signal op1p, op1, op2, ALUout, ALUoutp, op1f, op2f, rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2, mulp, mul : std_logic_vector(31 downto 0);
-    signal rad1, rad2, wad                                                                                                        : std_logic_vector(3 downto 0);
-    signal Samt                                                                                                                   : std_logic_vector(4 downto 0);
-  
-  
-    signal out_pulse, mulSel : std_logic;
+  signal HSIZE : std_logic_vector(1 downto 0);
+  signal reset : std_logic;
+  signal ReadyLED, HTRANS, HWRITE, LEDSelect_temp, ReadyAnode, ReadySwitch, ReadyMemory, ReadyCathode, HREADY_temp,
+    MemSelect_temp, AnodeSelect_temp, SwitchSelect_temp, CathodeSelect_temp : std_logic;
+  signal Cathodes, HRDATA, HWDATA, MemoryData : std_logic_vector(31 downto 0);
+  signal SwitchData                           : std_logic_vector(31 downto 0);
+  signal HADDR                                : std_logic_vector(31 downto 0);
+  signal Anodes                               : std_logic_vector(1 downto 0);
+  signal temp                                 : std_logic;
+  signal btn_3_d                              : std_logic;
+  signal UART_RX_CNT                          : std_logic_vector(15 downto 0);
+  signal clk_mem                              : std_logic;
+  signal ena_mem                              : std_logic;
+  signal wea_mem                              : std_logic_vector(3 downto 0);
+  signal addr_mem                             : std_logic_vector(11 downto 0);
+  signal din_mem                              : std_logic_vector(31 downto 0);
+  signal dout_mem, dout_mem_temp, dshow       : std_logic_vector(31 downto 0);
+  signal IR                                   : std_logic_vector(31 downto 0);
+  signal rx_uart                              : std_logic_vector(7 downto 0);
+  signal switch_pair                          : std_logic_vector(1 downto 0);
+  signal reset_mem                            : std_logic;
+  signal Flags_out                            : std_logic_vector(3 downto 0);
+
+  signal op1p, op1, op2, ALUout, ALUoutp, op1f, op2f,
+    rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2, mulp, mul : std_logic_vector(31 downto 0);
+  signal rad1, rad2, wad : std_logic_vector(3 downto 0);
+  signal Samt            : std_logic_vector(4 downto 0);
+  signal dttyper : std_logic_vector(2 downto 0);
+
+  signal out_pulse, mulSel : std_logic;
 begin
 
 
@@ -264,9 +267,9 @@ begin
     MulW        => dout_mem(29),
     ShiftW      => dout_mem(30),
     op1update   => dout_mem(31),
-        HTRANS => HTRANS,
-    HWRITE =>HWRITE,
-    HREADY=>HREADY_temp);
+    HTRANS      => HTRANS,
+    HWRITE      => HWRITE,
+    HREADY      => HREADY_temp);
 
   DP_inst : Datapath port map(
     clock   => out_pulse,
@@ -339,12 +342,13 @@ begin
     HREADYIN  => HREADY_temp,
     HREADYOUT => ReadyMemory,
     HRDATA    => MemoryData,
-    HSIZE => HSIZE,
-    reset => reset
+    HSIZE     => HSIZE,
+    reset     => reset,
+    dttyper   => dttyper
     );
 
-  Pattern: Cathode_interface port map(
-    Position => Anodes,
+  Pattern : Cathode_interface port map(
+    Position   => Anodes,
     HTRANS     => HTRANS,
     PortSelect => CathodeSelect_temp,
     HWRITE     => HWRITE,
@@ -352,7 +356,7 @@ begin
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadyCathode,
     HWDATA     => HWDATA,
-    Cathodes => Cathodes
+    Cathodes   => Cathodes
     );
 
   si : Switches_interface port map(
@@ -362,8 +366,8 @@ begin
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadySwitch,
     HRDATA     => SwitchData,
-    HWRITE => HWRITE,
-    Switches => SW
+    HWRITE     => HWRITE,
+    Switches   => SW
     );
 
   Position : Anode_interface port map(
@@ -374,7 +378,7 @@ begin
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadyAnode,
     HWDATA     => HWDATA,
-    Anodes => Anodes
+    Anodes     => Anodes
     );
 
   li : LEDs_interface port map(
@@ -385,23 +389,24 @@ begin
     HREADYIN   => HREADY_temp,
     HREADYOUT  => ReadyCathode,
     HWDATA     => HWDATA,
-    LEDs => LED
+    LEDs       => LED
     );
 
+  dttyper <= ins(6) & ins(6 downto 5) when dout_mem(2) = '0' else "000";
 
   with HADDR select HRDATA <=
-    SwitchData                         when "11111111111111111111111111111100" ,
-    "00000000000000000000000000000000" when "11111111111111111111111111111101" ,
-    "00000000000000000000000000000000" when "11111111111111111111111111111110" ,
-    "00000000000000000000000000000000" when "11111111111111111111111111111111" ,
-    MemoryData when others;
+    SwitchData                         when "11111111111111111111111111111100",
+    "00000000000000000000000000000000" when "11111111111111111111111111111101",
+    "00000000000000000000000000000000" when "11111111111111111111111111111110",
+    "00000000000000000000000000000000" when "11111111111111111111111111111111",
+    MemoryData                         when others;
 
   with HADDR select HREADY_temp <=
-    ReadySwitch  when "11111111111111111111111111111100" ,
-    ReadyLED     when "11111111111111111111111111111101" ,
-    ReadyAnode   when "11111111111111111111111111111110" ,
-    ReadyCathode when "11111111111111111111111111111111" ,
-    ReadyMemory when others;
+    ReadySwitch  when "11111111111111111111111111111100",
+    ReadyLED     when "11111111111111111111111111111101",
+    ReadyAnode   when "11111111111111111111111111111110",
+    ReadyCathode when "11111111111111111111111111111111",
+    ReadyMemory  when others;
 
   MemSelect_temp     <= '0' when HADDR(31 downto 2) = "111111111111111111111111111111" else '1';
   SwitchSelect_temp  <= '1' when HADDR = "11111111111111111111111111111100"            else '0';
