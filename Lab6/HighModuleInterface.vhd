@@ -189,6 +189,10 @@ architecture arch of HighModuleInterface is
 --carry: in std_logic
 
 
+      HRDATA :in std_logic_vector(31 downto 0);
+      HWDATA :out std_logic_vector(31 downto 0);
+      HADDR :out std_logic_vector(31 downto 0);
+
 
       ALUout_sig   : out std_logic_vector(31 downto 0);
       ALUoutp_sig  : out std_logic_vector(31 downto 0);
@@ -306,6 +310,10 @@ begin
     op      => dout_mem(18 downto 15),
     ReW     => dout_mem(19),
 
+    HWDATA => HWDATA,
+    HRDATA => HRDATA,
+    HADDR => HADDR,
+
     WadSrc      => dout_mem(21 downto 20),
     R1src       => dout_mem(23 downto 22),
     op1sel      => dout_mem(24),
@@ -404,7 +412,8 @@ begin
     LEDs       => LED
     );
 
-  dttyper <= ins(6) & ins(6 downto 5) when dout_mem(2) = '0' else "000";
+  dttyper <= IR(6) & IR(6 downto 5) when dout_mem(2) = '0' else "000";
+  --dttyper <= '1' & HSIZE;
 
   with HADDR select HRDATA <=
     SwitchData                         when "11111111111111111111111111111100",

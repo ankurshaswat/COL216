@@ -1,3 +1,8 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+
+
 entity SevenSegmentDisplay is
 port(
 		clk : in std_logic;
@@ -29,11 +34,11 @@ to_display<= Display_inp(15 downto 0);
 pushbutton <= '0';
 
 Disp: display
-port map (to_display<= to_display,
-		pushbutton<=  pushbutton
-		cathod<= Cathode,
-		anodd<= Anode,
-		clock<= clk);
+port map (to_display=> to_display,
+		pushbutton=>  pushbutton,
+		cathod => Cathode,
+		anodd=> Anode,
+		clock=> clk);
 
 
 

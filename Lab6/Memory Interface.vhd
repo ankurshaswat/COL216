@@ -49,10 +49,12 @@ architecture arch of Memory_Interface is
   type state_type is (init, assertAddress, wait1, wait2, wait3, ReadData, WriteData);
   signal state : state_type;
   signal W:std_logic;
-  signal addr:std_logic_vector(31 downto 0);
+  signal addr,ad:std_logic_vector(31 downto 0);
   signal mem_out,mem_out_temp,HWDATA_modified:std_logic_vector(31 downto 0);
   signal MW:std_logic;
   signal write_enable_modified:std_logic_vector(3 downto 0);
+  signal byte_offset:std_logic_vector(1 downto 0);
+  
   -- signal dttyper:std_logic_vector(2 downto 0);
 begin
 
@@ -105,9 +107,8 @@ begin
     end if;
   end process;
 
-dttyper <= '1' & HSIZE;
 
-byte_offset <= HAADR(1 downto 0);
+byte_offset <= HADDR(1 downto 0);
 ad         <= HADDR(31 downto 2) & "00";
 
 -- dttyper     <= ins(6) & ins(6 downto 5) when IW = '0' else "000";

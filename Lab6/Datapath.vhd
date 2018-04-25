@@ -38,6 +38,9 @@ entity Datapath is
 --carry: in std_logic
 
 
+      HRDATA :in std_logic_vector(31 downto 0);
+      HWDATA :out std_logic_vector(31 downto 0);
+      HADDR :out std_logic_vector(31 downto 0);
 
     ALUout_sig   : out std_logic_vector(31 downto 0);
     ALUoutp_sig  : out std_logic_vector(31 downto 0);
@@ -312,12 +315,9 @@ begin
       PC          => PC);
 
 
-      HRDATA in
-      HWDATA out
-      HADDR out
 
       rd <= HRDATA;
-      HAADR <= ad;
+      HADDR <= ad;
       HWDATA <= rd2p;
 
 
