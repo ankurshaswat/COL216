@@ -677,7 +677,7 @@ IorD <= IorD_temp;
           state <= wr_from_M2RF;  --wait3;
           --HTRANS <= "10";
 
-          IorD_temp  <= '0';  -- made 1 in addr --'1';
+          IorD_temp  <= '1';  -- made 1 in addr --'1';
 
           --MR: out std_logic:='0';
           --  PW          <= '1';
