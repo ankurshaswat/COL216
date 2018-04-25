@@ -9,7 +9,7 @@ entity ALU is
     Op2      : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
     opcode   : in  std_logic_vector(3 downto 0)  := "0000";
     carry_in : in  std_logic                     := '0';
-    output1  : out std_logic_vector(31 downto 0);
+    output1  : out std_logic_vector(31 downto 0):="00000000000000000000000000000000";
     Z        : out std_logic                     := '0';
     N        : out std_logic                     := '0';
     C        : out std_logic                     := '0';

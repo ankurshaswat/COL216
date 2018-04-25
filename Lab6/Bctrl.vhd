@@ -4,9 +4,9 @@ use IEEE.std_logic_1164.all;
 
 entity Bctrl is
   port (
-    ins_31_28 : in  std_logic_vector(3 downto 0);
-    F         : in  std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
-    p         : out std_logic);
+    ins_31_28 : in  std_logic_vector(3 downto 0) := "0000";
+    F         : in  std_logic_vector(3 downto 0) := "0000";  -- (Flags : Z & N & V & C )
+    p         : out std_logic   :=  '0' ) ;
 end entity Bctrl;
 
 architecture arch of Bctrl is
