@@ -10,7 +10,7 @@ Position : in std_logic_vector(1 downto 0) := "00";
   HWRITE     : in  std_logic := '0';
     clk       : in  std_logic := '0';
       HREADYIN    : in std_logic := '0';
-        HREADYOUT    : out std_logic := '1';
+        HREADYOUT    : out std_logic := '0';
   HWDATA     : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
   Cathodes   : out std_logic_vector(31 downto 0) := "00000000000000000000000000000000"
 
@@ -32,6 +32,7 @@ process (clk)
       case state is
       ------------------------------
         when Initial => 
+            HREADYOUT<='0';
 
           if (HTRANS = '0') then  -- IDLE
             state <= Initial;
@@ -46,6 +47,8 @@ process (clk)
       ------------------------------
 
         when WriteData => 
+                   HREADYOUT<='1';
+
         if(Position ="00") then
           Cathodes (7 downto 0) <= HWDATA(7 downto 0);
           elsif (Position = "01") then

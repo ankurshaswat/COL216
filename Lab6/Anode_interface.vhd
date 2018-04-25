@@ -8,7 +8,7 @@ entity Anode_interface is
      PortSelect : in  std_logic := '0';
      HWRITE     : in  std_logic := '0';
       HREADYIN    : in std_logic := '0';
-                HREADYOUT    : out std_logic := '1';
+                HREADYOUT    : out std_logic := '0';
       clk       : in  std_logic := '0';
      HWDATA     : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
      Anodes     : out std_logic_vector(1 downto 0):= "00"
@@ -30,7 +30,7 @@ process (clk)
       case state is
       ------------------------------
         when Initial => 
-
+            HREADYOUT<='0';
           if (HTRANS = '0') then  -- IDLE
             state <= Initial;
           elsif (HTRANS = '1') then -- NONSEQ
@@ -44,6 +44,7 @@ process (clk)
       ------------------------------
 
         when WriteData => 
+           HREADYOUT<='1';
           Anodes <= HWDATA(1 downto 0);
           state <= Initial;
          

@@ -161,6 +161,7 @@ IorD <= IorD_temp;
           ShiftW_temp      <= '0';
           op1update_temp   <= '0';
           state       <= prefetch;
+       HWRITE<='0';
 
 --------------------------------------------|
         when wait3 =>                   --00000000
@@ -269,6 +270,7 @@ IorD <= IorD_temp;
             HTRANS <= '1';
             state <= prefetch ;
           end if ;
+       HWRITE<='0';
 
           IorD_temp   <= '0';
           --MR: out std_logic:='0';
@@ -590,7 +592,15 @@ IorD <= IorD_temp;
 --------------------------------------------|
         when wait_state1 => 
           
-          HWRITE <= '0';
+          if (ins_20 = '0') then --state <= wrM;
+        
+            HWRITE <= '1';
+          else 
+            HWRITE <= '0';
+
+          end if;
+          
+--          HWRITE <= '0';
           HTRANS <= '1';
           if(HREADY = '1') then 
               if (ins_20 = '0') then 
@@ -639,7 +649,9 @@ IorD <= IorD_temp;
 
 --------------------------------------------|
 
-        when wrM =>                     -- 00020003
+        when wrM =>        
+                    -- 00020003
+       HWRITE<='0';
           state <= prefetch ; --wait1;
           --HTRANS <= "1";  -- NONSEQ;
 
@@ -709,6 +721,8 @@ IorD <= IorD_temp;
 --------------------------------------------|
         when brn =>                     -- 002230C0
           --;;;  -- we have to do PC =PC + 4 + Offset will take two cycles;
+                 HWRITE<='0';
+
           state  <=   prefetch; --wait1;
           HTRANS <= '1';
 
@@ -742,6 +756,8 @@ IorD <= IorD_temp;
           op1update_temp   <= '0';
 --------------------------------------------|
         when wrRF =>                    -- 000200A0
+               HWRITE<='0';
+
           state <=   prefetch;  --wait1;
           -- if (not (ins_27_20(4) = '1' and(ins_27_20(3) = '0'))) then
             IorD_temp   <= '0';
@@ -775,6 +791,8 @@ IorD <= IorD_temp;
           -- end if;
 --------------------------------------------|
         when wr_from_M2RF =>            -- 00020080
+               HWRITE<='0';
+
           state <=    prefetch  ;  ---wait1;
           IorD_temp  <= '0';
 
@@ -1187,6 +1205,7 @@ IorD <= IorD_temp;
         when wrM_wrRF =>  -- 111200A3 -- Auto_inc  XXX 11120023 -- without Auto_inc
           state <= prefetch ; --wait1;
 
+       HWRITE<='0';
 
           -- If W='1' then auto_inc else don't
           if (ins_27_20(1) = '1') then RW_temp <= p;  --'1';
@@ -1437,7 +1456,10 @@ IorD <= IorD_temp;
           ShiftW_temp      <= '0';
           op1update_temp   <= '0';
 --------------------------------------------|
-        when wr_mul =>                  -- 00120CA0
+        when wr_mul =>    
+                      -- 00120CA0
+                             HWRITE<='0';
+
           state  <= prefetch;
           IorD_temp   <= '0';
           MW_temp     <= '0';

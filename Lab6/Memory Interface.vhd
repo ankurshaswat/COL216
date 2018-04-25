@@ -64,6 +64,7 @@ begin
       case state is
 
         when init =>
+        HREADYOUT <= '0';
           if(HTRANS = '0') then
             state <= init;
           else
