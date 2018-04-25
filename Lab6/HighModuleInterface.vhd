@@ -45,6 +45,17 @@ architecture arch of HighModuleInterface is
       out_pulse : out std_logic);
   end component;
 
+  component SevenSegmentDisplay is
+  port(
+  		clk : in std_logic;
+  		Display_inp : in std_logic_vector(31 downto 0);
+
+  		Anode : out std_logic_vector(3 downto 0);
+  		Cathode : out std_logic_vector(7 downto 0)
+  	);
+  end component;
+
+
   component Anode_interface is
     port (
       HTRANS     : in  std_logic;
@@ -237,6 +248,7 @@ architecture arch of HighModuleInterface is
   signal out_pulse, mulSel : std_logic;
 begin
 
+  ssd : SevenSegmentDisplay port map(clk => CLK , Display_inp => Cathodes, Anode =>SSEG_AN, Cathode => SSEG_CA);
 
   sp : Single_clock_cycle port map(clock => CLK, button => BTN(2), out_pulse => out_pulse);
 
