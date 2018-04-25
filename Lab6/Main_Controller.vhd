@@ -266,7 +266,7 @@ IorD <= IorD_temp;
             state <= fetch ;
           else
             state <= prefetch ;
-          endif ;
+          end if ;
 
           IorD_temp   <= '0';
           --MR: out std_logic:='0';
@@ -295,11 +295,10 @@ IorD <= IorD_temp;
           MulW_temp        <= '0';
           ShiftW_temp      <= '0';
           op1update_temp   <= '0';
-          state       <= rdAB;
 
 --------------------------------------------|
         when fetch =>                   -- 002210C4
-          HREADY <= '0';
+          HTRANS <= '0';
 
           IorD_temp   <= '0';
           --MR: out std_logic:='0';

@@ -6,8 +6,8 @@ use ieee.numeric_std.all;
 
 entity Memory is
 
-  port(Address     : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000001";
-       writeData   : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000001";
+  port(Address     : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+       writeData   : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
        clock       : in  std_logic                     := '0';
        MR          : in  std_logic                     := '1';
        reset       : in  std_logic                     := '0';
