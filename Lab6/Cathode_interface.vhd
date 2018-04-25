@@ -50,13 +50,13 @@ process (clk)
                    HREADYOUT<='1';
 
         if(Position ="00") then
-          Cathodes (7 downto 0) <= HWDATA(7 downto 0);
+          Cathodes (3 downto 0) <= HWDATA(3 downto 0);
           elsif (Position = "01") then
-          Cathodes (15 downto 8) <= HWDATA(7 downto 0);
-           elsif (Position = "01") then
-           Cathodes (23 downto 16) <= HWDATA(7 downto 0);
+          Cathodes (7 downto 4) <= HWDATA(3 downto 0);
+           elsif (Position = "10") then
+           Cathodes (11 downto 8) <= HWDATA(3 downto 0);
           else
-          Cathodes (31 downto 24) <= HWDATA(7 downto 0);
+          Cathodes (15 downto 12) <= HWDATA(3 downto 0);
           end if;
           state <= Initial;
          
