@@ -411,7 +411,7 @@ begin
     HWRITE     => HWRITE,
     clk        => out_pulse,
     HREADYIN   => HREADY_temp,
-    HREADYOUT  => ReadyCathode,
+    HREADYOUT  => ReadyLED,
     HWDATA     => HWDATA,
     LEDs       => LED
     );

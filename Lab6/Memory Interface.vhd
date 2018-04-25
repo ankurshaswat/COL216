@@ -108,8 +108,8 @@ begin
   end process;
 
 
-byte_offset <= HADDR(1 downto 0);
-ad         <= HADDR(31 downto 2) & "00";
+byte_offset <= addr(1 downto 0);
+ad         <= addr(31 downto 2) & "00";
 
 -- dttyper     <= ins(6) & ins(6 downto 5) when IW = '0' else "000";
 
