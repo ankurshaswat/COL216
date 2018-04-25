@@ -261,10 +261,12 @@ IorD <= IorD_temp;
 
 --------------------------------------------|
         when prefetch =>                   -- 002210C4
-          HTRANS <= '1';
+          
           if (HREADY = '1')  then
             state <= fetch ;
+            HTRANS <= '0';
           else
+            HTRANS <= '1';
             state <= prefetch ;
           end if ;
 
@@ -298,7 +300,7 @@ IorD <= IorD_temp;
 
 --------------------------------------------|
         when fetch =>                   -- 002210C4
-          HTRANS <= '0';
+          
 
           IorD_temp   <= '0';
           --MR: out std_logic:='0';
