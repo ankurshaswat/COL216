@@ -13,7 +13,7 @@ entity Memory_Interface is
   HREADYIN    : in std_logic := '0';
   HREADYOUT    : out std_logic := '0';
   HRDATA    : out std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
-  HSIZE: in std_logic_vector(1 downto 0) "00";
+  HSIZE: in std_logic_vector(1 downto 0) :="00";
   reset:in std_logic := '0';
   dttyper : in std_logic_vector(2 downto 0) := "000"
   );
@@ -48,10 +48,10 @@ architecture arch of Memory_Interface is
 
   type state_type is (init, assertAddress, wait1, wait2, wait3, ReadData, WriteData);
   signal state : state_type;
-  signal W:std_logic;
-  signal addr,ad:std_logic_vector(31 downto 0);
+  signal W:std_logic:='0';
+  signal addr,ad:std_logic_vector(31 downto 0):="00000000000000000000000000000000";
   signal mem_out,mem_out_temp,HWDATA_modified:std_logic_vector(31 downto 0);
-  signal MW:std_logic;
+  signal MW:std_logic:='0';
   signal write_enable_modified:std_logic_vector(3 downto 0);
   signal byte_offset:std_logic_vector(1 downto 0);
   

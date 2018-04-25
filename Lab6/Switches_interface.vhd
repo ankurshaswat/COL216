@@ -7,7 +7,7 @@ entity Switches_interface is
      HTRANS     : in  std_logic:='0';
      PortSelect : in  std_logic:='0';
       HREADYIN    : in std_logic:='0';
-                HREADYOUT    : out std_logic:='0';
+                HREADYOUT    : out std_logic:='1';
      HWRITE     : in  std_logic:='0';
       clk       : in  std_logic:='0';
      HRDATA     : out std_logic_vector(31 downto 0):="00000000000000000000000000000000";

@@ -10,7 +10,7 @@ Position : in std_logic_vector(1 downto 0) := "00";
   HWRITE     : in  std_logic := '0';
     clk       : in  std_logic := '0';
       HREADYIN    : in std_logic := '0';
-        HREADYOUT    : out std_logic := '0';
+        HREADYOUT    : out std_logic := '1';
   HWDATA     : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
   Cathodes   : out std_logic_vector(31 downto 0) := "00000000000000000000000000000000"
 

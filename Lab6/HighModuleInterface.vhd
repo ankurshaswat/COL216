@@ -249,12 +249,16 @@ architecture arch of HighModuleInterface is
   signal Samt            : std_logic_vector(4 downto 0):="00000";
   signal dttyper : std_logic_vector(2 downto 0):="000";
 
-  signal out_pulse, mulSel : std_logic:='0';
+  signal out_pulse_temp , out_pulse, mulSel,sim : std_logic:='0';
 begin
+
+    with sim select out_pulse <= 
+    clk when '1',
+    out_pulse_temp when others;
 
   ssd : SevenSegmentDisplay port map(clk => CLK , Display_inp => Cathodes, Anode =>SSEG_AN, Cathode => SSEG_CA);
 
-  sp : Single_clock_cycle port map(clock => CLK, button => BTN(2), out_pulse => out_pulse);
+  sp : Single_clock_cycle port map(clock => CLK, button => BTN(2), out_pulse => out_pulse_temp);
 
   cont : Controller port map(
     ins         => IR,

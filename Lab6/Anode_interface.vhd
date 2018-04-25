@@ -8,7 +8,7 @@ entity Anode_interface is
      PortSelect : in  std_logic := '0';
      HWRITE     : in  std_logic := '0';
       HREADYIN    : in std_logic := '0';
-                HREADYOUT    : out std_logic; := '0'
+                HREADYOUT    : out std_logic := '1';
       clk       : in  std_logic := '0';
      HWDATA     : in  std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
      Anodes     : out std_logic_vector(1 downto 0):= "00"
