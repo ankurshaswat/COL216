@@ -591,11 +591,13 @@ IorD <= IorD_temp;
         when wait_state1 => 
           
           HWRITE <= '0';
-          HTRANS <= '0';
+          HTRANS <= '1';
           if(HREADY = '1') then 
               if (ins_20 = '0') then 
+                HTRANS <= '0';
                 state <= wrM;
               else 
+                HTRANS <= '0';
                 state <= rdM;
               end if;
           else state <=wait_state1;
@@ -1268,12 +1270,14 @@ IorD <= IorD_temp;
           
           
           HWRITE <= '0';
-          HTRANS <= '0';
-          HTRANS <= '0';  -- IDLE 
+          HTRANS <= '1';
+           -- IDLE 
           if(HREADY = '1') then      
               if (ins_20 = '0') then 
+                HTRANS <= '0';
                 state <= wrM_wrRF;
               else 
+                HTRANS <= '0';
                 state <= rdM_wrRF;
               end if;
           else state <=wait_state2;
