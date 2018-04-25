@@ -4,21 +4,21 @@ use IEEE.std_logic_1164.all;
 
 entity HighModuleInterface is
   port(
-    SW        : in    std_logic_vector (15 downto 0);
-    BTN       : in    std_logic_vector (4 downto 0);
-    CLK       : in    std_logic;
-    LED       : out   std_logic_vector (15 downto 0);
-    SSEG_CA   : out   std_logic_vector (7 downto 0);
-    SSEG_AN   : out   std_logic_vector (3 downto 0);
-    UART_TXD  : out   std_logic;
-    UART_RXD  : in    std_logic;
-    VGA_RED   : out   std_logic_vector (3 downto 0);
-    VGA_BLUE  : out   std_logic_vector (3 downto 0);
-    VGA_GREEN : out   std_logic_vector (3 downto 0);
-    VGA_VS    : out   std_logic;
-    VGA_HS    : out   std_logic;
-    PS2_CLK   : inout std_logic;
-    PS2_DATA  : inout std_logic
+    SW        : in    std_logic_vector (15 downto 0):="0000000000000000";
+    BTN       : in    std_logic_vector (4 downto 0):="00000";
+    CLK       : in    std_logic:='0';
+    LED       : out   std_logic_vector (15 downto 0):="0000000000000000";
+    SSEG_CA   : out   std_logic_vector (7 downto 0):="00000000";
+    SSEG_AN   : out   std_logic_vector (3 downto 0):="0000";
+    UART_TXD  : out   std_logic:='0';
+    UART_RXD  : in    std_logic:='0';
+    VGA_RED   : out   std_logic_vector (3 downto 0):="0000";
+    VGA_BLUE  : out   std_logic_vector (3 downto 0):="0000";
+    VGA_GREEN : out   std_logic_vector (3 downto 0):="0000";
+    VGA_VS    : out   std_logic:='0';
+    VGA_HS    : out   std_logic:='0';
+    PS2_CLK   : inout std_logic:='0';
+    PS2_DATA  : inout std_logic:='0'
     );
 end entity HighModuleInterface;
 
@@ -220,36 +220,36 @@ architecture arch of HighModuleInterface is
       );
   end component;
 
-  signal HSIZE : std_logic_vector(1 downto 0);
-  signal reset : std_logic;
+  signal HSIZE : std_logic_vector(1 downto 0):="00";
+  signal reset : std_logic:='0';
   signal ReadyLED, HTRANS, HWRITE, LEDSelect_temp, ReadyAnode, ReadySwitch, ReadyMemory, ReadyCathode, HREADY_temp,
-    MemSelect_temp, AnodeSelect_temp, SwitchSelect_temp, CathodeSelect_temp : std_logic;
-  signal Cathodes, HRDATA, HWDATA, MemoryData : std_logic_vector(31 downto 0);
-  signal SwitchData                           : std_logic_vector(31 downto 0);
-  signal HADDR                                : std_logic_vector(31 downto 0);
-  signal Anodes                               : std_logic_vector(1 downto 0);
-  signal temp                                 : std_logic;
-  signal btn_3_d                              : std_logic;
-  signal UART_RX_CNT                          : std_logic_vector(15 downto 0);
-  signal clk_mem                              : std_logic;
-  signal ena_mem                              : std_logic;
-  signal wea_mem                              : std_logic_vector(3 downto 0);
-  signal addr_mem                             : std_logic_vector(11 downto 0);
-  signal din_mem                              : std_logic_vector(31 downto 0);
-  signal dout_mem, dout_mem_temp, dshow       : std_logic_vector(31 downto 0);
-  signal IR                                   : std_logic_vector(31 downto 0);
-  signal rx_uart                              : std_logic_vector(7 downto 0);
-  signal switch_pair                          : std_logic_vector(1 downto 0);
-  signal reset_mem                            : std_logic;
-  signal Flags_out                            : std_logic_vector(3 downto 0);
+    MemSelect_temp, AnodeSelect_temp, SwitchSelect_temp, CathodeSelect_temp : std_logic:='0';
+  signal Cathodes, HRDATA, HWDATA, MemoryData : std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  signal SwitchData                           : std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  signal HADDR                                : std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  signal Anodes                               : std_logic_vector(1 downto 0):="00";
+  signal temp                                 : std_logic:='0';
+  signal btn_3_d                              : std_logic:='0';
+  signal UART_RX_CNT                          : std_logic_vector(15 downto 0):="0000000000000000";
+  signal clk_mem                              : std_logic:='0';
+  signal ena_mem                              : std_logic:='0';
+  signal wea_mem                              : std_logic_vector(3 downto 0):="0000";
+  signal addr_mem                             : std_logic_vector(11 downto 0):="000000000000";
+  signal din_mem                              : std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  signal dout_mem, dout_mem_temp, dshow       : std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  signal IR                                   : std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  signal rx_uart                              : std_logic_vector(7 downto 0):="00000000";
+  signal switch_pair                          : std_logic_vector(1 downto 0):="00";
+  signal reset_mem                            : std_logic:='0';
+  signal Flags_out                            : std_logic_vector(3 downto 0):="0000";
 
   signal op1p, op1, op2, ALUout, ALUoutp, op1f, op2f,
-    rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2, mulp, mul : std_logic_vector(31 downto 0);
-  signal rad1, rad2, wad : std_logic_vector(3 downto 0);
-  signal Samt            : std_logic_vector(4 downto 0);
-  signal dttyper : std_logic_vector(2 downto 0);
+    rd1p, rd_temp, rd, rd2p, shifted, shiftedp, PC, wd, ad2, rd2p2, mulp, mul : std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+  signal rad1, rad2, wad : std_logic_vector(3 downto 0):="0000";
+  signal Samt            : std_logic_vector(4 downto 0):="00000";
+  signal dttyper : std_logic_vector(2 downto 0):="000";
 
-  signal out_pulse, mulSel : std_logic;
+  signal out_pulse, mulSel : std_logic:='0';
 begin
 
   ssd : SevenSegmentDisplay port map(clk => CLK , Display_inp => Cathodes, Anode =>SSEG_AN, Cathode => SSEG_CA);

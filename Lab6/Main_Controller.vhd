@@ -4,53 +4,53 @@ use IEEE.std_logic_1164.all;
 
 entity Main_Controller is
   port (
-    decoded_op : in std_logic_vector;              -- whats this
-    ins_20     : in std_logic;
-    ins_31_28  : in std_logic_vector(3 downto 0);
-    ins_27_26  : in std_logic_vector(1 downto 0);
-    ins_27_20  : in std_logic_vector(7 downto 0);
-    ins_7_4    : in std_logic_vector(3 downto 0);
-    F          : in std_logic_vector(3 downto 0);  -- (Flags : Z & N & V & C )
-    p          : in std_logic;
-    clk        : in std_logic;
-    class      : in std_logic_vector(1 downto 0);
-    sub_class  : in std_logic_vector(3 downto 0);
-    variant    : in std_logic_vector(1 downto 0);
-    ins_status : in std_logic_vector(1 downto 0);
+    decoded_op : in std_logic_vector(3 downto 0):="0000";              -- whats this
+    ins_20     : in std_logic:='0';
+    ins_31_28  : in std_logic_vector(3 downto 0):="0000";
+    ins_27_26  : in std_logic_vector(1 downto 0):="00";
+    ins_27_20  : in std_logic_vector(7 downto 0):="00000000";
+    ins_7_4    : in std_logic_vector(3 downto 0):="0000";
+    F          : in std_logic_vector(3 downto 0):="0000";  -- (Flags : Z & N & V & C )
+    p          : in std_logic:='0';
+    clk        : in std_logic:='0';
+    class      : in std_logic_vector(1 downto 0):="00";
+    sub_class  : in std_logic_vector(3 downto 0):="0000";
+    variant    : in std_logic_vector(1 downto 0):="00";
+    ins_status : in std_logic_vector(1 downto 0):="00";
 
 --CONTROL SIGNALS
     --------------
 
-    IorD   : out std_logic;
+    IorD   : out std_logic:='0';
 --MR: out std_logic:='0';
-    MW     : out std_logic;
-    IW     : out std_logic;
-    DW     : out std_logic;
-    Rsrc   : out std_logic;
-    M2R    : out std_logic_vector(1 downto 0);  --
-    RW     : out std_logic;
-    AW     : out std_logic;
-    BW     : out std_logic;
-    mulSel : out std_logic;
-    Asrc1  : out std_logic;                     --
-    Asrc2  : out std_logic_vector(1 downto 0);
-    Fset   : out std_logic;
-    op     : out std_logic_vector(3 downto 0);
-    ReW    : out std_logic;
+    MW     : out std_logic:='0';
+    IW     : out std_logic:='0';
+    DW     : out std_logic:='0';
+    Rsrc   : out std_logic:='0';
+    M2R    : out std_logic_vector(1 downto 0):="00";  --
+    RW     : out std_logic:='0';
+    AW     : out std_logic:='0';
+    BW     : out std_logic:='0';
+    mulSel : out std_logic:='0';
+    Asrc1  : out std_logic:='0';                     --
+    Asrc2  : out std_logic_vector(1 downto 0):="00";
+    Fset   : out std_logic:='0';
+    op     : out std_logic_vector(3 downto 0):="0000";
+    ReW    : out std_logic:='0';
 
-    WadSrc      : out std_logic_vector(1 downto 0);
-    R1src       : out std_logic_vector(1 downto 0);
-    op1sel      : out std_logic;
-    SType       : out std_logic_vector(1 downto 0);
-    ShiftAmtSel : out std_logic;
-    Shift       : out std_logic;
-    MulW        : out std_logic;
-    ShiftW      : out std_logic;
-    op1update   : out std_logic;
+    WadSrc      : out std_logic_vector(1 downto 0):="00";
+    R1src       : out std_logic_vector(1 downto 0):="00";
+    op1sel      : out std_logic:='0';
+    SType       : out std_logic_vector(1 downto 0):="00";
+    ShiftAmtSel : out std_logic:='0';
+    Shift       : out std_logic:='0';
+    MulW        : out std_logic:='0';
+    ShiftW      : out std_logic:='0';
+    op1update   : out std_logic:='0';
     
-    HTRANS : out std_logic;
-    HWRITE : out std_logic;
-    HREADY:in std_logic
+    HTRANS : out std_logic:='0';
+    HWRITE : out std_logic:='0';
+    HREADY:in std_logic:='0'
     );
 end entity Main_Controller;
 
@@ -59,13 +59,13 @@ architecture arch of Main_Controller is
 
   type state_type is (wait_state2,wait_state1,wait1, wait2, wait3, wait4,wait5,wait6, wait7, wait8, fetch, rdAB, arith, addr, brn, wrRF, wrM, rdM, wr_from_M2RF, shift_state1, shift_state2, rdM_wrRF, wrM_wrRF, addr_rdB, PC_plus4, mul_ck_MLA, only_mul, add_MLA, wr_mul);
 
-    signal IorD_temp,MW_temp,IW_temp,Rsrc_temp,DW_temp,RW_temp,AW_temp,BW_temp,mulSel_temp,Asrc1_temp,Fset_temp,ReW_temp,op1sel_temp,ShiftAmtSel_temp,Shift_temp,MulW_temp,ShiftW_temp,op1update_temp:std_logic;
- signal SType_temp,M2R_temp,Asrc2_temp,WadSrc_temp,R1src_temp:std_logic_vector(1 downto 0);
- signal op_temp:std_logic_vector(3 downto 0);
+    signal IorD_temp,MW_temp,IW_temp,Rsrc_temp,DW_temp,RW_temp,AW_temp,BW_temp,mulSel_temp,Asrc1_temp,Fset_temp,ReW_temp,op1sel_temp,ShiftAmtSel_temp,Shift_temp,MulW_temp,ShiftW_temp,op1update_temp:std_logic:='0';
+ signal SType_temp,M2R_temp,Asrc2_temp,WadSrc_temp,R1src_temp:std_logic_vector(1 downto 0):="00";
+ signal op_temp:std_logic_vector(3 downto 0):="0000";
  
   signal state      : state_type;
   --signal op_temp : std_logic := "0100";
-  signal Z, N, V, C : std_logic;
+  signal Z, N, V, C : std_logic:='0';
 
 begin
 

@@ -5,11 +5,11 @@ use IEEE.std_logic_1164.all;
 
 entity SevenSegmentDisplay is
 port(
-		clk : in std_logic;
-		Display_inp : in std_logic_vector(31 downto 0);
+		clk : in std_logic:='0';
+		Display_inp : in std_logic_vector(31 downto 0):="00000000000000000000000000000000";
 
-		Anode : out std_logic_vector(3 downto 0);
-		Cathode : out std_logic_vector(7 downto 0)
+		Anode : out std_logic_vector(3 downto 0):="0000";
+		Cathode : out std_logic_vector(7 downto 0):="00000000"
 	);
 end entity SevenSegmentDisplay;
 
@@ -17,9 +17,9 @@ end entity SevenSegmentDisplay;
 architecture arch of SevenSegmentDisplay is
 
 --signal Anode : std_logic_vector(3 downto 0);
-signal temp_cathode : std_logic_vector(7 downto 0);
-signal to_display : std_logic_vector(15 downto 0);
-signal pushbutton : std_logic;
+signal temp_cathode : std_logic_vector(6 downto 0):="0000000";
+signal to_display : std_logic_vector(15 downto 0):="0000000000000000";
+signal pushbutton : std_logic:='0';
 
 component display is
 port (to_display:in std_logic_vector(15 downto 0);

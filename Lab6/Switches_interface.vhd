@@ -4,14 +4,14 @@ use IEEE.std_logic_1164.all;
 
 entity Switches_interface is
    port (
-     HTRANS     : in  std_logic;
-     PortSelect : in  std_logic;
-      HREADYIN    : in std_logic;
-                HREADYOUT    : out std_logic;
-     HWRITE     : in  std_logic;
-      clk       : in  std_logic;
-     HRDATA     : out std_logic_vector(31 downto 0);
-     Switches   : in  std_logic_vector(15 downto 0)
+     HTRANS     : in  std_logic:='0';
+     PortSelect : in  std_logic:='0';
+      HREADYIN    : in std_logic:='0';
+                HREADYOUT    : out std_logic:='0';
+     HWRITE     : in  std_logic:='0';
+      clk       : in  std_logic:='0';
+     HRDATA     : out std_logic_vector(31 downto 0):="00000000000000000000000000000000";
+     Switches   : in  std_logic_vector(15 downto 0):="0000000000000000"
 
      );
 end entity Switches_interface;
