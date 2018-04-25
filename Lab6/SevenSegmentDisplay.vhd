@@ -16,8 +16,8 @@ end entity SevenSegmentDisplay;
 
 architecture arch of SevenSegmentDisplay is
 
--- signal Anode : std_logic_vector(3 downto 0);
--- signal cathode : std_logic_vector(7 downto 0);
+--signal Anode : std_logic_vector(3 downto 0);
+signal temp_cathode : std_logic_vector(7 downto 0);
 signal to_display : std_logic_vector(15 downto 0);
 signal pushbutton : std_logic;
 
@@ -36,9 +36,11 @@ pushbutton <= '0';
 Disp: display
 port map (to_display=> to_display,
 		pushbutton=>  pushbutton,
-		cathod => Cathode,
+		cathod => temp_cathode,
 		anodd=> Anode,
 		clock=> clk);
+
+Cathode <= '0' & temp_cathode;
 
 
 
