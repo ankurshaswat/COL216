@@ -590,6 +590,7 @@ IorD <= IorD_temp;
 --------------------------------------------|
         when wait_state1 => 
           
+          HWRITE <= '0';
           HTRANS <= '0';
           if(HREADY = '1') then 
               if (ins_20 = '0') then 
@@ -1265,6 +1266,9 @@ IorD <= IorD_temp;
 
  when wait_state2 => 
           
+          
+          HWRITE <= '0';
+          HTRANS <= '0';
           HTRANS <= '0';  -- IDLE 
           if(HREADY = '1') then      
               if (ins_20 = '0') then 
@@ -1274,6 +1278,8 @@ IorD <= IorD_temp;
               end if;
           else state <=wait_state2;
           end if;
+
+
           IorD_temp                         <= IorD_temp ;      -- give the address for reading  or writing   --- '0';
 
           --MR: out std_logic:='0';
