@@ -7,7 +7,7 @@ entity SevenSegmentDisplay is
 port(
 		clk : in std_logic:='0';
 		Display_inp : in std_logic_vector(31 downto 0):="00000000000000000000000000000000";
-
+        pushbutton : in std_logic:='0';
 		Anode : out std_logic_vector(3 downto 0):="0000";
 		Cathode : out std_logic_vector(7 downto 0):="00000000"
 	);
@@ -19,7 +19,7 @@ architecture arch of SevenSegmentDisplay is
 --signal Anode : std_logic_vector(3 downto 0);
 signal temp_cathode : std_logic_vector(6 downto 0):="0000000";
 signal to_display : std_logic_vector(15 downto 0):="0000000000000000";
-signal pushbutton : std_logic:='0';
+--signal pushbutton : std_logic:='0';
 
 component display is
 port (to_display:in std_logic_vector(15 downto 0);
@@ -31,7 +31,7 @@ end component;
 begin
 
 to_display<= Display_inp(15 downto 0);
-pushbutton <= '0';
+--pushbutton <= '0';
 
 Disp: display
 port map (to_display=> to_display,
@@ -111,47 +111,7 @@ cathode_displayer: cat_disp
 
 
 end Behavioral;
-
-------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
-entity clock_reducer is
-Port (
-        clk_in : in  STD_LOGIC;
-
-        clk_out: out STD_LOGIC
-    );
-end clock_reducer;
-
-architecture Behavioral of clock_reducer is
-    signal temporal :std_logic :='0';
-    signal counter : integer range 0 to 131075 := 0;
-begin
-    process ( clk_in) begin
-
-        if rising_edge(clk_in) then
-            if (counter = 131072) then
-                temporal <= NOT(temporal);
-                counter <= 0;
-            else
-                counter <= counter + 1;
-            end if;
-        end if;
-    end process;
-
-    clk_out <= temporal;
-end Behavioral;
-------------------------------------
+------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

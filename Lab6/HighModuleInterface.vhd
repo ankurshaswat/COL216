@@ -24,6 +24,11 @@ end entity HighModuleInterface;
 
 architecture arch of HighModuleInterface is
 
+component clock_reducer is
+       Port (
+           clk_in : in  STD_LOGIC;
+           clk_out: out STD_LOGIC);
+end component;
 
   component LEDs_interface is
     port (
@@ -49,7 +54,7 @@ architecture arch of HighModuleInterface is
   port(
   		clk : in std_logic;
   		Display_inp : in std_logic_vector(31 downto 0);
-
+        pushbutton : in std_logic;
   		Anode : out std_logic_vector(3 downto 0);
   		Cathode : out std_logic_vector(7 downto 0)
   	);
@@ -249,16 +254,22 @@ architecture arch of HighModuleInterface is
   signal Samt            : std_logic_vector(4 downto 0):="00000";
   signal dttyper : std_logic_vector(2 downto 0):="000";
 
-  signal out_pulse_temp , out_pulse, mulSel,sim : std_logic:='0';
+  signal out_pulse_temp , out_pulse, mulSel,sim ,reduced_clk: std_logic:='0';
 begin
+
+    cr : clock_reducer port map(clk_in=> CLK , clk_out => reduced_clk);
+
+    sim<=BTN(1);
 
     with sim select out_pulse <= 
     clk when '1',
-    out_pulse_temp when others;
+    reduced_clk when others;
 
-  ssd : SevenSegmentDisplay port map(clk => CLK , Display_inp => Cathodes, Anode =>SSEG_AN, Cathode => SSEG_CA);
+--    with 
 
-  sp : Single_clock_cycle port map(clock => CLK, button => BTN(2), out_pulse => out_pulse_temp);
+  ssd : SevenSegmentDisplay port map(clk => CLK , Display_inp => Cathodes, Anode =>SSEG_AN, Cathode => SSEG_CA, pushbutton=>BTN(1));
+
+--  sp : Single_clock_cycle port map(clock => CLK, button => BTN(2), out_pulse => out_pulse_temp);
 
   cont : Controller port map(
     ins         => IR,
