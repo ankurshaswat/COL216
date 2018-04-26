@@ -820,7 +820,11 @@ state<=skip;
             DW_temp     <= '0';
             Rsrc_temp   <= '0'; 
             M2R_temp    <= "01";             --
-            RW_temp     <= p;                --'1';
+            if (decoded_op(3 downto 2) = "10")  then
+              RW_temp     <= 0;                --'1';
+            else            
+              RW_temp     <= p;                --'1';
+            end if;
             AW_temp     <= '0';
             BW_temp     <= '0';
             --Asrc1_temp <= "00";
@@ -984,7 +988,7 @@ state<=skip;
               --else
               --  ShiftAmtSel_temp <= '0';           -- immediate
               --end if;
-              ShiftAmtSel_temp <= '0';
+              ShiftAmtSel_temp <= '1';
               Shift_temp     <= '0';
               MulW_temp      <= '0';
               ShiftW_temp    <= '0';
