@@ -1068,11 +1068,12 @@ state<=skip;
             R1src_temp  <= "01";
             op1sel_temp <= '1';
             SType_temp  <= SType_temp;             --- Not sure which bits signal it
-            if (ins_7_4(0) = '0') then
-              ShiftAmtSel_temp <= '1';       -- register specified
-            else
-              ShiftAmtSel_temp <= '0';       -- immediate
-            end if;
+              --if (ins_7_4(0) = '0') then
+              --  ShiftAmtSel_temp <= '1';       -- register specified
+              --else
+              --  ShiftAmtSel_temp <= '0';       -- immediate
+              --end if;
+              ShiftAmtSel_temp <= ShiftAmtSel_temp;
             Shift_temp     <= '1';
             MulW_temp      <= '0';
             ShiftW_temp    <= '1';
