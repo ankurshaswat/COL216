@@ -6,6 +6,7 @@ entity Controller is
   port (
     ins         : in  std_logic_vector(31 downto 0):="00000000000000000000000000000000";
     clk         : in  std_logic:='0';
+    F : in std_logic_vector(3 downto 0):="0000";
     IorD        : out std_logic:='0';
     MW          : out std_logic:='0';
     IW          : out std_logic:='0';
@@ -125,7 +126,7 @@ architecture arch of Controller is
 
 --    signal ins:std_logic_vector(31 downto 0);
 --    signal op:std_logic_vector(3 downto 0);
-  signal F          : std_logic_vector(3 downto 0):="0000";
+--  signal F          : std_logic_vector(3 downto 0):="0000";
   signal p_received : std_logic:='0';
   -- signal Z, N, V, C :  std_logic;
   signal op_temp    : std_logic_vector(3 downto 0):="0000";

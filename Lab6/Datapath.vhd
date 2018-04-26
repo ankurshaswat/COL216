@@ -173,6 +173,11 @@ architecture struc of Datapath is
 
   signal carry_out,
     flagTempN,
+    flagTempN2,
+    flagTempZ2,
+    flagTempV2,
+    flagTempC2,
+
     flagTempZ,
     flagTempV,
     flagTempC,
@@ -279,18 +284,18 @@ begin
       C        => flagTempC,
       V        => flagTempV);
 
-  with Fset select Z <=
-    Z when '0',
-    flagTempZ when others;
-  with Fset select C <=
-    C when '0',
-    flagTempC when others;
-  with Fset select N <=
-    N when '0',
-    flagTempN when others;
-  with Fset select V <=
-    V when '0',
-    flagTempV when others;
+--  with Fset select Z <=
+--    Z when '0',
+--    flagTempZ when others;
+--  with Fset select C <=
+--    C when '0',
+--    flagTempC when others;
+--  with Fset select N <=
+--    N when '0',
+--    flagTempN when others;
+--  with Fset select V <=
+--    V when '0',
+--    flagTempV when others;
   with mulSel select op2f <=
     op2_temp when '0',
     mulp     when others;
@@ -387,6 +392,24 @@ begin
       else
         shiftedp <= shifted;
       end if;
+      
+       if (Fset = '0') then
+             Z <= Z;
+             C <= C;
+             N <= N;
+             V <= V;
+             
+           else
+             Z <= flagTempZ2;
+             C <= flagTempC2;
+             N <= flagTempN2;
+             V <= flagTempV2;
+           end if;
+           
+            flagTempZ2  <= flagTempZ;
+                      flagTempC2 <= flagTempC;
+                      flagTempN2 <= flagTempN;
+                      flagTempV2 <= flagTempV;
     end if;
   end process;
 

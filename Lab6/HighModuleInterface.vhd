@@ -131,6 +131,7 @@ end component;
     port (
       ins         : in  std_logic_vector(31 downto 0);
       clk         : in  std_logic;
+      F : in std_logic_vector(3 downto 0);
       IorD        : out std_logic;
       MW          : out std_logic;
       IW          : out std_logic;
@@ -273,6 +274,7 @@ begin
 
   cont : Controller port map(
     ins         => IR,
+    F => Flags_out,
     clk         => out_pulse,
     IorD        => dout_mem(0),
     MW          => dout_mem(1),

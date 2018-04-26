@@ -69,6 +69,10 @@ architecture arch of Main_Controller is
 
 begin
 
+Z<=F(3);
+N<=F(1);
+V<=F(2);
+C<=F(0);
 
 IorD <= IorD_temp;
     MW                           <= MW_temp;
@@ -823,7 +827,12 @@ state<=skip;
             mulSel_temp <= '0';
             Asrc1_temp  <= '0';
             Asrc2_temp  <= "00";
-            Fset_temp   <= ins_27_20(0) or decoded_op(3 downto 2) = "10" ;     -- depends on p from Bctrl
+            if(decoded_op(3 downto 2) = "10") then
+                        Fset_temp   <= '1';
+            else
+            Fset_temp   <= ins_27_20(0)   ;     -- depends on p from Bctrl
+            end if;
+            
             op_temp     <= "0100";           -- op_temp from Actrl
             ReW_temp    <= '0';
 
