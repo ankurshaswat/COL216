@@ -814,7 +814,7 @@ state<=skip;
             MW_temp     <= '0';
             IW_temp     <= '0';
             DW_temp     <= '0';
-            Rsrc_temp   <= '0';
+            Rsrc_temp   <= '0'; 
             M2R_temp    <= "01";             --
             RW_temp     <= p;                --'1';
             AW_temp     <= '0';
@@ -823,7 +823,7 @@ state<=skip;
             mulSel_temp <= '0';
             Asrc1_temp  <= '0';
             Asrc2_temp  <= "00";
-            Fset_temp   <= ins_27_20(0);     -- depends on p from Bctrl
+            Fset_temp   <= ins_27_20(0) or decoded_op(3 downto 2) = "10" ;     -- depends on p from Bctrl
             op_temp     <= "0100";           -- op_temp from Actrl
             ReW_temp    <= '0';
 
