@@ -17,7 +17,7 @@ begin
 
   Z <= F(3);
   N <= F(2);
-  V <= F(1);
+  V <= F(1);   
   C <= F(0);
 
   with ins_31_28 select p <=
@@ -31,7 +31,8 @@ begin
     not V                       when "0111",
     C and (not Z)               when "1000",
     (not C) or Z                when "1001",
-    not (N xor V)               when "1010",
+--    not (N xor V)               when "1010",
+    not (N)               when "1010",
     (N xor V)                   when "1011",
     (not Z) and (not (N xor V)) when "1100",
     Z or (N xor V)              when "1101",
