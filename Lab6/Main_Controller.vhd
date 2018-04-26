@@ -985,7 +985,7 @@ state<=skip;
               --  ShiftAmtSel_temp <= '0';           -- immediate
               --end if;
               ShiftAmtSel_temp <= '0';
-              Shift_temp     <= '1';
+              Shift_temp     <= '0';
               MulW_temp      <= '0';
               ShiftW_temp    <= '0';
               op1update_temp <= '1';
