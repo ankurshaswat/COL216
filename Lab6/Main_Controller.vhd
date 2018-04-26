@@ -821,7 +821,7 @@ state<=skip;
             Rsrc_temp   <= '0'; 
             M2R_temp    <= "01";             --
             if (decoded_op(3 downto 2) = "10")  then
-              RW_temp     <= 0;                --'1';
+              RW_temp     <= '0';                --'1';
             else            
               RW_temp     <= p;                --'1';
             end if;
